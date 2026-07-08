@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-08T20:25:15Z",
+ "bijgewerkt": "2026-07-08T20:38:57Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -623,7 +623,7 @@
      {
       "pos": 7,
       "naam": "Tim Merlier",
-      "land": "BEL",
+      "land": "GER",
       "ploeg": "Soudal–Quick-Step",
       "tijd": "55 ptn"
      },
@@ -803,6 +803,13 @@
     ]
    }
   },
-  "voetnoot": "Stand na etappe 5, automatisch bijgewerkt 8 juli 22:25 uur (bron: Wikipedia)."
+  "wissels": [],
+  "voetnoot": "Stand na etappe 5, automatisch bijgewerkt 8 juli 22:38 uur (bron: Wikipedia)."
+ },
+ "dagcommentaar": {
+  "voorEtappe": 6,
+  "tekst": "Olav Kooij (Decathlon CMA CGM) sprintte naar de zege in Pau, voor Max Kanter en Tim Merlier. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Torstein Træen, met Sean Quinn als eerste achtervolger op 0:28.",
+  "bron": "vast patroon",
+  "feiten": "d48517aa7b23f6f1"
  }
 }

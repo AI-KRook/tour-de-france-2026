@@ -9,7 +9,9 @@ Het script is bewust defensief: als een pagina niet geladen of geparset kan
 worden, blijft de bestaande data staan en eindigt het met exitcode 0.
 Entries met "lock": true worden nooit overschreven.
 """
+import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -40,6 +42,21 @@ ETAPPES = {
 }
 
 NL_TZ = timezone(timedelta(hours=2))  # CEST in juli
+
+# etappenummer -> (startplaats, finishplaats, type) voor het dagcommentaar
+ETAPPE_INFO = {
+    1: ("Barcelona", "Barcelona", "tijdrit"), 2: ("Tarragona", "Barcelona", "heuvels"),
+    3: ("Granollers", "Les Angles", "berg"), 4: ("Carcassonne", "Foix", "heuvels"),
+    5: ("Lannemezan", "Pau", "vlak"), 6: ("Pau", "Gavarnie-Gèdre", "berg"),
+    7: ("Hagetmau", "Bordeaux", "vlak"), 8: ("Périgueux", "Bergerac", "vlak"),
+    9: ("Malemort", "Ussel", "heuvels"), 10: ("Aurillac", "Le Lioran", "berg"),
+    11: ("Vichy", "Nevers", "vlak"), 12: ("Magny-Cours", "Chalon-sur-Saône", "vlak"),
+    13: ("Dole", "Belfort", "heuvels"), 14: ("Mulhouse", "Le Markstein", "berg"),
+    15: ("Champagnole", "Plateau de Solaison", "berg"), 16: ("Évian-les-Bains", "Thonon-les-Bains", "tijdrit"),
+    17: ("Chambéry", "Voiron", "vlak"), 18: ("Voiron", "Orcières-Merlette", "berg"),
+    19: ("Gap", "Alpe d'Huez", "berg"), 20: ("Le Bourg-d'Oisans", "Alpe d'Huez", "berg"),
+    21: ("Thoiry", "Parijs", "vlak"),
+}
 
 
 def haal(url):
@@ -268,6 +285,96 @@ def renner_pagina_info(naam):
     return info
 
 
+WERKWOORD = {
+    "vlak": "sprintte naar de zege in",
+    "tijdrit": "was de snelste tegen de klok in",
+    "berg": "bedwong als eerste de slotklim naar",
+    "heuvels": "sloeg toe in",
+}
+TRUI_LABEL = {"geel": "de gele trui", "groen": "de groene trui",
+              "bollen": "de bollentrui", "wit": "de witte trui"}
+
+
+def maak_feiten(stand):
+    """Feitenblad voor het dagcommentaar: de laatste uitslag, truiwissels en de stand."""
+    uitslagen = stand.get("uitslagen", {})
+    volgende = next((n for n in sorted(ETAPPES) if not (uitslagen.get(str(n)) or {}).get("pod")), None)
+    vorige = max((n for n in sorted(ETAPPES) if (uitslagen.get(str(n)) or {}).get("pod")), default=None)
+    if volgende is None or vorige is None:
+        return None
+    u = uitslagen[str(vorige)]
+    k = stand.get("klassement") or {}
+    top10 = k.get("top10") or []
+    feiten = {
+        "volgende": {"n": volgende, "start": ETAPPE_INFO[volgende][0],
+                     "finish": ETAPPE_INFO[volgende][1], "type": ETAPPE_INFO[volgende][2],
+                     "datum": ETAPPES[volgende][0]},
+        "vorige": {"n": vorige, "finish": ETAPPE_INFO[vorige][1], "type": ETAPPE_INFO[vorige][2],
+                   "top3": [{"naam": p.get("naam"), "ploeg": p.get("ploeg"), "tijd": p.get("tijd")}
+                            for p in (u.get("pod") or [])[:3]]},
+        "wissels": k.get("wissels") or [],
+        "truien": {t: (v.get("naam") if isinstance(v, dict) else v)
+                   for t, v in (k.get("truien") or {}).items()},
+    }
+    if len(top10) > 1:
+        feiten["geel"] = {"naam": top10[0]["naam"], "achtervolger": top10[1]["naam"],
+                          "achterstand": top10[1].get("tijd")}
+    return feiten
+
+
+def regels_commentaar(f):
+    """Dagcommentaar volgens een vast patroon; werkt zonder API-sleutel."""
+    top3 = f["vorige"]["top3"]
+    w = top3[0]
+    zin = w["naam"] + (f' ({w["ploeg"]})' if w.get("ploeg") else "")
+    zin += f' {WERKWOORD.get(f["vorige"]["type"], "won in")} {f["vorige"]["finish"]}'
+    rest = [p["naam"] for p in top3[1:] if p.get("naam")]
+    if rest:
+        zin += ", voor " + " en ".join(rest)
+    zinnen = [zin + "."]
+    if f["wissels"]:
+        delen = [f'{x["naar"]} neemt {TRUI_LABEL.get(x["trui"], x["trui"])} over van {x["van"]}'
+                 for x in f["wissels"]]
+        zinnen.append(" en ".join(delen) + ".")
+    else:
+        zinnen.append("Alle truien blijven om dezelfde schouders.")
+    if f.get("geel"):
+        achterstand = str(f["geel"].get("achterstand") or "").replace("+ ", "")
+        zinnen.append(f'In het algemeen klassement leidt {f["geel"]["naam"]}, '
+                      f'met {f["geel"]["achtervolger"]} als eerste achtervolger op {achterstand}.')
+    return " ".join(zinnen)
+
+
+def claude_commentaar(f):
+    """Laat Claude het dagcommentaar schrijven. Geeft None terug zonder API-sleutel
+    of bij fouten, zodat het vaste patroon het overneemt."""
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        return None
+    try:
+        import anthropic
+        client = anthropic.Anthropic()
+        prompt = (
+            "Je bent een enthousiaste Nederlandse wielercommentator bij de Tour de France 2026. "
+            "Schrijf een terugblik van drie of vier zinnen op de vorige etappe als opmaat naar de volgende rit. "
+            "Gebruik uitsluitend de feiten hieronder en verzin niets. Noem de winnaar, zeg iets over de truien "
+            "en de stand, en sluit af met precies één zin die de brug slaat naar de komende etappe. "
+            "Schrijf lopende tekst zonder opsommingen, zonder kopjes en zonder gedachtestreepjes. "
+            "Antwoord met alleen die tekst.\n\nFeiten (JSON):\n" + json.dumps(f, ensure_ascii=False)
+        )
+        resp = client.messages.create(
+            model="claude-opus-4-8",
+            max_tokens=1024,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        if resp.stop_reason == "refusal":
+            return None
+        tekst = next((b.text for b in resp.content if b.type == "text"), "").strip()
+        return tekst or None
+    except Exception as e:
+        print(f"  Claude-commentaar mislukt, vast patroon gebruikt: {e}")
+        return None
+
+
 def main():
     stand = json.loads(STAND_PAD.read_text(encoding="utf-8")) if STAND_PAD.exists() else {}
     stand.setdefault("uitslagen", {})
@@ -423,11 +530,22 @@ def main():
                     truien[trui] = oud["truien"][trui]
         MND = {1: "januari", 2: "februari", 3: "maart", 4: "april", 5: "mei", 6: "juni",
                7: "juli", 8: "augustus", 9: "september", 10: "oktober", 11: "november", 12: "december"}
+        # truiwissels t.o.v. de vorige stand (voer voor het dagcommentaar)
+        wissels = []
+        for trui in ("geel", "groen", "bollen", "wit"):
+            oud_v = (oud.get("truien") or {}).get(trui)
+            oud_naam = oud_v.get("naam") if isinstance(oud_v, dict) else oud_v
+            nieuw_naam = (truien.get(trui) or {}).get("naam")
+            if oud_naam and nieuw_naam and oud_naam != nieuw_naam:
+                wissels.append({"trui": trui, "van": oud_naam, "naar": nieuw_naam})
+        if oud.get("naEtappe") == beste_n and not wissels:
+            wissels = oud.get("wissels") or []
         nieuw_klassement = {
             "naEtappe": beste_n,
             "truien": truien,
             "top10": gc_top,
             "klassementen": klassementen,
+            "wissels": wissels,
             "voetnoot": f"Stand na etappe {beste_n}, automatisch bijgewerkt "
                         f"{nu.day} {MND[nu.month]} {nu.strftime('%H:%M')} uur (bron: Wikipedia).",
         }
@@ -441,6 +559,23 @@ def main():
             print(f"Klassement ongewijzigd (na etappe {beste_n})")
     else:
         print("Geen bruikbare GC-tabel gevonden")
+
+    # 3) dagcommentaar voor de eerstvolgende rit; vernieuwt zodra de feiten wijzigen
+    feiten = maak_feiten(stand)
+    if feiten:
+        vingerafdruk = hashlib.sha256(
+            json.dumps(feiten, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+        if (stand.get("dagcommentaar") or {}).get("feiten") != vingerafdruk:
+            tekst = claude_commentaar(feiten)
+            bron = "claude-opus-4-8" if tekst else "vast patroon"
+            stand["dagcommentaar"] = {
+                "voorEtappe": feiten["volgende"]["n"],
+                "tekst": tekst or regels_commentaar(feiten),
+                "bron": bron,
+                "feiten": vingerafdruk,
+            }
+            gewijzigd = True
+            print(f"Dagcommentaar vernieuwd voor etappe {feiten['volgende']['n']} ({bron})")
 
     if gewijzigd:
         stand["bijgewerkt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

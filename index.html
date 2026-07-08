@@ -515,6 +515,7 @@ const EXACT = {};
 // uitslagen, klassement en truien komen uit data/stand.json (automatisch bijgewerkt via GitHub Actions)
 let UITSLAGEN = {};
 let KLASSEMENT = null;
+let DAGCOMMENTAAR = null;
 
 // ---------- vlaggen (IOC-code -> emoji) ----------
 const IOC2ISO = {NED:"NL",BEL:"BE",FRA:"FR",GER:"DE",DEN:"DK",SLO:"SI",NOR:"NO",GBR:"GB",USA:"US",
@@ -661,7 +662,11 @@ function terugblikTekst(n){
 function previewHtml(n){
   const p=VOORBESCHOUWING[n];
   if(!p)return "";
-  const tb=terugblikTekst(n);
+  // het dagelijks vernieuwde commentaar uit de workflow heeft voorrang op de
+  // lokaal opgebouwde terugblikzin
+  const tb=(DAGCOMMENTAAR&&DAGCOMMENTAAR.voorEtappe===n&&DAGCOMMENTAAR.tekst)
+    ?DAGCOMMENTAAR.tekst
+    :terugblikTekst(n);
   return `<div class="previewblok">
     <div class="titelu">🎙️ Voorbeschouwing</div>
     ${tb?`<p class="ptekst terugblik">${tb}</p>`:""}
@@ -1059,6 +1064,7 @@ async function laadStand(){
     const st=await r.json();
     UITSLAGEN=st.uitslagen||{};
     KLASSEMENT=st.klassement||null;
+    DAGCOMMENTAAR=st.dagcommentaar||null;
   }catch(err){/* offline of lokaal geopend */}
   renderUitslagen();
   renderKlassement();

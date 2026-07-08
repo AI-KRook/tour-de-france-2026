@@ -32,10 +32,14 @@ jobs:
 
       - name: Dependencies installeren
         if: github.event_name != 'push'
-        run: pip install --quiet requests beautifulsoup4
+        run: pip install --quiet requests beautifulsoup4 anthropic
 
-      - name: Uitslagen en klassement bijwerken
+      - name: Uitslagen, klassement en dagcommentaar bijwerken
         if: github.event_name != 'push'
+        env:
+          # optioneel repo-secret; zonder sleutel valt het dagcommentaar
+          # terug op een vast tekstpatroon
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/update_stand.py
         continue-on-error: true
 
