@@ -244,9 +244,14 @@ def renner_pagina_info(naam):
     if p:
         intro = schoon(p.get_text(" ", strip=True)).lower()[:250]
         for dem, code in DEMONIEM.items():
-            if re.search(rf"\ban? {dem} \b", intro):
+            if re.search(rf"\ban? {dem} ", intro):
                 info["land"] = code
                 break
+    if "land" not in info:
+        # betrouwbare fallback: de paginacategorie "French male cyclists" e.d.
+        m = re.search(r"([A-Z][A-Za-z\- ]+?) (?:male|female) cyclists", html)
+        if m and m.group(1).lower() in DEMONIEM:
+            info["land"] = DEMONIEM[m.group(1).lower()]
     for tr in soup.select("table.infobox tr"):
         th = tr.find("th")
         if th and "current team" in th.get_text(" ", strip=True).lower():
