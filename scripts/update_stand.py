@@ -1,25 +1,32 @@
 #!/usr/bin/env python3
 """Werkt data/stand.json bij met uitslagen, klassement en truien.
 
-Bron: procyclingstats.com. Het script is bewust defensief: als een pagina
-niet geladen of geparset kan worden, blijft de bestaande data staan en
-eindigt het script gewoon met exitcode 0. Entries met "lock": true worden
-nooit overschreven.
+Bron: Wikipedia (en.wikipedia.org), dat de Tour-uitslagen doorgaans binnen
+enkele uren na de finish bijwerkt en goed bereikbaar is vanaf GitHub Actions
+(procyclingstats.com blokkeert datacenter-IP's met een Cloudflare-challenge).
+
+Het script is bewust defensief: als een pagina niet geladen of geparset kan
+worden, blijft de bestaande data staan en eindigt het met exitcode 0.
+Entries met "lock": true worden nooit overschreven.
 """
 import json
 import re
 import sys
 import time
-import unicodedata
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
 
-BASIS = "https://www.procyclingstats.com/race/tour-de-france/2026"
 STAND_PAD = Path(__file__).resolve().parent.parent / "data" / "stand.json"
-UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; TdF-routeverkenner; +https://github.com) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
+UA = {"User-Agent": "TdF-Routeverkenner/1.0 (hobbyproject; github actions)"}
+WIKI = "https://en.wikipedia.org/wiki"
+PAGINAS = {
+    "1-11": f"{WIKI}/2026_Tour_de_France,_Stage_1_to_Stage_11",
+    "12-21": f"{WIKI}/2026_Tour_de_France,_Stage_12_to_Stage_21",
+    "hoofd": f"{WIKI}/2026_Tour_de_France",
+}
 
 # etappenummer -> (datum, starttijd lokale NL-tijd)
 ETAPPES = {
@@ -41,6 +48,8 @@ def haal(url):
             r = requests.get(url, headers=UA, timeout=30)
             if r.status_code == 200:
                 return r.text
+            if r.status_code == 404:
+                return None  # pagina bestaat (nog) niet
             print(f"  {url}: HTTP {r.status_code}")
         except requests.RequestException as e:
             print(f"  {url}: {e}")
@@ -48,180 +57,166 @@ def haal(url):
     return None
 
 
-TUSSENVOEGSELS = {"van", "der", "de", "den", "ter", "ten", "te", "la", "le", "los",
-                  "di", "del", "della", "da", "dos", "von", "af", "el", "al"}
-
-
-def _cap(w):
-    """Hoofdletter per naamdeel, ook na apostrof of koppelteken (O'Connor, Saint-Croix)."""
-    w = w.lower()
-    return re.sub(r"(^|['’\-])(\w)", lambda m: m.group(1) + m.group(2).upper(), w)
-
-
-def net_naam(ruw):
-    """PCS toont namen als 'POGAČAR Tadej' of 'VAN AERT Wout' -> 'Tadej Pogačar' / 'Wout van Aert'."""
-    ruw = re.sub(r"\s+", " ", (ruw or "").strip())
-    if not ruw:
-        return ""
-    delen = ruw.split(" ")
-    familie, gegeven = [], []
-    for d in delen:
-        # hoofdletterwoorden (incl. tussenvoegsels als VAN, DER) horen bij de familienaam
-        kaal = "".join(c for c in unicodedata.normalize("NFD", d) if c.isalpha())
-        if kaal and kaal == kaal.upper() and not gegeven:
-            familie.append(d.lower() if d.lower() in TUSSENVOEGSELS else _cap(d))
-        else:
-            gegeven.append(d)
-    if not familie or not gegeven:
-        return ruw
-    return " ".join(gegeven) + " " + " ".join(familie)
+def schoon(tekst):
+    """Verwijdert voetnootmarkeringen en nationaliteit: 'Olav Kooij ( NED ) [ a ]' -> 'Olav Kooij'."""
+    tekst = re.sub(r"\[[^\]]*\]", "", tekst or "")
+    tekst = re.sub(r"\(\s*[A-Z]{3}\s*\)", "", tekst)
+    return re.sub(r"\s+", " ", tekst).strip()
 
 
 def korte_naam(vol):
-    delen = vol.split(" ")
+    delen = (vol or "").split(" ")
     if len(delen) < 2:
-        return vol
+        return vol or "—"
     return delen[0][0] + ". " + " ".join(delen[1:])
 
 
-def parse_tijd_sec(t):
-    t = re.sub(r"[^\d:]", "", t or "")
-    if not t or ":" not in t:
+def wiki_tijd(ruw):
+    """Zet wiki-notatie om: '3h 29\\' 07\"' -> '3:29:07', '+ 28\"' -> '+ 0:28', '+ 0\"' -> 'z.t.'."""
+    t = (ruw or "").replace("″", '"').replace("′", "'").replace("−", "-")
+    t = re.sub(r"\[[^\]]*\]", "", t).strip()
+    if not t or t in ("—", "-"):
         return None
-    try:
-        delen = [int(x) for x in t.split(":")]
-    except ValueError:
-        return None
-    sec = 0
-    for d in delen:
-        sec = sec * 60 + d
-    return sec
+    if t.lower().rstrip(".").replace(" ", "") in ("s.t", "st", "z.t", "zt"):
+        return "z.t."
+    plus = t.startswith("+")
+    kern = t.lstrip("+").strip()
+    m = re.fullmatch(r"(?:(\d+)\s*h\s*)?(?:(\d+)\s*'\s*)?(?:(\d+)\s*\")?", kern)
+    if not m or not any(m.groups()):
+        return t  # onbekend formaat: ruwe tekst tonen
+    u, mi, s = (int(x) if x else 0 for x in m.groups())
+    if plus:
+        if u * 3600 + mi * 60 + s == 0:
+            return "z.t."
+        return f"+ {u}:{mi:02d}:{s:02d}" if u else f"+ {mi}:{s:02d}"
+    return f"{u}:{mi:02d}:{s:02d}" if u else f"{mi}:{s:02d}"
 
 
-def fmt_gap(sec):
-    if sec <= 0:
-        return "—"
-    u, rest = divmod(sec, 3600)
-    m, s = divmod(rest, 60)
-    return f"+ {u}:{m:02d}:{s:02d}" if u else f"+ {m}:{s:02d}"
-
-
-def fmt_duur(sec):
-    u, rest = divmod(sec, 3600)
-    m, s = divmod(rest, 60)
-    return f"{u}:{m:02d}:{s:02d}" if u else f"{m}:{s:02d}"
-
-
-def eerste_resultstabel(soup):
-    for tabel in soup.select("table"):
-        klassen = " ".join(tabel.get("class") or [])
-        if "results" in klassen:
+def vind_tabel(soup, caption_regex):
+    for tabel in soup.find_all("table", class_="wikitable"):
+        cap = tabel.find("caption")
+        if cap and re.search(caption_regex, cap.get_text(" ", strip=True), re.I):
             return tabel
     return None
 
 
-def parse_rijen(tabel):
-    """Geeft lijst van dicts: pos, naam, ploeg, tijd_sec (cumulatief) of tijd_ruw."""
-    kop = [th.get_text(" ", strip=True).lower() for th in tabel.select("thead th")]
+def parse_result_tabel(tabel):
+    """Wikitable met Rank/Rider/Team/Time (of Rank/Team/Time bij een ploegentijdrit)."""
+    kop = [schoon(c.get_text(" ", strip=True)).lower() for c in tabel.find_all("tr")[0].find_all(["th", "td"])]
 
-    def kol(*namen):
-        for i, k in enumerate(kop):
-            if any(n in k for n in namen):
-                return i
-        return None
+    def kol(naam):
+        return kop.index(naam) if naam in kop else None
 
+    i_naam = kol("rider") if kol("rider") is not None else kol("team")
+    i_ploeg = kol("team") if kol("rider") is not None else None
     i_tijd = kol("time")
+    if i_naam is None:
+        return []
     rijen = []
-    vorige_sec = None
-    for tr in tabel.select("tbody tr"):
-        tds = tr.select("td")
-        if not tds:
+    for tr in tabel.find_all("tr")[1:]:
+        cellen = tr.find_all(["th", "td"])
+        nodig = max(i for i in (i_naam, i_ploeg, i_tijd, 0) if i is not None)
+        if len(cellen) <= nodig:
             continue
-        pos_txt = tds[0].get_text(strip=True)
-        if not re.fullmatch(r"\d{1,3}", pos_txt):
-            continue  # DNF/DNS/kopregels overslaan
-        rider = tr.select_one('a[href^="rider"]')
-        team = tr.select_one('a[href^="team"]')
-        naam = net_naam(rider.get_text(" ", strip=True)) if rider else ""
+        pos_txt = schoon(cellen[0].get_text(" ", strip=True))
+        m = re.match(r"(\d{1,3})", pos_txt)
+        if not m:
+            continue
+        naam = schoon(cellen[i_naam].get_text(" ", strip=True))
         if not naam:
             continue
-        tijd_ruw = ""
-        if i_tijd is not None and i_tijd < len(tds):
-            tekst = tds[i_tijd].get_text(" ", strip=True)
-            # PCS plakt tijden soms dubbel aan elkaar ("4:10:454:10:45"): pak de eerste echte tijd
-            m = re.search(r"(?:\d{1,3}:)?\d{1,2}:\d{2}", tekst)
-            if m:
-                tijd_ruw = ("+ " if tekst.lstrip().startswith("+") else "") + m.group(0)
-            else:
-                tijd_ruw = tekst
-        sec = parse_tijd_sec(tijd_ruw)
-        if tijd_ruw in (",,", "", "-", '"'):
-            sec = vorige_sec
-        if sec is not None:
-            vorige_sec = sec
         rijen.append({
-            "pos": int(pos_txt),
+            "pos": int(m.group(1)),
             "naam": naam,
-            "ploeg": team.get_text(" ", strip=True) if team else "",
-            "sec": sec,
-            "ruw": tijd_ruw,
+            "ploeg": schoon(cellen[i_ploeg].get_text(" ", strip=True)) if i_ploeg is not None else "",
+            "tijd": wiki_tijd(cellen[i_tijd].get_text(" ", strip=True)) if i_tijd is not None else None,
         })
-    # Normaliseren naar cumulatieve tijden. Rijen na de leider tonen soms een
-    # achterstand ("+ 0:28") in plaats van een totaaltijd; een echte totaaltijd
-    # is nooit kleiner dan die van de leider, dus kleiner = achterstand.
-    if rijen and rijen[0]["sec"] is not None:
-        leider = rijen[0]["sec"]
-        for r in rijen[1:]:
-            if r["sec"] is not None and r["sec"] < leider:
-                r["sec"] = leider + r["sec"]
     return rijen
 
 
 def pod_regels(rijen):
-    """Bouwt de top-10-regels in het formaat van de app."""
     regels = []
-    leider_sec = rijen[0]["sec"]
     for r in rijen[:10]:
         deel = f'{r["pos"]}. {r["naam"]}'
         if r["ploeg"]:
             deel += f' ({r["ploeg"]})'
-        if r["pos"] == 1 and leider_sec:
-            deel += f" · {fmt_duur(leider_sec)}"
-        elif r["sec"] is not None and leider_sec is not None:
-            gap = r["sec"] - leider_sec
-            deel += " z.t." if gap <= 0 else f" {fmt_gap(gap)}"
+        if r["tijd"] == "z.t.":
+            deel += " z.t."
+        elif r["tijd"]:
+            deel += f' {r["tijd"]}' if r["tijd"].startswith("+") else f' · {r["tijd"]}'
         regels.append(deel)
     return regels
 
 
-def scrape_etappe(n):
-    html = haal(f"{BASIS}/stage-{n}")
-    if not html:
-        return None
-    tabel = eerste_resultstabel(BeautifulSoup(html, "html.parser"))
-    if tabel is None:
-        return None
-    rijen = parse_rijen(tabel)
-    if len(rijen) < 3 or rijen[0]["pos"] != 1:
-        return None
-    w = rijen[0]
-    return {
-        "w": w["naam"],
-        "note": f'{w["ploeg"]}' if w["ploeg"] else "",
-        "pod": pod_regels(rijen),
-        "bron": "procyclingstats.com",
-    }
+def expandeer_grid(tabel):
+    """Zet een wikitable met row-/colspans om naar een rechthoekig grid van teksten."""
+    grid = []
+    hangend = {}  # kolomindex -> [resterende rijen, tekst]
+    for tr in tabel.find_all("tr"):
+        rij = []
+        kol = 0
+
+        def vul_hangend():
+            nonlocal kol
+            while kol in hangend and hangend[kol][0] > 0:
+                rij.append(hangend[kol][1])
+                hangend[kol][0] -= 1
+                kol += 1
+
+        vul_hangend()
+        for cel in tr.find_all(["th", "td"]):
+            vul_hangend()
+            tekst = schoon(cel.get_text(" ", strip=True))
+            span = int(cel.get("rowspan") or 1)
+            colspan = int(cel.get("colspan") or 1)
+            for _ in range(colspan):
+                rij.append(tekst)
+                if span > 1:
+                    hangend[kol] = [span - 1, tekst]
+                kol += 1
+            vul_hangend()
+        grid.append(rij)
+    return grid
 
 
-def scrape_klassement_cat(cat):
-    html = haal(f"{BASIS}/{cat}")
-    if not html:
-        return None
-    tabel = eerste_resultstabel(BeautifulSoup(html, "html.parser"))
+def truien_uit_hoofdpagina(html, na_etappe):
+    """Leest de 'Classification leadership'-tabel en geeft de dragers na etappe N."""
+    soup = BeautifulSoup(html, "html.parser")
+    tabel = vind_tabel(soup, r"lassification leadership")
+    if tabel is None:
+        # tabel heeft niet altijd class wikitable; zoek ook op caption alleen
+        for t in soup.find_all("table"):
+            cap = t.find("caption")
+            if cap and "lassification leadership" in cap.get_text(" ", strip=True):
+                tabel = t
+                break
     if tabel is None:
         return None
-    rijen = parse_rijen(tabel)
-    return rijen if rijen else None
+    grid = expandeer_grid(tabel)
+    if not grid:
+        return None
+    kop = [c.lower() for c in grid[0]]
+
+    def kol(deel):
+        for i, k in enumerate(kop):
+            if deel in k:
+                return i
+        return None
+
+    kolommen = {"geel": kol("general"), "groen": kol("points"),
+                "bollen": kol("mountains"), "wit": kol("young")}
+    doel = None
+    for rij in grid[1:]:
+        if rij and rij[0].strip() == str(na_etappe):
+            doel = rij
+            break
+    if doel is None:
+        return None
+    truien = {}
+    for trui, i in kolommen.items():
+        if i is not None and i < len(doel) and doel[i]:
+            truien[trui] = korte_naam(doel[i])
+    return truien or None
 
 
 def main():
@@ -230,6 +225,14 @@ def main():
     nu = datetime.now(NL_TZ)
     vandaag = nu.strftime("%Y-%m-%d")
     gewijzigd = False
+
+    paginas = {}
+
+    def pagina(sleutel):
+        if sleutel not in paginas:
+            html = haal(PAGINAS[sleutel])
+            paginas[sleutel] = BeautifulSoup(html, "html.parser") if html else None
+        return paginas[sleutel]
 
     # 1) etappe-uitslagen
     for n, (datum, start) in ETAPPES.items():
@@ -246,53 +249,81 @@ def main():
                 continue
         if bestaand and bestaand.get("bron") and datum < vandaag:
             continue  # eerdere etappe al binnen; niet blijven herscrapen
-        print(f"Etappe {n} ({datum}) ophalen…")
-        res = scrape_etappe(n)
-        if res:
-            if bestaand and bestaand.get("note"):
-                res["note"] = bestaand["note"]
-            stand["uitslagen"][sleutel] = res
+        soup = pagina("1-11" if n <= 11 else "12-21")
+        if soup is None:
+            continue
+        tabel = vind_tabel(soup, rf"Stage {n} result")
+        if tabel is None:
+            print(f"Etappe {n}: nog geen uitslag op Wikipedia")
+            continue
+        rijen = parse_result_tabel(tabel)
+        if len(rijen) < 3 or rijen[0]["pos"] != 1:
+            print(f"Etappe {n}: uitslagtabel nog niet bruikbaar")
+            continue
+        w = rijen[0]
+        nieuw = {
+            "w": w["naam"],
+            "note": (bestaand or {}).get("note") or w["ploeg"],
+            "pod": pod_regels(rijen),
+            "bron": "en.wikipedia.org",
+        }
+        if bestaand != nieuw:
+            stand["uitslagen"][sleutel] = nieuw
             gewijzigd = True
-            print(f"  winnaar: {res['w']}")
+            print(f"Etappe {n}: winnaar {w['naam']}")
         else:
-            print("  nog geen (bruikbare) uitslag")
+            print(f"Etappe {n}: ongewijzigd")
 
-    # 2) klassement + truien
-    verreden = [n for n, (d, _) in ETAPPES.items()
-                if str(n) in stand["uitslagen"] and stand["uitslagen"][str(n)].get("pod")]
-    if verreden:
-        gc = scrape_klassement_cat("gc")
-        if gc and len(gc) >= 10 and gc[0]["pos"] == 1:
-            leider_sec = gc[0]["sec"]
-            top10 = []
-            for r in gc[:10]:
-                if r["pos"] == 1 or r["sec"] is None or leider_sec is None:
-                    tijd = "—" if r["pos"] == 1 else (r["ruw"] or "—")
-                else:
-                    gap = r["sec"] - leider_sec
-                    tijd = "z.t." if gap <= 0 else fmt_gap(gap)
-                top10.append({"pos": r["pos"], "naam": r["naam"], "ploeg": r["ploeg"], "tijd": tijd})
-            truien = {"geel": korte_naam(gc[0]["naam"])}
-            for cat, trui in (("points", "groen"), ("kom", "bollen"), ("youth", "wit")):
-                rijen = scrape_klassement_cat(cat)
-                if rijen:
-                    truien[trui] = korte_naam(rijen[0]["naam"])
-                else:
-                    oud = (stand.get("klassement") or {}).get("truien", {}).get(trui)
-                    if oud:
-                        truien[trui] = oud
-            stand["klassement"] = {
-                "naEtappe": max(verreden),
-                "truien": truien,
-                "top10": top10,
-                "voetnoot": f"Stand na etappe {max(verreden)}, automatisch bijgewerkt "
-                            f"{nu.strftime('%-d %B').replace('July', 'juli')} {nu.strftime('%H:%M')} uur "
-                            f"(bron: procyclingstats.com).",
-            }
-            gewijzigd = True
-            print(f"Klassement bijgewerkt na etappe {max(verreden)}; geel: {truien['geel']}")
+    # 2) klassement: hoogste 'General classification after stage N' die er is
+    beste_n, beste_tabel = 0, None
+    for sleutel_pag in ("12-21", "1-11"):
+        soup = pagina(sleutel_pag)
+        if soup is None:
+            continue
+        for tabel in soup.find_all("table", class_="wikitable"):
+            cap = tabel.find("caption")
+            if not cap:
+                continue
+            m = re.search(r"General classification after stage (\d+)", cap.get_text(" ", strip=True), re.I)
+            if m and int(m.group(1)) > beste_n:
+                rijen = parse_result_tabel(tabel)
+                if len(rijen) >= 5:
+                    beste_n, beste_tabel = int(m.group(1)), rijen
+        if beste_tabel:
+            break  # de 12-21-pagina heeft altijd een nieuwere stand dan 1-11
+
+    if beste_tabel:
+        oud = stand.get("klassement") or {}
+        top10 = [{"pos": r["pos"], "naam": r["naam"], "ploeg": r["ploeg"],
+                  "tijd": "—" if r["pos"] == 1 else (r["tijd"] or "—")} for r in beste_tabel[:10]]
+        truien = {"geel": korte_naam(beste_tabel[0]["naam"])}
+        hoofd_html = haal(PAGINAS["hoofd"])
+        extra = truien_uit_hoofdpagina(hoofd_html, beste_n) if hoofd_html else None
+        if extra:
+            truien.update(extra)
         else:
-            print("Klassement niet bijgewerkt (geen bruikbare GC-tabel)")
+            for trui in ("groen", "bollen", "wit"):
+                if oud.get("truien", {}).get(trui):
+                    truien[trui] = oud["truien"][trui]
+        MND = {1: "januari", 2: "februari", 3: "maart", 4: "april", 5: "mei", 6: "juni",
+               7: "juli", 8: "augustus", 9: "september", 10: "oktober", 11: "november", 12: "december"}
+        nieuw_klassement = {
+            "naEtappe": beste_n,
+            "truien": truien,
+            "top10": top10,
+            "voetnoot": f"Stand na etappe {beste_n}, automatisch bijgewerkt "
+                        f"{nu.day} {MND[nu.month]} {nu.strftime('%H:%M')} uur (bron: Wikipedia).",
+        }
+        # alleen schrijven als er inhoudelijk iets veranderde (voetnoot telt niet mee)
+        if {k: v for k, v in oud.items() if k != "voetnoot"} != \
+           {k: v for k, v in nieuw_klassement.items() if k != "voetnoot"}:
+            stand["klassement"] = nieuw_klassement
+            gewijzigd = True
+            print(f"Klassement bijgewerkt na etappe {beste_n}; geel: {truien['geel']}")
+        else:
+            print(f"Klassement ongewijzigd (na etappe {beste_n})")
+    else:
+        print("Geen bruikbare GC-tabel gevonden")
 
     if gewijzigd:
         stand["bijgewerkt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
