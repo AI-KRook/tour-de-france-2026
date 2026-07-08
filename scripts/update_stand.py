@@ -116,12 +116,13 @@ def parse_result_tabel(tabel):
     i_naam = kol("rider") if kol("rider") is not None else kol("team")
     i_ploeg = kol("team") if kol("rider") is not None else None
     i_tijd = kol("time")
+    i_pnt = kol("points")
     if i_naam is None:
         return []
     rijen = []
     for tr in tabel.find_all("tr")[1:]:
         cellen = tr.find_all(["th", "td"])
-        nodig = max(i for i in (i_naam, i_ploeg, i_tijd, 0) if i is not None)
+        nodig = max(i for i in (i_naam, i_ploeg, i_tijd, i_pnt, 0) if i is not None)
         if len(cellen) <= nodig:
             continue
         pos_txt = schoon(cellen[0].get_text(" ", strip=True))
@@ -132,12 +133,17 @@ def parse_result_tabel(tabel):
         naam = schoon(ruwe_naam)
         if not naam:
             continue
+        pnt = None
+        if i_pnt is not None:
+            mp = re.search(r"\d+", cellen[i_pnt].get_text(" ", strip=True))
+            pnt = int(mp.group(0)) if mp else None
         rijen.append({
             "pos": int(m.group(1)),
             "naam": naam,
             "land": land_uit(ruwe_naam),
             "ploeg": schoon(cellen[i_ploeg].get_text(" ", strip=True)) if i_ploeg is not None else "",
             "tijd": wiki_tijd(cellen[i_tijd].get_text(" ", strip=True)) if i_tijd is not None else None,
+            "pnt": pnt,
         })
     return rijen
 
@@ -328,26 +334,65 @@ def main():
         else:
             print(f"Etappe {n}: ongewijzigd")
 
-    # 2) klassement: hoogste 'General classification after stage N' die er is
-    beste_n, beste_tabel = 0, None
-    for sleutel_pag in ("12-21", "1-11"):
-        soup = pagina(sleutel_pag)
-        if soup is None:
-            continue
+    # 2) de vier klassementen: tussenstanden op de hoofdpagina
+    KLASSEMENT_DEFS = {
+        "geel":   (r"General classification after stage (\d+)", "tijd"),
+        "groen":  (r"Points classification after stage (\d+)", "punten"),
+        "bollen": (r"Mountains classification after stage (\d+)", "punten"),
+        "wit":    (r"Young rider classification after stage (\d+)", "tijd"),
+    }
+
+    def fmt_rijen(rijen, eenheid):
+        uit = []
+        for r in rijen[:10]:
+            if eenheid == "punten":
+                waarde = f"{r['pnt']} ptn" if r.get("pnt") is not None else "—"
+            else:
+                waarde = "—" if r["pos"] == 1 else (r["tijd"] or "—")
+            uit.append({"pos": r["pos"], "naam": r["naam"], "land": r["land"],
+                        "ploeg": r["ploeg"], "tijd": waarde})
+        return uit
+
+    def zoek_klassement(soup, patroon, min_rijen=3):
+        beste = (0, None)
         for tabel in soup.find_all("table", class_="wikitable"):
             cap = tabel.find("caption")
             if not cap:
                 continue
-            m = re.search(r"General classification after stage (\d+)", cap.get_text(" ", strip=True), re.I)
-            if m and int(m.group(1)) > beste_n:
+            m = re.search(patroon, cap.get_text(" ", strip=True), re.I)
+            if m and int(m.group(1)) > beste[0]:
                 rijen = parse_result_tabel(tabel)
-                if len(rijen) >= 5:
-                    beste_n, beste_tabel = int(m.group(1)), rijen
-        if beste_tabel:
-            break  # de 12-21-pagina heeft altijd een nieuwere stand dan 1-11
+                if len(rijen) >= min_rijen:
+                    beste = (int(m.group(1)), rijen)
+        return beste
 
-    if beste_tabel:
-        onthoud(beste_tabel)
+    hoofd_html = haal(PAGINAS["hoofd"])
+    hoofd_soup = BeautifulSoup(hoofd_html, "html.parser") if hoofd_html else None
+    klassementen, beste_n = {}, 0
+    if hoofd_soup:
+        for trui, (patroon, eenheid) in KLASSEMENT_DEFS.items():
+            n_kl, rijen = zoek_klassement(hoofd_soup, patroon)
+            if rijen:
+                onthoud(rijen)
+                klassementen[trui] = {"naEtappe": n_kl, "eenheid": eenheid,
+                                      "top10": fmt_rijen(rijen, eenheid)}
+                beste_n = max(beste_n, n_kl)
+
+    # fallback voor geel: de GC-tabel op de etappepagina's
+    if "geel" not in klassementen:
+        for sleutel_pag in ("12-21", "1-11"):
+            soup = pagina(sleutel_pag)
+            if soup is None:
+                continue
+            n_kl, rijen = zoek_klassement(soup, KLASSEMENT_DEFS["geel"][0], min_rijen=5)
+            if rijen:
+                onthoud(rijen)
+                klassementen["geel"] = {"naEtappe": n_kl, "eenheid": "tijd",
+                                        "top10": fmt_rijen(rijen, "tijd")}
+                beste_n = max(beste_n, n_kl)
+                break
+
+    if klassementen.get("geel"):
         oud = stand.get("klassement") or {}
 
         def trui_entry(vol_naam):
@@ -363,11 +408,13 @@ def main():
             return {"naam": vol_naam, "kort": korte_naam(vol_naam),
                     "land": info.get("land"), "ploeg": info.get("ploeg") or ""}
 
-        top10 = [{"pos": r["pos"], "naam": r["naam"], "land": r["land"], "ploeg": r["ploeg"],
-                  "tijd": "—" if r["pos"] == 1 else (r["tijd"] or "—")} for r in beste_tabel[:10]]
-        truien = {"geel": trui_entry(beste_tabel[0]["naam"])}
-        hoofd_html = haal(PAGINAS["hoofd"])
+        gc_top = klassementen["geel"]["top10"]
+        truien = {"geel": trui_entry(gc_top[0]["naam"])}
+        # de nummers 1 van de andere klassementen zijn meestal ook de dragers
         extra = truien_uit_hoofdpagina(hoofd_html, beste_n) if hoofd_html else None
+        if not extra:
+            extra = {t: klassementen[t]["top10"][0]["naam"] for t in ("groen", "bollen", "wit")
+                     if klassementen.get(t)}
         if extra:
             truien.update({trui: trui_entry(naam) for trui, naam in extra.items()})
         else:
@@ -379,7 +426,8 @@ def main():
         nieuw_klassement = {
             "naEtappe": beste_n,
             "truien": truien,
-            "top10": top10,
+            "top10": gc_top,
+            "klassementen": klassementen,
             "voetnoot": f"Stand na etappe {beste_n}, automatisch bijgewerkt "
                         f"{nu.day} {MND[nu.month]} {nu.strftime('%H:%M')} uur (bron: Wikipedia).",
         }
