@@ -222,7 +222,14 @@
 
   /* ---------- detail ---------- */
   #dUitslag{margin-top:14px;border:1px solid var(--lijn);border-radius:14px;padding:12px 14px;background:var(--papier)}
-  #dUitslag .titelu{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  #dUitslag .titelu,.previewblok .titelu{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+
+  /* ---------- voorbeschouwing ---------- */
+  .previewblok{margin-top:14px;border:1px solid #f0e4b0;border-radius:14px;padding:13px 15px;background:#fffbe8}
+  .previewblok .ptekst{font-size:.9rem;line-height:1.6}
+  .previewblok .kopk{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grijs);margin:12px 0 7px}
+  .kanshebbers{display:flex;flex-wrap:wrap;gap:7px}
+  .kans{background:#fff;border:1px solid var(--lijn);border-radius:20px;padding:5px 12px;font-size:.82rem;font-weight:600;white-space:nowrap}
   .notu{font-size:.82rem;color:var(--grijs);margin-top:10px;font-style:italic}
   #chartWrap{margin-top:16px;height:210px;position:relative}
   #chartWrap .titel{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs);margin-bottom:6px}
@@ -282,6 +289,7 @@
 
   <div id="vandaagCard" class="kaartje" style="margin-top:14px"></div>
   <div id="vandaagUitslag" class="kaartje" hidden></div>
+  <div id="volgendeRit" class="kaartje" hidden></div>
 
   <h2 class="sectiekop">De truien <span class="hint" id="truienHint"></span></h2>
   <div id="truienMini" class="truien"></div>
@@ -309,6 +317,7 @@
     </div>
     <div class="cols" id="dCols"></div>
     <div id="dUitslag" style="display:none"></div>
+    <div id="dPreview" style="display:none"></div>
     <div id="chartWrap">
       <div class="titel" id="chartTitel">Hoogteprofiel</div>
       <canvas id="profielChart" aria-hidden="true"></canvas>
@@ -462,6 +471,43 @@ const ETAPPES = [
 ];
 
 const RUSTDAGEN = {"2026-07-13":"Rustdag 1 · regio Limousin","2026-07-20":"Rustdag 2 · regio Meer van Genève"};
+
+// voorbeschouwingen in commentaarstijl; getoond zolang er nog geen uitslag is
+// (etappe 1 t/m 5 zijn verreden en hebben er daarom geen)
+const VOORBESCHOUWING = {
+ 6:{t:"Dames en heren, dan is het nu tijd voor de eerste échte bergrit van deze Tour! Over de Col d'Aspin en de mythische Tourmalet klimmen we naar Gavarnie-Gèdre. De klassementsmannen staan na de vluchtersdagen op ruim acht minuten van Træen, dus verwacht vuurwerk van UAE en Visma. Grijpt Pogačar meteen de macht, of prikt Vingegaard op het dak van de Pyreneeën?",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Remco Evenepoel","BEL"],["Lenny Martinez","FRA"],["Tobias Halland Johannessen","NOR"]]},
+ 7:{t:"Na het klimgeweld in de Pyreneeën is het woord aan de rappe mannen. Door de eindeloze dennenbossen van de Landes rollen we naar Bordeaux, waar de Place des Quinconces traditiegetrouw het decor is voor een massasprint. Let op de sprinttreintjes in de brede slotkilometers; Kooij bewees in Pau al dat hij de snelste benen heeft.",
+  k:[["Olav Kooij","NED"],["Tim Merlier","BEL"],["Jasper Philipsen","BEL"],["Biniam Girmay","ERI"],["Max Kanter","GER"]]},
+ 8:{t:"Sprintkans nummer twee, maar pas op: de Côte de Domme en het klimmetje van Buisson-de-Cadouin kunnen vermoeide benen verraden. In het decor van de Dordogne willen de sprintploegen de vlucht kort houden, en Pedersen ruikt punten voor zijn groene trui. Wordt het opnieuw een Nederlands feestje in Bergerac?",
+  k:[["Tim Merlier","BEL"],["Jasper Philipsen","BEL"],["Olav Kooij","NED"],["Mads Pedersen","DEN"],["Søren Wærenskjold","NOR"]]},
+ 9:{t:"Ruim 3.300 hoogtemeters zonder één grote col: dit golvende terrein richting Ussel is op het lijf geschreven van de avonturiers. De klassementsploegen zullen de teugels vieren, dus wie hier mee is in de goede vlucht, mag dromen van de zege. Een dag voor slimme coureurs met een snedig eindschot.",
+  k:[["Romain Grégoire","FRA"],["Quinn Simmons","USA"],["Kévin Vauquelin","FRA"],["Tom Pidcock","GBR"],["Anthony Turgis","FRA"]]},
+ 10:{t:"Quatorze juillet, en heel Frankrijk kijkt naar de Cantal! Via de Puy Mary en de venijnige Col de Pertus, met stroken tot bijna negen procent, klimmen we naar Le Lioran. Twee jaar geleden versloeg Vingegaard Pogačar hier in een memorabel duel. De Fransen dromen van Martinez of Seixas op de nationale feestdag, maar de groten der aarde loeren.",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Mattias Skjelmose","DEN"],["Lenny Martinez","FRA"],["Paul Seixas","FRA"]]},
+ 11:{t:"Na het bergwerk in de Cantal mag het peloton uithijgen langs de Loire. Een overgangsrit naar Nevers, en dat betekent maar één ding: de sprintploegen nemen het heft in handen. De enige vraag is wie de chaos van de laatste kilometer het beste overleeft. Alles wijst op een koninklijke massasprint.",
+  k:[["Olav Kooij","NED"],["Tim Merlier","BEL"],["Jasper Philipsen","BEL"],["Biniam Girmay","ERI"],["Milan Fretin","BEL"]]},
+ 12:{t:"Een unieke start: vanaf het oude Formule 1-circuit van Magny-Cours schieten we uit de startblokken! Daarna wachten open vlaktes richting de Saône, waar de wind bij een stevige bries voor waaiers kan zorgen. Klassementsmannen, blijf bij de les! Halen de sprinters het, dan kennen we het scenario in Chalon-sur-Saône.",
+  k:[["Tim Merlier","BEL"],["Olav Kooij","NED"],["Max Kanter","GER"],["Jasper Philipsen","BEL"],["Søren Wærenskjold","NOR"]]},
+ 13:{t:"De langste dag van deze Tour: 205,8 kilometer op en af door de Jura naar Belfort. Dit soort ritten is loodzwaar te controleren, en dat weten de aanvallers ook. Verwacht een verbeten gevecht om de vlucht en ploegen die de finale openbreken. Wie overleeft de slijtageslag?",
+  k:[["Quinn Simmons","USA"],["Kévin Vauquelin","FRA"],["Romain Grégoire","FRA"],["Anthony Turgis","FRA"],["Tom Pidcock","GBR"]]},
+ 14:{t:"De Vogezen op hun mooist: Grand Ballon, Ballon d'Alsace en als klap op de vuurpijl de nieuwe Col du Haag, elf kilometer aan zeven procent, vlak voor de streep op Le Markstein. Bijna 4.000 hoogtemeters: hier kan de vlucht stand houden, maar reken erop dat de klassementsmannen elkaar in de slotklim in de ogen kijken.",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Remco Evenepoel","BEL"],["Tobias Halland Johannessen","NOR"],["Lenny Martinez","FRA"]]},
+ 15:{t:"De steilste aankomst van deze Tour! Eerst de muur van Le Salève, ruim elf procent gemiddeld, en dan het Plateau de Solaison: elf kilometer aan negen procent. Dit is terrein voor de pure klimgeiten; wie hier een mindere dag heeft, verliest minuten. Het klassement kan volledig op zijn kop.",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Lenny Martinez","FRA"],["Paul Seixas","FRA"],["Remco Evenepoel","BEL"]]},
+ 16:{t:"Na de rustdag liegt de klok niet: 26 kilometer tijdrijden langs het Meer van Genève, met de Côte de Larringes als scherprechter. Olympisch tijdritkampioen Evenepoel is dé man voor dit werk en kan vandaag flink wat seconden terugpakken op de klimmers. Voor de klassementsrenners: verliezen verboden.",
+  k:[["Remco Evenepoel","BEL"],["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Mathias Vacek","CZE"],["Juan Ayuso","ESP"]]},
+ 17:{t:"Op papier de allerlaatste kans voor de sprinters, maar met 2.300 hoogtemeters aan de rand van de Alpen is dit geen cadeautje. De vluchters ruiken bloed en de sprintploegen die hun kans nog niet grepen, worden zenuwachtig. Een dag met twee scenario's, en dat maakt het juist zo spannend.",
+  k:[["Mads Pedersen","DEN"],["Jasper Philipsen","BEL"],["Olav Kooij","NED"],["Anthony Turgis","FRA"],["Romain Grégoire","FRA"]]},
+ 18:{t:"De Alpen, deel twee! Via de Col du Festre en de Col de Manse trekken we naar de skiplaats Orcières-Merlette, waar een explosieve slotklim van zeven kilometer wacht. Geen kolos, wel een klim waar een sterke ploeg het verschil maakt. Wie zijn kruit droog hield, kan hier zomaar de trui laten kantelen.",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Remco Evenepoel","BEL"],["Isaac del Toro","MEX"],["Juan Ayuso","ESP"]]},
+ 19:{t:"Kippenvel: Alpe d'Huez! Kort maar venijnig, via de Col du Noyer en de Col d'Ornon, en dan de eenentwintig haarspeldbochten van de mythe. In bocht zeven kleurt alles oranje en wordt elke renner naar boven geschreeuwd. Een korte rit betekent koers van kilometer nul. Dit wil je niet missen!",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Lenny Martinez","FRA"],["Remco Evenepoel","BEL"],["Tobias Halland Johannessen","NOR"]]},
+ 20:{t:"De koninginnenrit, en wat voor één: Croix de Fer, Télégraphe, de Galibier op 2.642 meter als dak van de Tour, de verraderlijke Col de Sarenne en dan nóg een keer Alpe d'Huez, nu via de oostkant. 4.600 hoogtemeters! Hier valt de beslissing van deze Tour. Wie hier in het geel finisht, wint een dag later in Parijs.",
+  k:[["Tadej Pogačar","SLO"],["Jonas Vingegaard","DEN"],["Remco Evenepoel","BEL"],["Isaac del Toro","MEX"],["Paul Seixas","FRA"]]},
+ 21:{t:"De apotheose in Parijs, en net als vorig jaar met drie beklimmingen van Montmartre voor de finish op de Champs-Élysées. Dat maakt de slotrit allesbehalve een parade: puncheurs krijgen de kans om de sprinters te vloeren op de kasseien van de Sacré-Cœur. Champagne voor de geletruidrager, strijd voor de rest!",
+  k:[["Mads Pedersen","DEN"],["Tom Pidcock","GBR"],["Jasper Philipsen","BEL"],["Remco Evenepoel","BEL"],["Romain Grégoire","FRA"]]}
+};
 const GEM_SNELHEID = 42, TT_SNELHEID = 50;
 const EXACT = {};
 
@@ -577,6 +623,18 @@ function pasExactToe(n,data){
   lagen[n]={lijn,pts:data.pts};
 }
 
+// ---------- voorbeschouwing ----------
+function previewHtml(n){
+  const p=VOORBESCHOUWING[n];
+  if(!p)return "";
+  return `<div class="previewblok">
+    <div class="titelu">🎙️ Voorbeschouwing</div>
+    <p class="ptekst">${p.t}</p>
+    <div class="kopk">Kanshebbers</div>
+    <div class="kanshebbers">${p.k.map(([naam,land])=>`<span class="kans">${metVlag(naam,land)}</span>`).join("")}</div>
+  </div>`;
+}
+
 // ---------- renner-rijen ----------
 function podRij(r){
   const tijd=r.tijd==null?"":r.tijd;
@@ -632,17 +690,24 @@ function kies(n,zoom=true){
   document.getElementById("dTop").textContent=top.toLocaleString("nl-NL")+" m";
   document.getElementById("dCols").innerHTML=e.cols;
   const uB=document.getElementById("dUitslag");
+  const pB=document.getElementById("dPreview");
   const u=UITSLAGEN[n];
   if(u&&u.pod){
     uB.style.display="block";
     uB.innerHTML=`<div class="titelu">🏁 Uitslag etappe ${n}</div>`
       +u.pod.map(podRij).join("")
       +(u.note?`<p class="notu">${u.note}</p>`:"");
-  }else if(e.d===vandaagISO){
-    uB.style.display="block";
-    uB.innerHTML=`<div class="titelu">🔴 Vandaag</div><div style="font-size:.88rem">Nog geen uitslag; die verschijnt hier automatisch zodra de rit binnen is.</div>`;
+    pB.style.display="none";pB.innerHTML="";
   }else{
-    uB.style.display="none";uB.innerHTML="";
+    if(e.d===vandaagISO){
+      uB.style.display="block";
+      uB.innerHTML=`<div class="titelu">🔴 Vandaag</div><div style="font-size:.88rem">Nog geen uitslag; die verschijnt hier automatisch zodra de rit binnen is.</div>`;
+    }else{
+      uB.style.display="none";uB.innerHTML="";
+    }
+    const pv=previewHtml(n);
+    if(pv){pB.style.display="block";pB.innerHTML=pv;}
+    else{pB.style.display="none";pB.innerHTML="";}
   }
   document.getElementById("chartTitel").textContent=(ex&&ex.prof)?"Hoogteprofiel":"Hoogteprofiel · indicatief";
   const wpStr=e.wp.map(w=>`${w[1]},${w[2]}`).join("|");
@@ -822,6 +887,7 @@ function renderVandaag(){
         <div class="stat"><div class="w">±${e.st}</div><div class="l">Starttijd</div></div>
       </div>
       <div class="cols">${e.cols}</div>
+      ${(!UITSLAGEN[e.n]||!UITSLAGEN[e.n].pod)?previewHtml(e.n):""}
       <div class="knoppen">
         <button class="knop geel" type="button" id="naarEtappe">🗺️ Route en profiel</button>
         <a class="knop" href="https://www.letour.fr/nl" target="_blank" rel="noopener">📡 Live volgen</a>
@@ -837,6 +903,22 @@ function renderVandaag(){
       +u.pod.slice(0,3).map(podRij).join("")
       +`<div class="knoppen"><button class="knop" type="button" onclick="toonTab('uitslagen')">Alle uitslagen</button></div>`;
   }else{vu.hidden=true;vu.innerHTML="";}
+  // vooruitblik op de volgende rit zodra vandaag klaar is (of op rust-/tussendagen)
+  const vr=document.getElementById("volgendeRit");
+  const volgende=ETAPPES.find(x=>x.d>vandaagISO);
+  const vandaagKlaar=!vandaagEt||!!(UITSLAGEN[vandaagEt.n]&&UITSLAGEN[vandaagEt.n].pod);
+  if(volgende&&vandaagKlaar&&VOORBESCHOUWING[volgende.n]){
+    const morgenISO=new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam"})
+      .format(new Date(new Date(vandaagISO+"T12:00:00").getTime()+864e5));
+    const label=volgende.d===morgenISO?"Morgen":"Volgende etappe";
+    vr.hidden=false;
+    vr.innerHTML=`<h2 class="sectiekop" style="margin-top:0">${label} · Etappe ${volgende.n}</h2>
+      <div class="vtitel" style="font-size:1.2rem">${volgende.start[0]} → ${volgende.fin[0]}</div>
+      <div class="vdatum">${fmtDatum(volgende.d)} · ${TYPENAAM[volgende.type]} ${TYPE_EMOJI[volgende.type]} · ${(EXACT[volgende.n]?EXACT[volgende.n].km:volgende.km).toLocaleString("nl-NL")} km</div>
+      ${previewHtml(volgende.n)}
+      <div class="knoppen"><button class="knop" type="button" id="naarVolgende">🗺️ Bekijk de route</button></div>`;
+    document.getElementById("naarVolgende").onclick=()=>{toonTab("etappes");kies(volgende.n);};
+  }else{vr.hidden=true;vr.innerHTML="";}
   // truien-mini: tik op een trui voor de top 10 van dat klassement
   renderTruien(document.getElementById("truienMini"),false);
   document.getElementById("truienHint").textContent=KLASSEMENT?`na etappe ${KLASSEMENT.naEtappe} · tik voor de top 10`:"";
