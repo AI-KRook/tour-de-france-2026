@@ -12,21 +12,18 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: update-en-publiceer
   cancel-in-progress: false
 
 jobs:
   update-en-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         if: github.event_name != 'push'
@@ -59,16 +56,6 @@ jobs:
             git push origin main
           fi
 
-      - name: Pages configureren
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Site uploaden
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "."
-
-      - name: Publiceren naar GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # GitHub Pages serveert de gh-pages-branch; die spiegelen we hier.
+      - name: Publiceren naar GitHub Pages (gh-pages)
+        run: git push origin HEAD:gh-pages --force
