@@ -2,8 +2,11 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffd100">
 <title>Tour de France 2026 · Routeverkenner</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -14,342 +17,340 @@
     --papier:#fafaf7;
     --kaart:#ffffff;
     --inkt:#16160f;
-    --grijs:#6e6e64;
-    --zacht:#a3a396;
+    --grijs:#5d5d53;
+    --zacht:#83837a;
     --lijn:#e9e7de;
     --geel:#ffd100;
     --geel-donker:#f0c400;
-    --vlak:#2f9e55;
-    --heuvels:#e08a00;
+    --vlak:#20853f;
+    --heuvels:#c67a00;
     --berg:#d9331f;
     --tijdrit:#2b6fd4;
+    --groen:#238a3b;
+    --focus:#2b6fd4;
     --schaduw:0 1px 2px rgba(22,22,15,.05),0 4px 16px rgba(22,22,15,.06);
-    --radius:16px;
+    --radius:18px;
+    --navhoogte:calc(62px + env(safe-area-inset-bottom,0px));
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body{
     background:var(--papier);color:var(--inkt);
     font-family:"Inter",-apple-system,"Segoe UI",Roboto,sans-serif;
-    font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+    font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+    padding-bottom:var(--navhoogte);
   }
   .cond{font-family:"Barlow Condensed","Arial Narrow",-apple-system,sans-serif}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  a{color:inherit}
+  :is(a,button,summary):focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+  .visueel-verborgen{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-  .wrap{max-width:880px;margin:0 auto;padding:0 14px 40px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 14px 32px}
 
   /* ---------- topbalk ---------- */
-  header{
+  header.top{
     position:sticky;top:0;z-index:1000;
-    background:rgba(250,250,247,.92);backdrop-filter:blur(10px);
+    background:rgba(250,250,247,.93);backdrop-filter:blur(10px);
     border-bottom:1px solid var(--lijn);
   }
   .topbar{
-    max-width:880px;margin:0 auto;padding:12px 14px 10px;
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    max-width:820px;margin:0 auto;padding:12px 16px 10px;
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
     position:relative;overflow:hidden;
   }
-  .merk{display:flex;align-items:baseline;gap:9px}
-  .merk h1{
+  .topbar h1{
     font-family:"Barlow Condensed","Arial Narrow",sans-serif;
-    font-size:1.35rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    font-size:1.4rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
   }
-  .merk h1 em{font-style:normal;background:var(--geel);padding:0 6px;border-radius:4px}
-  .merk .sub{font-size:.72rem;color:var(--grijs);font-weight:500}
+  .topbar h1 em{font-style:normal;background:var(--geel);padding:0 7px;border-radius:5px}
+  .topbar .sub{font-size:.78rem;color:var(--grijs);font-weight:500}
   .fietsje{position:absolute;bottom:0;right:-30px;font-size:15px;opacity:.85;animation:rijden 18s linear infinite}
   @keyframes rijden{from{right:-30px}to{right:104%}}
   @media(prefers-reduced-motion:reduce){.fietsje{display:none}}
 
-  /* ---------- vandaag-held ---------- */
-  #nuStrip{
-    margin:14px 0 0;background:var(--geel);border-radius:var(--radius);
-    padding:16px 18px 18px;box-shadow:var(--schaduw);position:relative;overflow:hidden;
+  /* ---------- tabs ---------- */
+  .tab[hidden]{display:none}
+  nav#tabbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:1200;
+    background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+    border-top:1px solid var(--lijn);
+    padding-bottom:env(safe-area-inset-bottom,0px);
   }
-  #nuStrip::after{
-    content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;
-    border-radius:50%;background:rgba(255,255,255,.35);
+  #tabbar .binnen{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+  #tabbar button{
+    min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    font-size:.72rem;font-weight:600;color:var(--grijs);
   }
-  #nuStrip .label{
-    display:inline-flex;align-items:center;gap:6px;
-    font-family:"Barlow Condensed",sans-serif;font-size:.78rem;font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--inkt);
-  }
-  #nuStrip .label .puls{
-    width:8px;height:8px;border-radius:50%;background:var(--berg);
-    animation:puls 1.6s ease-in-out infinite;
-  }
-  @keyframes puls{50%{opacity:.25}}
-  @media(prefers-reduced-motion:reduce){#nuStrip .label .puls{animation:none}}
-  #nuTitel{
-    font-family:"Barlow Condensed",sans-serif;
-    font-size:1.5rem;font-weight:800;line-height:1.15;margin-top:6px;position:relative;z-index:1;
-  }
-  #nuInfo{font-size:.82rem;color:rgba(22,22,15,.75);margin-top:4px;position:relative;z-index:1;max-width:60ch}
-  .voortgang{margin-top:14px;height:10px;background:rgba(22,22,15,.14);border-radius:6px;position:relative;z-index:1}
-  .voortgang .balk{height:100%;background:var(--inkt);border-radius:6px;width:0%;transition:width .6s ease}
-  .voortgang .stip{
-    position:absolute;top:50%;transform:translate(-50%,-50%);
-    width:20px;height:20px;border-radius:50%;background:var(--inkt);
-    display:flex;align-items:center;justify-content:center;font-size:11px;
-  }
-  #nuKm{font-size:.8rem;font-weight:700;margin-top:8px;position:relative;z-index:1}
+  #tabbar button .ico{font-size:1.35rem;line-height:1;padding:2px 12px}
+  #tabbar button.actief{color:var(--inkt)}
+  #tabbar button.actief .ico{background:var(--geel);border-radius:12px}
 
-  /* ---------- secties ---------- */
-  .sectiekop{
-    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
-    margin:26px 2px 10px;
-  }
-  .sectiekop h2{
+  /* ---------- kopjes en kaartjes ---------- */
+  h2.sectiekop{
     font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:800;
     letter-spacing:.1em;text-transform:uppercase;
+    margin:24px 2px 10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;
   }
-  .sectiekop .hint{font-size:.72rem;color:var(--zacht)}
+  h2.sectiekop .hint{font-family:"Inter",sans-serif;font-size:.74rem;font-weight:500;color:var(--zacht);letter-spacing:0;text-transform:none}
+  .kaartje{
+    background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
+    box-shadow:var(--schaduw);padding:18px;margin-bottom:14px;
+  }
 
-  /* ---------- kaart ---------- */
+  /* ---------- hero: nu in koers ---------- */
+  #nuStrip{
+    margin-top:14px;background:var(--geel);border-radius:var(--radius);
+    padding:18px;box-shadow:var(--schaduw);position:relative;overflow:hidden;
+    border:0;width:100%;text-align:left;display:block;
+  }
+  #nuStrip::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.35)}
+  #nuStrip .label{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:"Barlow Condensed",sans-serif;font-size:.8rem;font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;
+  }
+  #nuStrip .label .puls{width:9px;height:9px;border-radius:50%;background:var(--berg);animation:puls 1.6s ease-in-out infinite}
+  @keyframes puls{50%{opacity:.25}}
+  @media(prefers-reduced-motion:reduce){#nuStrip .label .puls{animation:none}}
+  #nuTitel{font-family:"Barlow Condensed",sans-serif;font-size:1.55rem;font-weight:800;line-height:1.15;margin-top:6px;position:relative;z-index:1}
+  #nuInfo{font-size:.88rem;color:rgba(22,22,15,.78);margin-top:5px;position:relative;z-index:1;max-width:60ch}
+  .voortgang{margin-top:15px;height:10px;background:rgba(22,22,15,.14);border-radius:6px;position:relative;z-index:1}
+  .voortgang .balk{height:100%;background:var(--inkt);border-radius:6px;width:0%;transition:width .6s ease}
+  @media(prefers-reduced-motion:reduce){.voortgang .balk{transition:none}}
+  .voortgang .stip{
+    position:absolute;top:50%;transform:translate(-50%,-50%);
+    width:22px;height:22px;border-radius:50%;background:var(--inkt);
+    display:flex;align-items:center;justify-content:center;font-size:12px;
+  }
+  #nuKm{font-size:.84rem;font-weight:700;margin-top:9px;position:relative;z-index:1}
+
+  /* ---------- vandaag-kaart ---------- */
+  .badge{
+    display:inline-block;color:#fff;font-family:"Barlow Condensed",sans-serif;
+    font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 11px;border-radius:20px;white-space:nowrap;
+  }
+  .badge.polka{background:repeating-linear-gradient(45deg,#fff,#fff 6px,#ffdad4 6px,#ffdad4 12px);color:var(--berg);border:1.5px solid var(--berg)}
+  .vkop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .vtitel{font-family:"Barlow Condensed",sans-serif;font-size:1.45rem;font-weight:800;line-height:1.15}
+  .vdatum{font-size:.82rem;color:var(--grijs);margin-top:3px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
+  .stat{background:var(--papier);border:1px solid var(--lijn);border-radius:12px;padding:10px 8px;text-align:center}
+  .stat .w{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:800}
+  .stat .l{font-size:.68rem;font-weight:600;color:var(--grijs);letter-spacing:.06em;text-transform:uppercase}
+  .cols{font-size:.9rem;color:var(--grijs);margin-top:12px}
+  .cols b{color:var(--inkt)}
+  .knoppen{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .knop{
+    display:inline-flex;align-items:center;justify-content:center;gap:7px;
+    min-height:46px;padding:10px 18px;border-radius:14px;
+    background:var(--papier);border:1.5px solid var(--lijn);
+    font-weight:600;font-size:.92rem;text-decoration:none;flex:1 1 auto;
+  }
+  .knop.geel{background:var(--geel);border-color:var(--geel-donker)}
+
+  /* ---------- truien ---------- */
+  .truien{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .trui{border-radius:14px;padding:12px 13px;border:1px solid var(--lijn);background:#fff;min-height:44px}
+  .trui .tl{font-family:"Barlow Condensed",sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.78}
+  .trui .tn{font-weight:700;font-size:1rem;margin-top:3px;line-height:1.3}
+  .trui .tp{font-size:.76rem;color:var(--grijs);margin-top:1px}
+  .trui.geel{background:var(--geel);border-color:var(--geel-donker)}
+  .trui.geel .tp{color:rgba(22,22,15,.65)}
+  .trui.groen{background:var(--groen);border-color:var(--groen);color:#fff}
+  .trui.groen .tp{color:rgba(255,255,255,.88)}
+  .trui.bollen{background:radial-gradient(circle at 8px 8px,#ffd4cc 3.5px,transparent 4px);background-size:26px 26px;background-color:#fff;border-color:#f0b9ae}
+  .trui.wit{background:#fff;border-color:#d9d7cc}
+
+  /* ---------- renner-rijen (uitslagen en klassement) ---------- */
+  .rij{display:flex;align-items:baseline;gap:10px;padding:9px 2px;border-top:1px solid var(--lijn)}
+  .rij:first-child{border-top:0}
+  .rij .pos{
+    flex:0 0 26px;text-align:center;font-family:"Barlow Condensed",sans-serif;
+    font-weight:800;font-size:1rem;color:var(--grijs);
+  }
+  .rij:first-child .pos{background:var(--geel);border-radius:8px;color:var(--inkt)}
+  .rij .wie{flex:1;min-width:0}
+  .rij .naam{font-weight:600;font-size:.95rem;display:block}
+  .rij .ploeg{font-size:.76rem;color:var(--grijs);display:block}
+  .rij .tijd{flex:0 0 auto;font-variant-numeric:tabular-nums;font-size:.86rem;font-weight:600;color:var(--grijs);white-space:nowrap}
+  .voetk{font-size:.78rem;color:var(--grijs);margin-top:14px;line-height:1.6}
+  .voetk a{color:var(--tijdrit)}
+
+  /* ---------- kaart (map) ---------- */
   #mapKaart{
     background:var(--kaart);border-radius:var(--radius);box-shadow:var(--schaduw);
-    overflow:hidden;border:1px solid var(--lijn);
+    overflow:hidden;border:1px solid var(--lijn);margin-top:14px;
   }
-  #map{height:46vh;min-height:300px}
-  @media(min-width:700px){#map{height:54vh}}
+  #map{height:44vh;min-height:280px}
+  @media(min-width:700px){#map{height:50vh}}
   .leaflet-container{font:inherit;background:#eef0ea}
   .legenda{
     background:rgba(255,255,255,.95);border:1px solid var(--lijn);border-radius:10px;
-    padding:8px 11px;font-size:.7rem;line-height:1.7;color:var(--inkt);box-shadow:var(--schaduw);
+    padding:8px 11px;font-size:.72rem;line-height:1.7;box-shadow:var(--schaduw);
   }
-  .legenda b{font-family:"Barlow Condensed",sans-serif;font-size:.66rem;font-weight:800;
-    letter-spacing:.12em;text-transform:uppercase;color:var(--grijs)}
-  .legenda .kleur{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-.5px}
+  .legenda b{font-family:"Barlow Condensed",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grijs)}
+  .legenda .kleur{display:inline-block;width:14px;height:5px;border-radius:3px;margin-right:6px;vertical-align:middle}
+  .fiets{font-size:22px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
 
-  /* ---------- etappe-selector ---------- */
+  /* ---------- etappe-chips ---------- */
   #chips{
-    display:flex;gap:9px;overflow-x:auto;padding:4px 2px 10px;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    display:flex;gap:9px;overflow-x:auto;padding:12px 2px;margin:2px -2px 6px;
+    scroll-snap-type:x proximity;scrollbar-width:none;
   }
   #chips::-webkit-scrollbar{display:none}
   .chip{
-    flex:0 0 auto;background:var(--kaart);border:1.5px solid var(--lijn);
-    border-radius:14px;padding:10px 13px 9px;cursor:pointer;text-align:left;
-    color:var(--inkt);min-width:104px;position:relative;
-    box-shadow:var(--schaduw);transition:transform .12s,border-color .15s;
+    flex:0 0 auto;scroll-snap-align:center;position:relative;
+    background:var(--kaart);border:1.5px solid var(--lijn);border-radius:14px;
+    padding:9px 13px 12px;text-align:left;min-width:104px;min-height:62px;
+    box-shadow:var(--schaduw);
   }
-  .chip:active{transform:scale(.95)}
-  .chip .nr{
-    font-family:"Barlow Condensed",sans-serif;font-size:1.45rem;font-weight:800;line-height:1;
-  }
-  .chip .nr small{font-size:.66rem;font-weight:600;color:var(--zacht);letter-spacing:.08em;margin-left:4px}
-  .chip .tt{font-size:.76rem;font-weight:600;margin-top:4px;white-space:nowrap;color:var(--grijs)}
-  .chip .tp{display:inline-block;margin-top:6px;width:9px;height:9px;border-radius:50%}
-  .chip.actief{border-color:var(--inkt);background:var(--inkt);color:#fff}
-  .chip.actief .tt{color:rgba(255,255,255,.75)}
-  .chip.actief .nr small{color:rgba(255,255,255,.55)}
+  .chip .nr{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.15rem;line-height:1}
+  .chip .nr small{font-size:.62rem;font-weight:700;color:var(--zacht);margin-left:5px;letter-spacing:.06em}
+  .chip .tt{font-size:.74rem;color:var(--grijs);margin-top:3px;max-width:15ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .chip .tp{position:absolute;left:13px;right:13px;bottom:6px;height:4px;border-radius:2px}
+  .chip.actief{border-color:var(--inkt);background:#fffbe6}
   .chip.vandaag::before{
-    content:"vandaag";position:absolute;top:-7px;left:10px;background:var(--geel);
-    color:var(--inkt);font-size:.56rem;font-weight:800;letter-spacing:.1em;
-    text-transform:uppercase;padding:1px 7px;border-radius:99px;
+    content:"VANDAAG";position:absolute;top:-7px;left:10px;background:var(--berg);color:#fff;
+    font-size:.56rem;font-weight:800;letter-spacing:.1em;padding:1px 7px;border-radius:8px;
   }
-  .chip.rust{opacity:.55;cursor:default;box-shadow:none}
-  .chip .exact{position:absolute;top:8px;right:9px;font-size:.56rem;font-weight:800;
-    color:var(--inkt);background:var(--geel);border-radius:99px;padding:1px 6px;display:none;letter-spacing:.06em}
-  .chip.heeftGpx .exact{display:block}
-  .chip.actief .exact{background:var(--geel)}
+  .chip.rust{background:var(--papier);border-style:dashed;min-width:84px}
+  .chip.rust .nr{font-size:1rem}
 
-  /* ---------- detailkaart ---------- */
-  #detail{
+  /* ---------- detail ---------- */
+  #dUitslag{margin-top:14px;border:1px solid var(--lijn);border-radius:14px;padding:12px 14px;background:var(--papier)}
+  #dUitslag .titelu{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .notu{font-size:.82rem;color:var(--grijs);margin-top:10px;font-style:italic}
+  #chartWrap{margin-top:16px;height:210px;position:relative}
+  #chartWrap .titel{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs);margin-bottom:6px}
+  #profielChart{max-height:180px}
+  .exactLabel{background:#e4f2e8;color:var(--vlak);border-radius:8px;padding:1px 8px;font-size:.72rem;font-weight:700}
+
+  /* ---------- uitslagen-accordeon ---------- */
+  details.uitslag{
     background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
-    box-shadow:var(--schaduw);padding:18px 18px 20px;margin-top:4px;
+    box-shadow:var(--schaduw);margin-bottom:10px;overflow:hidden;
   }
-  #detail .kop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
-  #dTitel{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;font-weight:800;line-height:1.15}
-  #dDatum{color:var(--grijs);font-size:.8rem;margin-top:3px}
-  #dDatum .exactLabel{color:var(--inkt);background:var(--geel);font-weight:700;
-    padding:1px 7px;border-radius:99px;font-size:.7rem}
-  .badge{
-    display:inline-block;padding:5px 12px;border-radius:99px;
-    font-family:"Barlow Condensed",sans-serif;font-size:.8rem;font-weight:800;
-    text-transform:uppercase;letter-spacing:.1em;color:#fff;
+  details.uitslag summary{
+    list-style:none;display:flex;align-items:center;gap:12px;
+    padding:14px 16px;cursor:pointer;min-height:56px;
   }
-  .badge.polka{
-    background:#fff;color:var(--inkt);border:1.5px solid var(--berg);
-    background-image:radial-gradient(var(--berg) 24%,transparent 30%);background-size:11px 11px;
+  details.uitslag summary::-webkit-details-marker{display:none}
+  .en{
+    flex:0 0 34px;height:34px;border-radius:11px;background:var(--geel);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.05rem;
   }
-  .stats{display:flex;gap:0;margin:16px 0 4px;border:1px solid var(--lijn);border-radius:12px;overflow:hidden}
-  .stat{flex:1;text-align:center;padding:10px 4px;background:var(--papier)}
-  .stat+.stat{border-left:1px solid var(--lijn)}
-  .stat .w{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;font-weight:800;line-height:1.1}
-  .stat .l{font-size:.62rem;color:var(--zacht);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
-  .cols{margin:14px 2px 4px;font-size:.84rem;color:var(--grijs);line-height:1.6}
-  .cols b{color:var(--inkt)}
-  #chartWrap{margin-top:14px;background:var(--papier);border:1px solid var(--lijn);border-radius:12px;padding:12px 10px 6px}
-  #chartWrap .titel{font-size:.64rem;color:var(--zacht);text-transform:uppercase;
-    letter-spacing:.14em;font-weight:700;margin:0 6px 6px}
-  #profielChart{max-height:185px}
-  .knoppen{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
-  .knop{
-    display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border-radius:12px;
-    text-decoration:none;font-weight:700;font-size:.84rem;color:var(--inkt);
-    background:var(--papier);border:1.5px solid var(--lijn);transition:transform .12s;
-  }
-  .knop:active{transform:scale(.96)}
-  .knop.geel{background:var(--geel);border-color:var(--geel-donker)}
-  #dRide{cursor:pointer;min-width:158px;justify-content:center}
-  .fiets{font-size:24px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+  details.uitslag .wn{flex:1;min-width:0;font-weight:700;font-size:.95rem;line-height:1.3}
+  details.uitslag .wn small{display:block;font-weight:500;color:var(--grijs);font-size:.76rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  details.uitslag .pijl{color:var(--zacht);transition:transform .2s}
+  @media(prefers-reduced-motion:reduce){details.uitslag .pijl{transition:none}}
+  details.uitslag[open] .pijl{transform:rotate(180deg)}
+  details.uitslag .pod{padding:2px 16px 14px}
 
-  /* ---------- klassement ---------- */
-  #klassement{
-    background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
-    box-shadow:var(--schaduw);padding:16px 18px;
-  }
-  #klassement .kopregel{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer}
-  #klassement .titelk{font-family:"Barlow Condensed",sans-serif;font-size:1rem;font-weight:800;
-    letter-spacing:.1em;text-transform:uppercase}
-  #klBtn{font-size:.74rem;font-weight:600;color:var(--grijs);border:1.5px solid var(--lijn);
-    border-radius:99px;padding:5px 12px;background:var(--papier);cursor:pointer}
-  .truien{display:flex;gap:9px;overflow-x:auto;margin-top:12px;scrollbar-width:none;padding-bottom:2px}
-  .truien::-webkit-scrollbar{display:none}
-  .trui{flex:0 0 auto;border-radius:12px;padding:9px 13px;color:var(--inkt);min-width:118px;border:1px solid rgba(22,22,15,.08)}
-  .trui .tl{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
-  .trui .tn{font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:800;white-space:nowrap}
-  .trui.geel{background:var(--geel)}
-  .trui.groen{background:#bfe8cd}
-  .trui.bollen{background:#fff;background-image:radial-gradient(rgba(217,51,31,.85) 20%,transparent 26%);background-size:12px 12px}
-  .trui.witjong{background:#f2f2ee}
-  #gcTop{display:none;margin-top:12px}
-  #gcTop.open{display:block}
-  #gcTop table{width:100%;border-collapse:collapse;font-size:.84rem}
-  #gcTop td{padding:7px 8px;border-bottom:1px solid var(--lijn)}
-  #gcTop td.p{color:var(--zacht);width:28px;font-family:"Barlow Condensed",sans-serif;font-weight:700}
-  #gcTop td.t{text-align:right;color:var(--grijs);white-space:nowrap;font-variant-numeric:tabular-nums}
-  #gcTop tr:first-child td{background:var(--geel);font-weight:700}
-  #gcTop tr:first-child td:first-child{border-radius:8px 0 0 8px}
-  #gcTop tr:first-child td:last-child{border-radius:0 8px 8px 0}
-  .voetk{font-size:.7rem;color:var(--zacht);margin-top:12px;line-height:1.6}
-  .voetk a{color:var(--grijs)}
-
-  /* ---------- import ---------- */
-  #importBar{
-    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-    background:var(--kaart);border:1.5px dashed var(--lijn);border-radius:var(--radius);
-    padding:13px 16px;margin-top:12px;
-  }
-  #importBtn{
-    background:var(--inkt);color:#fff;border:none;padding:10px 15px;border-radius:12px;
-    font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;
-  }
-  #importStatus{font-size:.74rem;color:var(--grijs);flex:1;min-width:200px;line-height:1.55}
-  #importStatus b{color:var(--inkt)}
-  #gpxInput{display:none}
-
-  footer{padding:26px 4px 0;color:var(--zacht);font-size:.68rem;line-height:1.7}
+  footer{margin-top:28px;font-size:.76rem;color:var(--zacht);line-height:1.7;text-align:center;padding:0 6px}
   footer a{color:var(--grijs)}
-  #uitslagen{background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
-    box-shadow:var(--schaduw);padding:6px 18px}
-  .uitslag{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--lijn)}
-  .uitslag:last-child{border-bottom:none}
-  .uitslag .en{font-family:"Barlow Condensed",sans-serif;font-size:1.3rem;font-weight:800;
-    width:26px;color:var(--zacht);text-align:right}
-  .uitslag .wn{font-weight:700;flex:1;font-size:.9rem}
-  .uitslag .wn small{display:block;font-weight:500;color:var(--grijs);font-size:.73rem;margin-top:1px}
-  .uitslag .dt{font-size:.72rem;color:var(--zacht);white-space:nowrap}
-  .uitslag{display:block;cursor:pointer}
-  .uitslag .kopr{display:flex;align-items:baseline;gap:14px}
-  .uitslag .pod{display:none;margin:8px 0 2px 40px;font-size:.78rem;color:var(--grijs);line-height:1.8}
-  .uitslag.open .pod{display:block}
-  #dUitslag{margin-top:12px;background:var(--papier);border:1px solid var(--lijn);
-    border-radius:12px;padding:12px 14px;font-size:.83rem;line-height:1.9;color:var(--inkt)}
-  #dUitslag .titelu{font-family:"Barlow Condensed",sans-serif;font-size:.72rem;font-weight:800;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--zacht);line-height:1.4;margin-bottom:4px}
-  #dUitslag .notu{font-size:.74rem;color:var(--grijs);margin-top:6px;line-height:1.5}
-  .nuActies{display:flex;gap:8px;margin-top:12px;position:relative;z-index:1}
-  .nuKnop{display:inline-flex;align-items:center;gap:5px;background:rgba(22,22,15,.88);color:#fff;
-    border:none;border-radius:99px;padding:7px 13px;font-size:.74rem;font-weight:700;
-    cursor:pointer;text-decoration:none;font-family:inherit}
-  .nuKnop .draai{display:inline-block}
-  .nuKnop.bezig .draai{animation:draai .6s linear}
-  @keyframes draai{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 
-<header>
+<header class="top">
   <div class="topbar">
-    <div class="merk">
-      <h1>Tour de France <em>2026</em></h1>
-      <span class="sub">Barcelona → Paris · 4–26 juli</span>
-    </div>
+    <h1>Tour de France <em>2026</em></h1>
+    <span class="sub">4–26 juli · Barcelona → Parijs</span>
     <span class="fietsje" aria-hidden="true">🚴</span>
   </div>
 </header>
 
-<div class="wrap">
+<main class="wrap">
 
-<div id="nuStrip">
-  <span class="label"><span class="puls"></span>Nu in koers</span>
-  <div id="nuTitel">—</div>
-  <div id="nuInfo">—</div>
-  <div class="voortgang" id="nuBar" style="display:none">
-    <div class="balk" id="nuBalk"></div>
-    <div class="stip" id="nuStip" style="left:0%">🚴</div>
-  </div>
-  <div id="nuKm"></div>
-  <div class="nuActies">
-    <button class="nuKnop" id="nuVervers" type="button"><span class="draai">⟳</span> Ververs schatting</button>
-    <a class="nuKnop" href="https://www.letour.fr/nl" target="_blank" rel="noopener">📡 Live volgen</a>
-  </div>
-</div>
-
-<div class="sectiekop"><h2>Parcours</h2><span class="hint">tik op een lijn voor de etappe</span></div>
-<div id="mapKaart"><div id="map"></div></div>
-
-<div class="sectiekop"><h2>Etappes</h2><span class="hint">21 ritten · 3.321 km · 54.450 hm</span></div>
-<div id="chips"></div>
-
-<div id="detail">
-  <div class="kop">
-    <div>
-      <div id="dTitel">—</div>
-      <div id="dDatum">—</div>
+<!-- ======== TAB: VANDAAG ======== -->
+<section id="tab-vandaag" class="tab" aria-label="Vandaag">
+  <button id="nuStrip" type="button" aria-label="Vandaag in koers, bekijk op de kaart">
+    <span class="label"><span class="puls" aria-hidden="true"></span>Nu in koers</span>
+    <div id="nuTitel">—</div>
+    <div id="nuInfo">—</div>
+    <div class="voortgang" id="nuBar" style="display:none" aria-hidden="true">
+      <div class="balk" id="nuBalk"></div>
+      <div class="stip" id="nuStip" style="left:0%">🚴</div>
     </div>
-    <span class="badge" id="dBadge">—</span>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="w" id="dKm">—</div><div class="l">Kilometer</div></div>
-    <div class="stat"><div class="w" id="dHm">—</div><div class="l">Hoogtemeters</div></div>
-    <div class="stat"><div class="w" id="dTop">—</div><div class="l">Hoogste punt</div></div>
-  </div>
-  <div class="cols" id="dCols"></div>
-  <div id="dUitslag" style="display:none"></div>
-  <div id="chartWrap">
-    <div class="titel" id="chartTitel">Hoogteprofiel</div>
-    <canvas id="profielChart"></canvas>
-  </div>
-  <div class="knoppen">
-    <a class="knop geel" id="dRide" href="javascript:void(0)">▶ Rij de etappe</a>
-    <a class="knop" id="dGpxDownload" href="#" target="_blank" rel="noopener">⬇ GPX</a>
-    <a class="knop" id="dGmaps" href="#" target="_blank" rel="noopener">Google Maps</a>
-  </div>
-</div>
+    <div id="nuKm"></div>
+  </button>
 
-<div class="sectiekop"><h2>Klassement</h2><span class="hint" id="klHint">—</span></div>
-<div id="klassement"></div>
+  <div id="vandaagCard" class="kaartje" style="margin-top:14px"></div>
+  <div id="vandaagUitslag" class="kaartje" hidden></div>
 
-<div class="sectiekop"><h2>Uitslagen</h2><span class="hint">verreden etappes</span></div>
-<div id="uitslagen"></div>
+  <h2 class="sectiekop">De truien <span class="hint" id="truienHint"></span></h2>
+  <div id="truienMini" class="truien"></div>
+</section>
 
-<div id="importBar">
-  <button id="importBtn">📂 GPX importeren</button>
-  <input type="file" id="gpxInput" accept=".gpx" multiple>
-  <div id="importStatus">De app laadt exacte routes automatisch. Ontbreekt er een? Tik bij een etappe op <b>⬇ GPX</b>, bewaar het bestand en laad het hier in (meerdere tegelijk kan). De app onthoudt geïmporteerde routes.</div>
-</div>
+<!-- ======== TAB: ETAPPES ======== -->
+<section id="tab-etappes" class="tab" hidden aria-label="Etappes en kaart">
+  <div id="mapKaart"><div id="map" aria-label="Kaart met alle etappes van de Tour de France 2026" role="img"></div></div>
+
+  <h2 class="sectiekop">Etappes <span class="hint">21 ritten · 3.321 km · 54.450 hm</span></h2>
+  <div id="chips"></div>
+
+  <article id="detail" class="kaartje">
+    <div class="vkop">
+      <div>
+        <div class="vtitel" id="dTitel">—</div>
+        <div class="vdatum" id="dDatum">—</div>
+      </div>
+      <span class="badge" id="dBadge">—</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="w" id="dKm">—</div><div class="l">Kilometer</div></div>
+      <div class="stat"><div class="w" id="dHm">—</div><div class="l">Hoogtemeters</div></div>
+      <div class="stat"><div class="w" id="dTop">—</div><div class="l">Hoogste punt</div></div>
+    </div>
+    <div class="cols" id="dCols"></div>
+    <div id="dUitslag" style="display:none"></div>
+    <div id="chartWrap">
+      <div class="titel" id="chartTitel">Hoogteprofiel</div>
+      <canvas id="profielChart" aria-hidden="true"></canvas>
+    </div>
+    <div class="knoppen">
+      <button class="knop geel" id="dRide" type="button">▶ Rij de etappe</button>
+      <a class="knop" id="dGmaps" href="#" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+  </article>
+</section>
+
+<!-- ======== TAB: KLASSEMENT ======== -->
+<section id="tab-klassement" class="tab" hidden aria-label="Klassement">
+  <h2 class="sectiekop">Klassement <span class="hint" id="klHint">—</span></h2>
+  <div id="klassement"></div>
+</section>
+
+<!-- ======== TAB: UITSLAGEN ======== -->
+<section id="tab-uitslagen" class="tab" hidden aria-label="Uitslagen">
+  <h2 class="sectiekop">Uitslagen <span class="hint">verreden etappes</span></h2>
+  <div id="uitslagen"></div>
+</section>
 
 <footer>
-  Uitslagen, truien en klassement worden automatisch bijgewerkt (bron: procyclingstats.com), net als de exacte routes (letour.fr / ASO via cyclingstage.com). Zonder GPX toont de app een indicatieve lijn tussen start, bekende beklimmingen en finish. De positie-indicatie is een schatting op basis van starttijd en ±42 km/u, geen live GPS. Kaart: © OpenStreetMap-bijdragers.
+  Uitslagen, truien en klassement worden automatisch bijgewerkt (bron: Wikipedia).
+  Routes: letour.fr / ASO. De positie-indicatie is een schatting op basis van de starttijd en ±42 km/u, geen live GPS.
+  Kaart: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-bijdragers ·
+  Actuele stand: <a href="https://www.letour.fr/nl/klassementen" target="_blank" rel="noopener">letour.fr</a>
 </footer>
 
-</div>
+</main>
+
+<nav id="tabbar" aria-label="Hoofdnavigatie">
+  <div class="binnen">
+    <button id="nav-vandaag" class="actief" type="button" aria-current="page"><span class="ico" aria-hidden="true">🔴</span>Vandaag</button>
+    <button id="nav-etappes" type="button"><span class="ico" aria-hidden="true">🗺️</span>Etappes</button>
+    <button id="nav-klassement" type="button"><span class="ico" aria-hidden="true">🏆</span>Klassement</button>
+    <button id="nav-uitslagen" type="button"><span class="ico" aria-hidden="true">🏁</span>Uitslagen</button>
+  </div>
+</nav>
 
 <script>
-
-const KLEUR = {vlak:"#2f9e55", heuvels:"#e08a00", berg:"#d9331f", tijdrit:"#2b6fd4"};
+const KLEUR = {vlak:"#20853f", heuvels:"#c67a00", berg:"#d9331f", tijdrit:"#2b6fd4"};
 const TYPENAAM = {vlak:"Vlak", heuvels:"Heuvels", berg:"Bergen", tijdrit:"Tijdrit"};
 const TYPE_EMOJI = {vlak:"💨", heuvels:"🌄", berg:"🏔️", tijdrit:"⏱️"};
 
@@ -371,11 +372,6 @@ const KLIM = {
  20:[["Croix de Fer",42,2067],["Télégraphe",78,1566],["Galibier",105,2642],["Col de Sarenne",145,1999]],
  21:[["Montmartre (3x)",112,128]]
 };
-
-// uitslagen, klassement en truien komen uit data/stand.json (automatisch bijgewerkt via GitHub Actions)
-let UITSLAGEN = {};
-let KLASSEMENT = null;
-let STAND_BIJGEWERKT = null;
 
 const ETAPPES = [
  {n:1,d:"2026-07-04",start:["Barcelona",41.390,2.169],fin:["Barcelona",41.365,2.155],km:19.6,type:"tijdrit",hm:200,st:"17:10",
@@ -468,18 +464,52 @@ const RUSTDAGEN = {"2026-07-13":"Rustdag 1 · regio Limousin","2026-07-20":"Rust
 const GEM_SNELHEID = 42, TT_SNELHEID = 50;
 const EXACT = {};
 
+// uitslagen, klassement en truien komen uit data/stand.json (automatisch bijgewerkt via GitHub Actions)
+let UITSLAGEN = {};
+let KLASSEMENT = null;
+
+// ---------- vlaggen (IOC-code -> emoji) ----------
+const IOC2ISO = {NED:"NL",BEL:"BE",FRA:"FR",GER:"DE",DEN:"DK",SLO:"SI",NOR:"NO",GBR:"GB",USA:"US",
+ ESP:"ES",ITA:"IT",AUS:"AU",SUI:"CH",AUT:"AT",POR:"PT",IRL:"IE",POL:"PL",CZE:"CZ",SVK:"SK",
+ LUX:"LU",CAN:"CA",COL:"CO",ECU:"EC",MEX:"MX",ERI:"ER",RSA:"ZA",KAZ:"KZ",HUN:"HU",EST:"EE",
+ LAT:"LV",LTU:"LT",CRO:"HR",ROU:"RO",UKR:"UA",NZL:"NZ",JPN:"JP",ISR:"IL",SWE:"SE",FIN:"FI",
+ RUS:"RU",BLR:"BY",ARG:"AR",BRA:"BR",GRE:"GR",CHN:"CN",CRC:"CR",URU:"UY",VEN:"VE",ALG:"DZ",MAR:"MA"};
+function vlag(ioc){
+  const iso=IOC2ISO[ioc];
+  if(!iso)return "";
+  return [...iso].map(c=>String.fromCodePoint(0x1F1E6+c.charCodeAt(0)-65)).join("");
+}
+function metVlag(naam,land){
+  const v=vlag(land);
+  return (v?`<span aria-hidden="true">${v}</span> `:"")+naam;
+}
+
+// ---------- tabs ----------
+const TABS=["vandaag","etappes","klassement","uitslagen"];
+let pendingFit=null;
+function toonTab(naam){
+  for(const t of TABS){
+    document.getElementById("tab-"+t).hidden = (t!==naam);
+    const k=document.getElementById("nav-"+t);
+    k.classList.toggle("actief", t===naam);
+    if(t===naam)k.setAttribute("aria-current","page");else k.removeAttribute("aria-current");
+  }
+  window.scrollTo({top:0});
+  if(naam==="etappes"){
+    map.invalidateSize();
+    if(pendingFit){map.fitBounds(pendingFit);pendingFit=null;}
+  }
+}
+TABS.forEach(t=>{document.getElementById("nav-"+t).onclick=()=>toonTab(t);});
+
 // ---------- kaart ----------
 const map = L.map("map",{scrollWheelZoom:true}).setView([45.5,3.2],6);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-  maxZoom:17, attribution:'© OpenStreetMap'
-}).addTo(map);
-
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:17,attribution:"© OpenStreetMap"}).addTo(map);
 const legenda=L.control({position:"bottomleft"});
 legenda.onAdd=()=>{
   const d=L.DomUtil.create("div","legenda");
   d.innerHTML="<b>Etappetype</b>"+Object.keys(KLEUR).map(t=>
-    `<div><span class="kleur" style="background:${KLEUR[t]}"></span>${TYPENAAM[t]} ${TYPE_EMOJI[t]}</div>`).join("")
-    +'<div>┅ = nog indicatief</div><div>⚪ = col</div>';
+    `<div><span class="kleur" style="background:${KLEUR[t]}"></span>${TYPENAAM[t]} ${TYPE_EMOJI[t]}</div>`).join("")+"<div>⚪ = col</div>";
   return d;
 };
 legenda.addTo(map);
@@ -500,7 +530,6 @@ ETAPPES.forEach(e=>{
   });
   lagen[e.n]={lijn,pts};
 });
-
 let nuMarker=null;
 
 // ---------- helpers ----------
@@ -542,102 +571,19 @@ function pasExactToe(n,data){
   const e=ETAPPES.find(x=>x.n===n);
   map.removeLayer(lagen[n].lijn);
   const lijn=L.polyline(data.pts,{color:KLEUR[e.type],weight:4,opacity:.95}).addTo(map);
-  lijn.bindTooltip(`Etappe ${e.n}: ${e.start[0]} → ${e.fin[0]} (exact)`,{sticky:true});
+  lijn.bindTooltip(`Etappe ${e.n}: ${e.start[0]} → ${e.fin[0]}`,{sticky:true});
   lijn.on("click",()=>kies(e.n));
   lagen[n]={lijn,pts:data.pts};
-  const chip=document.getElementById("chip-"+n);
-  if(chip)chip.classList.add("heeftGpx");
 }
 
-// ---------- GPX-import ----------
-function parseGpx(tekst){
-  const doc=new DOMParser().parseFromString(tekst,"application/xml");
-  if(doc.querySelector("parsererror"))throw new Error("geen geldig GPX-bestand");
-  let pts=[...doc.querySelectorAll("trkpt")];
-  if(!pts.length)pts=[...doc.querySelectorAll("rtept")];
-  if(pts.length<10)throw new Error("te weinig routepunten");
-  return pts.map(p=>[
-    parseFloat(p.getAttribute("lat")),
-    parseFloat(p.getAttribute("lon")),
-    p.querySelector("ele")?parseFloat(p.querySelector("ele").textContent):null
-  ]);
+// ---------- renner-rijen ----------
+function podRij(r){
+  const tijd=r.tijd==null?"":r.tijd;
+  return `<div class="rij">
+    <span class="pos">${r.pos}</span>
+    <span class="wie"><span class="naam">${metVlag(r.naam,r.land)}</span>${r.ploeg?`<span class="ploeg">${r.ploeg}</span>`:""}</span>
+    <span class="tijd">${tijd}</span></div>`;
 }
-function matchEtappe(bestandsnaam,punten){
-  const m=bestandsnaam.match(/(?:stage|etappe|rit|st)[-_ ]?0?(\d{1,2})/i);
-  if(m){const n=parseInt(m[1]);if(n>=1&&n<=21)return n;}
-  let beste=null,bDist=Infinity;
-  const p0=[punten[0][0],punten[0][1]];
-  ETAPPES.forEach(e=>{
-    const d=haversine(p0,[e.start[1],e.start[2]]);
-    if(d<bDist){bDist=d;beste=e.n;}
-  });
-  return bDist<30?beste:null;
-}
-function verwerkGpx(punten){
-  const cumVol=[0];
-  for(let i=1;i<punten.length;i++)cumVol.push(cumVol[i-1]+haversine(punten[i-1],punten[i]));
-  const totKm=cumVol[punten.length-1];
-  const stap=Math.max(1,Math.floor(punten.length/900));
-  const pts=[],cum=[];
-  for(let i=0;i<punten.length;i+=stap){
-    pts.push([+punten[i][0].toFixed(5),+punten[i][1].toFixed(5)]);cum.push(+cumVol[i].toFixed(2));
-  }
-  if(cum[cum.length-1]!==+totKm.toFixed(2)){pts.push([+punten[punten.length-1][0].toFixed(5),+punten[punten.length-1][1].toFixed(5)]);cum.push(+totKm.toFixed(2));}
-  let prof=[],hm=0,top=0,laatsteEle=null,laatsteKm=-1;
-  const heeftEle=punten.some(p=>p[2]!==null&&!isNaN(p[2]));
-  if(heeftEle){
-    for(let i=0;i<punten.length;i++){
-      const ele=punten[i][2];if(ele===null||isNaN(ele))continue;
-      if(ele>top)top=ele;
-      if(laatsteEle!==null&&ele>laatsteEle+3){hm+=ele-laatsteEle;laatsteEle=ele;}
-      else if(laatsteEle===null||ele<laatsteEle)laatsteEle=ele;
-      if(cumVol[i]-laatsteKm>=0.5||i===punten.length-1){prof.push([+cumVol[i].toFixed(2),Math.round(ele)]);laatsteKm=cumVol[i];}
-    }
-  }
-  return {pts,cum,prof:heeftEle?prof:null,km:+totKm.toFixed(1),hm:Math.round(hm),top:Math.round(top)};
-}
-async function bewaarExact(n,data){
-  try{localStorage.setItem("tdf26_gpx_"+n,JSON.stringify(data));}
-  catch(err){/* opslag niet beschikbaar: import blijft deze sessie werken */}
-}
-async function laadOpgeslagen(){
-  let geladen=0;
-  for(const e of ETAPPES){
-    if(EXACT[e.n])continue;
-    try{
-      const r=localStorage.getItem("tdf26_gpx_"+e.n);
-      if(r){pasExactToe(e.n,JSON.parse(r));geladen++;}
-    }catch(err){/* sleutel bestaat niet */}
-  }
-  if(geladen>0){
-    const act=document.querySelector(".chip.actief");
-    if(act)kies(parseInt(act.id.replace("chip-","")),false);
-    updateNu();
-  }
-}
-document.getElementById("importBtn").onclick=()=>document.getElementById("gpxInput").click();
-document.getElementById("gpxInput").onchange=async ev=>{
-  const files=[...ev.target.files];if(!files.length)return;
-  const status=document.getElementById("importStatus");
-  let ok=0,fout=[];
-  for(const f of files){
-    try{
-      const tekst=await f.text();
-      const punten=parseGpx(tekst);
-      const n=matchEtappe(f.name,punten);
-      if(!n)throw new Error("kon geen etappe herkennen");
-      const data=verwerkGpx(punten);
-      pasExactToe(n,data);
-      await bewaarExact(n,data);
-      ok++;
-    }catch(err){fout.push(`${f.name} (${err.message})`);}
-  }
-  status.innerHTML=`<b>${ok} route${ok!==1?"s":""} geïmporteerd.</b>`+(fout.length?` Mislukt: ${fout.join(", ")}.`:"")+" Tik op een etappe voor het exacte tracé.";
-  const act=document.querySelector(".chip.actief");
-  if(act)kies(parseInt(act.id.replace("chip-","")),false);
-  updateNu();
-  ev.target.value="";
-};
 
 // ---------- etappe-selector ----------
 const vandaagISO = new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam"}).format(new Date());
@@ -645,15 +591,16 @@ const chipsEl=document.getElementById("chips");
 let kalender=[...ETAPPES.map(e=>({soort:"et",e})), ...Object.keys(RUSTDAGEN).map(d=>({soort:"rust",d}))];
 kalender.sort((a,b)=>(a.soort==="et"?a.e.d:a.d).localeCompare(b.soort==="et"?b.e.d:b.d));
 kalender.forEach(item=>{
-  const c=document.createElement("button");c.className="chip";
+  const c=document.createElement("button");c.className="chip";c.type="button";
   if(item.soort==="rust"){
     c.classList.add("rust");
+    c.disabled=true;
     c.innerHTML=`<div class="nr">😴</div><div class="tt">Rustdag · ${parseInt(item.d.slice(8))} juli</div>`;
   }else{
     const e=item.e;
     if(e.d===vandaagISO)c.classList.add("vandaag");
-    c.innerHTML=`<span class="exact">GPX</span>
-      <div class="nr">${e.n}<small>${parseInt(e.d.slice(8))} JULI</small></div>
+    c.setAttribute("aria-label",`Etappe ${e.n}, ${parseInt(e.d.slice(8))} juli, ${TYPENAAM[e.type]}, finish in ${e.fin[0].split(" (")[0]}`);
+    c.innerHTML=`<div class="nr">${e.n}<small>${parseInt(e.d.slice(8))} JULI</small></div>
       <div class="tt">${TYPE_EMOJI[e.type]} ${e.fin[0].split(" (")[0]}</div>
       <span class="tp" style="background:${KLEUR[e.type]}"></span>`;
     c.onclick=()=>kies(e.n);
@@ -684,25 +631,23 @@ function kies(n,zoom=true){
   document.getElementById("dTop").textContent=top.toLocaleString("nl-NL")+" m";
   document.getElementById("dCols").innerHTML=e.cols;
   const uB=document.getElementById("dUitslag");
-  if(UITSLAGEN[n]){
+  const u=UITSLAGEN[n];
+  if(u&&u.pod){
     uB.style.display="block";
     uB.innerHTML=`<div class="titelu">🏁 Uitslag etappe ${n}</div>`
-      +UITSLAGEN[n].pod.map(p=>`<div>${p}</div>`).join("")
-      +`<div class="notu">${UITSLAGEN[n].note}</div>`;
+      +u.pod.map(podRij).join("")
+      +(u.note?`<p class="notu">${u.note}</p>`:"");
   }else if(e.d===vandaagISO){
     uB.style.display="block";
-    uB.innerHTML=`<div class="titelu">🔴 Vandaag</div><div>Nog geen uitslag. Volg de koers live via de knop op de gele kaart bovenaan; de uitslag verschijnt hier automatisch zodra die binnen is.</div>`;
+    uB.innerHTML=`<div class="titelu">🔴 Vandaag</div><div style="font-size:.88rem">Nog geen uitslag; die verschijnt hier automatisch zodra de rit binnen is.</div>`;
   }else{
     uB.style.display="none";uB.innerHTML="";
   }
-  document.getElementById("chartTitel").textContent=(ex&&ex.prof)?"Hoogteprofiel · uit GPX":"Hoogteprofiel · indicatief";
+  document.getElementById("chartTitel").textContent=(ex&&ex.prof)?"Hoogteprofiel":"Hoogteprofiel · indicatief";
   const wpStr=e.wp.map(w=>`${w[1]},${w[2]}`).join("|");
   let url=`https://www.google.com/maps/dir/?api=1&origin=${e.start[1]},${e.start[2]}&destination=${e.fin[1]},${e.fin[2]}&travelmode=driving`;
   if(wpStr)url+=`&waypoints=${encodeURIComponent(wpStr)}`;
   document.getElementById("dGmaps").href=url;
-  const gpxNaam=(n===5||n===6)?`stage-${n}.gpx`:`stage-${n}-route.gpx`;
-  document.getElementById("dGpxDownload").href=`https://cdn.cyclingstage.com/images/tour-de-france/2026/${gpxNaam}`;
-  document.getElementById("dGpxDownload").textContent=ex?"✓ GPX geladen":"⬇ GPX";
   if(chart)chart.destroy();
   const maxKm=ex?ex.km:e.km;
   const colPts=(KLIM[n]||[]).filter(k=>k[1]<=maxKm+1).map(k=>{
@@ -730,8 +675,8 @@ function kies(n,zoom=true){
         title:c=>`km ${c[0].parsed.x.toFixed(0)}`,
         label:c=>c.datasetIndex===1?`⛰️ ${c.raw.naam} · ${c.parsed.y.toFixed(0)} m`:`${c.parsed.y.toFixed(0)} m`}}},
       scales:{
-        x:{type:"linear",min:0,max:maxKm,ticks:{color:"#a3a396",callback:v=>v+" km"},grid:{color:"#efede6"}},
-        y:{suggestedMax:Math.round(top*1.3)+30,ticks:{color:"#a3a396",callback:v=>v+" m"},grid:{color:"#efede6"}}
+        x:{type:"linear",min:0,max:maxKm,ticks:{color:"#83837a",callback:v=>v+" km"},grid:{color:"#efede6"}},
+        y:{suggestedMax:Math.round(top*1.3)+30,ticks:{color:"#83837a",callback:v=>v+" m"},grid:{color:"#efede6"}}
       }
     },
     plugins:[{
@@ -755,7 +700,11 @@ function kies(n,zoom=true){
       }
     }]
   });
-  if(zoom)map.fitBounds(L.latLngBounds(lagen[n].pts).pad(0.25));
+  const bounds=L.latLngBounds(lagen[n].pts).pad(0.25);
+  if(zoom){
+    if(document.getElementById("tab-etappes").hidden)pendingFit=bounds;
+    else map.fitBounds(bounds);
+  }
 }
 
 // ---------- rij de etappe ----------
@@ -831,7 +780,7 @@ function updateNu(){
   }else{
     const frac=Math.min(verstreken/duurMin,1);
     const kmNu=frac*totKm;
-    i.textContent=`Geschatte positie op basis van starttijd ±${e.st} en ±${snelheid} km/u, geen live GPS${ex?", wel het exacte tracé":""}.`;
+    i.textContent=`Geschatte positie op basis van starttijd ±${e.st} en ±${snelheid} km/u, geen live GPS.`;
     bar.style.display="block";
     balk.style.width=(frac*100).toFixed(1)+"%";
     stip.style.left=(frac*100).toFixed(1)+"%";stip.textContent="🚴";
@@ -842,10 +791,110 @@ function updateNu(){
   }
 }
 
+// ---------- vandaag-tab ----------
+const vandaagEt=ETAPPES.find(x=>x.d===vandaagISO);
+function renderVandaag(){
+  const el=document.getElementById("vandaagCard");
+  if(RUSTDAGEN[vandaagISO]){
+    el.innerHTML=`<div class="vtitel">😴 ${RUSTDAGEN[vandaagISO]}</div>
+      <p class="cols">De renners rusten uit. Bekijk intussen het parcours van de komende etappes of de tussenstand.</p>
+      <div class="knoppen"><button class="knop geel" type="button" onclick="toonTab('etappes')">🗺️ Bekijk het parcours</button></div>`;
+  }else if(!vandaagEt){
+    const voorbij=vandaagISO>"2026-07-26";
+    el.innerHTML=`<div class="vtitel">${voorbij?"🏆 De Tour zit erop":"⏳ Nog even geduld"}</div>
+      <p class="cols">${voorbij?"Bekijk de eindstand bij Klassement of blader door alle uitslagen.":"De Tour start op zaterdag 4 juli met een ploegentijdrit in Barcelona."}</p>
+      <div class="knoppen"><button class="knop geel" type="button" onclick="toonTab('${voorbij?"klassement":"etappes"}')">${voorbij?"🏆 Eindklassement":"🗺️ Bekijk het parcours"}</button></div>`;
+  }else{
+    const e=vandaagEt;
+    const ex=EXACT[e.n];
+    el.innerHTML=`
+      <div class="vkop">
+        <div>
+          <div class="vtitel">Etappe ${e.n} · ${e.start[0]} → ${e.fin[0]}</div>
+          <div class="vdatum">${fmtDatum(e.d)} · start ±${e.st} uur</div>
+        </div>
+        <span class="badge${e.type==="berg"?" polka":""}" style="${e.type==="berg"?"":"background:"+KLEUR[e.type]}">${TYPENAAM[e.type]} ${TYPE_EMOJI[e.type]}</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="w">${(ex?ex.km:e.km).toLocaleString("nl-NL")}</div><div class="l">Kilometer</div></div>
+        <div class="stat"><div class="w">${(ex&&ex.hm?ex.hm:e.hm).toLocaleString("nl-NL")}</div><div class="l">Hoogtemeters</div></div>
+        <div class="stat"><div class="w">±${e.st}</div><div class="l">Starttijd</div></div>
+      </div>
+      <div class="cols">${e.cols}</div>
+      <div class="knoppen">
+        <button class="knop geel" type="button" id="naarEtappe">🗺️ Route en profiel</button>
+        <a class="knop" href="https://www.letour.fr/nl" target="_blank" rel="noopener">📡 Live volgen</a>
+      </div>`;
+    document.getElementById("naarEtappe").onclick=()=>{toonTab("etappes");kies(e.n);};
+  }
+  // uitslag van vandaag
+  const vu=document.getElementById("vandaagUitslag");
+  const u=vandaagEt&&UITSLAGEN[vandaagEt.n];
+  if(u&&u.pod){
+    vu.hidden=false;
+    vu.innerHTML=`<h2 class="sectiekop" style="margin-top:0">🏁 Uitslag van vandaag</h2>`
+      +u.pod.slice(0,3).map(podRij).join("")
+      +`<div class="knoppen"><button class="knop" type="button" onclick="toonTab('uitslagen')">Alle uitslagen</button></div>`;
+  }else{vu.hidden=true;vu.innerHTML="";}
+  // truien-mini
+  renderTruien(document.getElementById("truienMini"));
+  document.getElementById("truienHint").textContent=KLASSEMENT?`na etappe ${KLASSEMENT.naEtappe}`:"";
+}
+document.getElementById("nuStrip").onclick=()=>{if(vandaagEt){toonTab("etappes");kies(vandaagEt.n);}};
+
+// ---------- klassement ----------
+function truiData(v){return (v&&typeof v==="object")?v:{naam:v||"—",kort:v||"—"};}
+function renderTruien(el){
+  if(!KLASSEMENT||!KLASSEMENT.truien){el.innerHTML="";return;}
+  const labels={geel:["Geel · algemeen","geel"],groen:["Groen · punten","groen"],bollen:["Bollen · bergen","bollen"],wit:["Wit · jongeren","wit"]};
+  el.innerHTML=Object.entries(labels).map(([k,[label,cls]])=>{
+    const t=truiData(KLASSEMENT.truien[k]);
+    return `<div class="trui ${cls}">
+      <div class="tl">${label}</div>
+      <div class="tn">${metVlag(t.naam||t.kort,t.land)}</div>
+      ${t.ploeg?`<div class="tp">${t.ploeg}</div>`:""}
+    </div>`;
+  }).join("");
+}
+function renderKlassement(){
+  const el=document.getElementById("klassement");
+  const hint=document.getElementById("klHint");
+  if(!KLASSEMENT){
+    el.innerHTML=`<div class="kaartje">Het klassement verschijnt na de eerste etappe.</div>`;
+    hint.textContent="";return;
+  }
+  hint.textContent=KLASSEMENT.naEtappe?`na etappe ${KLASSEMENT.naEtappe}`:"actueel";
+  el.innerHTML=`
+    <div id="truienGroot" class="truien" style="margin-bottom:14px"></div>
+    <div class="kaartje">
+      <h2 class="sectiekop" style="margin-top:0">🏆 Algemeen klassement</h2>
+      <div>${(KLASSEMENT.top10||[]).map(podRij).join("")}</div>
+      <p class="voetk">${KLASSEMENT.voetnoot||""}</p>
+    </div>`;
+  renderTruien(document.getElementById("truienGroot"));
+}
+
+// ---------- uitslagen ----------
+function renderUitslagen(){
+  const uEl=document.getElementById("uitslagen");
+  const gereden=ETAPPES.filter(e=>UITSLAGEN[e.n]&&UITSLAGEN[e.n].pod);
+  uEl.innerHTML=gereden.length?gereden.slice().reverse().map(e=>{
+    const u=UITSLAGEN[e.n];
+    return `<details class="uitslag">
+      <summary>
+        <span class="en" aria-hidden="true">${e.n}</span>
+        <span class="wn">🏆 ${metVlag(u.w,u.wLand)}<small>${e.start[0]} → ${e.fin[0]} · ${parseInt(e.d.slice(8))} juli${u.wPloeg?" · "+u.wPloeg:""}</small></span>
+        <span class="pijl" aria-hidden="true">▾</span>
+      </summary>
+      <div class="pod">${u.pod.map(podRij).join("")}${u.note?`<p class="notu">${u.note}</p>`:""}</div>
+    </details>`;}).join("")
+    :`<div class="kaartje">Nog geen etappes verreden.</div>`;
+}
+
 // ---------- data laden (automatisch bijgewerkt via GitHub Actions) ----------
 async function laadRoutes(){
   try{
-    const r=await fetch("data/routes.json?t="+Date.now(),{cache:"no-store"});
+    const r=await fetch("data/routes.json",{cache:"no-cache"});
     if(!r.ok)return;
     const routes=await r.json();
     let nieuw=0;
@@ -854,51 +903,12 @@ async function laadRoutes(){
       if(!EXACT[n]){pasExactToe(n,pdata);nieuw++;}
     }
     if(nieuw>0){
-      const ns=Object.keys(routes).map(Number).sort((a,b)=>a-b);
-      document.getElementById("importStatus").innerHTML=
-        `<b>${ns.length} exacte route${ns.length!==1?"s":""} automatisch geladen</b> (etappe ${ns.join(", ")}). Ontbrekende routes verschijnen vanzelf zodra de officiële GPX beschikbaar is; handmatig importeren kan ook.`;
       const act=document.querySelector(".chip.actief");
       if(act&&!ride)kies(parseInt(act.id.replace("chip-","")),false);
+      renderVandaag();
       updateNu();
     }
-  }catch(err){/* offline of lokaal geopend: indicatieve lijnen blijven staan */}
-}
-function renderKlassement(){
-  const el=document.getElementById("klassement");
-  const hint=document.getElementById("klHint");
-  if(!KLASSEMENT){el.innerHTML="";el.style.display="none";hint.textContent="volgt na de eerste etappe";return;}
-  const k=KLASSEMENT;
-  el.style.display="";
-  hint.textContent=k.naEtappe?`na etappe ${k.naEtappe}`:"actueel";
-  const tr=k.truien||{};
-  el.innerHTML=`
-  <div class="kopregel" onclick="document.getElementById('gcTop').classList.toggle('open');document.getElementById('klBtn').textContent=document.getElementById('gcTop').classList.contains('open')?'▲ Inklappen':'▼ Top 10'">
-    <span class="titelk">🏆 De truien</span>
-    <button id="klBtn" type="button">▼ Top 10</button>
-  </div>
-  <div class="truien">
-    <div class="trui geel"><div class="tl">Geel · algemeen</div><div class="tn">${tr.geel||"—"}</div></div>
-    <div class="trui groen"><div class="tl">Groen · punten</div><div class="tn">${tr.groen||"—"}</div></div>
-    <div class="trui bollen"><div class="tl">Bollen · berg</div><div class="tn">${tr.bollen||"—"}</div></div>
-    <div class="trui witjong"><div class="tl">Wit · jongeren</div><div class="tn">${tr.wit||"—"}</div></div>
-  </div>
-  <div id="gcTop">
-    <table>${(k.top10||[]).map(r=>`<tr><td class="p">${r.pos}</td><td>${r.naam}${r.ploeg?" · "+r.ploeg:""}</td><td class="t">${r.tijd||"—"}</td></tr>`).join("")}</table>
-  </div>
-  <div class="voetk">${k.voetnoot||""} Actuele stand: <a href="https://www.letour.fr/nl/klassementen" target="_blank" rel="noopener">letour.fr</a>.</div>`;
-}
-function renderUitslagen(){
-  const uEl=document.getElementById("uitslagen");
-  const gereden=ETAPPES.filter(e=>UITSLAGEN[e.n]);
-  uEl.innerHTML=gereden.length?gereden.map(e=>{
-    const u=UITSLAGEN[e.n];
-    return `<div class="uitslag" onclick="this.classList.toggle('open')">
-     <div class="kopr"><div class="en">${e.n}</div>
-     <div class="wn">🏆 ${u.w}<small>${u.note?u.note+" · ":""}${e.start[0]} → ${e.fin[0]}</small></div>
-     <div class="dt">${parseInt(e.d.slice(8))} juli ▾</div></div>
-     <div class="pod">${u.pod.map(p=>`<div>${p}</div>`).join("")}</div>
-     </div>`;}).join("")
-    :'<div class="uitslag"><div class="wn">Nog geen etappes verreden.</div></div>';
+  }catch(err){/* offline: indicatieve lijnen blijven staan */}
 }
 async function laadStand(){
   try{
@@ -907,36 +917,25 @@ async function laadStand(){
     const st=await r.json();
     UITSLAGEN=st.uitslagen||{};
     KLASSEMENT=st.klassement||null;
-    STAND_BIJGEWERKT=st.bijgewerkt||null;
   }catch(err){/* offline of lokaal geopend */}
   renderUitslagen();
   renderKlassement();
+  renderVandaag();
   const act=document.querySelector(".chip.actief");
   if(act&&!ride)kies(parseInt(act.id.replace("chip-","")),false);
 }
 
 // ---------- init ----------
-const vandaagEt=ETAPPES.find(x=>x.d===vandaagISO);
 kies(vandaagEt?vandaagEt.n:1, false);
-if(vandaagEt)map.fitBounds(L.latLngBounds(lagen[vandaagEt.n].pts).pad(0.35));
-document.getElementById("nuStrip").style.cursor="pointer";
-document.getElementById("nuStrip").onclick=()=>{if(vandaagEt)kies(vandaagEt.n);};
-document.getElementById("nuVervers").onclick=ev=>{
-  ev.stopPropagation();
-  const k=ev.currentTarget;
-  k.classList.remove("bezig");void k.offsetWidth;k.classList.add("bezig");
-  updateNu();
-};
-document.querySelector(".nuActies a").onclick=ev=>ev.stopPropagation();
-renderUitslagen();
+if(vandaagEt)pendingFit=L.latLngBounds(lagen[vandaagEt.n].pts).pad(0.35);
+renderVandaag();
 renderKlassement();
+renderUitslagen();
 updateNu();
 setInterval(updateNu,60000);
 laadStand();
 laadRoutes();
-laadOpgeslagen();
 setInterval(laadStand,10*60*1000);
-setInterval(laadRoutes,60*60*1000);
 </script>
 </body>
 </html>

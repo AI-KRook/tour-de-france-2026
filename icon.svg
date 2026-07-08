@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#ffd100"/>
+  <text x="50" y="66" font-size="52" text-anchor="middle">🚴</text>
+  <text x="50" y="92" font-family="Arial Narrow, sans-serif" font-size="16" font-weight="800" text-anchor="middle" fill="#16160f">TDF 2026</text>
+</svg>

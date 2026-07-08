@@ -34,11 +34,6 @@ jobs:
         if: github.event_name != 'push'
         run: pip install --quiet requests beautifulsoup4
 
-      - name: Routes ophalen (GPX)
-        if: github.event_name != 'push'
-        run: python scripts/fetch_routes.py
-        continue-on-error: true
-
       - name: Uitslagen en klassement bijwerken
         if: github.event_name != 'push'
         run: python scripts/update_stand.py

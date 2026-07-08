@@ -64,6 +64,12 @@ def schoon(tekst):
     return re.sub(r"\s+", " ", tekst).strip()
 
 
+def land_uit(tekst):
+    """Haalt de IOC-landcode uit een rennercel: 'Olav Kooij ( NED )' -> 'NED'."""
+    m = re.search(r"\(\s*([A-Z]{3})\s*\)", tekst or "")
+    return m.group(1) if m else None
+
+
 def korte_naam(vol):
     delen = (vol or "").split(" ")
     if len(delen) < 2:
@@ -122,30 +128,23 @@ def parse_result_tabel(tabel):
         m = re.match(r"(\d{1,3})", pos_txt)
         if not m:
             continue
-        naam = schoon(cellen[i_naam].get_text(" ", strip=True))
+        ruwe_naam = cellen[i_naam].get_text(" ", strip=True)
+        naam = schoon(ruwe_naam)
         if not naam:
             continue
         rijen.append({
             "pos": int(m.group(1)),
             "naam": naam,
+            "land": land_uit(ruwe_naam),
             "ploeg": schoon(cellen[i_ploeg].get_text(" ", strip=True)) if i_ploeg is not None else "",
             "tijd": wiki_tijd(cellen[i_tijd].get_text(" ", strip=True)) if i_tijd is not None else None,
         })
     return rijen
 
 
-def pod_regels(rijen):
-    regels = []
-    for r in rijen[:10]:
-        deel = f'{r["pos"]}. {r["naam"]}'
-        if r["ploeg"]:
-            deel += f' ({r["ploeg"]})'
-        if r["tijd"] == "z.t.":
-            deel += " z.t."
-        elif r["tijd"]:
-            deel += f' {r["tijd"]}' if r["tijd"].startswith("+") else f' · {r["tijd"]}'
-        regels.append(deel)
-    return regels
+def pod_structuur(rijen):
+    return [{"pos": r["pos"], "naam": r["naam"], "land": r["land"],
+             "ploeg": r["ploeg"], "tijd": r["tijd"]} for r in rijen[:10]]
 
 
 def expandeer_grid(tabel):
@@ -215,8 +214,47 @@ def truien_uit_hoofdpagina(html, na_etappe):
     truien = {}
     for trui, i in kolommen.items():
         if i is not None and i < len(doel) and doel[i]:
-            truien[trui] = korte_naam(doel[i])
+            truien[trui] = doel[i]  # volledige naam; land/ploeg wordt elders opgezocht
     return truien or None
+
+
+DEMONIEM = {
+    "french": "FRA", "dutch": "NED", "belgian": "BEL", "danish": "DEN", "slovenian": "SLO",
+    "norwegian": "NOR", "british": "GBR", "american": "USA", "spanish": "ESP", "italian": "ITA",
+    "german": "GER", "australian": "AUS", "swiss": "SUI", "austrian": "AUT", "portuguese": "POR",
+    "irish": "IRL", "polish": "POL", "czech": "CZE", "slovak": "SVK", "luxembourgish": "LUX",
+    "canadian": "CAN", "colombian": "COL", "ecuadorian": "ECU", "mexican": "MEX", "eritrean": "ERI",
+    "south african": "RSA", "kazakh": "KAZ", "hungarian": "HUN", "estonian": "EST", "latvian": "LAT",
+    "lithuanian": "LTU", "croatian": "CRO", "romanian": "ROU", "ukrainian": "UKR",
+    "new zealand": "NZL", "japanese": "JPN", "israeli": "ISR", "swedish": "SWE", "finnish": "FIN",
+    "russian": "RUS", "belarusian": "BLR", "argentine": "ARG", "brazilian": "BRA", "greek": "GRE",
+    "chinese": "CHN", "costa rican": "CRC", "uruguayan": "URU", "venezuelan": "VEN",
+}
+
+
+def renner_pagina_info(naam):
+    """Fallback voor renners die in geen enkele uitslagtabel staan (bijv. de bergtrui-
+    drager na een vroege vlucht): lees land en ploeg van de eigen Wikipedia-pagina."""
+    html = haal(f"{WIKI}/{naam.replace(' ', '_')}")
+    if not html:
+        return {}
+    soup = BeautifulSoup(html, "html.parser")
+    info = {}
+    p = soup.select_one("div.mw-parser-output > p:not(.mw-empty-elt)")
+    if p:
+        intro = schoon(p.get_text(" ", strip=True)).lower()[:250]
+        for dem, code in DEMONIEM.items():
+            if re.search(rf"\ban? {dem} \b", intro):
+                info["land"] = code
+                break
+    for tr in soup.select("table.infobox tr"):
+        th = tr.find("th")
+        if th and "current team" in th.get_text(" ", strip=True).lower():
+            td = tr.find("td")
+            if td:
+                info["ploeg"] = schoon(td.get_text(" ", strip=True))
+            break
+    return info
 
 
 def main():
@@ -233,6 +271,14 @@ def main():
             html = haal(PAGINAS[sleutel])
             paginas[sleutel] = BeautifulSoup(html, "html.parser") if html else None
         return paginas[sleutel]
+
+    # naam -> {land, ploeg}, opgebouwd uit alle geparste tabellen (voor de truiendragers)
+    renner_info = {}
+
+    def onthoud(rijen):
+        for r in rijen:
+            if r["naam"] and (r["land"] or r["ploeg"]):
+                renner_info[r["naam"]] = {"land": r["land"], "ploeg": r["ploeg"]}
 
     # 1) etappe-uitslagen
     for n, (datum, start) in ETAPPES.items():
@@ -260,11 +306,14 @@ def main():
         if len(rijen) < 3 or rijen[0]["pos"] != 1:
             print(f"Etappe {n}: uitslagtabel nog niet bruikbaar")
             continue
+        onthoud(rijen)
         w = rijen[0]
         nieuw = {
             "w": w["naam"],
-            "note": (bestaand or {}).get("note") or w["ploeg"],
-            "pod": pod_regels(rijen),
+            "wLand": w["land"],
+            "wPloeg": w["ploeg"],
+            "note": (bestaand or {}).get("note") or "",
+            "pod": pod_structuur(rijen),
             "bron": "en.wikipedia.org",
         }
         if bestaand != nieuw:
@@ -293,14 +342,29 @@ def main():
             break  # de 12-21-pagina heeft altijd een nieuwere stand dan 1-11
 
     if beste_tabel:
+        onthoud(beste_tabel)
         oud = stand.get("klassement") or {}
-        top10 = [{"pos": r["pos"], "naam": r["naam"], "ploeg": r["ploeg"],
+
+        def trui_entry(vol_naam):
+            info = renner_info.get(vol_naam)
+            if info is None:
+                # hergebruik wat de vorige run al wist, anders de rennerpagina raadplegen
+                for oud_trui in (oud.get("truien") or {}).values():
+                    if isinstance(oud_trui, dict) and oud_trui.get("naam") == vol_naam and oud_trui.get("land"):
+                        info = oud_trui
+                        break
+            if info is None:
+                info = renner_pagina_info(vol_naam)
+            return {"naam": vol_naam, "kort": korte_naam(vol_naam),
+                    "land": info.get("land"), "ploeg": info.get("ploeg") or ""}
+
+        top10 = [{"pos": r["pos"], "naam": r["naam"], "land": r["land"], "ploeg": r["ploeg"],
                   "tijd": "—" if r["pos"] == 1 else (r["tijd"] or "—")} for r in beste_tabel[:10]]
-        truien = {"geel": korte_naam(beste_tabel[0]["naam"])}
+        truien = {"geel": trui_entry(beste_tabel[0]["naam"])}
         hoofd_html = haal(PAGINAS["hoofd"])
         extra = truien_uit_hoofdpagina(hoofd_html, beste_n) if hoofd_html else None
         if extra:
-            truien.update(extra)
+            truien.update({trui: trui_entry(naam) for trui, naam in extra.items()})
         else:
             for trui in ("groen", "bollen", "wit"):
                 if oud.get("truien", {}).get(trui):
@@ -319,7 +383,7 @@ def main():
            {k: v for k, v in nieuw_klassement.items() if k != "voetnoot"}:
             stand["klassement"] = nieuw_klassement
             gewijzigd = True
-            print(f"Klassement bijgewerkt na etappe {beste_n}; geel: {truien['geel']}")
+            print(f"Klassement bijgewerkt na etappe {beste_n}; geel: {truien['geel']['kort']}")
         else:
             print(f"Klassement ongewijzigd (na etappe {beste_n})")
     else:

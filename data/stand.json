@@ -1,153 +1,502 @@
 {
- "bijgewerkt": "2026-07-08T18:01:38Z",
+ "bijgewerkt": "2026-07-08T18:10:36Z",
  "uitslagen": {
   "1": {
-   "lock": true,
-   "w": "Visma | Lease a Bike",
+   "w": "Visma–Lease a Bike",
+   "wLand": null,
+   "wPloeg": "",
    "note": "Ploegentijdrit · Vingegaard snelste individueel en pakt het eerste geel",
    "pod": [
-    "1. Visma | Lease a Bike · 21:47",
-    "2. Netcompany INEOS + 0:07",
-    "3. UAE Team Emirates-XRG + 0:11",
-    "4. Lidl-Trek + 0:15",
-    "5. Red Bull-BORA-hansgrohe + 0:18",
-    "6. Decathlon CMA CGM + 0:38",
-    "7. Alpecin-Premier Tech z.t.",
-    "8. Groupama-FDJ United + 0:40",
-    "9. Bahrain Victorious + 0:46",
-    "10. Team Jayco AlUla + 0:50"
-   ]
+    {
+     "pos": 1,
+     "naam": "Visma–Lease a Bike",
+     "land": null,
+     "ploeg": "",
+     "tijd": "21:47"
+    },
+    {
+     "pos": 2,
+     "naam": "Netcompany INEOS",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:08"
+    },
+    {
+     "pos": 3,
+     "naam": "UAE Team Emirates XRG",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:12"
+    },
+    {
+     "pos": 4,
+     "naam": "Lidl–Trek",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:16"
+    },
+    {
+     "pos": 5,
+     "naam": "Red Bull–Bora–Hansgrohe",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:19"
+    },
+    {
+     "pos": 6,
+     "naam": "Decathlon CMA CGM",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:39"
+    },
+    {
+     "pos": 7,
+     "naam": "Alpecin–Premier Tech",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:39"
+    },
+    {
+     "pos": 8,
+     "naam": "Groupama–FDJ United",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:41"
+    },
+    {
+     "pos": 9,
+     "naam": "Team Bahrain Victorious",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:47"
+    },
+    {
+     "pos": 10,
+     "naam": "Team Jayco–AlUla",
+     "land": null,
+     "ploeg": "",
+     "tijd": "+ 0:51"
+    }
+   ],
+   "bron": "en.wikipedia.org"
   },
   "2": {
-   "lock": true,
    "w": "Isaac del Toro",
+   "wLand": "MEX",
+   "wPloeg": "UAE Team Emirates XRG",
    "note": "UAE-één-tweetje op Montjuïc: Pogačar gunt zijn ploegmaat de zege",
    "pod": [
-    "1. Isaac del Toro (UAE Team Emirates-XRG) · 3:40:01",
-    "2. Tadej Pogačar (UAE Team Emirates-XRG) z.t.",
-    "3. Remco Evenepoel (Red Bull-BORA-hansgrohe) z.t.",
-    "4. Jonas Vingegaard (Visma | Lease a Bike) z.t.",
-    "5. Mattias Skjelmose (Lidl-Trek) + 0:03",
-    "6. Tobias Halland Johannessen (Uno-X Mobility) z.t.",
-    "7. Romain Grégoire (Groupama-FDJ United) z.t.",
-    "8. Lenny Martinez (Bahrain Victorious) z.t.",
-    "9. Paul Seixas (Decathlon CMA CGM) z.t.",
-    "10. Tom Pidcock (Pinarello-Q36.5) z.t."
-   ]
+    {
+     "pos": 1,
+     "naam": "Isaac del Toro",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "3:40:01"
+    },
+    {
+     "pos": 2,
+     "naam": "Tadej Pogačar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 3,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 4,
+     "naam": "Jonas Vingegaard",
+     "land": "DEN",
+     "ploeg": "Visma–Lease a Bike",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 5,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl–Trek",
+     "tijd": "+ 0:03"
+    },
+    {
+     "pos": 6,
+     "naam": "Tobias Halland Johannessen",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "+ 0:03"
+    },
+    {
+     "pos": 7,
+     "naam": "Romain Grégoire",
+     "land": "FRA",
+     "ploeg": "Groupama–FDJ United",
+     "tijd": "+ 0:03"
+    },
+    {
+     "pos": 8,
+     "naam": "Lenny Martinez",
+     "land": "FRA",
+     "ploeg": "Team Bahrain Victorious",
+     "tijd": "+ 0:03"
+    },
+    {
+     "pos": 9,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM",
+     "tijd": "+ 0:03"
+    },
+    {
+     "pos": 10,
+     "naam": "Tom Pidcock",
+     "land": "GBR",
+     "ploeg": "Pinarello–Q36.5 Pro Cycling Team",
+     "tijd": "+ 0:03"
+    }
+   ],
+   "bron": "en.wikipedia.org"
   },
   "3": {
-   "lock": true,
    "w": "Tadej Pogačar",
+   "wLand": "SLO",
+   "wPloeg": "UAE Team Emirates XRG",
    "note": "UAE · dubbelslag: afgetekende zege én geel in Les Angles. Volledige top 10 is voor deze (door bosbranden aangepaste) etappe niet gepubliceerd.",
    "pod": [
-    "1. Tadej Pogačar (UAE Team Emirates-XRG)"
-   ]
+    {
+     "pos": 1,
+     "naam": "Tadej Pogačar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "4:45:11"
+    },
+    {
+     "pos": 2,
+     "naam": "Jonas Vingegaard",
+     "land": "DEN",
+     "ploeg": "Visma–Lease a Bike",
+     "tijd": "+ 0:02"
+    },
+    {
+     "pos": 3,
+     "naam": "Richard Carapaz",
+     "land": "ECU",
+     "ploeg": "EF Education–EasyPost",
+     "tijd": "+ 0:02"
+    },
+    {
+     "pos": 4,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM",
+     "tijd": "+ 0:02"
+    },
+    {
+     "pos": 5,
+     "naam": "Tobias Halland Johannessen",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "+ 0:04"
+    },
+    {
+     "pos": 6,
+     "naam": "Lennert van Eetvelt",
+     "land": "BEL",
+     "ploeg": "Lotto–Intermarché",
+     "tijd": "+ 0:04"
+    },
+    {
+     "pos": 7,
+     "naam": "Florian Lipowitz",
+     "land": "GER",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "+ 0:04"
+    },
+    {
+     "pos": 8,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "+ 0:04"
+    },
+    {
+     "pos": 9,
+     "naam": "Isaac del Toro",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 0:04"
+    },
+    {
+     "pos": 10,
+     "naam": "Juan Ayuso",
+     "land": "ESP",
+     "ploeg": "Lidl–Trek",
+     "tijd": "+ 0:04"
+    }
+   ],
+   "bron": "en.wikipedia.org"
   },
   "4": {
-   "lock": true,
    "w": "Mads Pedersen",
+   "wLand": "DEN",
+   "wPloeg": "Lidl–Trek",
    "note": "Lidl-Trek overmeestert de vlucht · Pedersen pakt ook groen, Træen verovert geel",
    "pod": [
-    "1. Mads Pedersen (Lidl-Trek) · 4:10:45",
-    "2. Quinn Simmons (Lidl-Trek) z.t.",
-    "3. Raúl García Pierna z.t.",
-    "4. Marco Frigo z.t.",
-    "5. Ramses Debruyne (Alpecin-Premier Tech) z.t.",
-    "6. Kévin Vauquelin (Netcompany INEOS) z.t.",
-    "7. Sean Quinn (EF Education-EasyPost) z.t.",
-    "8. Torstein Træen (Uno-X Mobility) z.t.",
-    "9. Pablo Castrillo (Movistar) z.t.",
-    "10. Mathias Vacek (Lidl-Trek) z.t."
-   ]
+    {
+     "pos": 1,
+     "naam": "Mads Pedersen",
+     "land": "DEN",
+     "ploeg": "Lidl–Trek",
+     "tijd": "4:10:45"
+    },
+    {
+     "pos": 2,
+     "naam": "Quinn Simmons",
+     "land": "USA",
+     "ploeg": "Lidl–Trek",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 3,
+     "naam": "Raúl García Pierna",
+     "land": "ESP",
+     "ploeg": "Movistar Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 4,
+     "naam": "Marco Frigo",
+     "land": "ITA",
+     "ploeg": "NSN Cycling Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 5,
+     "naam": "Ramses Debruyne",
+     "land": "BEL",
+     "ploeg": "Alpecin–Premier Tech",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 6,
+     "naam": "Kévin Vauquelin",
+     "land": "FRA",
+     "ploeg": "Netcompany INEOS",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 7,
+     "naam": "Sean Quinn",
+     "land": "USA",
+     "ploeg": "EF Education–EasyPost",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 8,
+     "naam": "Torstein Træen",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 9,
+     "naam": "Pablo Castrillo",
+     "land": "ESP",
+     "ploeg": "Movistar Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 10,
+     "naam": "Mathias Vacek",
+     "land": "CZE",
+     "ploeg": "Lidl–Trek",
+     "tijd": "z.t."
+    }
+   ],
+   "bron": "en.wikipedia.org"
   },
   "5": {
-   "lock": true,
    "w": "Olav Kooij",
+   "wLand": "NED",
+   "wPloeg": "Decathlon CMA CGM",
    "note": "Nederlandse zege in de eerste massasprint · alle truien blijven; klassementsgroep op 14 tellen na een valpartij",
    "pod": [
-    "1. Olav Kooij (Decathlon CMA CGM) · 3:29:07",
-    "2. Max Kanter (XDS Astana) z.t.",
-    "3. Tim Merlier (Soudal Quick-Step) z.t.",
-    "4. Huub Artz (Lotto-Intermarché) z.t.",
-    "5. Jasper Philipsen (Alpecin-Premier Tech) z.t.",
-    "6. Biniam Girmay (NSN Cycling Team) z.t.",
-    "7. Mads Pedersen (Lidl-Trek) z.t.",
-    "8. Milan Fretin (Cofidis) z.t.",
-    "9. Anthony Turgis (TotalEnergies) z.t.",
-    "10. Søren Wærenskjold (Uno-X Mobility) z.t."
-   ]
+    {
+     "pos": 1,
+     "naam": "Olav Kooij",
+     "land": "NED",
+     "ploeg": "Decathlon CMA CGM",
+     "tijd": "3:29:07"
+    },
+    {
+     "pos": 2,
+     "naam": "Max Kanter",
+     "land": "GER",
+     "ploeg": "XDS Astana Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 3,
+     "naam": "Tim Merlier",
+     "land": "BEL",
+     "ploeg": "Soudal–Quick-Step",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 4,
+     "naam": "Huub Artz",
+     "land": "NED",
+     "ploeg": "Lotto–Intermarché",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 5,
+     "naam": "Jasper Philipsen",
+     "land": "BEL",
+     "ploeg": "Alpecin–Premier Tech",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 6,
+     "naam": "Biniam Girmay",
+     "land": "ERI",
+     "ploeg": "NSN Cycling Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 7,
+     "naam": "Mads Pedersen",
+     "land": "DEN",
+     "ploeg": "Lidl–Trek",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 8,
+     "naam": "Milan Fretin",
+     "land": "BEL",
+     "ploeg": "Cofidis",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 9,
+     "naam": "Anthony Turgis",
+     "land": "FRA",
+     "ploeg": "Team TotalEnergies",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 10,
+     "naam": "Søren Wærenskjold",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "z.t."
+    }
+   ],
+   "bron": "en.wikipedia.org"
   }
  },
  "klassement": {
   "naEtappe": 5,
   "truien": {
-   "geel": "T. Træen",
-   "groen": "M. Pedersen",
-   "bollen": "A. Baudin",
-   "wit": "M. Vacek"
+   "geel": {
+    "naam": "Torstein Træen",
+    "kort": "T. Træen",
+    "land": "NOR",
+    "ploeg": "Uno-X Mobility"
+   },
+   "groen": {
+    "naam": "Mads Pedersen",
+    "kort": "M. Pedersen",
+    "land": "DEN",
+    "ploeg": "Lidl–Trek"
+   },
+   "bollen": {
+    "naam": "Alex Baudin",
+    "kort": "A. Baudin",
+    "land": null,
+    "ploeg": ""
+   },
+   "wit": {
+    "naam": "Mathias Vacek",
+    "kort": "M. Vacek",
+    "land": "CZE",
+    "ploeg": "Lidl–Trek"
+   }
   },
   "top10": [
    {
     "pos": 1,
     "naam": "Torstein Træen",
+    "land": "NOR",
     "ploeg": "Uno-X Mobility",
     "tijd": "—"
    },
    {
     "pos": 2,
     "naam": "Sean Quinn",
+    "land": "USA",
     "ploeg": "EF Education–EasyPost",
     "tijd": "+ 0:28"
    },
    {
     "pos": 3,
     "naam": "Mathias Vacek",
+    "land": "CZE",
     "ploeg": "Lidl–Trek",
     "tijd": "+ 3:50"
    },
    {
     "pos": 4,
     "naam": "Tadej Pogačar",
+    "land": "SLO",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "+ 7:53"
    },
    {
     "pos": 5,
     "naam": "Jonas Vingegaard",
+    "land": "DEN",
     "ploeg": "Visma–Lease a Bike",
     "tijd": "+ 7:53"
    },
    {
     "pos": 6,
     "naam": "Ramses Debruyne",
+    "land": "BEL",
     "ploeg": "Alpecin–Premier Tech",
     "tijd": "+ 8:06"
    },
    {
     "pos": 7,
     "naam": "Remco Evenepoel",
+    "land": "BEL",
     "ploeg": "Red Bull–Bora–Hansgrohe",
     "tijd": "+ 8:16"
    },
    {
     "pos": 8,
     "naam": "Isaac del Toro",
+    "land": "MEX",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "+ 8:17"
    },
    {
     "pos": 9,
     "naam": "Juan Ayuso",
+    "land": "ESP",
     "ploeg": "Lidl–Trek",
     "tijd": "+ 8:20"
    },
    {
     "pos": 10,
     "naam": "Paul Seixas",
+    "land": "FRA",
     "ploeg": "Decathlon CMA CGM",
     "tijd": "+ 8:41"
    }
   ],
-  "voetnoot": "Stand na etappe 5, automatisch bijgewerkt 8 juli 20:01 uur (bron: Wikipedia)."
+  "voetnoot": "Stand na etappe 5, automatisch bijgewerkt 8 juli 20:10 uur (bron: Wikipedia)."
  }
 }

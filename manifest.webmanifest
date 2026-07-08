@@ -1,0 +1,13 @@
+{
+  "name": "Tour de France 2026 · Routeverkenner",
+  "short_name": "TdF 2026",
+  "description": "Volg de Tour de France 2026: parcours, uitslagen, klassement en truien, automatisch bijgewerkt.",
+  "lang": "nl",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fafaf7",
+  "theme_color": "#ffd100",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
