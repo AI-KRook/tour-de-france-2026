@@ -4,28 +4,15 @@ jobs:
   diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: Test bereikbaarheid
+      - name: Wikipedia-pagina's ophalen
         run: |
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-          echo "== PCS zonder headers =="
-          curl -s -o /dev/null -w "%{http_code}\n" --max-time 20 "https://www.procyclingstats.com/race/tour-de-france/2026/gc" || true
-          echo "== PCS met UA =="
-          curl -s -o /dev/null -w "%{http_code}\n" --max-time 20 -A "$UA" "https://www.procyclingstats.com/race/tour-de-france/2026/gc" || true
-          echo "== PCS met volledige browser-headers =="
-          curl -s -o /tmp/pcs.html -w "%{http_code}\n" --max-time 20 --compressed -A "$UA" \
-            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" \
-            -H "Accept-Language: en-US,en;q=0.9,nl;q=0.8" \
-            -H "Referer: https://www.procyclingstats.com/" \
-            -H "Upgrade-Insecure-Requests: 1" \
-            -H "Sec-Fetch-Dest: document" -H "Sec-Fetch-Mode: navigate" -H "Sec-Fetch-Site: same-origin" \
-            "https://www.procyclingstats.com/race/tour-de-france/2026/gc" || true
-          head -c 300 /tmp/pcs.html || true; echo
-          echo "== Wikipedia hoofdpagina =="
-          curl -s -o /tmp/wiki.html -w "%{http_code}\n" --max-time 20 -A "TdF-Routeverkenner/1.0 (github actions)" "https://en.wikipedia.org/wiki/2026_Tour_de_France" || true
-          grep -c "wikitable" /tmp/wiki.html || true
-          echo "== Wikipedia etappepagina =="
-          curl -s -o /tmp/wiki2.html -w "%{http_code}\n" --max-time 20 -A "TdF-Routeverkenner/1.0 (github actions)" "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_1_to_Stage_11" || true
-          grep -o "General classification after stage [0-9]*" /tmp/wiki2.html | tail -2 || true
-          grep -o "Stage [0-9]* result" /tmp/wiki2.html | tail -3 || true
-          echo "== letour.fr =="
-          curl -s -o /dev/null -w "%{http_code}\n" --max-time 20 -A "$UA" "https://www.letour.fr/nl/klassementen" || true
+          mkdir -p /tmp/wiki
+          UA="TdF-Routeverkenner/1.0 (contact via github)"
+          curl -s --max-time 30 -A "$UA" -o /tmp/wiki/hoofd.html "https://en.wikipedia.org/wiki/2026_Tour_de_France"
+          curl -s --max-time 30 -A "$UA" -o /tmp/wiki/etappes-1-11.html "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_1_to_Stage_11"
+          curl -s --max-time 30 -A "$UA" -o /tmp/wiki/etappes-12-21.html -w "stage12-21: %{http_code}\n" "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_12_to_Stage_21" || true
+          ls -la /tmp/wiki
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wiki-html
+          path: /tmp/wiki/
