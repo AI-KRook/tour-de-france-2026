@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour de France 2026 · Routeverkenner</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papier:#fafaf7;
+    --kaart:#ffffff;
+    --inkt:#16160f;
+    --grijs:#6e6e64;
+    --zacht:#a3a396;
+    --lijn:#e9e7de;
+    --geel:#ffd100;
+    --geel-donker:#f0c400;
+    --vlak:#2f9e55;
+    --heuvels:#e08a00;
+    --berg:#d9331f;
+    --tijdrit:#2b6fd4;
+    --schaduw:0 1px 2px rgba(22,22,15,.05),0 4px 16px rgba(22,22,15,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--papier);color:var(--inkt);
+    font-family:"Inter",-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  .cond{font-family:"Barlow Condensed","Arial Narrow",-apple-system,sans-serif}
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 14px 40px}
+
+  /* ---------- topbalk ---------- */
+  header{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(250,250,247,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--lijn);
+  }
+  .topbar{
+    max-width:880px;margin:0 auto;padding:12px 14px 10px;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    position:relative;overflow:hidden;
+  }
+  .merk{display:flex;align-items:baseline;gap:9px}
+  .merk h1{
+    font-family:"Barlow Condensed","Arial Narrow",sans-serif;
+    font-size:1.35rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+  }
+  .merk h1 em{font-style:normal;background:var(--geel);padding:0 6px;border-radius:4px}
+  .merk .sub{font-size:.72rem;color:var(--grijs);font-weight:500}
+  .fietsje{position:absolute;bottom:0;right:-30px;font-size:15px;opacity:.85;animation:rijden 18s linear infinite}
+  @keyframes rijden{from{right:-30px}to{right:104%}}
+  @media(prefers-reduced-motion:reduce){.fietsje{display:none}}
+
+  /* ---------- vandaag-held ---------- */
+  #nuStrip{
+    margin:14px 0 0;background:var(--geel);border-radius:var(--radius);
+    padding:16px 18px 18px;box-shadow:var(--schaduw);position:relative;overflow:hidden;
+  }
+  #nuStrip::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;
+    border-radius:50%;background:rgba(255,255,255,.35);
+  }
+  #nuStrip .label{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:"Barlow Condensed",sans-serif;font-size:.78rem;font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--inkt);
+  }
+  #nuStrip .label .puls{
+    width:8px;height:8px;border-radius:50%;background:var(--berg);
+    animation:puls 1.6s ease-in-out infinite;
+  }
+  @keyframes puls{50%{opacity:.25}}
+  @media(prefers-reduced-motion:reduce){#nuStrip .label .puls{animation:none}}
+  #nuTitel{
+    font-family:"Barlow Condensed",sans-serif;
+    font-size:1.5rem;font-weight:800;line-height:1.15;margin-top:6px;position:relative;z-index:1;
+  }
+  #nuInfo{font-size:.82rem;color:rgba(22,22,15,.75);margin-top:4px;position:relative;z-index:1;max-width:60ch}
+  .voortgang{margin-top:14px;height:10px;background:rgba(22,22,15,.14);border-radius:6px;position:relative;z-index:1}
+  .voortgang .balk{height:100%;background:var(--inkt);border-radius:6px;width:0%;transition:width .6s ease}
+  .voortgang .stip{
+    position:absolute;top:50%;transform:translate(-50%,-50%);
+    width:20px;height:20px;border-radius:50%;background:var(--inkt);
+    display:flex;align-items:center;justify-content:center;font-size:11px;
+  }
+  #nuKm{font-size:.8rem;font-weight:700;margin-top:8px;position:relative;z-index:1}
+
+  /* ---------- secties ---------- */
+  .sectiekop{
+    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    margin:26px 2px 10px;
+  }
+  .sectiekop h2{
+    font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;
+  }
+  .sectiekop .hint{font-size:.72rem;color:var(--zacht)}
+
+  /* ---------- kaart ---------- */
+  #mapKaart{
+    background:var(--kaart);border-radius:var(--radius);box-shadow:var(--schaduw);
+    overflow:hidden;border:1px solid var(--lijn);
+  }
+  #map{height:46vh;min-height:300px}
+  @media(min-width:700px){#map{height:54vh}}
+  .leaflet-container{font:inherit;background:#eef0ea}
+  .legenda{
+    background:rgba(255,255,255,.95);border:1px solid var(--lijn);border-radius:10px;
+    padding:8px 11px;font-size:.7rem;line-height:1.7;color:var(--inkt);box-shadow:var(--schaduw);
+  }
+  .legenda b{font-family:"Barlow Condensed",sans-serif;font-size:.66rem;font-weight:800;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--grijs)}
+  .legenda .kleur{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-.5px}
+
+  /* ---------- etappe-selector ---------- */
+  #chips{
+    display:flex;gap:9px;overflow-x:auto;padding:4px 2px 10px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  #chips::-webkit-scrollbar{display:none}
+  .chip{
+    flex:0 0 auto;background:var(--kaart);border:1.5px solid var(--lijn);
+    border-radius:14px;padding:10px 13px 9px;cursor:pointer;text-align:left;
+    color:var(--inkt);min-width:104px;position:relative;
+    box-shadow:var(--schaduw);transition:transform .12s,border-color .15s;
+  }
+  .chip:active{transform:scale(.95)}
+  .chip .nr{
+    font-family:"Barlow Condensed",sans-serif;font-size:1.45rem;font-weight:800;line-height:1;
+  }
+  .chip .nr small{font-size:.66rem;font-weight:600;color:var(--zacht);letter-spacing:.08em;margin-left:4px}
+  .chip .tt{font-size:.76rem;font-weight:600;margin-top:4px;white-space:nowrap;color:var(--grijs)}
+  .chip .tp{display:inline-block;margin-top:6px;width:9px;height:9px;border-radius:50%}
+  .chip.actief{border-color:var(--inkt);background:var(--inkt);color:#fff}
+  .chip.actief .tt{color:rgba(255,255,255,.75)}
+  .chip.actief .nr small{color:rgba(255,255,255,.55)}
+  .chip.vandaag::before{
+    content:"vandaag";position:absolute;top:-7px;left:10px;background:var(--geel);
+    color:var(--inkt);font-size:.56rem;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;padding:1px 7px;border-radius:99px;
+  }
+  .chip.rust{opacity:.55;cursor:default;box-shadow:none}
+  .chip .exact{position:absolute;top:8px;right:9px;font-size:.56rem;font-weight:800;
+    color:var(--inkt);background:var(--geel);border-radius:99px;padding:1px 6px;display:none;letter-spacing:.06em}
+  .chip.heeftGpx .exact{display:block}
+  .chip.actief .exact{background:var(--geel)}
+
+  /* ---------- detailkaart ---------- */
+  #detail{
+    background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
+    box-shadow:var(--schaduw);padding:18px 18px 20px;margin-top:4px;
+  }
+  #detail .kop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  #dTitel{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;font-weight:800;line-height:1.15}
+  #dDatum{color:var(--grijs);font-size:.8rem;margin-top:3px}
+  #dDatum .exactLabel{color:var(--inkt);background:var(--geel);font-weight:700;
+    padding:1px 7px;border-radius:99px;font-size:.7rem}
+  .badge{
+    display:inline-block;padding:5px 12px;border-radius:99px;
+    font-family:"Barlow Condensed",sans-serif;font-size:.8rem;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;color:#fff;
+  }
+  .badge.polka{
+    background:#fff;color:var(--inkt);border:1.5px solid var(--berg);
+    background-image:radial-gradient(var(--berg) 24%,transparent 30%);background-size:11px 11px;
+  }
+  .stats{display:flex;gap:0;margin:16px 0 4px;border:1px solid var(--lijn);border-radius:12px;overflow:hidden}
+  .stat{flex:1;text-align:center;padding:10px 4px;background:var(--papier)}
+  .stat+.stat{border-left:1px solid var(--lijn)}
+  .stat .w{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;font-weight:800;line-height:1.1}
+  .stat .l{font-size:.62rem;color:var(--zacht);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+  .cols{margin:14px 2px 4px;font-size:.84rem;color:var(--grijs);line-height:1.6}
+  .cols b{color:var(--inkt)}
+  #chartWrap{margin-top:14px;background:var(--papier);border:1px solid var(--lijn);border-radius:12px;padding:12px 10px 6px}
+  #chartWrap .titel{font-size:.64rem;color:var(--zacht);text-transform:uppercase;
+    letter-spacing:.14em;font-weight:700;margin:0 6px 6px}
+  #profielChart{max-height:185px}
+  .knoppen{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
+  .knop{
+    display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border-radius:12px;
+    text-decoration:none;font-weight:700;font-size:.84rem;color:var(--inkt);
+    background:var(--papier);border:1.5px solid var(--lijn);transition:transform .12s;
+  }
+  .knop:active{transform:scale(.96)}
+  .knop.geel{background:var(--geel);border-color:var(--geel-donker)}
+  #dRide{cursor:pointer;min-width:158px;justify-content:center}
+  .fiets{font-size:24px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+
+  /* ---------- klassement ---------- */
+  #klassement{
+    background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
+    box-shadow:var(--schaduw);padding:16px 18px;
+  }
+  #klassement .kopregel{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer}
+  #klassement .titelk{font-family:"Barlow Condensed",sans-serif;font-size:1rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase}
+  #klBtn{font-size:.74rem;font-weight:600;color:var(--grijs);border:1.5px solid var(--lijn);
+    border-radius:99px;padding:5px 12px;background:var(--papier);cursor:pointer}
+  .truien{display:flex;gap:9px;overflow-x:auto;margin-top:12px;scrollbar-width:none;padding-bottom:2px}
+  .truien::-webkit-scrollbar{display:none}
+  .trui{flex:0 0 auto;border-radius:12px;padding:9px 13px;color:var(--inkt);min-width:118px;border:1px solid rgba(22,22,15,.08)}
+  .trui .tl{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
+  .trui .tn{font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;font-weight:800;white-space:nowrap}
+  .trui.geel{background:var(--geel)}
+  .trui.groen{background:#bfe8cd}
+  .trui.bollen{background:#fff;background-image:radial-gradient(rgba(217,51,31,.85) 20%,transparent 26%);background-size:12px 12px}
+  .trui.witjong{background:#f2f2ee}
+  #gcTop{display:none;margin-top:12px}
+  #gcTop.open{display:block}
+  #gcTop table{width:100%;border-collapse:collapse;font-size:.84rem}
+  #gcTop td{padding:7px 8px;border-bottom:1px solid var(--lijn)}
+  #gcTop td.p{color:var(--zacht);width:28px;font-family:"Barlow Condensed",sans-serif;font-weight:700}
+  #gcTop td.t{text-align:right;color:var(--grijs);white-space:nowrap;font-variant-numeric:tabular-nums}
+  #gcTop tr:first-child td{background:var(--geel);font-weight:700}
+  #gcTop tr:first-child td:first-child{border-radius:8px 0 0 8px}
+  #gcTop tr:first-child td:last-child{border-radius:0 8px 8px 0}
+  .voetk{font-size:.7rem;color:var(--zacht);margin-top:12px;line-height:1.6}
+  .voetk a{color:var(--grijs)}
+
+  /* ---------- import ---------- */
+  #importBar{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    background:var(--kaart);border:1.5px dashed var(--lijn);border-radius:var(--radius);
+    padding:13px 16px;margin-top:12px;
+  }
+  #importBtn{
+    background:var(--inkt);color:#fff;border:none;padding:10px 15px;border-radius:12px;
+    font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+  #importStatus{font-size:.74rem;color:var(--grijs);flex:1;min-width:200px;line-height:1.55}
+  #importStatus b{color:var(--inkt)}
+  #gpxInput{display:none}
+
+  footer{padding:26px 4px 0;color:var(--zacht);font-size:.68rem;line-height:1.7}
+  footer a{color:var(--grijs)}
+  #uitslagen{background:var(--kaart);border:1px solid var(--lijn);border-radius:var(--radius);
+    box-shadow:var(--schaduw);padding:6px 18px}
+  .uitslag{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--lijn)}
+  .uitslag:last-child{border-bottom:none}
+  .uitslag .en{font-family:"Barlow Condensed",sans-serif;font-size:1.3rem;font-weight:800;
+    width:26px;color:var(--zacht);text-align:right}
+  .uitslag .wn{font-weight:700;flex:1;font-size:.9rem}
+  .uitslag .wn small{display:block;font-weight:500;color:var(--grijs);font-size:.73rem;margin-top:1px}
+  .uitslag .dt{font-size:.72rem;color:var(--zacht);white-space:nowrap}
+  .uitslag{display:block;cursor:pointer}
+  .uitslag .kopr{display:flex;align-items:baseline;gap:14px}
+  .uitslag .pod{display:none;margin:8px 0 2px 40px;font-size:.78rem;color:var(--grijs);line-height:1.8}
+  .uitslag.open .pod{display:block}
+  #dUitslag{margin-top:12px;background:var(--papier);border:1px solid var(--lijn);
+    border-radius:12px;padding:12px 14px;font-size:.83rem;line-height:1.9;color:var(--inkt)}
+  #dUitslag .titelu{font-family:"Barlow Condensed",sans-serif;font-size:.72rem;font-weight:800;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--zacht);line-height:1.4;margin-bottom:4px}
+  #dUitslag .notu{font-size:.74rem;color:var(--grijs);margin-top:6px;line-height:1.5}
+  .nuActies{display:flex;gap:8px;margin-top:12px;position:relative;z-index:1}
+  .nuKnop{display:inline-flex;align-items:center;gap:5px;background:rgba(22,22,15,.88);color:#fff;
+    border:none;border-radius:99px;padding:7px 13px;font-size:.74rem;font-weight:700;
+    cursor:pointer;text-decoration:none;font-family:inherit}
+  .nuKnop .draai{display:inline-block}
+  .nuKnop.bezig .draai{animation:draai .6s linear}
+  @keyframes draai{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="merk">
+      <h1>Tour de France <em>2026</em></h1>
+      <span class="sub">Barcelona → Paris · 4–26 juli</span>
+    </div>
+    <span class="fietsje" aria-hidden="true">🚴</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div id="nuStrip">
+  <span class="label"><span class="puls"></span>Nu in koers</span>
+  <div id="nuTitel">—</div>
+  <div id="nuInfo">—</div>
+  <div class="voortgang" id="nuBar" style="display:none">
+    <div class="balk" id="nuBalk"></div>
+    <div class="stip" id="nuStip" style="left:0%">🚴</div>
+  </div>
+  <div id="nuKm"></div>
+  <div class="nuActies">
+    <button class="nuKnop" id="nuVervers" type="button"><span class="draai">⟳</span> Ververs schatting</button>
+    <a class="nuKnop" href="https://www.letour.fr/nl" target="_blank" rel="noopener">📡 Live volgen</a>
+  </div>
+</div>
+
+<div class="sectiekop"><h2>Parcours</h2><span class="hint">tik op een lijn voor de etappe</span></div>
+<div id="mapKaart"><div id="map"></div></div>
+
+<div class="sectiekop"><h2>Etappes</h2><span class="hint">21 ritten · 3.321 km · 54.450 hm</span></div>
+<div id="chips"></div>
+
+<div id="detail">
+  <div class="kop">
+    <div>
+      <div id="dTitel">—</div>
+      <div id="dDatum">—</div>
+    </div>
+    <span class="badge" id="dBadge">—</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="w" id="dKm">—</div><div class="l">Kilometer</div></div>
+    <div class="stat"><div class="w" id="dHm">—</div><div class="l">Hoogtemeters</div></div>
+    <div class="stat"><div class="w" id="dTop">—</div><div class="l">Hoogste punt</div></div>
+  </div>
+  <div class="cols" id="dCols"></div>
+  <div id="dUitslag" style="display:none"></div>
+  <div id="chartWrap">
+    <div class="titel" id="chartTitel">Hoogteprofiel</div>
+    <canvas id="profielChart"></canvas>
+  </div>
+  <div class="knoppen">
+    <a class="knop geel" id="dRide" href="javascript:void(0)">▶ Rij de etappe</a>
+    <a class="knop" id="dGpxDownload" href="#" target="_blank" rel="noopener">⬇ GPX</a>
+    <a class="knop" id="dGmaps" href="#" target="_blank" rel="noopener">Google Maps</a>
+  </div>
+</div>
+
+<div class="sectiekop"><h2>Klassement</h2><span class="hint" id="klHint">—</span></div>
+<div id="klassement"></div>
+
+<div class="sectiekop"><h2>Uitslagen</h2><span class="hint">verreden etappes</span></div>
+<div id="uitslagen"></div>
+
+<div id="importBar">
+  <button id="importBtn">📂 GPX importeren</button>
+  <input type="file" id="gpxInput" accept=".gpx" multiple>
+  <div id="importStatus">De app laadt exacte routes automatisch. Ontbreekt er een? Tik bij een etappe op <b>⬇ GPX</b>, bewaar het bestand en laad het hier in (meerdere tegelijk kan). De app onthoudt geïmporteerde routes.</div>
+</div>
+
+<footer>
+  Uitslagen, truien en klassement worden automatisch bijgewerkt (bron: procyclingstats.com), net als de exacte routes (letour.fr / ASO via cyclingstage.com). Zonder GPX toont de app een indicatieve lijn tussen start, bekende beklimmingen en finish. De positie-indicatie is een schatting op basis van starttijd en ±42 km/u, geen live GPS. Kaart: © OpenStreetMap-bijdragers.
+</footer>
+
+</div>
+
+<script>
+
+const KLEUR = {vlak:"#2f9e55", heuvels:"#e08a00", berg:"#d9331f", tijdrit:"#2b6fd4"};
+const TYPENAAM = {vlak:"Vlak", heuvels:"Heuvels", berg:"Bergen", tijdrit:"Tijdrit"};
+const TYPE_EMOJI = {vlak:"💨", heuvels:"🌄", berg:"🏔️", tijdrit:"⏱️"};
+
+// beklimmingen per etappe: [naam, km, hoogte]
+const KLIM = {
+ 1:[["Montjuïc",18.5,60]],
+ 2:[["Côte de Begues",94,399],["Montjuïc (3x)",162,90]],
+ 3:[["St. Feliu de Codines",17,622],["Col de Toses",128,1778],["Col du Calvaire",172,1836]],
+ 4:[["Col de Bedos",48,485],["Col du Paradis",65,622],["Col de Coudons",105,883],["Col de Montségur",147,1059]],
+ 5:[["Côte de Baleix",133,348]],
+ 6:[["Loucrup",51,528],["Mauvezin",77,518],["Col d'Aspin",118,1489],["Col du Tourmalet",148,2115]],
+ 8:[["Côte de Domme",103,216],["Buisson-de-Cadouin",140,200]],
+ 10:[["Puy Mary",128,1589],["Col de Pertus",146,1309],["Font de Cère",163,1294]],
+ 14:[["Grand Ballon",42,1336],["Ballon d'Alsace",118,1178],["Col du Haag",147,1230]],
+ 15:[["Le Salève",155,1150],["Plateau de Solaison",183.9,1508]],
+ 16:[["Côte de Larringes",13,620]],
+ 18:[["Col du Festre",110,1441],["Col de Manse",150,1268]],
+ 19:[["Col du Noyer",40,1664],["Col d'Ornon",100,1371],["Alpe d'Huez",127.9,1850]],
+ 20:[["Croix de Fer",42,2067],["Télégraphe",78,1566],["Galibier",105,2642],["Col de Sarenne",145,1999]],
+ 21:[["Montmartre (3x)",112,128]]
+};
+
+// uitslagen, klassement en truien komen uit data/stand.json (automatisch bijgewerkt via GitHub Actions)
+let UITSLAGEN = {};
+let KLASSEMENT = null;
+let STAND_BIJGEWERKT = null;
+
+const ETAPPES = [
+ {n:1,d:"2026-07-04",start:["Barcelona",41.390,2.169],fin:["Barcelona",41.365,2.155],km:19.6,type:"tijdrit",hm:200,st:"17:10",
+  cols:"Ploegentijdrit met klim naar Montjuïc in de finale; individuele tijden tellen.",
+  wp:[["Sagrada Família",41.403,2.174]],
+  prof:[[0,10],[6,15],[10,25],[16,20],[18.5,60],[19.6,95]]},
+ {n:2,d:"2026-07-05",start:["Tarragona",41.119,1.245],fin:["Barcelona (Montjuïc)",41.364,2.158],km:168.5,type:"heuvels",hm:2600,st:"13:15",
+  cols:"Côte de Begues (km 94, 399 m) en drie slotronden over Montjuïc.",
+  wp:[["Côte de Begues",41.333,1.917]],
+  prof:[[0,20],[40,180],[94,399],[120,120],[140,60],[155,90],[162,40],[166,90],[168.5,80]]},
+ {n:3,d:"2026-07-06",start:["Granollers",41.608,2.288],fin:["Les Angles",42.572,2.073],km:195.9,type:"berg",hm:4000,st:"12:45",
+  cols:"Côte de Saint Feliu de Codines (km 17), <b>Col de Toses</b> (km 128, 1.778 m, cat. 1), Col du Calvaire (km 172, 1.836 m), slotklim Les Angles (1.794 m).",
+  wp:[["Col de Toses",42.328,1.900],["Col du Calvaire",42.545,2.010]],
+  prof:[[0,150],[17,622],[45,350],[80,700],[128,1778],[150,1150],[172,1836],[186,1550],[196,1794]]},
+ {n:4,d:"2026-07-07",start:["Carcassonne",43.213,2.351],fin:["Foix",42.964,1.608],km:181.9,type:"heuvels",hm:2800,st:"13:15",
+  cols:"Col de Bedos, Col du Paradis, Col de Coudons (km 105, 883 m), Col de Montségur (km 147, 1.059 m); laatste 35 km grotendeels dalend.",
+  wp:[["Col de Coudons",42.842,2.146],["Col de Montségur",42.877,1.836]],
+  prof:[[0,110],[48,485],[65,622],[85,450],[105,883],[125,600],[147,1059],[165,600],[182,385]]},
+ {n:5,d:"2026-07-08",start:["Lannemezan",43.126,0.384],fin:["Pau",43.296,-0.370],km:158.3,type:"vlak",hm:1500,st:"14:15",
+  cols:"Côte de Baleix (km 133, 348 m); massasprint verwacht in Pau.",
+  wp:[["Côte de Baleix",43.383,-0.115]],
+  prof:[[0,585],[30,450],[60,350],[100,300],[133,348],[145,250],[158.3,200]]},
+ {n:6,d:"2026-07-09",start:["Pau",43.296,-0.370],fin:["Gavarnie-Gèdre",42.733,-0.010],km:186.2,type:"berg",hm:4100,st:"12:40",
+  cols:"<b>Col d'Aspin</b> (km 118, 1.489 m, cat. 1) en <b>Col du Tourmalet</b> (km 148, 2.115 m, HC); aankomst bergop bij Gavarnie-Gèdre (1.380 m).",
+  wp:[["Col d'Aspin",42.938,0.326],["Col du Tourmalet",42.908,0.145]],
+  prof:[[0,200],[51,528],[77,518],[95,700],[118,1489],[130,830],[148,2115],[165,900],[186.2,1380]]},
+ {n:7,d:"2026-07-10",start:["Hagetmau",43.656,-0.593],fin:["Bordeaux",44.841,-0.581],km:175.1,type:"vlak",hm:900,st:"13:25",
+  cols:"Sprintersetappe door de Landes; finish op de Place des Quinconces.",
+  wp:[],
+  prof:[[0,100],[50,60],[100,40],[137,84],[160,20],[175.1,10]]},
+ {n:8,d:"2026-07-11",start:["Périgueux",45.184,0.721],fin:["Bergerac",44.853,0.483],km:180.4,type:"vlak",hm:1400,st:"13:25",
+  cols:"Côte de Domme (km 103) en Côte du Buisson-de-Cadouin (km 140); opnieuw een sprintkans.",
+  wp:[],
+  prof:[[0,100],[50,180],[103,216],[125,140],[140,200],[165,80],[180.4,35]]},
+ {n:9,d:"2026-07-12",start:["Malemort",45.169,1.564],fin:["Ussel",45.548,2.309],km:185.5,type:"heuvels",hm:3300,st:"13:45",
+  cols:"Golvende dag richting het Centraal Massief, ruim 3.300 hoogtemeters; terrein voor de vlucht.",
+  wp:[],
+  prof:[[0,150],[30,420],[60,550],[90,450],[120,620],[150,540],[170,680],[185.5,630]]},
+ {n:10,d:"2026-07-14",start:["Aurillac",44.931,2.444],fin:["Le Lioran",45.084,2.752],km:166.6,type:"berg",hm:3800,st:"13:25",
+  cols:"Col de la Griffoul, <b>Puy Mary – Pas de Peyrol</b>, Col de Pertus (8,8%!), Col de Font de Cère; finish in Le Lioran op quatorze juillet.",
+  wp:[["Puy Mary – Pas de Peyrol",45.112,2.681]],
+  prof:[[0,620],[50,800],[95,1000],[112,1300],[128,1589],[138,940],[146,1309],[158,1100],[163,1294],[166.6,1240]]},
+ {n:11,d:"2026-07-15",start:["Vichy",46.128,3.425],fin:["Nevers",46.990,3.159],km:161.3,type:"vlak",hm:900,st:"14:05",
+  cols:"Overgangsetappe langs de Loire-vallei; sprint verwacht.",
+  wp:[],
+  prof:[[0,260],[50,280],[100,240],[140,210],[161,180]]},
+ {n:12,d:"2026-07-16",start:["Circuit de Nevers Magny-Cours",46.864,3.163],fin:["Chalon-sur-Saône",46.781,4.854],km:179.1,type:"vlak",hm:1100,st:"13:40",
+  cols:"Start op het oude F1-circuit; open vlaktes richting de Saône, klimmetje bij Montagny-lès-Buxy, sprint in Chalon.",
+  wp:[],
+  prof:[[0,230],[60,280],[115,320],[155,380],[168,250],[179.1,180]]},
+ {n:13,d:"2026-07-17",start:["Dole",47.093,5.490],fin:["Belfort",47.638,6.863],km:205.8,type:"heuvels",hm:2309,st:"13:20",
+  cols:"Langste etappe van deze Tour, golvend door de Jura richting Belfort; lastig te controleren.",
+  wp:[],
+  prof:[[0,220],[40,420],[80,560],[120,480],[160,600],[185,520],[205.8,360]]},
+ {n:14,d:"2026-07-18",start:["Mulhouse",47.750,7.340],fin:["Le Markstein",47.923,7.031],km:155.3,type:"berg",hm:3941,st:"12:30",
+  cols:"Vogezendag: <b>Grand Ballon</b>, Col du Page, <b>Ballon d'Alsace</b> en de nieuwe Col du Haag (±11 km à 7%); finish Le Markstein.",
+  wp:[["Grand Ballon",47.901,7.096],["Ballon d'Alsace",47.822,6.842]],
+  prof:[[0,240],[25,700],[42,1336],[60,700],[80,1100],[100,750],[118,1178],[132,650],[147,1230],[155.3,1184]]},
+ {n:15,d:"2026-07-19",start:["Champagnole",46.745,5.911],fin:["Plateau de Solaison",46.040,6.430],km:183.9,type:"berg",hm:4098,st:"12:20",
+  cols:"Alpenopener: <b>Le Salève</b> (4,7 km à 11,2%) en slotklim <b>Plateau de Solaison</b> (11,3 km à 9%), de steilste aankomst van deze Tour.",
+  wp:[["Le Salève",46.135,6.180]],
+  prof:[[0,545],[40,700],[80,850],[120,600],[148,480],[155,1150],[163,600],[172.6,650],[183.9,1508]]},
+ {n:16,d:"2026-07-21",start:["Évian-les-Bains",46.401,6.588],fin:["Thonon-les-Bains",46.371,6.479],km:26.1,type:"tijdrit",hm:470,st:"13:05",
+  cols:"Individuele tijdrit langs het Meer van Genève; Côte de Larringes (9,7 km à 4,3%) in de eerste helft.",
+  wp:[["Côte de Larringes",46.376,6.585]],
+  prof:[[0,375],[10,560],[13,620],[19,400],[26.1,375]]},
+ {n:17,d:"2026-07-22",start:["Chambéry",45.564,5.918],fin:["Voiron",45.364,5.591],km:174.7,type:"vlak",hm:2362,st:"12:35",
+  cols:"Laatste kans voor de sprinters aan de Alpenrand, al ligt een vluchtsucces op de loer.",
+  wp:[],
+  prof:[[0,270],[40,420],[80,540],[120,400],[150,350],[174.7,290]]},
+ {n:18,d:"2026-07-23",start:["Voiron",45.364,5.591],fin:["Orcières-Merlette",44.694,6.325],km:185.2,type:"berg",hm:3944,st:"11:50",
+  cols:"Via Col de Manse en Col du Festre naar de skiplaats <b>Orcières-Merlette</b>; slotklim 7,1 km à 6,7%.",
+  wp:[["Col du Festre",44.672,5.851],["Col de Manse",44.617,6.135]],
+  prof:[[0,290],[40,600],[80,850],[110,1441],[130,1000],[150,1268],[168,950],[178,1100],[185.2,1838]]},
+ {n:19,d:"2026-07-24",start:["Gap",44.559,6.079],fin:["Alpe d'Huez",45.092,6.070],km:127.9,type:"berg",hm:3572,st:"13:15",
+  cols:"Compacte bergrit via de <b>Col du Noyer</b> (1.664 m) en <b>Col d'Ornon</b>; eerste finish over de legendarische 21 haarspeldbochten van <b>Alpe d'Huez</b>.",
+  wp:[["Col du Noyer",44.696,5.960],["Col d'Ornon",44.971,5.976]],
+  prof:[[0,740],[25,1150],[40,1664],[60,900],[80,1050],[100,1371],[114,720],[127.9,1850]]},
+ {n:20,d:"2026-07-25",start:["Le Bourg-d'Oisans",45.055,6.030],fin:["Alpe d'Huez",45.092,6.070],km:170.9,type:"berg",hm:4600,st:"10:30",
+  cols:"Koninginnenrit: <b>Col de la Croix de Fer</b> (2.067 m), <b>Col du Télégraphe</b>, <b>Col du Galibier</b> (2.642 m, dak van de Tour) en <b>Col de Sarenne</b>, dan via de oostkant omhoog naar <b>Alpe d'Huez</b>.",
+  wp:[["Col de la Croix de Fer",45.227,6.184],["Col du Télégraphe",45.202,6.445],["Col du Galibier",45.064,6.408],["Col de Sarenne",45.089,6.135]],
+  prof:[[0,720],[25,1400],[42,2067],[65,1200],[78,1566],[90,1400],[105,2642],[125,1400],[145,1999],[158,1100],[170.9,1850]]},
+ {n:21,d:"2026-07-26",start:["Thoiry",48.869,1.797],fin:["Paris (Champs-Élysées)",48.870,2.307],km:133,type:"vlak",hm:1000,st:"16:00",
+  cols:"Slotrit naar Parijs met drie beklimmingen van <b>Montmartre</b> voor de finish op de Champs-Élysées.",
+  wp:[["Montmartre",48.887,2.341]],
+  prof:[[0,110],[40,90],[80,60],[105,50],[112,128],[119,45],[125,128],[130,50],[133,40]]}
+];
+
+const RUSTDAGEN = {"2026-07-13":"Rustdag 1 · regio Limousin","2026-07-20":"Rustdag 2 · regio Meer van Genève"};
+const GEM_SNELHEID = 42, TT_SNELHEID = 50;
+const EXACT = {};
+
+// ---------- kaart ----------
+const map = L.map("map",{scrollWheelZoom:true}).setView([45.5,3.2],6);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+  maxZoom:17, attribution:'© OpenStreetMap'
+}).addTo(map);
+
+const legenda=L.control({position:"bottomleft"});
+legenda.onAdd=()=>{
+  const d=L.DomUtil.create("div","legenda");
+  d.innerHTML="<b>Etappetype</b>"+Object.keys(KLEUR).map(t=>
+    `<div><span class="kleur" style="background:${KLEUR[t]}"></span>${TYPENAAM[t]} ${TYPE_EMOJI[t]}</div>`).join("")
+    +'<div>┅ = nog indicatief</div><div>⚪ = col</div>';
+  return d;
+};
+legenda.addTo(map);
+
+const lagen = {};
+ETAPPES.forEach(e=>{
+  const pts = [[e.start[1],e.start[2]], ...e.wp.map(w=>[w[1],w[2]]), [e.fin[1],e.fin[2]]];
+  const lijn = L.polyline(pts,{color:KLEUR[e.type],weight:4,opacity:.9,dashArray:"6 6"}).addTo(map);
+  lijn.bindTooltip(`Etappe ${e.n}: ${e.start[0]} → ${e.fin[0]}`,{sticky:true});
+  lijn.on("click",()=>kies(e.n));
+  L.circleMarker([e.start[1],e.start[2]],{radius:4,color:"#fff",fillColor:KLEUR[e.type],fillOpacity:1,weight:1.5})
+    .addTo(map).bindTooltip(`Start et. ${e.n}: ${e.start[0]}`);
+  L.circleMarker([e.fin[1],e.fin[2]],{radius:5,color:"#16160f",fillColor:"#ffd100",fillOpacity:1,weight:1.5})
+    .addTo(map).bindTooltip(`🏁 Finish et. ${e.n}: ${e.fin[0]}`);
+  e.wp.forEach(w=>{
+    L.circleMarker([w[1],w[2]],{radius:5,color:"#d9331f",fillColor:"#fff",fillOpacity:1,weight:2})
+      .addTo(map).bindTooltip(`⛰️ ${w[0]}`);
+  });
+  lagen[e.n]={lijn,pts};
+});
+
+let nuMarker=null;
+
+// ---------- helpers ----------
+const DAGEN=["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
+const MND=["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
+function fmtDatum(iso){const d=new Date(iso+"T12:00:00");return `${DAGEN[d.getDay()]} ${d.getDate()} ${MND[d.getMonth()]} 2026`;}
+function haversine(a,b){
+  const R=6371,rad=Math.PI/180;
+  const dLat=(b[0]-a[0])*rad, dLng=(b[1]-a[1])*rad;
+  const h=Math.sin(dLat/2)**2+Math.cos(a[0]*rad)*Math.cos(b[0]*rad)*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+function interpSimple(pts,frac){
+  let tot=0,seg=[];
+  for(let i=1;i<pts.length;i++){const dl=haversine(pts[i-1],pts[i]);seg.push(dl);tot+=dl;}
+  let doel=frac*tot;
+  for(let i=0;i<seg.length;i++){
+    if(doel<=seg[i]){const t=seg[i]===0?0:doel/seg[i];
+      return [pts[i][0]+(pts[i+1][0]-pts[i][0])*t, pts[i][1]+(pts[i+1][1]-pts[i][1])*t];}
+    doel-=seg[i];
+  }
+  return pts[pts.length-1];
+}
+function posOpKm(n,km){
+  const ex=EXACT[n];
+  if(ex){
+    const c=ex.cum;
+    let i=c.findIndex(v=>v>=km);
+    if(i<0)return ex.pts[ex.pts.length-1];
+    if(i===0)return ex.pts[0];
+    const t=(km-c[i-1])/(c[i]-c[i-1]||1);
+    return [ex.pts[i-1][0]+(ex.pts[i][0]-ex.pts[i-1][0])*t, ex.pts[i-1][1]+(ex.pts[i][1]-ex.pts[i-1][1])*t];
+  }
+  const e=ETAPPES.find(x=>x.n===n);
+  return interpSimple(lagen[n].pts, km/e.km);
+}
+function pasExactToe(n,data){
+  EXACT[n]=data;
+  const e=ETAPPES.find(x=>x.n===n);
+  map.removeLayer(lagen[n].lijn);
+  const lijn=L.polyline(data.pts,{color:KLEUR[e.type],weight:4,opacity:.95}).addTo(map);
+  lijn.bindTooltip(`Etappe ${e.n}: ${e.start[0]} → ${e.fin[0]} (exact)`,{sticky:true});
+  lijn.on("click",()=>kies(e.n));
+  lagen[n]={lijn,pts:data.pts};
+  const chip=document.getElementById("chip-"+n);
+  if(chip)chip.classList.add("heeftGpx");
+}
+
+// ---------- GPX-import ----------
+function parseGpx(tekst){
+  const doc=new DOMParser().parseFromString(tekst,"application/xml");
+  if(doc.querySelector("parsererror"))throw new Error("geen geldig GPX-bestand");
+  let pts=[...doc.querySelectorAll("trkpt")];
+  if(!pts.length)pts=[...doc.querySelectorAll("rtept")];
+  if(pts.length<10)throw new Error("te weinig routepunten");
+  return pts.map(p=>[
+    parseFloat(p.getAttribute("lat")),
+    parseFloat(p.getAttribute("lon")),
+    p.querySelector("ele")?parseFloat(p.querySelector("ele").textContent):null
+  ]);
+}
+function matchEtappe(bestandsnaam,punten){
+  const m=bestandsnaam.match(/(?:stage|etappe|rit|st)[-_ ]?0?(\d{1,2})/i);
+  if(m){const n=parseInt(m[1]);if(n>=1&&n<=21)return n;}
+  let beste=null,bDist=Infinity;
+  const p0=[punten[0][0],punten[0][1]];
+  ETAPPES.forEach(e=>{
+    const d=haversine(p0,[e.start[1],e.start[2]]);
+    if(d<bDist){bDist=d;beste=e.n;}
+  });
+  return bDist<30?beste:null;
+}
+function verwerkGpx(punten){
+  const cumVol=[0];
+  for(let i=1;i<punten.length;i++)cumVol.push(cumVol[i-1]+haversine(punten[i-1],punten[i]));
+  const totKm=cumVol[punten.length-1];
+  const stap=Math.max(1,Math.floor(punten.length/900));
+  const pts=[],cum=[];
+  for(let i=0;i<punten.length;i+=stap){
+    pts.push([+punten[i][0].toFixed(5),+punten[i][1].toFixed(5)]);cum.push(+cumVol[i].toFixed(2));
+  }
+  if(cum[cum.length-1]!==+totKm.toFixed(2)){pts.push([+punten[punten.length-1][0].toFixed(5),+punten[punten.length-1][1].toFixed(5)]);cum.push(+totKm.toFixed(2));}
+  let prof=[],hm=0,top=0,laatsteEle=null,laatsteKm=-1;
+  const heeftEle=punten.some(p=>p[2]!==null&&!isNaN(p[2]));
+  if(heeftEle){
+    for(let i=0;i<punten.length;i++){
+      const ele=punten[i][2];if(ele===null||isNaN(ele))continue;
+      if(ele>top)top=ele;
+      if(laatsteEle!==null&&ele>laatsteEle+3){hm+=ele-laatsteEle;laatsteEle=ele;}
+      else if(laatsteEle===null||ele<laatsteEle)laatsteEle=ele;
+      if(cumVol[i]-laatsteKm>=0.5||i===punten.length-1){prof.push([+cumVol[i].toFixed(2),Math.round(ele)]);laatsteKm=cumVol[i];}
+    }
+  }
+  return {pts,cum,prof:heeftEle?prof:null,km:+totKm.toFixed(1),hm:Math.round(hm),top:Math.round(top)};
+}
+async function bewaarExact(n,data){
+  try{localStorage.setItem("tdf26_gpx_"+n,JSON.stringify(data));}
+  catch(err){/* opslag niet beschikbaar: import blijft deze sessie werken */}
+}
+async function laadOpgeslagen(){
+  let geladen=0;
+  for(const e of ETAPPES){
+    if(EXACT[e.n])continue;
+    try{
+      const r=localStorage.getItem("tdf26_gpx_"+e.n);
+      if(r){pasExactToe(e.n,JSON.parse(r));geladen++;}
+    }catch(err){/* sleutel bestaat niet */}
+  }
+  if(geladen>0){
+    const act=document.querySelector(".chip.actief");
+    if(act)kies(parseInt(act.id.replace("chip-","")),false);
+    updateNu();
+  }
+}
+document.getElementById("importBtn").onclick=()=>document.getElementById("gpxInput").click();
+document.getElementById("gpxInput").onchange=async ev=>{
+  const files=[...ev.target.files];if(!files.length)return;
+  const status=document.getElementById("importStatus");
+  let ok=0,fout=[];
+  for(const f of files){
+    try{
+      const tekst=await f.text();
+      const punten=parseGpx(tekst);
+      const n=matchEtappe(f.name,punten);
+      if(!n)throw new Error("kon geen etappe herkennen");
+      const data=verwerkGpx(punten);
+      pasExactToe(n,data);
+      await bewaarExact(n,data);
+      ok++;
+    }catch(err){fout.push(`${f.name} (${err.message})`);}
+  }
+  status.innerHTML=`<b>${ok} route${ok!==1?"s":""} geïmporteerd.</b>`+(fout.length?` Mislukt: ${fout.join(", ")}.`:"")+" Tik op een etappe voor het exacte tracé.";
+  const act=document.querySelector(".chip.actief");
+  if(act)kies(parseInt(act.id.replace("chip-","")),false);
+  updateNu();
+  ev.target.value="";
+};
+
+// ---------- etappe-selector ----------
+const vandaagISO = new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam"}).format(new Date());
+const chipsEl=document.getElementById("chips");
+let kalender=[...ETAPPES.map(e=>({soort:"et",e})), ...Object.keys(RUSTDAGEN).map(d=>({soort:"rust",d}))];
+kalender.sort((a,b)=>(a.soort==="et"?a.e.d:a.d).localeCompare(b.soort==="et"?b.e.d:b.d));
+kalender.forEach(item=>{
+  const c=document.createElement("button");c.className="chip";
+  if(item.soort==="rust"){
+    c.classList.add("rust");
+    c.innerHTML=`<div class="nr">😴</div><div class="tt">Rustdag · ${parseInt(item.d.slice(8))} juli</div>`;
+  }else{
+    const e=item.e;
+    if(e.d===vandaagISO)c.classList.add("vandaag");
+    c.innerHTML=`<span class="exact">GPX</span>
+      <div class="nr">${e.n}<small>${parseInt(e.d.slice(8))} JULI</small></div>
+      <div class="tt">${TYPE_EMOJI[e.type]} ${e.fin[0].split(" (")[0]}</div>
+      <span class="tp" style="background:${KLEUR[e.type]}"></span>`;
+    c.onclick=()=>kies(e.n);
+    c.id="chip-"+e.n;
+  }
+  chipsEl.appendChild(c);
+});
+
+// ---------- detail + grafiek ----------
+let chart=null;
+function kies(n,zoom=true){
+  stopRide();
+  const e=ETAPPES.find(x=>x.n===n);
+  const ex=EXACT[n];
+  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("actief"));
+  const chip=document.getElementById("chip-"+n);
+  if(chip){chip.classList.add("actief");chip.scrollIntoView({inline:"center",behavior:"smooth",block:"nearest"});}
+  document.getElementById("dTitel").textContent=`Etappe ${e.n} · ${e.start[0]} → ${e.fin[0]}`;
+  document.getElementById("dDatum").innerHTML=fmtDatum(e.d)+(e.st?` · start ±${e.st}`:"")+(ex?` · <span class="exactLabel">exact tracé</span>`:"");
+  const b=document.getElementById("dBadge");
+  b.textContent=TYPENAAM[e.type]+" "+TYPE_EMOJI[e.type];
+  b.className="badge"+(e.type==="berg"?" polka":"");
+  b.style.background=e.type==="berg"?"":KLEUR[e.type];
+  document.getElementById("dKm").textContent=ex?ex.km.toLocaleString("nl-NL"):e.km.toLocaleString("nl-NL");
+  document.getElementById("dHm").textContent=(ex&&ex.hm)?ex.hm.toLocaleString("nl-NL"):"±"+e.hm.toLocaleString("nl-NL");
+  const profData=(ex&&ex.prof)?ex.prof:e.prof;
+  const top=(ex&&ex.top)?ex.top:Math.max(...e.prof.map(p=>p[1]));
+  document.getElementById("dTop").textContent=top.toLocaleString("nl-NL")+" m";
+  document.getElementById("dCols").innerHTML=e.cols;
+  const uB=document.getElementById("dUitslag");
+  if(UITSLAGEN[n]){
+    uB.style.display="block";
+    uB.innerHTML=`<div class="titelu">🏁 Uitslag etappe ${n}</div>`
+      +UITSLAGEN[n].pod.map(p=>`<div>${p}</div>`).join("")
+      +`<div class="notu">${UITSLAGEN[n].note}</div>`;
+  }else if(e.d===vandaagISO){
+    uB.style.display="block";
+    uB.innerHTML=`<div class="titelu">🔴 Vandaag</div><div>Nog geen uitslag. Volg de koers live via de knop op de gele kaart bovenaan; de uitslag verschijnt hier automatisch zodra die binnen is.</div>`;
+  }else{
+    uB.style.display="none";uB.innerHTML="";
+  }
+  document.getElementById("chartTitel").textContent=(ex&&ex.prof)?"Hoogteprofiel · uit GPX":"Hoogteprofiel · indicatief";
+  const wpStr=e.wp.map(w=>`${w[1]},${w[2]}`).join("|");
+  let url=`https://www.google.com/maps/dir/?api=1&origin=${e.start[1]},${e.start[2]}&destination=${e.fin[1]},${e.fin[2]}&travelmode=driving`;
+  if(wpStr)url+=`&waypoints=${encodeURIComponent(wpStr)}`;
+  document.getElementById("dGmaps").href=url;
+  const gpxNaam=(n===5||n===6)?`stage-${n}.gpx`:`stage-${n}-route.gpx`;
+  document.getElementById("dGpxDownload").href=`https://cdn.cyclingstage.com/images/tour-de-france/2026/${gpxNaam}`;
+  document.getElementById("dGpxDownload").textContent=ex?"✓ GPX geladen":"⬇ GPX";
+  if(chart)chart.destroy();
+  const maxKm=ex?ex.km:e.km;
+  const colPts=(KLIM[n]||[]).filter(k=>k[1]<=maxKm+1).map(k=>{
+    let y=k[2];
+    if(ex&&ex.prof&&ex.prof.length){
+      let best=ex.prof[0];
+      for(const p of ex.prof)if(Math.abs(p[0]-k[1])<Math.abs(best[0]-k[1]))best=p;
+      y=best[1];
+    }
+    return {x:Math.min(k[1],maxKm),y:y,naam:k[0]};
+  });
+  chart=new Chart(document.getElementById("profielChart"),{
+    type:"line",
+    data:{datasets:[
+      {data:profData.map(p=>({x:p[0],y:p[1]})),
+       borderColor:KLEUR[e.type],backgroundColor:KLEUR[e.type]+"26",
+       fill:true,tension:ex?0:0.35,pointRadius:0,borderWidth:2,order:2},
+      {type:"scatter",data:colPts,pointRadius:4,pointHoverRadius:6,
+       pointBackgroundColor:"#fff",pointBorderColor:"#d9331f",pointBorderWidth:2,order:1}
+    ]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:18,right:26}},
+      plugins:{legend:{display:false},tooltip:{callbacks:{
+        title:c=>`km ${c[0].parsed.x.toFixed(0)}`,
+        label:c=>c.datasetIndex===1?`⛰️ ${c.raw.naam} · ${c.parsed.y.toFixed(0)} m`:`${c.parsed.y.toFixed(0)} m`}}},
+      scales:{
+        x:{type:"linear",min:0,max:maxKm,ticks:{color:"#a3a396",callback:v=>v+" km"},grid:{color:"#efede6"}},
+        y:{suggestedMax:Math.round(top*1.3)+30,ticks:{color:"#a3a396",callback:v=>v+" m"},grid:{color:"#efede6"}}
+      }
+    },
+    plugins:[{
+      id:"colLabels",
+      afterDatasetsDraw(c){
+        const meta=c.getDatasetMeta(1);
+        if(!meta||!meta.data.length)return;
+        const ctx=c.ctx;
+        ctx.save();
+        ctx.font="700 10px 'Barlow Condensed','Arial Narrow',sans-serif";
+        ctx.fillStyle="#16160f";
+        meta.data.forEach((pt,idx)=>{
+          const d=c.data.datasets[1].data[idx];
+          ctx.save();
+          ctx.translate(pt.x,pt.y-9);
+          ctx.rotate(-0.55);
+          ctx.fillText(d.naam,0,0);
+          ctx.restore();
+        });
+        ctx.restore();
+      }
+    }]
+  });
+  if(zoom)map.fitBounds(L.latLngBounds(lagen[n].pts).pad(0.25));
+}
+
+// ---------- rij de etappe ----------
+let ride=null, rideMarker=null;
+function stopRide(){
+  if(ride)cancelAnimationFrame(ride);
+  ride=null;
+  if(rideMarker){map.removeLayer(rideMarker);rideMarker=null;}
+  const k=document.getElementById("dRide");
+  if(k)k.textContent="▶ Rij de etappe";
+}
+function toggleRide(){
+  if(ride){stopRide();return;}
+  const act=document.querySelector(".chip.actief");
+  if(!act)return;
+  const n=parseInt(act.id.replace("chip-",""));
+  const e=ETAPPES.find(x=>x.n===n);
+  const tot=EXACT[n]?EXACT[n].km:e.km;
+  const duur=18000, t0=performance.now();
+  const fiets=L.divIcon({className:"",html:"<div class='fiets'>🚴</div>",iconSize:[28,28],iconAnchor:[14,14]});
+  rideMarker=L.marker(posOpKm(n,0),{icon:fiets}).addTo(map);
+  map.fitBounds(L.latLngBounds(lagen[n].pts).pad(0.2));
+  document.getElementById("mapKaart").scrollIntoView({behavior:"smooth",block:"start"});
+  function stap(t){
+    const fr=Math.min((t-t0)/duur,1), km=fr*tot;
+    rideMarker.setLatLng(posOpKm(n,km));
+    document.getElementById("dRide").textContent=`⏹ km ${km.toFixed(0)} / ${Math.round(tot)}`;
+    if(fr<1){ride=requestAnimationFrame(stap);}
+    else{
+      document.getElementById("dRide").textContent="🏁 Finish!";
+      ride=null;
+      setTimeout(()=>{if(!ride)stopRide();},3500);
+    }
+  }
+  ride=requestAnimationFrame(stap);
+}
+document.getElementById("dRide").onclick=toggleRide;
+
+// ---------- NU: waar zijn ze? ----------
+function updateNu(){
+  const nu=new Date();
+  const iso=new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam"}).format(nu);
+  const t=document.getElementById("nuTitel"),i=document.getElementById("nuInfo"),
+        bar=document.getElementById("nuBar"),balk=document.getElementById("nuBalk"),
+        stip=document.getElementById("nuStip"),kmEl=document.getElementById("nuKm");
+  if(nuMarker){map.removeLayer(nuMarker);nuMarker=null;}
+  bar.style.display="none";kmEl.textContent="";
+
+  if(iso<"2026-07-04"){t.textContent="De Tour is nog niet begonnen";i.textContent="Start: zaterdag 4 juli in Barcelona";return;}
+  if(iso>"2026-07-26"){t.textContent="Tour de France 2026 is afgelopen";i.textContent="Gefinisht op 26 juli in Parijs";return;}
+  if(RUSTDAGEN[iso]){t.textContent=RUSTDAGEN[iso];i.textContent="Vandaag wordt er niet gekoerst. Morgen gaat het verder.";return;}
+
+  const e=ETAPPES.find(x=>x.d===iso);
+  if(!e){t.textContent="Geen etappe gevonden voor vandaag";i.textContent="";return;}
+  const ex=EXACT[e.n];
+  const totKm=ex?ex.km:e.km;
+  t.textContent=`Etappe ${e.n} · ${e.start[0]} → ${e.fin[0]} · ${totKm} km`;
+
+  const [uu,mm]=e.st.split(":").map(Number);
+  const startT=new Date(nu);startT.setHours(uu,mm,0,0);
+  const snelheid=e.type==="tijdrit"?TT_SNELHEID:GEM_SNELHEID;
+  const duurMin=totKm/snelheid*60;
+  const verstreken=(nu-startT)/60000;
+
+  if(verstreken<0){
+    const w=-verstreken;
+    const cd=w>=60?`${Math.floor(w/60)} u ${Math.round(w%60)} min`:`${Math.round(w)} min`;
+    i.textContent=`⏳ Start over ${cd} (±${e.st} uur) in ${e.start[0]}. Verwachte finish rond ${new Date(startT.getTime()+duurMin*60000).toTimeString().slice(0,5)} uur.`;
+  }else if(verstreken>duurMin){
+    i.textContent=`De etappe is gefinisht in ${e.fin[0]}.`;
+    bar.style.display="block";balk.style.width="100%";stip.style.left="100%";stip.textContent="🏁";
+    kmEl.textContent=`${totKm} van ${totKm} km · finish bereikt`;
+  }else{
+    const frac=Math.min(verstreken/duurMin,1);
+    const kmNu=frac*totKm;
+    i.textContent=`Geschatte positie op basis van starttijd ±${e.st} en ±${snelheid} km/u, geen live GPS${ex?", wel het exacte tracé":""}.`;
+    bar.style.display="block";
+    balk.style.width=(frac*100).toFixed(1)+"%";
+    stip.style.left=(frac*100).toFixed(1)+"%";stip.textContent="🚴";
+    kmEl.textContent=`± km ${kmNu.toFixed(0)} van ${totKm} · nog ±${Math.max(duurMin-verstreken,0).toFixed(0)} min tot de finish`;
+    const pos=posOpKm(e.n,kmNu);
+    nuMarker=L.circleMarker(pos,{radius:9,color:"#16160f",weight:3,fillColor:"#ffd100",fillOpacity:1})
+      .addTo(map).bindTooltip("Geschatte positie peloton");
+  }
+}
+
+// ---------- data laden (automatisch bijgewerkt via GitHub Actions) ----------
+async function laadRoutes(){
+  try{
+    const r=await fetch("data/routes.json?t="+Date.now(),{cache:"no-store"});
+    if(!r.ok)return;
+    const routes=await r.json();
+    let nieuw=0;
+    for(const [pn,pdata] of Object.entries(routes)){
+      const n=parseInt(pn);
+      if(!EXACT[n]){pasExactToe(n,pdata);nieuw++;}
+    }
+    if(nieuw>0){
+      const ns=Object.keys(routes).map(Number).sort((a,b)=>a-b);
+      document.getElementById("importStatus").innerHTML=
+        `<b>${ns.length} exacte route${ns.length!==1?"s":""} automatisch geladen</b> (etappe ${ns.join(", ")}). Ontbrekende routes verschijnen vanzelf zodra de officiële GPX beschikbaar is; handmatig importeren kan ook.`;
+      const act=document.querySelector(".chip.actief");
+      if(act&&!ride)kies(parseInt(act.id.replace("chip-","")),false);
+      updateNu();
+    }
+  }catch(err){/* offline of lokaal geopend: indicatieve lijnen blijven staan */}
+}
+function renderKlassement(){
+  const el=document.getElementById("klassement");
+  const hint=document.getElementById("klHint");
+  if(!KLASSEMENT){el.innerHTML="";el.style.display="none";hint.textContent="volgt na de eerste etappe";return;}
+  const k=KLASSEMENT;
+  el.style.display="";
+  hint.textContent=k.naEtappe?`na etappe ${k.naEtappe}`:"actueel";
+  const tr=k.truien||{};
+  el.innerHTML=`
+  <div class="kopregel" onclick="document.getElementById('gcTop').classList.toggle('open');document.getElementById('klBtn').textContent=document.getElementById('gcTop').classList.contains('open')?'▲ Inklappen':'▼ Top 10'">
+    <span class="titelk">🏆 De truien</span>
+    <button id="klBtn" type="button">▼ Top 10</button>
+  </div>
+  <div class="truien">
+    <div class="trui geel"><div class="tl">Geel · algemeen</div><div class="tn">${tr.geel||"—"}</div></div>
+    <div class="trui groen"><div class="tl">Groen · punten</div><div class="tn">${tr.groen||"—"}</div></div>
+    <div class="trui bollen"><div class="tl">Bollen · berg</div><div class="tn">${tr.bollen||"—"}</div></div>
+    <div class="trui witjong"><div class="tl">Wit · jongeren</div><div class="tn">${tr.wit||"—"}</div></div>
+  </div>
+  <div id="gcTop">
+    <table>${(k.top10||[]).map(r=>`<tr><td class="p">${r.pos}</td><td>${r.naam}${r.ploeg?" · "+r.ploeg:""}</td><td class="t">${r.tijd||"—"}</td></tr>`).join("")}</table>
+  </div>
+  <div class="voetk">${k.voetnoot||""} Actuele stand: <a href="https://www.letour.fr/nl/klassementen" target="_blank" rel="noopener">letour.fr</a>.</div>`;
+}
+function renderUitslagen(){
+  const uEl=document.getElementById("uitslagen");
+  const gereden=ETAPPES.filter(e=>UITSLAGEN[e.n]);
+  uEl.innerHTML=gereden.length?gereden.map(e=>{
+    const u=UITSLAGEN[e.n];
+    return `<div class="uitslag" onclick="this.classList.toggle('open')">
+     <div class="kopr"><div class="en">${e.n}</div>
+     <div class="wn">🏆 ${u.w}<small>${u.note?u.note+" · ":""}${e.start[0]} → ${e.fin[0]}</small></div>
+     <div class="dt">${parseInt(e.d.slice(8))} juli ▾</div></div>
+     <div class="pod">${u.pod.map(p=>`<div>${p}</div>`).join("")}</div>
+     </div>`;}).join("")
+    :'<div class="uitslag"><div class="wn">Nog geen etappes verreden.</div></div>';
+}
+async function laadStand(){
+  try{
+    const r=await fetch("data/stand.json?t="+Date.now(),{cache:"no-store"});
+    if(!r.ok)return;
+    const st=await r.json();
+    UITSLAGEN=st.uitslagen||{};
+    KLASSEMENT=st.klassement||null;
+    STAND_BIJGEWERKT=st.bijgewerkt||null;
+  }catch(err){/* offline of lokaal geopend */}
+  renderUitslagen();
+  renderKlassement();
+  const act=document.querySelector(".chip.actief");
+  if(act&&!ride)kies(parseInt(act.id.replace("chip-","")),false);
+}
+
+// ---------- init ----------
+const vandaagEt=ETAPPES.find(x=>x.d===vandaagISO);
+kies(vandaagEt?vandaagEt.n:1, false);
+if(vandaagEt)map.fitBounds(L.latLngBounds(lagen[vandaagEt.n].pts).pad(0.35));
+document.getElementById("nuStrip").style.cursor="pointer";
+document.getElementById("nuStrip").onclick=()=>{if(vandaagEt)kies(vandaagEt.n);};
+document.getElementById("nuVervers").onclick=ev=>{
+  ev.stopPropagation();
+  const k=ev.currentTarget;
+  k.classList.remove("bezig");void k.offsetWidth;k.classList.add("bezig");
+  updateNu();
+};
+document.querySelector(".nuActies a").onclick=ev=>ev.stopPropagation();
+renderUitslagen();
+renderKlassement();
+updateNu();
+setInterval(updateNu,60000);
+laadStand();
+laadRoutes();
+laadOpgeslagen();
+setInterval(laadStand,10*60*1000);
+setInterval(laadRoutes,60*60*1000);
+</script>
+</body>
+</html>

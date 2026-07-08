@@ -1,0 +1,74 @@
+name: Data bijwerken en site publiceren
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # elk kwartier tijdens koersuren in juli (UTC; NL = UTC+2)
+    - cron: "*/15 12-19 * 7 *"
+    # dagelijkse controle (o.a. nieuwe GPX-routes)
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-en-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        if: github.event_name != 'push'
+        with:
+          python-version: "3.12"
+
+      - name: Dependencies installeren
+        if: github.event_name != 'push'
+        run: pip install --quiet requests beautifulsoup4
+
+      - name: Routes ophalen (GPX)
+        if: github.event_name != 'push'
+        run: python scripts/fetch_routes.py
+        continue-on-error: true
+
+      - name: Uitslagen en klassement bijwerken
+        if: github.event_name != 'push'
+        run: python scripts/update_stand.py
+        continue-on-error: true
+
+      - name: Wijzigingen committen
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "Data-update $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
+
+      - name: Pages configureren
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Site uploaden
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Publiceren naar GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
