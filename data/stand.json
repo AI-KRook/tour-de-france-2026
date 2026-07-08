@@ -1,57 +1,153 @@
 {
-  "bijgewerkt": "2026-07-08T18:30:00Z",
-  "uitslagen": {
-    "1": {
-      "lock": true,
-      "w": "Visma | Lease a Bike",
-      "note": "Ploegentijdrit · Vingegaard snelste individueel en pakt het eerste geel",
-      "pod": ["1. Visma | Lease a Bike · 21:47", "2. Netcompany INEOS + 0:07", "3. UAE Team Emirates-XRG + 0:11", "4. Lidl-Trek + 0:15", "5. Red Bull-BORA-hansgrohe + 0:18", "6. Decathlon CMA CGM + 0:38", "7. Alpecin-Premier Tech z.t.", "8. Groupama-FDJ United + 0:40", "9. Bahrain Victorious + 0:46", "10. Team Jayco AlUla + 0:50"]
-    },
-    "2": {
-      "lock": true,
-      "w": "Isaac del Toro",
-      "note": "UAE-één-tweetje op Montjuïc: Pogačar gunt zijn ploegmaat de zege",
-      "pod": ["1. Isaac del Toro (UAE Team Emirates-XRG) · 3:40:01", "2. Tadej Pogačar (UAE Team Emirates-XRG) z.t.", "3. Remco Evenepoel (Red Bull-BORA-hansgrohe) z.t.", "4. Jonas Vingegaard (Visma | Lease a Bike) z.t.", "5. Mattias Skjelmose (Lidl-Trek) + 0:03", "6. Tobias Halland Johannessen (Uno-X Mobility) z.t.", "7. Romain Grégoire (Groupama-FDJ United) z.t.", "8. Lenny Martinez (Bahrain Victorious) z.t.", "9. Paul Seixas (Decathlon CMA CGM) z.t.", "10. Tom Pidcock (Pinarello-Q36.5) z.t."]
-    },
-    "3": {
-      "lock": true,
-      "w": "Tadej Pogačar",
-      "note": "UAE · dubbelslag: afgetekende zege én geel in Les Angles. Volledige top 10 is voor deze (door bosbranden aangepaste) etappe niet gepubliceerd.",
-      "pod": ["1. Tadej Pogačar (UAE Team Emirates-XRG)"]
-    },
-    "4": {
-      "lock": true,
-      "w": "Mads Pedersen",
-      "note": "Lidl-Trek overmeestert de vlucht · Pedersen pakt ook groen, Træen verovert geel",
-      "pod": ["1. Mads Pedersen (Lidl-Trek) · 4:10:45", "2. Quinn Simmons (Lidl-Trek) z.t.", "3. Raúl García Pierna z.t.", "4. Marco Frigo z.t.", "5. Ramses Debruyne (Alpecin-Premier Tech) z.t.", "6. Kévin Vauquelin (Netcompany INEOS) z.t.", "7. Sean Quinn (EF Education-EasyPost) z.t.", "8. Torstein Træen (Uno-X Mobility) z.t.", "9. Pablo Castrillo (Movistar) z.t.", "10. Mathias Vacek (Lidl-Trek) z.t."]
-    },
-    "5": {
-      "lock": true,
-      "w": "Olav Kooij",
-      "note": "Nederlandse zege in de eerste massasprint · alle truien blijven; klassementsgroep op 14 tellen na een valpartij",
-      "pod": ["1. Olav Kooij (Decathlon CMA CGM) · 3:29:07", "2. Max Kanter (XDS Astana) z.t.", "3. Tim Merlier (Soudal Quick-Step) z.t.", "4. Huub Artz (Lotto-Intermarché) z.t.", "5. Jasper Philipsen (Alpecin-Premier Tech) z.t.", "6. Biniam Girmay (NSN Cycling Team) z.t.", "7. Mads Pedersen (Lidl-Trek) z.t.", "8. Milan Fretin (Cofidis) z.t.", "9. Anthony Turgis (TotalEnergies) z.t.", "10. Søren Wærenskjold (Uno-X Mobility) z.t."]
-    }
+ "bijgewerkt": "2026-07-08T18:01:38Z",
+ "uitslagen": {
+  "1": {
+   "lock": true,
+   "w": "Visma | Lease a Bike",
+   "note": "Ploegentijdrit · Vingegaard snelste individueel en pakt het eerste geel",
+   "pod": [
+    "1. Visma | Lease a Bike · 21:47",
+    "2. Netcompany INEOS + 0:07",
+    "3. UAE Team Emirates-XRG + 0:11",
+    "4. Lidl-Trek + 0:15",
+    "5. Red Bull-BORA-hansgrohe + 0:18",
+    "6. Decathlon CMA CGM + 0:38",
+    "7. Alpecin-Premier Tech z.t.",
+    "8. Groupama-FDJ United + 0:40",
+    "9. Bahrain Victorious + 0:46",
+    "10. Team Jayco AlUla + 0:50"
+   ]
   },
-  "klassement": {
-    "naEtappe": 5,
-    "truien": {
-      "geel": "T. Træen",
-      "groen": "M. Pedersen",
-      "bollen": "A. Baudin",
-      "wit": "M. Vacek"
-    },
-    "top10": [
-      {"pos": 1, "naam": "Torstein Træen", "ploeg": "Uno-X Mobility", "tijd": "—"},
-      {"pos": 2, "naam": "Sean Quinn", "ploeg": "EF Education-EasyPost", "tijd": "+ 0:28"},
-      {"pos": 3, "naam": "Mathias Vacek", "ploeg": "Lidl-Trek", "tijd": "+ 3:50"},
-      {"pos": 4, "naam": "Tadej Pogačar", "ploeg": "UAE Team Emirates-XRG", "tijd": "+ 7:53"},
-      {"pos": 5, "naam": "Jonas Vingegaard", "ploeg": "Visma-Lease a Bike", "tijd": "+ 7:53"},
-      {"pos": 6, "naam": "Ramses Debruyne", "ploeg": "Alpecin-Premier Tech", "tijd": "+ 8:06"},
-      {"pos": 7, "naam": "Remco Evenepoel", "ploeg": "Red Bull-BORA-hansgrohe", "tijd": "+ 8:16"},
-      {"pos": 8, "naam": "Isaac del Toro", "ploeg": "UAE Team Emirates-XRG", "tijd": "+ 8:17"},
-      {"pos": 9, "naam": "Juan Ayuso", "ploeg": "Lidl-Trek", "tijd": "+ 8:20"},
-      {"pos": 10, "naam": "Paul Seixas", "ploeg": "Decathlon CMA CGM", "tijd": "+ 8:41"}
-    ],
-    "voetnoot": "Momentopname na etappe 5, bijgewerkt 8 juli 18:30 uur."
+  "2": {
+   "lock": true,
+   "w": "Isaac del Toro",
+   "note": "UAE-één-tweetje op Montjuïc: Pogačar gunt zijn ploegmaat de zege",
+   "pod": [
+    "1. Isaac del Toro (UAE Team Emirates-XRG) · 3:40:01",
+    "2. Tadej Pogačar (UAE Team Emirates-XRG) z.t.",
+    "3. Remco Evenepoel (Red Bull-BORA-hansgrohe) z.t.",
+    "4. Jonas Vingegaard (Visma | Lease a Bike) z.t.",
+    "5. Mattias Skjelmose (Lidl-Trek) + 0:03",
+    "6. Tobias Halland Johannessen (Uno-X Mobility) z.t.",
+    "7. Romain Grégoire (Groupama-FDJ United) z.t.",
+    "8. Lenny Martinez (Bahrain Victorious) z.t.",
+    "9. Paul Seixas (Decathlon CMA CGM) z.t.",
+    "10. Tom Pidcock (Pinarello-Q36.5) z.t."
+   ]
+  },
+  "3": {
+   "lock": true,
+   "w": "Tadej Pogačar",
+   "note": "UAE · dubbelslag: afgetekende zege én geel in Les Angles. Volledige top 10 is voor deze (door bosbranden aangepaste) etappe niet gepubliceerd.",
+   "pod": [
+    "1. Tadej Pogačar (UAE Team Emirates-XRG)"
+   ]
+  },
+  "4": {
+   "lock": true,
+   "w": "Mads Pedersen",
+   "note": "Lidl-Trek overmeestert de vlucht · Pedersen pakt ook groen, Træen verovert geel",
+   "pod": [
+    "1. Mads Pedersen (Lidl-Trek) · 4:10:45",
+    "2. Quinn Simmons (Lidl-Trek) z.t.",
+    "3. Raúl García Pierna z.t.",
+    "4. Marco Frigo z.t.",
+    "5. Ramses Debruyne (Alpecin-Premier Tech) z.t.",
+    "6. Kévin Vauquelin (Netcompany INEOS) z.t.",
+    "7. Sean Quinn (EF Education-EasyPost) z.t.",
+    "8. Torstein Træen (Uno-X Mobility) z.t.",
+    "9. Pablo Castrillo (Movistar) z.t.",
+    "10. Mathias Vacek (Lidl-Trek) z.t."
+   ]
+  },
+  "5": {
+   "lock": true,
+   "w": "Olav Kooij",
+   "note": "Nederlandse zege in de eerste massasprint · alle truien blijven; klassementsgroep op 14 tellen na een valpartij",
+   "pod": [
+    "1. Olav Kooij (Decathlon CMA CGM) · 3:29:07",
+    "2. Max Kanter (XDS Astana) z.t.",
+    "3. Tim Merlier (Soudal Quick-Step) z.t.",
+    "4. Huub Artz (Lotto-Intermarché) z.t.",
+    "5. Jasper Philipsen (Alpecin-Premier Tech) z.t.",
+    "6. Biniam Girmay (NSN Cycling Team) z.t.",
+    "7. Mads Pedersen (Lidl-Trek) z.t.",
+    "8. Milan Fretin (Cofidis) z.t.",
+    "9. Anthony Turgis (TotalEnergies) z.t.",
+    "10. Søren Wærenskjold (Uno-X Mobility) z.t."
+   ]
   }
+ },
+ "klassement": {
+  "naEtappe": 5,
+  "truien": {
+   "geel": "T. Træen",
+   "groen": "M. Pedersen",
+   "bollen": "A. Baudin",
+   "wit": "M. Vacek"
+  },
+  "top10": [
+   {
+    "pos": 1,
+    "naam": "Torstein Træen",
+    "ploeg": "Uno-X Mobility",
+    "tijd": "—"
+   },
+   {
+    "pos": 2,
+    "naam": "Sean Quinn",
+    "ploeg": "EF Education–EasyPost",
+    "tijd": "+ 0:28"
+   },
+   {
+    "pos": 3,
+    "naam": "Mathias Vacek",
+    "ploeg": "Lidl–Trek",
+    "tijd": "+ 3:50"
+   },
+   {
+    "pos": 4,
+    "naam": "Tadej Pogačar",
+    "ploeg": "UAE Team Emirates XRG",
+    "tijd": "+ 7:53"
+   },
+   {
+    "pos": 5,
+    "naam": "Jonas Vingegaard",
+    "ploeg": "Visma–Lease a Bike",
+    "tijd": "+ 7:53"
+   },
+   {
+    "pos": 6,
+    "naam": "Ramses Debruyne",
+    "ploeg": "Alpecin–Premier Tech",
+    "tijd": "+ 8:06"
+   },
+   {
+    "pos": 7,
+    "naam": "Remco Evenepoel",
+    "ploeg": "Red Bull–Bora–Hansgrohe",
+    "tijd": "+ 8:16"
+   },
+   {
+    "pos": 8,
+    "naam": "Isaac del Toro",
+    "ploeg": "UAE Team Emirates XRG",
+    "tijd": "+ 8:17"
+   },
+   {
+    "pos": 9,
+    "naam": "Juan Ayuso",
+    "ploeg": "Lidl–Trek",
+    "tijd": "+ 8:20"
+   },
+   {
+    "pos": 10,
+    "naam": "Paul Seixas",
+    "ploeg": "Decathlon CMA CGM",
+    "tijd": "+ 8:41"
+   }
+  ],
+  "voetnoot": "Stand na etappe 5, automatisch bijgewerkt 8 juli 20:01 uur (bron: Wikipedia)."
+ }
 }
