@@ -1,18 +1,24 @@
 name: Diagnose databronnen
 on: workflow_dispatch
+permissions:
+  contents: write
 jobs:
   diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: Wikipedia-pagina's ophalen
+      - uses: actions/checkout@v4
+      - name: Wikipedia-pagina's ophalen en naar branch pushen
         run: |
-          mkdir -p /tmp/wiki
+          mkdir -p wikidump
           UA="TdF-Routeverkenner/1.0 (contact via github)"
-          curl -s --max-time 30 -A "$UA" -o /tmp/wiki/hoofd.html "https://en.wikipedia.org/wiki/2026_Tour_de_France"
-          curl -s --max-time 30 -A "$UA" -o /tmp/wiki/etappes-1-11.html "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_1_to_Stage_11"
-          curl -s --max-time 30 -A "$UA" -o /tmp/wiki/etappes-12-21.html -w "stage12-21: %{http_code}\n" "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_12_to_Stage_21" || true
-          ls -la /tmp/wiki
-      - uses: actions/upload-artifact@v4
-        with:
-          name: wiki-html
-          path: /tmp/wiki/
+          curl -s --max-time 30 -A "$UA" -o wikidump/hoofd.html "https://en.wikipedia.org/wiki/2026_Tour_de_France"
+          curl -s --max-time 30 -A "$UA" -o wikidump/etappes-1-11.html "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_1_to_Stage_11"
+          curl -s --max-time 30 -A "$UA" -o wikidump/etappes-12-21.html "https://en.wikipedia.org/wiki/2026_Tour_de_France,_Stage_12_to_Stage_21" || true
+          ls -la wikidump
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan diagnose-data
+          git rm -rf --cached . >/dev/null
+          git add -f wikidump
+          git commit -m "wiki-dump $(date -u +%H:%M)"
+          git push origin HEAD:diagnose-data --force
