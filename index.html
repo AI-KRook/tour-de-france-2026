@@ -227,6 +227,7 @@
   /* ---------- voorbeschouwing ---------- */
   .previewblok{margin-top:14px;border:1px solid #f0e4b0;border-radius:14px;padding:13px 15px;background:#fffbe8}
   .previewblok .ptekst{font-size:.9rem;line-height:1.6}
+  .previewblok .terugblik{margin-bottom:9px;padding-bottom:9px;border-bottom:1px dashed #e6d78f}
   .previewblok .kopk{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grijs);margin:12px 0 7px}
   .kanshebbers{display:flex;flex-wrap:wrap;gap:7px}
   .kans{background:#fff;border:1px solid var(--lijn);border-radius:20px;padding:5px 12px;font-size:.82rem;font-weight:600;white-space:nowrap}
@@ -624,11 +625,46 @@ function pasExactToe(n,data){
 }
 
 // ---------- voorbeschouwing ----------
+function volgendeRitNr(){
+  const e=ETAPPES.find(x=>!(UITSLAGEN[x.n]&&UITSLAGEN[x.n].pod));
+  return e?e.n:null;
+}
+function terugblikTekst(n){
+  // alleen bij de eerstvolgende rit: een terugblik op de vorige koersdag,
+  // automatisch opgebouwd uit de actuele uitslagen en het klassement
+  if(n!==volgendeRitNr())return "";
+  let vorige=null;
+  for(const e of ETAPPES){if(e.n<n&&UITSLAGEN[e.n]&&UITSLAGEN[e.n].pod)vorige=e;}
+  if(!vorige)return "";
+  const u=UITSLAGEN[vorige.n];
+  const p0=(u.pod&&u.pod[0])||{};
+  const naam=p0.naam||u.w, land=p0.land||u.wLand, ploeg=p0.ploeg||u.wPloeg||"";
+  if(!naam)return "";
+  const fin=vorige.fin[0].split(" (")[0];
+  // tijdsaanduiding vanuit de kijker: vandaag, gisteren of het etappenummer
+  const gisterenISO=(()=>{const d=new Date(vandaagISO+"T12:00:00");d.setDate(d.getDate()-1);return d.toISOString().slice(0,10);})();
+  const wanneer=vorige.d===vandaagISO?"Vandaag":(vorige.d===gisterenISO?"Gisteren":`In etappe ${vorige.n}`);
+  const wie=metVlag(naam,land)+(ploeg?` (${ploeg})`:"");
+  const T={
+    vlak:`${wanneer} sprintte ${wie} naar de zege in ${fin}.`,
+    tijdrit:`${wanneer} was ${wie} de snelste tegen de klok in ${fin}.`,
+    berg:`${wanneer} bedwong ${wie} als eerste de slotklim naar ${fin}.`,
+    heuvels:`${wanneer} sloeg ${wie} toe in ${fin}.`
+  };
+  let zin=T[vorige.type]||`${wanneer} won ${wie} in ${fin}.`;
+  if(KLASSEMENT&&KLASSEMENT.top10&&KLASSEMENT.top10.length>1){
+    const g=KLASSEMENT.top10[0],t=KLASSEMENT.top10[1];
+    zin+=` In het klassement draagt ${metVlag(g.naam,g.land)} het geel, met ${t.naam} als eerste achtervolger op ${(t.tijd||"—").replace("+ ","")}.`;
+  }
+  return zin;
+}
 function previewHtml(n){
   const p=VOORBESCHOUWING[n];
   if(!p)return "";
+  const tb=terugblikTekst(n);
   return `<div class="previewblok">
     <div class="titelu">🎙️ Voorbeschouwing</div>
+    ${tb?`<p class="ptekst terugblik">${tb}</p>`:""}
     <p class="ptekst">${p.t}</p>
     <div class="kopk">Kanshebbers</div>
     <div class="kanshebbers">${p.k.map(([naam,land])=>`<span class="kans">${metVlag(naam,land)}</span>`).join("")}</div>
