@@ -15,26 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Databron in racecenter-bundles zoeken
+      - name: livetracking.json ophalen
         run: |
           mkdir -p diagnose
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-          curl -sS -A "$UA" --max-time 20 -L "https://racecenter.letour.fr/nl" -o diagnose/pagina.html
-          grep -oE 'href="/js/[^"]*\.js"' diagnose/pagina.html | sed 's/href="//;s/"//' | sort -u > diagnose/bundles.txt
-          : > diagnose/hits.txt
-          while read -r p; do
-            curl -sS -A "$UA" --max-time 20 "https://racecenter.letour.fr$p" -o /tmp/b.js || continue
-            grep -oE '.{60}(wss://|socket|baseURL|pubnub|ably|firebase|signalr|eventsource|EventSource|VUE_APP|api\.aso|aso\.fr|letour\.fr)[^"]{0,80}' /tmp/b.js | head -80 >> diagnose/hits.txt || true
-          done < diagnose/bundles.txt
-          sort -u diagnose/hits.txt | head -400 > diagnose/hits-uniq.txt || true
-          wc -l diagnose/hits-uniq.txt
-          # kandidaat-endpoints direct proberen
-          : > diagnose/probes.txt
-          probe(){ code=$(curl -sS -A "$UA" -o /tmp/p.body -w "%{http_code}" --max-time 15 -L "$1" || true); size=$(wc -c < /tmp/p.body); echo "$code $size $1" >> diagnose/probes.txt; if [ "$code" = "200" ] && [ "$size" -lt 30000 ]; then echo "--- $1" >> diagnose/probes.txt; head -c 2500 /tmp/p.body >> diagnose/probes.txt; echo >> diagnose/probes.txt; fi; }
-          probe "https://racecenter.letour.fr/api/race"
-          probe "https://racecenter.letour.fr/api/live"
-          probe "https://racecenter.letour.fr/livetracking.json"
-          cat diagnose/probes.txt
+          curl -sS -A "$UA" --max-time 20 -L "https://racecenter.letour.fr/livetracking.json" -o diagnose/livetracking.json
+          wc -c diagnose/livetracking.json
 
       - name: Resultaat naar diagnose-data branch
         run: |
