@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-09T16:14:46Z",
+ "bijgewerkt": "2026-07-09T16:31:46Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -882,36 +882,20 @@
     ]
    }
   },
-  "wissels": [
-   {
-    "trui": "geel",
-    "van": "Tadej Pogačar",
-    "naar": "Tadej Pogacar"
-   },
-   {
-    "trui": "bollen",
-    "van": "Tadej Pogačar",
-    "naar": "Tadej Pogacar"
-   },
-   {
-    "trui": "wit",
-    "van": "Isaac del Toro",
-    "naar": "Isaac Del Toro Romero"
-   }
-  ],
-  "voetnoot": "Stand na etappe 6, automatisch bijgewerkt 9 juli 18:14 uur (bron: letour.fr)."
+  "wissels": [],
+  "voetnoot": "Stand na etappe 6, automatisch bijgewerkt 9 juli 18:31 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 7,
-  "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Gavarnie-Gèdre, voor Jonas Vingegaard Hansen en Juan Ayuso Pesquera. Tadej Pogacar neemt de gele trui over van Tadej Pogačar en Tadej Pogacar neemt de bollentrui over van Tadej Pogačar en Isaac Del Toro Romero neemt de witte trui over van Isaac del Toro. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
+  "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Gavarnie-Gèdre, voor Jonas Vingegaard Hansen en Juan Ayuso Pesquera. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
   "bron": "vast patroon",
-  "feiten": "1e2494dff7b19a09"
+  "feiten": "90ffc6f691782c31"
  },
  "samenvattingen": {
   "6": {
-   "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Gavarnie-Gèdre, met Jonas Vingegaard Hansen op +2:47. Tadej Pogacar neemt de gele trui over van Tadej Pogačar en Tadej Pogacar neemt de bollentrui over van Tadej Pogačar en Isaac Del Toro Romero neemt de witte trui over van Isaac del Toro. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
+   "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Gavarnie-Gèdre, met Jonas Vingegaard Hansen op +2:47. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
    "bron": "vast patroon",
-   "feiten": "ef3ff159ec998597"
+   "feiten": "f590f2131ae1658a"
   }
  }
 }
