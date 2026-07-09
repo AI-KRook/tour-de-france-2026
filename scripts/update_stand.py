@@ -334,7 +334,8 @@ def maak_feiten(stand):
         "vorige": {"n": vorige, "finish": ETAPPE_INFO[vorige][1], "type": ETAPPE_INFO[vorige][2],
                    "top3": [{"naam": p.get("naam"), "ploeg": p.get("ploeg"), "tijd": p.get("tijd")}
                             for p in (u.get("pod") or [])[:3]]},
-        "wissels": k.get("wissels") or [],
+        "wissels": [w for w in (k.get("wissels") or [])
+                    if not zelfde_renner(w.get("van"), w.get("naar"))],
         "truien": {t: (v.get("naam") if isinstance(v, dict) else v)
                    for t, v in (k.get("truien") or {}).items()},
     }
@@ -410,7 +411,8 @@ def maak_feiten_samenvatting(stand, n):
         "podium": [{"naam": p.get("naam"), "ploeg": p.get("ploeg"),
                     "tijd": (p.get("tijd") or "").replace("+ ", "+")}
                    for p in (u.get("pod") or [])[:5]],
-        "wissels": (k.get("wissels") or []) if k.get("naEtappe") == n else [],
+        "wissels": [w for w in ((k.get("wissels") or []) if k.get("naEtappe") == n else [])
+                    if not zelfde_renner(w.get("van"), w.get("naar"))],
         "truien": {t: (v.get("naam") if isinstance(v, dict) else v)
                    for t, v in (k.get("truien") or {}).items()},
     }
