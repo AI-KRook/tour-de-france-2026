@@ -414,9 +414,15 @@ def regels_samenvatting(f):
         zin += f', voor {pod[1]["naam"]}'
     zinnen = [zin + "."]
     if f.get("wissels"):
-        delen = [f'{x["naar"]} neemt {TRUI_LABEL.get(x["trui"], x["trui"])} over van {x["van"]}'
-                 for x in f["wissels"]]
-        zinnen.append(" en ".join(delen) + ".")
+        # truien die naar dezelfde renner gaan, bundelen tot één zin
+        per_renner = {}
+        for x in f["wissels"]:
+            per_renner.setdefault(x["naar"], []).append(TRUI_LABEL.get(x["trui"], x["trui"]))
+        delen = []
+        for naar, truien in per_renner.items():
+            truitekst = truien[0] if len(truien) == 1 else " en ".join([", ".join(truien[:-1]), truien[-1]])
+            delen.append(f'{naar} pakt {truitekst}')
+        zinnen.append(". ".join(d[0].upper() + d[1:] for d in delen) + ".")
     if f.get("klassement_top3") and len(f["klassement_top3"]) > 1:
         g = f["klassement_top3"]
         ach = str(g[1].get("achterstand") or "").replace("+ ", "")
