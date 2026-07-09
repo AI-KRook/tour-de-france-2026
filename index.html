@@ -133,6 +133,7 @@
   #nuGroepen .gnaam{font-weight:700;font-size:.88rem}
   #nuGroepen .ggat{font-variant-numeric:tabular-nums;font-weight:700;font-size:.85rem;color:#a3230f;margin-left:auto}
   #nuGroepen .grenners{flex-basis:100%;font-size:.82rem;color:rgba(22,22,15,.8);line-height:1.45}
+  #nuGroepen .gmeer{color:rgba(22,22,15,.55);font-style:italic}
   #nuTik{
     font-size:.76rem;font-weight:700;margin-top:12px;position:relative;z-index:1;
     display:inline-flex;align-items:center;gap:6px;
@@ -1005,9 +1006,10 @@ function updateNu(){
         grp.hidden=false;
         grp.innerHTML=`<div class="gkop">Koerssituatie · stand van ${hhmm} uur</div>`
           +KOERS.groepen.map(g=>{
-            const renners=(g.renners||[]).map(r=>Array.isArray(r)?metVlag(r[0],r[1]):metVlag(r,null)).join(", ");
+            let renners=(g.renners||[]).map(r=>Array.isArray(r)?metVlag(r[0],r[1]):metVlag(r,null)).join(", ");
+            if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
             return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal?` (${g.aantal})`:""}</span>`
-              +(g.gat?`<span class="ggat">${g.gat}</span>`:"")
+              +(g.gat?`<span class="ggat">${g.gat}</span>`:`<span class="ggat">kop</span>`)
               +(renners?`<div class="grenners">${renners}</div>`:"")
               +`</div>`;
           }).join("");

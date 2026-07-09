@@ -34,6 +34,33 @@ jobs:
         if: github.event_name != 'push'
         run: pip install --quiet requests beautifulsoup4 anthropic
 
+      - uses: actions/setup-node@v4
+        if: github.event_name != 'push'
+        with:
+          node-version: "20"
+
+      - name: Playwright-browser cachen
+        if: github.event_name != 'push'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-v1
+
+      - name: Live koerssituatie vangen (alleen tijdens koersuren)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: |
+          hu=$(date -u +%H)
+          # koersvenster: ruwweg 10:00-18:00 UTC (NL 12:00-20:00)
+          if [ "$hu" -ge 10 ] && [ "$hu" -le 18 ]; then
+            npm install --no-audit --no-fund --no-save playwright
+            npx playwright install --with-deps chromium
+            node scripts/capture_koers.js
+          else
+            echo "buiten koersvenster ($hu:00 UTC); koersvangst overgeslagen"
+            rm -f scripts/koers_out.json
+          fi
+
       - name: Uitslagen, klassement en dagcommentaar bijwerken
         if: github.event_name != 'push'
         env:

@@ -577,6 +577,26 @@ def main():
             gewijzigd = True
             print(f"Dagcommentaar vernieuwd voor etappe {feiten['volgende']['n']} ({bron})")
 
+    # 4) live koerssituatie (wegroepen + tijdsgaten), aangeleverd door
+    #    capture_koers.js. Ontbreekt het bestand of is de koers voorbij,
+    #    dan verwijderen we een verouderde stand.
+    koers_pad = Path(__file__).resolve().parent / "koers_out.json"
+    if koers_pad.exists():
+        try:
+            koers = json.loads(koers_pad.read_text(encoding="utf-8"))
+        except Exception:
+            koers = None
+        if koers and koers.get("groepen"):
+            if stand.get("koers") != koers:
+                stand["koers"] = koers
+                gewijzigd = True
+                print(f"Koerssituatie bijgewerkt: etappe {koers.get('etappe')}, "
+                      f"{len(koers['groepen'])} groepen")
+    elif stand.get("koers"):
+        del stand["koers"]
+        gewijzigd = True
+        print("Koerssituatie verwijderd (geen rijdende koers)")
+
     if gewijzigd:
         stand["bijgewerkt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         STAND_PAD.write_text(json.dumps(stand, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
