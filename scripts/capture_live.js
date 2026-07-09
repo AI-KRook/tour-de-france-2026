@@ -181,17 +181,31 @@ function koersKlaar(packArr) {
   return (g.computedRemainingDistance ?? g.remainingDistance ?? 1) <= 0;
 }
 
+// kies de data die bij de gevraagde etappe hoort; anders de hoogste beschikbare
+function voorEtappe(perStage, etappe) {
+  if (!perStage) return null;
+  if (perStage[etappe]) return perStage[etappe];
+  const keys = Object.keys(perStage).map(Number).filter(k => k <= etappe);
+  if (keys.length) return perStage[Math.max(...keys)];
+  const alle = Object.keys(perStage).map(Number);
+  return alle.length ? perStage[Math.max(...alle)] : null;
+}
+
 function bouwAlles(data, etappe, isoNu) {
+  // uitslag en klassement moeten van DEZELFDE (huidige) etappe komen; de pagina
+  // laadt soms ook naburige etappes, dus sleutelen we per etappenummer
+  const rank = voorEtappe(data.rankByStage, etappe);
+  const arrival = voorEtappe(data.arrivalByStage, etappe);
   const codeNaam = {};
-  for (const it of data.rank || []) if (it && it.code && it.name) codeNaam[it.code] = it.name;
+  for (const it of rank || []) if (it && it.code && it.name) codeNaam[it.code] = it.name;
   const idx = bouwIndex(data.comp, codeNaam);
   return {
     etappe,
     bijgewerkt: isoNu,
     klaar: koersKlaar(data.pack),
     koers: buildKoers(data.pack, idx, etappe, isoNu),
-    uitslag: buildUitslag(data.arrival, idx),
-    klassementen: buildKlassementen(data.rank, idx),
+    uitslag: buildUitslag(arrival, idx),
+    klassementen: buildKlassementen(rank, idx),
   };
 }
 
@@ -199,7 +213,7 @@ async function main() {
   const { chromium } = require("playwright");
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  const data = { pack: null, comp: null, rank: null, arrival: null };
+  const data = { pack: null, comp: null, rankByStage: {}, arrivalByStage: {} };
   let stage = null;
   page.on("response", async (r) => {
     const url = r.url();
@@ -207,8 +221,8 @@ async function main() {
       let m;
       if ((m = url.match(/\/api\/pack-2026-(\d+)/))) { stage = parseInt(m[1], 10); data.pack = await r.json(); }
       else if (url.includes("/api/allCompetitors-2026")) data.comp = await r.json();
-      else if (/\/api\/rankingType-2026-\d+/.test(url)) data.rank = await r.json();
-      else if (/\/api\/rankingTypeArrival-2026-\d+/.test(url)) data.arrival = await r.json();
+      else if ((m = url.match(/\/api\/rankingTypeArrival-2026-(\d+)/))) data.arrivalByStage[+m[1]] = await r.json();
+      else if ((m = url.match(/\/api\/rankingType-2026-(\d+)/))) data.rankByStage[+m[1]] = await r.json();
     } catch (e) { /* niet-JSON negeren */ }
   });
   await page.goto("https://racecenter.letour.fr/nl", { waitUntil: "networkidle", timeout: 60000 }).catch(() => {});
