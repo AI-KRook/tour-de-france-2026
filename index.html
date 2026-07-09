@@ -126,6 +126,13 @@
   }
   #nuKm{font-size:.84rem;font-weight:700;margin-top:9px;position:relative;z-index:1}
   #nuSamen{font-size:.86rem;color:rgba(22,22,15,.85);margin-top:10px;position:relative;z-index:1;max-width:62ch;line-height:1.5}
+  #nuGroepen{margin-top:10px;position:relative;z-index:1;background:rgba(255,255,255,.42);border-radius:12px;padding:10px 12px;text-align:left}
+  #nuGroepen .gkop{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(22,22,15,.65);margin-bottom:6px}
+  #nuGroepen .groepRij{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding:4px 0;border-top:1px solid rgba(22,22,15,.1)}
+  #nuGroepen .groepRij:first-of-type{border-top:0}
+  #nuGroepen .gnaam{font-weight:700;font-size:.88rem}
+  #nuGroepen .ggat{font-variant-numeric:tabular-nums;font-weight:700;font-size:.85rem;color:#a3230f;margin-left:auto}
+  #nuGroepen .grenners{flex-basis:100%;font-size:.82rem;color:rgba(22,22,15,.8);line-height:1.45}
   #nuTik{
     font-size:.76rem;font-weight:700;margin-top:12px;position:relative;z-index:1;
     display:inline-flex;align-items:center;gap:6px;
@@ -308,6 +315,7 @@
     </div>
     <div id="nuKm"></div>
     <div id="nuSamen"></div>
+    <div id="nuGroepen" hidden></div>
     <div id="nuTik" hidden>📍 Tik om live op de kaart te volgen</div>
   </button>
 
@@ -539,6 +547,7 @@ const EXACT = {};
 let UITSLAGEN = {};
 let KLASSEMENT = null;
 let DAGCOMMENTAAR = null;
+let KOERS = null; // live koerssituatie (kopgroep, achtervolgers, tijdsverschillen)
 
 // ---------- vlaggen (IOC-code -> emoji) ----------
 const IOC2ISO = {NED:"NL",BEL:"BE",FRA:"FR",GER:"DE",DEN:"DK",SLO:"SI",NOR:"NO",GBR:"GB",USA:"US",
@@ -736,6 +745,7 @@ kalender.forEach(item=>{
 let chart=null;
 function kies(n,zoom=true){
   stopRide();
+  getoondEtappe=n;
   const e=ETAPPES.find(x=>x.n===n);
   const ex=EXACT[n];
   document.querySelectorAll(".chip").forEach(c=>c.classList.remove("actief"));
@@ -810,6 +820,40 @@ function kies(n,zoom=true){
       }
     },
     plugins:[{
+      id:"livePositie",
+      afterDatasetsDraw(c){
+        if(liveKm==null||getoondEtappe!==liveEtappe)return;
+        const xs=c.scales.x, ys=c.scales.y;
+        const km=Math.min(liveKm,xs.max);
+        // hoogte op dit punt interpoleren uit het profiel
+        const d=c.data.datasets[0].data;
+        let hoogte=d[0]?d[0].y:0;
+        for(let j=1;j<d.length;j++){
+          if(d[j].x>=km){
+            const a=d[j-1],b=d[j],f=(km-a.x)/Math.max(b.x-a.x,1e-6);
+            hoogte=a.y+f*(b.y-a.y);break;
+          }
+          hoogte=d[j].y;
+        }
+        const px=xs.getPixelForValue(km), py=ys.getPixelForValue(hoogte);
+        const bodem=c.chartArea.bottom, ctx=c.ctx;
+        ctx.save();
+        ctx.strokeStyle="#d9331f";ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+        ctx.beginPath();ctx.moveTo(px,bodem);ctx.lineTo(px,py);ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle="#d9331f";
+        ctx.beginPath();ctx.arc(px,py,5,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle="#fff";ctx.lineWidth=2;ctx.stroke();
+        const tx=Math.min(Math.max(px,c.chartArea.left+22),c.chartArea.right-22);
+        ctx.textAlign="center";
+        ctx.font="15px sans-serif";
+        ctx.fillText("🚴",tx,py-11);
+        ctx.font="700 11px 'Barlow Condensed','Arial Narrow',sans-serif";
+        ctx.fillStyle="#a3230f";
+        ctx.fillText(`nu · ± km ${liveKm.toFixed(0)}`,tx,py-28);
+        ctx.restore();
+      }
+    },{
       id:"colLabels",
       afterDatasetsDraw(c){
         const meta=c.getDatasetMeta(1);
@@ -875,16 +919,19 @@ document.getElementById("dRide").onclick=toggleRide;
 
 // ---------- NU: waar zijn ze? ----------
 let laatsteNuPos=null;
+let liveKm=null, liveEtappe=null, getoondEtappe=null;
 function updateNu(){
   const nu=new Date();
   const iso=new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam"}).format(nu);
   const t=document.getElementById("nuTitel"),i=document.getElementById("nuInfo"),
         bar=document.getElementById("nuBar"),balk=document.getElementById("nuBalk"),
         stip=document.getElementById("nuStip"),kmEl=document.getElementById("nuKm"),
-        sam=document.getElementById("nuSamen"),tik=document.getElementById("nuTik");
+        sam=document.getElementById("nuSamen"),tik=document.getElementById("nuTik"),
+        grp=document.getElementById("nuGroepen");
   if(nuMarker){map.removeLayer(nuMarker);nuMarker=null;}
-  laatsteNuPos=null;
+  laatsteNuPos=null;liveKm=null;liveEtappe=null;
   bar.style.display="none";kmEl.textContent="";sam.textContent="";tik.hidden=true;
+  grp.hidden=true;grp.innerHTML="";
 
   if(iso<"2026-07-04"){t.textContent="De Tour is nog niet begonnen";i.textContent="Start: zaterdag 4 juli in Barcelona";return;}
   if(iso>"2026-07-26"){t.textContent="Tour de France 2026 is afgelopen";i.textContent="Gefinisht op 26 juli in Parijs";return;}
@@ -925,6 +972,7 @@ function updateNu(){
     sam.textContent=(u&&u.w)
       ?`🏆 ${u.w}${u.wPloeg?` (${u.wPloeg})`:""} won de rit. De volledige uitslag staat bij Uitslagen.`
       :"De uitslag verschijnt hier automatisch zodra die binnen is.";
+    if(chart&&getoondEtappe===e.n)chart.update("none");
   }else{
     const frac=Math.min(verstreken/duurMin,1);
     const kmNu=frac*totKm;
@@ -949,6 +997,25 @@ function updateNu(){
       zinnen.push("De renners starten één voor één; de klok is de enige tegenstander.");
     }
     sam.textContent=zinnen.join(" ");
+    // koersgroepen met tijdsverschillen (uit stand.json, indien vers genoeg)
+    if(KOERS&&KOERS.etappe===e.n&&Array.isArray(KOERS.groepen)&&KOERS.groepen.length){
+      const bijg=KOERS.bijgewerkt?new Date(KOERS.bijgewerkt):null;
+      if(bijg&&(nu-bijg)<45*60000){
+        const hhmm=bijg.toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Amsterdam"});
+        grp.hidden=false;
+        grp.innerHTML=`<div class="gkop">Koerssituatie · stand van ${hhmm} uur</div>`
+          +KOERS.groepen.map(g=>{
+            const renners=(g.renners||[]).map(r=>Array.isArray(r)?metVlag(r[0],r[1]):metVlag(r,null)).join(", ");
+            return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal?` (${g.aantal})`:""}</span>`
+              +(g.gat?`<span class="ggat">${g.gat}</span>`:"")
+              +(renners?`<div class="grenners">${renners}</div>`:"")
+              +`</div>`;
+          }).join("");
+      }
+    }
+    // livemarker op het hoogteprofiel van deze etappe
+    liveKm=kmNu;liveEtappe=e.n;
+    if(chart&&getoondEtappe===e.n)chart.update("none");
     // pulserende livemarker met km-label op de kaart
     const pos=posOpKm(e.n,kmNu);
     laatsteNuPos=pos;
@@ -1136,10 +1203,12 @@ async function laadStand(){
     UITSLAGEN=st.uitslagen||{};
     KLASSEMENT=st.klassement||null;
     DAGCOMMENTAAR=st.dagcommentaar||null;
+    KOERS=st.koers||null;
   }catch(err){/* offline of lokaal geopend */}
   renderUitslagen();
   renderKlassement();
   renderVandaag();
+  updateNu();
   const act=document.querySelector(".chip.actief");
   if(act&&!ride)kies(parseInt(act.id.replace("chip-","")),false);
 }
