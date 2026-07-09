@@ -258,6 +258,7 @@
   .previewblok .ptekst{font-size:.9rem;line-height:1.6}
   .previewblok .terugblik{margin-bottom:9px;padding-bottom:9px;border-bottom:1px dashed #e6d78f}
   .previewblok .kopk{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grijs);margin:12px 0 7px}
+  .previewblok.samenv{border-color:#d7e6c9;background:#f4faee}
   .kanshebbers{display:flex;flex-wrap:wrap;gap:7px}
   .kans{background:#fff;border:1px solid var(--lijn);border-radius:20px;padding:5px 12px;font-size:.82rem;font-weight:600;white-space:nowrap}
   .notu{font-size:.82rem;color:var(--grijs);margin-top:10px;font-style:italic}
@@ -549,6 +550,7 @@ let UITSLAGEN = {};
 let KLASSEMENT = null;
 let DAGCOMMENTAAR = null;
 let KOERS = null; // live koerssituatie (kopgroep, achtervolgers, tijdsverschillen)
+let SAMENVATTING = {}; // per etappe een terugblik op het raceverloop
 
 // ---------- vlaggen (IOC-code -> emoji) ----------
 const IOC2ISO = {NED:"NL",BEL:"BE",FRA:"FR",GER:"DE",DEN:"DK",SLO:"SI",NOR:"NO",GBR:"GB",USA:"US",
@@ -708,6 +710,14 @@ function previewHtml(n){
     <div class="kanshebbers">${p.k.map(([naam,land])=>`<span class="kans">${metVlag(naam,land)}</span>`).join("")}</div>
   </div>`;
 }
+function samenvattingHtml(n){
+  const s=SAMENVATTING[n]||SAMENVATTING[String(n)];
+  if(!s||!s.tekst)return "";
+  return `<div class="previewblok samenv">
+    <div class="titelu">🎙️ Zo verliep de rit</div>
+    <p class="ptekst">${s.tekst}</p>
+  </div>`;
+}
 
 // ---------- renner-rijen ----------
 function podRij(r){
@@ -772,7 +782,10 @@ function kies(n,zoom=true){
     uB.innerHTML=`<div class="titelu">🏁 Uitslag etappe ${n}</div>`
       +u.pod.map(podRij).join("")
       +(u.note?`<p class="notu">${u.note}</p>`:"");
-    pB.style.display="none";pB.innerHTML="";
+    // verreden rit: geen voorbeschouwing meer, wel de terugblik op het verloop
+    const sv=samenvattingHtml(n);
+    if(sv){pB.style.display="block";pB.innerHTML=sv;}
+    else{pB.style.display="none";pB.innerHTML="";}
   }else{
     if(e.d===vandaagISO){
       uB.style.display="block";
@@ -1072,6 +1085,7 @@ function renderVandaag(){
     vu.hidden=false;
     vu.innerHTML=`<h2 class="sectiekop" style="margin-top:0">🏁 Uitslag van vandaag</h2>`
       +u.pod.slice(0,3).map(podRij).join("")
+      +samenvattingHtml(vandaagEt.n)
       +`<div class="knoppen"><button class="knop" type="button" onclick="toonTab('uitslagen')">Alle uitslagen</button></div>`;
   }else{vu.hidden=true;vu.innerHTML="";}
   // vooruitblik op de volgende rit zodra vandaag klaar is (of op rust-/tussendagen)
@@ -1206,6 +1220,7 @@ async function laadStand(){
     KLASSEMENT=st.klassement||null;
     DAGCOMMENTAAR=st.dagcommentaar||null;
     KOERS=st.koers||null;
+    SAMENVATTING=st.samenvattingen||{};
   }catch(err){/* offline of lokaal geopend */}
   renderUitslagen();
   renderKlassement();

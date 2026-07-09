@@ -295,6 +295,10 @@ TRUI_LABEL = {"geel": "de gele trui", "groen": "de groene trui",
               "bollen": "de bollentrui", "wit": "de witte trui"}
 
 
+MAAND = {1: "januari", 2: "februari", 3: "maart", 4: "april", 5: "mei", 6: "juni",
+         7: "juli", 8: "augustus", 9: "september", 10: "oktober", 11: "november", 12: "december"}
+
+
 def maak_feiten(stand):
     """Feitenblad voor het dagcommentaar: de laatste uitslag, truiwissels en de stand."""
     uitslagen = stand.get("uitslagen", {})
@@ -372,6 +376,83 @@ def claude_commentaar(f):
         return tekst or None
     except Exception as e:
         print(f"  Claude-commentaar mislukt, vast patroon gebruikt: {e}")
+        return None
+
+
+def maak_feiten_samenvatting(stand, n):
+    """Feitenblad voor de terugblik op een verreden etappe n."""
+    u = (stand.get("uitslagen", {}) or {}).get(str(n))
+    if not (u and u.get("pod")):
+        return None
+    k = stand.get("klassement") or {}
+    top10 = k.get("top10") or []
+    info = ETAPPE_INFO.get(n, ("", "", ""))
+    feiten = {
+        "etappe": n, "start": info[0], "finish": info[1], "type": info[2],
+        "podium": [{"naam": p.get("naam"), "ploeg": p.get("ploeg"),
+                    "tijd": (p.get("tijd") or "").replace("+ ", "+")}
+                   for p in (u.get("pod") or [])[:5]],
+        "wissels": (k.get("wissels") or []) if k.get("naEtappe") == n else [],
+        "truien": {t: (v.get("naam") if isinstance(v, dict) else v)
+                   for t, v in (k.get("truien") or {}).items()},
+    }
+    if len(top10) > 1:
+        feiten["klassement_top3"] = [{"naam": r.get("naam"), "achterstand": r.get("tijd")}
+                                     for r in top10[:3]]
+    return feiten
+
+
+def regels_samenvatting(f):
+    """Terugblik volgens een vast patroon; werkt zonder API-sleutel."""
+    pod = f["podium"]
+    w = pod[0]
+    zin = w["naam"] + (f' ({w["ploeg"]})' if w.get("ploeg") else "")
+    zin += f' {WERKWOORD.get(f["type"], "won in")} {f["finish"]}'
+    if len(pod) > 1 and pod[1].get("tijd") and pod[1]["tijd"] not in ("", "—"):
+        zin += f', met {pod[1]["naam"]} op {pod[1]["tijd"]}'
+    elif len(pod) > 1:
+        zin += f', voor {pod[1]["naam"]}'
+    zinnen = [zin + "."]
+    if f.get("wissels"):
+        delen = [f'{x["naar"]} neemt {TRUI_LABEL.get(x["trui"], x["trui"])} over van {x["van"]}'
+                 for x in f["wissels"]]
+        zinnen.append(" en ".join(delen) + ".")
+    if f.get("klassement_top3") and len(f["klassement_top3"]) > 1:
+        g = f["klassement_top3"]
+        ach = str(g[1].get("achterstand") or "").replace("+ ", "")
+        zinnen.append(f'In het algemeen klassement leidt {g[0]["naam"]}, '
+                      f'met {g[1]["naam"]} op {ach}.')
+    return " ".join(zinnen)
+
+
+def claude_samenvatting(f):
+    """Laat Claude het raceverloop samenvatten. Geeft None terug zonder API-sleutel
+    of bij fouten, zodat het vaste patroon het overneemt."""
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        return None
+    try:
+        import anthropic
+        client = anthropic.Anthropic()
+        prompt = (
+            "Je bent een enthousiaste Nederlandse wielercommentator bij de Tour de France 2026. "
+            "Schrijf een korte terugblik van drie of vier zinnen op het verloop van de zojuist verreden etappe. "
+            "Gebruik uitsluitend de feiten hieronder en verzin niets. Noem de winnaar en hoe hij won "
+            "(solo, uit een kopgroep, in een sprint, afgaand op de tijdsverschillen op het podium), "
+            "iets over het klassement en eventuele truiwissels. "
+            "Schrijf lopende tekst zonder opsommingen, zonder kopjes en zonder gedachtestreepjes. "
+            "Antwoord met alleen die tekst.\n\nFeiten (JSON):\n" + json.dumps(f, ensure_ascii=False)
+        )
+        resp = client.messages.create(
+            model="claude-opus-4-8",
+            max_tokens=1024,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        if resp.stop_reason == "refusal":
+            return None
+        tekst = next((b.text for b in resp.content if b.type == "text"), "").strip()
+        return tekst or None
+    except Exception as e:
+        print(f"  Claude-samenvatting mislukt, vast patroon gebruikt: {e}")
         return None
 
 
@@ -560,6 +641,89 @@ def main():
     else:
         print("Geen bruikbare GC-tabel gevonden")
 
+    # 2b) letour.fr als primaire bron: verse rituitslag, klassementen en live
+    #     wegroepen (aangeleverd door capture_live.js). Overschrijft de
+    #     Wikipedia-data zodra beschikbaar; Wikipedia blijft het vangnet.
+    live_pad = Path(__file__).resolve().parent / "live_out.json"
+    live = None
+    if live_pad.exists():
+        try:
+            live = json.loads(live_pad.read_text(encoding="utf-8"))
+        except Exception:
+            live = None
+
+    if live and live.get("etappe"):
+        n = live["etappe"]
+        sl = str(n)
+
+        # rituitslag: alleen als de rit klaar is en er een winnaar staat
+        u = live.get("uitslag")
+        if live.get("klaar") and u and u.get("pod") and u["pod"][0].get("pos") == 1:
+            best = stand["uitslagen"].get(sl)
+            if not (best and best.get("lock")):
+                nieuw = {"w": u["w"], "wLand": u.get("wLand"), "wPloeg": u.get("wPloeg") or "",
+                         "note": (best or {}).get("note") or "", "pod": u["pod"],
+                         "bron": u.get("bron") or "letour.fr"}
+                if best != nieuw:
+                    stand["uitslagen"][sl] = nieuw
+                    gewijzigd = True
+                    print(f"Etappe {n}: uitslag van letour.fr ({u['w']})")
+
+        # de vier klassementen: alleen als de rit klaar is
+        kl = live.get("klassementen")
+        if live.get("klaar") and kl:
+            oud = stand.get("klassement") or {}
+            truien, klassementen = {}, {}
+            for trui in ("geel", "groen", "bollen", "wit"):
+                blok = kl.get(trui)
+                if blok and blok.get("top10"):
+                    leider = blok["top10"][0]
+                    truien[trui] = {"naam": leider["naam"], "kort": korte_naam(leider["naam"]),
+                                    "land": leider.get("land"), "ploeg": leider.get("ploeg") or ""}
+                    klassementen[trui] = {"naEtappe": n, "eenheid": blok.get("eenheid"),
+                                          "top10": blok["top10"]}
+                elif (oud.get("truien") or {}).get(trui):
+                    truien[trui] = oud["truien"][trui]
+            gc_top = (klassementen.get("geel") or {}).get("top10") or []
+            wissels = []
+            for trui in ("geel", "groen", "bollen", "wit"):
+                oud_v = (oud.get("truien") or {}).get(trui)
+                oud_naam = oud_v.get("naam") if isinstance(oud_v, dict) else oud_v
+                nieuw_naam = (truien.get(trui) or {}).get("naam")
+                if oud_naam and nieuw_naam and oud_naam != nieuw_naam:
+                    wissels.append({"trui": trui, "van": oud_naam, "naar": nieuw_naam})
+            if oud.get("naEtappe") == n and not wissels:
+                wissels = oud.get("wissels") or []
+            nieuw_kl = {
+                "naEtappe": n, "truien": truien, "top10": gc_top,
+                "klassementen": klassementen, "wissels": wissels,
+                "voetnoot": f"Stand na etappe {n}, automatisch bijgewerkt "
+                            f"{nu.day} {MAAND[nu.month]} {nu.strftime('%H:%M')} uur (bron: letour.fr).",
+            }
+            if gc_top and {k: v for k, v in oud.items() if k != "voetnoot"} != \
+               {k: v for k, v in nieuw_kl.items() if k != "voetnoot"}:
+                stand["klassement"] = nieuw_kl
+                gewijzigd = True
+                print(f"Klassement van letour.fr na etappe {n}; geel: "
+                      f"{(truien.get('geel') or {}).get('kort')}")
+
+        # live wegroepen: alleen tijdens de koers
+        koers = live.get("koers")
+        if koers and koers.get("groepen"):
+            if stand.get("koers") != koers:
+                stand["koers"] = koers
+                gewijzigd = True
+                print(f"Koerssituatie: etappe {koers.get('etappe')}, "
+                      f"{len(koers['groepen'])} groepen")
+        elif stand.get("koers"):
+            del stand["koers"]
+            gewijzigd = True
+            print("Koerssituatie verwijderd (geen rijdende koers)")
+    elif stand.get("koers"):
+        del stand["koers"]
+        gewijzigd = True
+        print("Koerssituatie verwijderd (geen livedata)")
+
     # 3) dagcommentaar voor de eerstvolgende rit; vernieuwt zodra de feiten wijzigen
     feiten = maak_feiten(stand)
     if feiten:
@@ -577,25 +741,25 @@ def main():
             gewijzigd = True
             print(f"Dagcommentaar vernieuwd voor etappe {feiten['volgende']['n']} ({bron})")
 
-    # 4) live koerssituatie (wegroepen + tijdsgaten), aangeleverd door
-    #    capture_koers.js. Ontbreekt het bestand of is de koers voorbij,
-    #    dan verwijderen we een verouderde stand.
-    koers_pad = Path(__file__).resolve().parent / "koers_out.json"
-    if koers_pad.exists():
-        try:
-            koers = json.loads(koers_pad.read_text(encoding="utf-8"))
-        except Exception:
-            koers = None
-        if koers and koers.get("groepen"):
-            if stand.get("koers") != koers:
-                stand["koers"] = koers
+    # 4) terugblik op de laatst verreden etappe; vernieuwt zodra de feiten wijzigen
+    laatste = max((int(sl) for sl, u in stand.get("uitslagen", {}).items()
+                   if (u or {}).get("pod")), default=None)
+    if laatste is not None:
+        f_sam = maak_feiten_samenvatting(stand, laatste)
+        if f_sam:
+            vinger = hashlib.sha256(
+                json.dumps(f_sam, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+            stand.setdefault("samenvattingen", {})
+            bestaand = stand["samenvattingen"].get(str(laatste))
+            if not bestaand or bestaand.get("feiten") != vinger:
+                tekst = claude_samenvatting(f_sam)
+                bron = "claude-opus-4-8" if tekst else "vast patroon"
+                stand["samenvattingen"][str(laatste)] = {
+                    "tekst": tekst or regels_samenvatting(f_sam),
+                    "bron": bron, "feiten": vinger,
+                }
                 gewijzigd = True
-                print(f"Koerssituatie bijgewerkt: etappe {koers.get('etappe')}, "
-                      f"{len(koers['groepen'])} groepen")
-    elif stand.get("koers"):
-        del stand["koers"]
-        gewijzigd = True
-        print("Koerssituatie verwijderd (geen rijdende koers)")
+                print(f"Samenvatting vernieuwd voor etappe {laatste} ({bron})")
 
     if gewijzigd:
         stand["bijgewerkt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

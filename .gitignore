@@ -4,3 +4,4 @@ node_modules/
 package.json
 package-lock.json
 scripts/koers_out.json
+scripts/live_out.json

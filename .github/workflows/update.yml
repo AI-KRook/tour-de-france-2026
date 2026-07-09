@@ -46,7 +46,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-chromium-v1
 
-      - name: Live koerssituatie vangen (alleen tijdens koersuren)
+      - name: Live wedstrijddata vangen (alleen tijdens koersuren)
         if: github.event_name != 'push'
         continue-on-error: true
         run: |
@@ -55,10 +55,10 @@ jobs:
           if [ "$hu" -ge 10 ] && [ "$hu" -le 18 ]; then
             npm install --no-audit --no-fund --no-save playwright
             npx playwright install --with-deps chromium
-            node scripts/capture_koers.js
+            node scripts/capture_live.js
           else
-            echo "buiten koersvenster ($hu:00 UTC); koersvangst overgeslagen"
-            rm -f scripts/koers_out.json
+            echo "buiten koersvenster ($hu:00 UTC); vangst overgeslagen"
+            rm -f scripts/live_out.json
           fi
 
       - name: Uitslagen, klassement en dagcommentaar bijwerken
