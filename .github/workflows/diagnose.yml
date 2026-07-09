@@ -15,12 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: livetracking.json ophalen
+      - name: Configmodules uit bundles halen
         run: |
           mkdir -p diagnose
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-          curl -sS -A "$UA" --max-time 20 -L "https://racecenter.letour.fr/livetracking.json" -o diagnose/livetracking.json
-          wc -c diagnose/livetracking.json
+          curl -sS -A "$UA" --max-time 20 -L "https://racecenter.letour.fr/nl" -o /tmp/pagina.html
+          grep -oE 'href="/js/[^"]*\.js"' /tmp/pagina.html | sed 's/href="//;s/"//' | sort -u > /tmp/bundles.txt
+          : > diagnose/config.txt
+          : > diagnose/sse.txt
+          while read -r p; do
+            curl -sS -A "$UA" --max-time 20 "https://racecenter.letour.fr$p" -o /tmp/b.js || continue
+            # volledige JSON.parse-configs met domein- of url-verwijzingen
+            grep -oE "JSON\.parse\('[^']{0,4000}'\)" /tmp/b.js | grep -E "letour|url|api|sse|stream" >> diagnose/config.txt || true
+            # context rond EventSource-constructie en url-opbouw
+            grep -oE '.{200}new EventSource.{200}' /tmp/b.js >> diagnose/sse.txt || true
+            grep -oE '.{80}(sseUrl|sse_url|streamUrl|liveUrl|dataUrl|apiUrl|baseUrl|BASE_URL)[^,;]{0,120}' /tmp/b.js >> diagnose/sse.txt || true
+          done < /tmp/bundles.txt
+          wc -c diagnose/config.txt diagnose/sse.txt
 
       - name: Resultaat naar diagnose-data branch
         run: |
