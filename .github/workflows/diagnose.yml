@@ -12,22 +12,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Livebronnen testen
+      - name: API-endpoints in racecenter-bundles zoeken
         run: |
           mkdir -p diagnose
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-          probe() {
-            naam="$1"; url="$2"
-            code=$(curl -sS -A "$UA" -o "diagnose/$naam.body" -w "%{http_code}" --max-time 20 -L "$url" 2>"diagnose/$naam.err" || true)
-            size=$(wc -c < "diagnose/$naam.body" 2>/dev/null || echo 0)
-            echo "$naam $code $size $url" >> diagnose/overzicht.txt
-            head -c 60000 "diagnose/$naam.body" > "diagnose/$naam.head" || true
-          }
-          probe letour-nl "https://www.letour.fr/nl"
-          probe racecenter "https://racecenter.letour.fr/"
-          probe racecenter-nl "https://racecenter.letour.fr/nl"
-          probe letour-live "https://www.letour.fr/nl/live"
-          cat diagnose/overzicht.txt
+          curl -sS -A "$UA" --max-time 20 -L "https://racecenter.letour.fr/nl" -o diagnose/pagina.html
+          # volledige initial state bewaren
+          grep -o 'window.__INITIAL_STATE__=.*' diagnose/pagina.html | head -c 200000 > diagnose/initial-state.txt || true
+          # alle js-bundles ophalen en op url-patronen doorzoeken
+          grep -oE 'href="/js/[^"]*\.js"' diagnose/pagina.html | sed 's/href="//;s/"//' | sort -u > diagnose/bundles.txt
+          : > diagnose/api-urls.txt
+          while read -r p; do
+            curl -sS -A "$UA" --max-time 20 "https://racecenter.letour.fr$p" -o /tmp/b.js || continue
+            grep -oE '"https?://[^"]{5,140}"' /tmp/b.js >> diagnose/api-urls.txt || true
+            grep -oE '"/[a-zA-Z0-9_/.-]*(api|json|live|ranking|situation|group)[a-zA-Z0-9_/.-]*"' /tmp/b.js >> diagnose/api-urls.txt || true
+          done < diagnose/bundles.txt
+          sort -u diagnose/api-urls.txt -o diagnose/api-urls.txt
+          wc -l diagnose/api-urls.txt
 
       - name: Resultaat naar diagnose-data branch
         run: |
@@ -36,5 +37,5 @@ jobs:
           git checkout --orphan diag-tmp
           git rm -rf --cached . >/dev/null
           git add -f diagnose/
-          git commit -m "Diagnose livebron $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git commit -m "Diagnose api-zoektocht $(date -u +'%Y-%m-%d %H:%M') UTC"
           git push origin HEAD:diagnose-data --force
