@@ -1,0 +1,40 @@
+name: Diagnose livebron
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Livebronnen testen
+        run: |
+          mkdir -p diagnose
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          probe() {
+            naam="$1"; url="$2"
+            code=$(curl -sS -A "$UA" -o "diagnose/$naam.body" -w "%{http_code}" --max-time 20 -L "$url" 2>"diagnose/$naam.err" || true)
+            size=$(wc -c < "diagnose/$naam.body" 2>/dev/null || echo 0)
+            echo "$naam $code $size $url" >> diagnose/overzicht.txt
+            head -c 60000 "diagnose/$naam.body" > "diagnose/$naam.head" || true
+          }
+          probe letour-nl "https://www.letour.fr/nl"
+          probe racecenter "https://racecenter.letour.fr/"
+          probe racecenter-nl "https://racecenter.letour.fr/nl"
+          probe letour-live "https://www.letour.fr/nl/live"
+          cat diagnose/overzicht.txt
+
+      - name: Resultaat naar diagnose-data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan diag-tmp
+          git rm -rf --cached . >/dev/null
+          git add -f diagnose/
+          git commit -m "Diagnose livebron $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push origin HEAD:diagnose-data --force
