@@ -262,6 +262,21 @@
   .kanshebbers{display:flex;flex-wrap:wrap;gap:7px}
   .kans{background:#fff;border:1px solid var(--lijn);border-radius:20px;padding:5px 12px;font-size:.82rem;font-weight:600;white-space:nowrap}
   .notu{font-size:.82rem;color:var(--grijs);margin-top:10px;font-style:italic}
+  /* klimmenradar */
+  #klimmen{margin:12px 0 2px;border:1px solid var(--lijn);border-radius:14px;padding:10px 12px;background:#fff}
+  #klimmen .klimkop{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  #klimmen .klimkop span{color:var(--grijs);font-weight:700;margin-left:4px}
+  #klimmen .klimrij{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px solid var(--lijn)}
+  #klimmen .kdot{flex:0 0 auto;width:12px;height:12px;border-radius:50%}
+  #klimmen .knaam{flex:1 1 auto;font-weight:700;font-size:.9rem;line-height:1.25}
+  #klimmen .knaam small{display:block;font-weight:500;color:var(--grijs);font-size:.76rem}
+  #klimmen .kcijf{flex:0 0 auto;text-align:right;font-size:.82rem;font-variant-numeric:tabular-nums;line-height:1.3}
+  #klimmen .kcijf small{display:block;color:var(--grijs);font-size:.72rem}
+  .steillegend{font-family:system-ui,sans-serif;font-weight:500;font-size:.62rem;letter-spacing:0;text-transform:none;color:var(--grijs);white-space:nowrap}
+  .steillegend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin:0 2px 0 6px;vertical-align:middle}
+  /* toast */
+  #toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%) translateY(12px);background:#16160f;color:#fff;padding:10px 16px;border-radius:999px;font-size:.86rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:1000}
+  #toast.aan{opacity:1;transform:translateX(-50%) translateY(0)}
   #chartWrap{margin-top:16px;height:210px;position:relative}
   #chartWrap .titel{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs);margin-bottom:6px}
   #profielChart{max-height:180px}
@@ -350,6 +365,7 @@
       <div class="stat"><div class="w" id="dTop">—</div><div class="l">Hoogste punt</div></div>
     </div>
     <div class="cols" id="dCols"></div>
+    <div id="klimmen" hidden></div>
     <div id="dUitslag" style="display:none"></div>
     <div id="dPreview" style="display:none"></div>
     <div id="chartWrap">
@@ -358,6 +374,7 @@
     </div>
     <div class="knoppen">
       <button class="knop geel" id="dRide" type="button">▶ Rij de etappe</button>
+      <button class="knop" id="dShare" type="button">📤 Delen</button>
       <a class="knop" id="dGmaps" href="#" target="_blank" rel="noopener">Google Maps</a>
     </div>
   </article>
@@ -752,6 +769,87 @@ kalender.forEach(item=>{
   chipsEl.appendChild(c);
 });
 
+// ---------- klimmenradar ----------
+function hellingKleur(p){
+  if(p<0)return "#8fb0c4";   // afdaling
+  if(p<3)return "#3f9b52";   // licht
+  if(p<6)return "#e0a021";   // pittig
+  if(p<9)return "#e2711d";   // zwaar
+  return "#c62f1c";          // muur
+}
+// beklimmingen uit de exacte routedata: lengte, gemiddeld % en hoogtemeters
+function klimAnalyse(n){
+  const ex=EXACT[n];
+  if(!ex||!ex.prof||!ex.prof.length)return [];
+  const prof=ex.prof, cols=(KLIM[n]||[]), out=[];
+  for(const c of cols){
+    const topKm=c[1];
+    let ti=0;
+    for(let i=0;i<prof.length;i++)if(Math.abs(prof[i][0]-topKm)<Math.abs(prof[ti][0]-topKm))ti=i;
+    // voet zoeken via voortschrijdend venster: vanaf de top steeds ~2 km
+    // terug; blijf uitbreiden zolang dat blok gemiddeld >=2% stijgt en stop
+    // bij de eerste vlakte, zodat de flauwe aanloop niet meetelt
+    let fi=ti;
+    while(prof[ti][0]-prof[fi][0]<35){
+      let j=fi;
+      while(j>0&&prof[fi][0]-prof[j][0]<2)j--;
+      if(j===fi)break;
+      const dx=(prof[fi][0]-prof[j][0])*1000;
+      const pct=dx>0?(prof[fi][1]-prof[j][1])/dx*100:0;
+      if(pct<2)break;
+      fi=j;
+    }
+    const lengte=prof[ti][0]-prof[fi][0], hm=prof[ti][1]-prof[fi][1];
+    if(lengte<1||hm<50)continue; // te klein voor een echte klim
+    const gem=hm/(lengte*1000)*100;
+    // steilste stuk over ~500 m
+    let maxp=0;
+    for(let i=ti;i>fi;i--){
+      let j=i;while(j>fi&&(prof[i][0]-prof[j][0])<0.5)j--;
+      const dx=(prof[i][0]-prof[j][0])*1000;
+      if(dx>0)maxp=Math.max(maxp,(prof[i][1]-prof[j][1])/dx*100);
+    }
+    out.push({naam:c[0],topH:Math.round(prof[ti][1]),lengte,gem,hm:Math.round(hm),max:maxp});
+  }
+  return out;
+}
+function renderKlimmen(n){
+  const el=document.getElementById("klimmen");
+  const ks=klimAnalyse(n);
+  if(!ks.length){el.hidden=true;el.innerHTML="";return;}
+  el.hidden=false;
+  el.innerHTML=`<div class="klimkop">⛰️ Klimmenradar <span>${ks.length} beklimming${ks.length>1?"en":""}</span></div>`
+    +ks.map(k=>`<div class="klimrij">
+        <span class="kdot" style="background:${hellingKleur(k.gem)}"></span>
+        <span class="knaam">${k.naam}<small>top ${k.topH.toLocaleString("nl-NL")} m</small></span>
+        <span class="kcijf"><b>${k.lengte.toFixed(1).replace(".",",")} km</b> · ${k.gem.toFixed(1).replace(".",",")}% gem
+          <small>+${k.hm} hm · steilste ±${k.max.toFixed(0)}%</small></span>
+      </div>`).join("");
+}
+function deelRit(n){
+  const e=ETAPPES.find(x=>x.n===n);if(!e)return;
+  const ex=EXACT[n];
+  const km=(ex?ex.km:e.km).toLocaleString("nl-NL");
+  const u=UITSLAGEN[n];
+  let tekst=`Tour de France 2026 · Etappe ${e.n}: ${e.start[0]} → ${e.fin[0]} (${TYPENAAM[e.type]}, ${km} km).`;
+  if(u&&u.pod&&u.pod[0]){const w=u.pod[0];tekst+=` 🏁 Winnaar: ${w.naam}${w.ploeg?` (${w.ploeg})`:""}.`;}
+  const url=location.origin+location.pathname+`#etappe-${n}`;
+  if(navigator.share){
+    navigator.share({title:"Tour de France 2026",text:tekst,url}).catch(()=>{});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(tekst+" "+url).then(()=>toast("Gekopieerd naar klembord")).catch(()=>{});
+  }else{
+    toast("Delen niet ondersteund op dit apparaat");
+  }
+}
+let toastTO=null;
+function toast(msg){
+  let t=document.getElementById("toast");
+  if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t);}
+  t.textContent=msg;t.classList.add("aan");
+  clearTimeout(toastTO);toastTO=setTimeout(()=>t.classList.remove("aan"),2200);
+}
+
 // ---------- detail + grafiek ----------
 let chart=null;
 function kies(n,zoom=true){
@@ -774,6 +872,7 @@ function kies(n,zoom=true){
   const top=(ex&&ex.top)?ex.top:Math.max(...e.prof.map(p=>p[1]));
   document.getElementById("dTop").textContent=top.toLocaleString("nl-NL")+" m";
   document.getElementById("dCols").innerHTML=e.cols;
+  renderKlimmen(n);
   const uB=document.getElementById("dUitslag");
   const pB=document.getElementById("dPreview");
   const u=UITSLAGEN[n];
@@ -797,7 +896,11 @@ function kies(n,zoom=true){
     if(pv){pB.style.display="block";pB.innerHTML=pv;}
     else{pB.style.display="none";pB.innerHTML="";}
   }
-  document.getElementById("chartTitel").textContent=(ex&&ex.prof)?"Hoogteprofiel":"Hoogteprofiel · indicatief";
+  document.getElementById("chartTitel").innerHTML=(ex&&ex.prof)
+    ?`Hoogteprofiel <span class="steillegend">`
+      +`<i style="background:#3f9b52"></i>&lt;3% <i style="background:#e0a021"></i>3-6% `
+      +`<i style="background:#e2711d"></i>6-9% <i style="background:#c62f1c"></i>9%+</span>`
+    :"Hoogteprofiel · indicatief";
   const wpStr=e.wp.map(w=>`${w[1]},${w[2]}`).join("|");
   let url=`https://www.google.com/maps/dir/?api=1&origin=${e.start[1]},${e.start[2]}&destination=${e.fin[1]},${e.fin[2]}&travelmode=driving`;
   if(wpStr)url+=`&waypoints=${encodeURIComponent(wpStr)}`;
@@ -818,7 +921,12 @@ function kies(n,zoom=true){
     data:{datasets:[
       {data:profData.map(p=>({x:p[0],y:p[1]})),
        borderColor:KLEUR[e.type],backgroundColor:KLEUR[e.type]+"26",
-       fill:true,tension:ex?0:0.35,pointRadius:0,borderWidth:2,order:2},
+       fill:true,tension:ex?0:0.35,pointRadius:0,borderWidth:(ex&&ex.prof)?2.5:2,order:2,
+       // exact profiel: lijn inkleuren naar stijgingspercentage
+       segment:(ex&&ex.prof)?{borderColor:seg=>{
+         const a=seg.p0.parsed,b=seg.p1.parsed,dx=(b.x-a.x)*1000;
+         return hellingKleur(dx>0?(b.y-a.y)/dx*100:0);
+       }}:undefined},
       {type:"scatter",data:colPts,pointRadius:4,pointHoverRadius:6,
        pointBackgroundColor:"#fff",pointBorderColor:"#d9331f",pointBorderWidth:2,order:1}
     ]},
@@ -930,6 +1038,35 @@ function toggleRide(){
   ride=requestAnimationFrame(stap);
 }
 document.getElementById("dRide").onclick=toggleRide;
+document.getElementById("dShare").onclick=()=>{const a=document.querySelector(".chip.actief");if(a)deelRit(parseInt(a.id.replace("chip-","")));};
+
+// ---------- swipen / pijltoetsen tussen etappes ----------
+function huidigeEtappe(){const a=document.querySelector(".chip.actief");return a?parseInt(a.id.replace("chip-","")):null;}
+function wisselEtappe(richting){
+  const n=huidigeEtappe();if(n==null)return;
+  const doel=n+richting;
+  if(doel>=1&&doel<=21){kies(doel);}
+}
+(function(){
+  const zone=document.getElementById("tab-etappes");
+  let x0=null,y0=null,opKaart=false;
+  zone.addEventListener("touchstart",ev=>{
+    const t=ev.touches[0];x0=t.clientX;y0=t.clientY;
+    opKaart=!!ev.target.closest("#mapKaart"); // kaart mag zelf pannen
+  },{passive:true});
+  zone.addEventListener("touchend",ev=>{
+    if(x0==null||opKaart){x0=null;return;}
+    const t=ev.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.6)wisselEtappe(dx<0?1:-1);
+    x0=null;
+  },{passive:true});
+})();
+document.addEventListener("keydown",ev=>{
+  if(document.getElementById("tab-etappes").hidden)return;
+  if(/input|textarea|select/i.test((ev.target.tagName||"")))return;
+  if(ev.key==="ArrowRight")wisselEtappe(1);
+  else if(ev.key==="ArrowLeft")wisselEtappe(-1);
+});
 
 // ---------- NU: waar zijn ze? ----------
 let laatsteNuPos=null;
