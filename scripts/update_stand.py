@@ -94,6 +94,24 @@ def korte_naam(vol):
     return delen[0][0] + ". " + " ".join(delen[1:])
 
 
+def zelfde_renner(a, b):
+    """Bepaalt of twee namen dezelfde renner zijn, accent- en hoofdletterongevoelig
+    en bestand tegen verschillende volledigheid. 'Tadej Pogačar' (Wikipedia),
+    'Tadej Pogacar' en 'Isaac del Toro' vs 'Isaac Del Toro Romero' (letour) tellen
+    als dezelfde renner: de woorden van de kortste naam zitten volledig in de andere."""
+    import unicodedata
+
+    def woorden(s):
+        s = unicodedata.normalize("NFKD", s or "")
+        s = "".join(c for c in s if not unicodedata.combining(c))
+        return set(s.lower().split())
+
+    wa, wb = woorden(a), woorden(b)
+    if not wa or not wb:
+        return False
+    return wa <= wb or wb <= wa
+
+
 def wiki_tijd(ruw):
     """Zet wiki-notatie om: '3h 29\\' 07\"' -> '3:29:07', '+ 28\"' -> '+ 0:28', '+ 0\"' -> 'z.t.'."""
     t = (ruw or "").replace("″", '"').replace("′", "'").replace("−", "-")
@@ -423,6 +441,8 @@ def regels_samenvatting(f):
             truitekst = truien[0] if len(truien) == 1 else " en ".join([", ".join(truien[:-1]), truien[-1]])
             delen.append(f'{naar} pakt {truitekst}')
         zinnen.append(". ".join(d[0].upper() + d[1:] for d in delen) + ".")
+    else:
+        zinnen.append("Alle truien bleven om dezelfde schouders.")
     if f.get("klassement_top3") and len(f["klassement_top3"]) > 1:
         g = f["klassement_top3"]
         ach = str(g[1].get("achterstand") or "").replace("+ ", "")
@@ -623,10 +643,11 @@ def main():
             oud_v = (oud.get("truien") or {}).get(trui)
             oud_naam = oud_v.get("naam") if isinstance(oud_v, dict) else oud_v
             nieuw_naam = (truien.get(trui) or {}).get("naam")
-            if oud_naam and nieuw_naam and oud_naam != nieuw_naam:
+            if oud_naam and nieuw_naam and not zelfde_renner(oud_naam, nieuw_naam):
                 wissels.append({"trui": trui, "van": oud_naam, "naar": nieuw_naam})
         if oud.get("naEtappe") == beste_n and not wissels:
-            wissels = oud.get("wissels") or []
+            wissels = [w for w in (oud.get("wissels") or [])
+                       if not zelfde_renner(w.get("van"), w.get("naar"))]
         nieuw_klassement = {
             "naEtappe": beste_n,
             "truien": truien,
@@ -696,10 +717,11 @@ def main():
                 oud_v = (oud.get("truien") or {}).get(trui)
                 oud_naam = oud_v.get("naam") if isinstance(oud_v, dict) else oud_v
                 nieuw_naam = (truien.get(trui) or {}).get("naam")
-                if oud_naam and nieuw_naam and oud_naam != nieuw_naam:
+                if oud_naam and nieuw_naam and not zelfde_renner(oud_naam, nieuw_naam):
                     wissels.append({"trui": trui, "van": oud_naam, "naar": nieuw_naam})
             if oud.get("naEtappe") == n and not wissels:
-                wissels = oud.get("wissels") or []
+                wissels = [w for w in (oud.get("wissels") or [])
+                           if not zelfde_renner(w.get("van"), w.get("naar"))]
             nieuw_kl = {
                 "naEtappe": n, "truien": truien, "top10": gc_top,
                 "klassementen": klassementen, "wissels": wissels,
