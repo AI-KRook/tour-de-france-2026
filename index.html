@@ -125,6 +125,27 @@
     display:flex;align-items:center;justify-content:center;font-size:12px;
   }
   #nuKm{font-size:.84rem;font-weight:700;margin-top:9px;position:relative;z-index:1}
+  #nuSamen{font-size:.86rem;color:rgba(22,22,15,.85);margin-top:10px;position:relative;z-index:1;max-width:62ch;line-height:1.5}
+  #nuTik{
+    font-size:.76rem;font-weight:700;margin-top:12px;position:relative;z-index:1;
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.6);border-radius:20px;padding:6px 13px;
+  }
+
+  /* ---------- live-positiemarker op de kaart ---------- */
+  .nuLive{position:relative;width:30px;height:30px}
+  .nuLive .ring{position:absolute;inset:0;border-radius:50%;background:rgba(217,51,31,.45);animation:nuring 1.8s ease-out infinite}
+  .nuLive .kern{
+    position:absolute;inset:4px;border-radius:50%;background:var(--geel);
+    border:2.5px solid var(--inkt);display:flex;align-items:center;justify-content:center;font-size:13px;
+  }
+  @keyframes nuring{from{transform:scale(.6);opacity:.9}to{transform:scale(2.1);opacity:0}}
+  @media(prefers-reduced-motion:reduce){.nuLive .ring{animation:none;opacity:.35}}
+  .nuLabel{
+    background:var(--inkt);color:#fff;border:0;border-radius:8px;
+    font-size:.7rem;font-weight:700;padding:2px 9px;box-shadow:var(--schaduw);
+  }
+  .nuLabel::before{border-top-color:var(--inkt) !important}
 
   /* ---------- vandaag-kaart ---------- */
   .badge{
@@ -277,7 +298,7 @@
 
 <!-- ======== TAB: VANDAAG ======== -->
 <section id="tab-vandaag" class="tab" aria-label="Vandaag">
-  <button id="nuStrip" type="button" aria-label="Vandaag in koers, bekijk op de kaart">
+  <button id="nuStrip" type="button" aria-label="Bekijk live op de kaart waar de koers nu rijdt">
     <span class="label"><span class="puls" aria-hidden="true"></span>Nu in koers</span>
     <div id="nuTitel">—</div>
     <div id="nuInfo">—</div>
@@ -286,6 +307,8 @@
       <div class="stip" id="nuStip" style="left:0%">🚴</div>
     </div>
     <div id="nuKm"></div>
+    <div id="nuSamen"></div>
+    <div id="nuTik" hidden>📍 Tik om live op de kaart te volgen</div>
   </button>
 
   <div id="vandaagCard" class="kaartje" style="margin-top:14px"></div>
@@ -851,14 +874,17 @@ function toggleRide(){
 document.getElementById("dRide").onclick=toggleRide;
 
 // ---------- NU: waar zijn ze? ----------
+let laatsteNuPos=null;
 function updateNu(){
   const nu=new Date();
   const iso=new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam"}).format(nu);
   const t=document.getElementById("nuTitel"),i=document.getElementById("nuInfo"),
         bar=document.getElementById("nuBar"),balk=document.getElementById("nuBalk"),
-        stip=document.getElementById("nuStip"),kmEl=document.getElementById("nuKm");
+        stip=document.getElementById("nuStip"),kmEl=document.getElementById("nuKm"),
+        sam=document.getElementById("nuSamen"),tik=document.getElementById("nuTik");
   if(nuMarker){map.removeLayer(nuMarker);nuMarker=null;}
-  bar.style.display="none";kmEl.textContent="";
+  laatsteNuPos=null;
+  bar.style.display="none";kmEl.textContent="";sam.textContent="";tik.hidden=true;
 
   if(iso<"2026-07-04"){t.textContent="De Tour is nog niet begonnen";i.textContent="Start: zaterdag 4 juli in Barcelona";return;}
   if(iso>"2026-07-26"){t.textContent="Tour de France 2026 is afgelopen";i.textContent="Gefinisht op 26 juli in Parijs";return;}
@@ -870,31 +896,66 @@ function updateNu(){
   const totKm=ex?ex.km:e.km;
   t.textContent=`Etappe ${e.n} · ${e.start[0]} → ${e.fin[0]} · ${totKm} km`;
 
+  const cols=KLIM[e.n]||[];
   const [uu,mm]=e.st.split(":").map(Number);
   const startT=new Date(nu);startT.setHours(uu,mm,0,0);
   const snelheid=e.type==="tijdrit"?TT_SNELHEID:GEM_SNELHEID;
   const duurMin=totKm/snelheid*60;
   const verstreken=(nu-startT)/60000;
+  const finishTijd=new Date(startT.getTime()+duurMin*60000).toTimeString().slice(0,5);
 
   if(verstreken<0){
     const w=-verstreken;
     const cd=w>=60?`${Math.floor(w/60)} u ${Math.round(w%60)} min`:`${Math.round(w)} min`;
-    i.textContent=`⏳ Start over ${cd} (±${e.st} uur) in ${e.start[0]}. Verwachte finish rond ${new Date(startT.getTime()+duurMin*60000).toTimeString().slice(0,5)} uur.`;
+    i.textContent=`⏳ Start over ${cd} (±${e.st} uur) in ${e.start[0]}.`;
+    const TYPEZIN={vlak:"Een dag voor de rappe mannen: alles wijst op een massasprint",
+      heuvels:"Golvend terrein vandaag: een dag voor aanvallers",
+      berg:"Zware bergrit vandaag",tijdrit:"Vandaag de race tegen de klok"};
+    let z=TYPEZIN[e.type]||"";
+    if(cols.length){
+      const zwaarste=cols.reduce((a,b)=>b[2]>a[2]?b:a);
+      z+=` met ${cols.length===1?"één beklimming":cols.length+" beklimmingen"}; scherprechter is ${zwaarste[0]} (km ${zwaarste[1]})`;
+    }
+    sam.textContent=(z?z+". ":"")+`Verwachte finish rond ${finishTijd} uur.`;
   }else if(verstreken>duurMin){
     i.textContent=`De etappe is gefinisht in ${e.fin[0]}.`;
     bar.style.display="block";balk.style.width="100%";stip.style.left="100%";stip.textContent="🏁";
     kmEl.textContent=`${totKm} van ${totKm} km · finish bereikt`;
+    const u=UITSLAGEN[e.n];
+    sam.textContent=(u&&u.w)
+      ?`🏆 ${u.w}${u.wPloeg?` (${u.wPloeg})`:""} won de rit. De volledige uitslag staat bij Uitslagen.`
+      :"De uitslag verschijnt hier automatisch zodra die binnen is.";
   }else{
     const frac=Math.min(verstreken/duurMin,1);
     const kmNu=frac*totKm;
-    i.textContent=`Geschatte positie op basis van starttijd ±${e.st} en ±${snelheid} km/u, geen live GPS.`;
+    i.textContent=`Schatting op basis van starttijd ±${e.st} en ±${snelheid} km/u, geen live GPS.`;
     bar.style.display="block";
     balk.style.width=(frac*100).toFixed(1)+"%";
     stip.style.left=(frac*100).toFixed(1)+"%";stip.textContent="🚴";
-    kmEl.textContent=`± km ${kmNu.toFixed(0)} van ${totKm} · nog ±${Math.max(duurMin-verstreken,0).toFixed(0)} min tot de finish`;
+    kmEl.textContent=`± km ${kmNu.toFixed(0)} van ${totKm} · nog ±${Math.max(duurMin-verstreken,0).toFixed(0)} min · finish rond ${finishTijd} uur`;
+    // korte samenvatting van waar de koers nu staat
+    const komend=cols.filter(c=>c[1]>kmNu), gehad=cols.filter(c=>c[1]<=kmNu);
+    const zinnen=[];
+    if(gehad.length)zinnen.push(`${gehad[gehad.length-1][0]} ligt achter hen.`);
+    if(komend.length){
+      const v=komend[0];
+      const nogKm=Math.max(v[1]-kmNu,0).toFixed(0);
+      zinnen.push(`Volgende scherprechter: ${v[0]} op km ${v[1]} (over ±${nogKm} km)${komend.length>1?`; daarna ${komend.length-1===1?"nog één beklimming":`nog ${komend.length-1} beklimmingen`}`:""}.`);
+    }else if(cols.length){
+      zinnen.push(`Alle beklimmingen zijn achter de rug; nu de finale richting ${e.fin[0].split(" (")[0]}!`);
+    }else if(e.type==="vlak"){
+      zinnen.push("Vlak terrein; de sprintploegen houden de boel onder controle.");
+    }else if(e.type==="tijdrit"){
+      zinnen.push("De renners starten één voor één; de klok is de enige tegenstander.");
+    }
+    sam.textContent=zinnen.join(" ");
+    // pulserende livemarker met km-label op de kaart
     const pos=posOpKm(e.n,kmNu);
-    nuMarker=L.circleMarker(pos,{radius:9,color:"#16160f",weight:3,fillColor:"#ffd100",fillOpacity:1})
-      .addTo(map).bindTooltip("Geschatte positie peloton");
+    laatsteNuPos=pos;
+    const ikoon=L.divIcon({className:"",html:"<div class='nuLive'><div class='ring'></div><div class='kern'>🚴</div></div>",iconSize:[30,30],iconAnchor:[15,15]});
+    nuMarker=L.marker(pos,{icon:ikoon,zIndexOffset:1000}).addTo(map)
+      .bindTooltip(`± km ${kmNu.toFixed(0)} · geschat`,{permanent:true,direction:"top",offset:[0,-16],className:"nuLabel"});
+    tik.hidden=false;
   }
 }
 
@@ -964,7 +1025,17 @@ function renderVandaag(){
   renderTruien(document.getElementById("truienMini"),false);
   document.getElementById("truienHint").textContent=KLASSEMENT?`na etappe ${KLASSEMENT.naEtappe} · tik voor de top 10`:"";
 }
-document.getElementById("nuStrip").onclick=()=>{if(vandaagEt){toonTab("etappes");kies(vandaagEt.n);}};
+document.getElementById("nuStrip").onclick=()=>{
+  if(!vandaagEt)return;
+  toonTab("etappes");
+  if(laatsteNuPos){
+    // spring naar de geschatte livepositie, ingezoomd
+    kies(vandaagEt.n,false);
+    map.flyTo(laatsteNuPos,11);
+  }else{
+    kies(vandaagEt.n);
+  }
+};
 
 // ---------- klassement ----------
 let truiKeuze="geel";
