@@ -298,6 +298,7 @@
   .trui .tn{display:flex;align-items:center;gap:8px}
   .rmnaam{font-size:1.3rem;font-weight:800;line-height:1.15}
   .rmploeg{color:var(--grijs);font-size:.92rem;margin-top:2px}
+  .rmfiets{font-size:.86rem;margin-top:3px}
   .rmfeiten{display:flex;gap:10px;margin:16px 0 4px}
   .rmfeiten>div{flex:1;background:#f7f5ee;border-radius:12px;padding:10px 6px;text-align:center}
   .rmfeiten b{display:block;font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums}
@@ -822,6 +823,38 @@ function rennerHtml(naam,land,bib){
   const inner=metVlag(naam,land);
   return b!=null?`<button type="button" class="rennerlink" data-r="${b}">${inner}</button>`:inner;
 }
+// Ploeg -> fietsmerk. Handmatige tabel: pas gerust aan of vul de lege in.
+// Leeg ("") betekent: nog niet bevestigd, dan tonen we geen fiets.
+const TEAMFIETS={
+  "UAE Team Emirates XRG":"Colnago",
+  "Team Visma | Lease a Bike":"Cervélo",
+  "Lidl-Trek":"Trek",
+  "Soudal Quick-Step":"Specialized",
+  "Red Bull - Bora - Hansgrohe":"Specialized",
+  "Netcompany Ineos Cycling Team":"Pinarello",
+  "Groupama-FDJ United":"Wilier",
+  "Decathlon CMA CGM Team":"Van Rysel",
+  "Movistar Team":"Canyon",
+  "Bahrain Victorious":"Merida",
+  "EF Education - EasyPost":"Cannondale",
+  "Alpecin-Premier Tech":"Canyon",
+  "XDS Astana Team":"XDS",
+  "Cofidis":"Look",
+  "Team Jayco AlUla":"Giant",
+  "Tudor Pro Cycling Team":"BMC",
+  "Team Picnic PostNL":"Scott",
+  "Pinarello-Q36.5 Pro Cycling Team":"Pinarello",
+  // nog te bevestigen:
+  "Uno-X Mobility":"",
+  "Lotto Intermarche":"",
+  "TotalEnergies":"",
+  "NSN Cycling Team":"",
+  "Caja Rural-Seguros RGA":"",
+};
+const _fietsIndex=(()=>{const m={};const nrm=s=>(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+  for(const k in TEAMFIETS)if(TEAMFIETS[k])m[nrm(k)]=TEAMFIETS[k];return m;})();
+function fietsVoor(ploeg){return _fietsIndex[(ploeg||"").toLowerCase().replace(/[^a-z0-9]/g,"")]||"";}
+
 const RM_TRUI={geel:["Algemeen","geel"],groen:["Punten","groen"],bollen:["Bergen","bollen"],wit:["Jongeren","wit"]};
 function openRenner(bib){
   const r=RENNERS[bib];if(!r)return;
@@ -836,6 +869,7 @@ function openRenner(bib){
       <div class="rmkopt">
         <div class="rmnaam" id="rmNaam">${metVlag(r.naam,r.land)}</div>
         ${r.ploeg?`<div class="rmploeg">${r.ploeg}</div>`:""}
+        ${fietsVoor(r.ploeg)?`<div class="rmfiets">🚲 ${fietsVoor(r.ploeg)}</div>`:""}
       </div>
     </div>
     <div class="rmfeiten">
