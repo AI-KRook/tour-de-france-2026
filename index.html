@@ -1317,23 +1317,6 @@ function updateNu(){
       zinnen.push("De renners starten één voor één; de klok is de enige tegenstander.");
     }
     sam.textContent=zinnen.join(" ");
-    // koersgroepen met tijdsverschillen (uit stand.json, indien vers genoeg)
-    if(KOERS&&KOERS.etappe===e.n&&Array.isArray(KOERS.groepen)&&KOERS.groepen.length){
-      const bijg=KOERS.bijgewerkt?new Date(KOERS.bijgewerkt):null;
-      if(bijg&&(nu-bijg)<45*60000){
-        const hhmm=bijg.toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Amsterdam"});
-        grp.hidden=false;
-        grp.innerHTML=`<div class="gkop">Koerssituatie · stand van ${hhmm} uur</div>`
-          +KOERS.groepen.map(g=>{
-            let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
-            if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
-            return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal?` (${g.aantal})`:""}</span>`
-              +(g.gat?`<span class="ggat">${g.gat}</span>`:`<span class="ggat">kop</span>`)
-              +(renners?`<div class="grenners">${renners}</div>`:"")
-              +`</div>`;
-          }).join("");
-      }
-    }
     // livemarker op het hoogteprofiel van deze etappe
     liveKm=kmNu;liveEtappe=e.n;
     if(chart&&getoondEtappe===e.n)chart.update("none");
@@ -1345,6 +1328,34 @@ function updateNu(){
       .bindTooltip(`± km ${kmNu.toFixed(0)} · geschat`,{permanent:true,direction:"top",offset:[0,-16],className:"nuLabel"});
     tik.hidden=false;
   }
+  // live koerssituatie: tonen zodra er verse letourdata is (jonger dan 45 min),
+  // ongeacht de tijdschatting hierboven, want dan wordt er echt gekoerst
+  toonKoersGroepen(e.n);
+}
+// rendert #nuGroepen met kopgroep/achtervolgers/peloton + tijdsgaten
+function toonKoersGroepen(etNr){
+  const grp=document.getElementById("nuGroepen");
+  if(!grp)return false;
+  const nu=new Date();
+  if(KOERS&&KOERS.etappe===etNr&&Array.isArray(KOERS.groepen)&&KOERS.groepen.length){
+    const bijg=KOERS.bijgewerkt?new Date(KOERS.bijgewerkt):null;
+    if(bijg&&(nu-bijg)<45*60000){
+      const hhmm=bijg.toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Amsterdam"});
+      grp.hidden=false;
+      grp.innerHTML=`<div class="gkop">🔴 Live koers · stand van ${hhmm} uur</div>`
+        +KOERS.groepen.map(g=>{
+          let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
+          if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
+          return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal?` (${g.aantal})`:""}</span>`
+            +(g.gat?`<span class="ggat">${g.gat}</span>`:`<span class="ggat">kop</span>`)
+            +(renners?`<div class="grenners">${renners}</div>`:"")
+            +`</div>`;
+        }).join("");
+      return true;
+    }
+  }
+  grp.hidden=true;grp.innerHTML="";
+  return false;
 }
 
 // ---------- vandaag-tab ----------
