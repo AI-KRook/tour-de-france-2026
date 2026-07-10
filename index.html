@@ -1343,11 +1343,13 @@ function toonKoersGroepen(etNr){
       const hhmm=bijg.toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Amsterdam"});
       grp.hidden=false;
       grp.innerHTML=`<div class="gkop">🔴 Live koers · stand van ${hhmm} uur</div>`
-        +KOERS.groepen.map(g=>{
+        +KOERS.groepen.map((g,i)=>{
           let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
           if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
+          // alleen de voorste groep is 'kop'; groepen erachter zonder gemeten gat tonen niets
+          const gat=g.gat?g.gat:(i===0?"kop":"");
           return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal&&g.aantal<250?` (${g.aantal})`:""}</span>`
-            +(g.gat?`<span class="ggat">${g.gat}</span>`:`<span class="ggat">kop</span>`)
+            +(gat?`<span class="ggat">${gat}</span>`:"")
             +(renners?`<div class="grenners">${renners}</div>`:"")
             +`</div>`;
         }).join("");
