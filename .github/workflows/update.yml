@@ -4,9 +4,11 @@ on:
   push:
     branches: [main]
   schedule:
-    # elk kwartier tijdens koersuren in juli (UTC; NL = UTC+2)
-    - cron: "*/15 12-19 * 7 *"
-    # dagelijkse controle (o.a. nieuwe GPX-routes)
+    # GitHub voert '*/15'-crons niet betrouwbaar uit; daarom kicken we een paar
+    # keer per uur af en lust elke run daarna ~50 min intern door (zie hieronder),
+    # zodat de hele koersperiode gedekt is met slechts enkele geslaagde crons.
+    - cron: "4,34 10-17 * 7 *"
+    # dagelijkse controle buiten de koers (klassement/samenvatting verversen)
     - cron: "0 5 * * *"
   workflow_dispatch:
 
@@ -14,23 +16,30 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-en-publiceer
+  # push-publicatie en de live-lus mogen elkaar niet blokkeren
+  group: ${{ github.event_name == 'push' && 'tdf-publiceer' || 'tdf-live' }}
   cancel-in-progress: false
 
 jobs:
-  update-en-deploy:
+  run:
     runs-on: ubuntu-latest
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # Bij een push (bijv. codewijziging) spiegelen we alleen naar gh-pages.
+      - name: Publiceren naar GitHub Pages (bij push)
+        if: github.event_name == 'push'
+        run: git push origin HEAD:gh-pages --force
 
       - uses: actions/setup-python@v5
         if: github.event_name != 'push'
         with:
           python-version: "3.12"
 
-      - name: Dependencies installeren
+      - name: Python-dependencies installeren
         if: github.event_name != 'push'
         run: pip install --quiet requests beautifulsoup4 anthropic
 
@@ -46,42 +55,38 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-chromium-v1
 
-      - name: Live wedstrijddata vangen (alleen tijdens koersuren)
-        if: github.event_name != 'push'
-        continue-on-error: true
-        run: |
-          hu=$(date -u +%H)
-          # koersvenster: ruwweg 10:00-18:00 UTC (NL 12:00-20:00)
-          if [ "$hu" -ge 10 ] && [ "$hu" -le 18 ]; then
-            npm install --no-audit --no-fund --no-save playwright
-            npx playwright install --with-deps chromium
-            node scripts/capture_live.js
-          else
-            echo "buiten koersvenster ($hu:00 UTC); vangst overgeslagen"
-            rm -f scripts/live_out.json
-          fi
-
-      - name: Uitslagen, klassement en dagcommentaar bijwerken
+      # Eén getriggerde run lust ~50 min door en vangt elke ~4 min de live data,
+      # zodat het niet afhangt van de (onbetrouwbare) cron-frequentie.
+      - name: Live capture-lus + publiceren
         if: github.event_name != 'push'
         env:
-          # optioneel repo-secret; zonder sleutel valt het dagcommentaar
-          # terug op een vast tekstpatroon
+          # optioneel repo-secret; zonder sleutel valt het commentaar terug op tekst
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/update_stand.py
-        continue-on-error: true
-
-      - name: Wijzigingen committen
-        if: github.event_name != 'push'
         run: |
+          set +e
+          npm install --no-audit --no-fund --no-save playwright
+          npx playwright install --with-deps chromium
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
-          if ! git diff --cached --quiet; then
-            git commit -m "Data-update $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git pull --rebase origin main || true
-            git push origin main
-          fi
-
-      # GitHub Pages serveert de gh-pages-branch; die spiegelen we hier.
-      - name: Publiceren naar GitHub Pages (gh-pages)
-        run: git push origin HEAD:gh-pages --force
+          einde=$(( $(date +%s) + 3000 ))   # maximaal ~50 minuten doorlussen
+          while : ; do
+            hu=$(date -u +%H)
+            venster=0; { [ "$hu" -ge 10 ] && [ "$hu" -le 18 ]; } && venster=1
+            if [ "$venster" = 1 ]; then
+              node scripts/capture_live.js
+            else
+              rm -f scripts/live_out.json
+            fi
+            python scripts/update_stand.py
+            git add data/
+            if ! git diff --cached --quiet; then
+              git commit -m "Data-update $(date -u +'%Y-%m-%d %H:%M') UTC"
+              git pull --rebase origin main || true
+              git push origin main || true
+            fi
+            git push origin HEAD:gh-pages --force || true
+            # buiten het koersvenster: eenmalige update (bijv. dagelijkse 05:00-run)
+            [ "$venster" = 0 ] && break
+            [ "$(date +%s)" -ge "$einde" ] && break
+            sleep 240
+          done

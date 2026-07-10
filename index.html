@@ -1346,7 +1346,7 @@ function toonKoersGroepen(etNr){
         +KOERS.groepen.map(g=>{
           let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
           if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
-          return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal?` (${g.aantal})`:""}</span>`
+          return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal&&g.aantal<250?` (${g.aantal})`:""}</span>`
             +(g.gat?`<span class="ggat">${g.gat}</span>`:`<span class="ggat">kop</span>`)
             +(renners?`<div class="grenners">${renners}</div>`:"")
             +`</div>`;
