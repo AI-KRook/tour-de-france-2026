@@ -772,7 +772,7 @@ function previewHtml(n){
     ${tb?`<p class="ptekst terugblik">${tb}</p>`:""}
     <p class="ptekst">${p.t}</p>
     <div class="kopk">Kanshebbers</div>
-    <div class="kanshebbers">${p.k.map(([naam,land])=>`<span class="kans">${metVlag(naam,land)}</span>`).join("")}</div>
+    <div class="kanshebbers">${p.k.map(([naam,land])=>`<span class="kans">${rennerHtml(naam,land)}</span>`).join("")}</div>
   </div>`;
 }
 function samenvattingHtml(n){
@@ -798,15 +798,26 @@ function laadRenners(data){
     if(r.kort)rennerNaamIndex[normNaam(r.kort)]=r;
   }
 }
-function bibVoor(naam,bib){
-  if(bib!=null&&RENNERS[bib])return bib;
-  const r=rennerNaamIndex[normNaam(naam)];
-  return r?r.bib:null;
+function _woorden(s){return new Set(normNaam(s).split(" ").filter(Boolean));}
+function _deelvan(a,b){for(const x of a)if(!b.has(x))return false;return true;}
+// zoek een renner op naam: eerst exact, anders accent-/volledigheidsongevoelig
+function zoekRenner(naam){
+  const k=normNaam(naam);
+  if(rennerNaamIndex[k])return rennerNaamIndex[k];
+  const q=_woorden(naam);
+  if(q.size<2)return null; // te weinig om zeker te matchen (bijv. alleen achternaam)
+  let hit=null;
+  for(const b in RENNERS){
+    const wn=_woorden(RENNERS[b].naam);
+    if(_deelvan(q,wn)||_deelvan(wn,q)){ if(hit&&hit.bib!==RENNERS[b].bib)return null; hit=RENNERS[b]; }
+  }
+  return hit;
 }
 function rennerVan(naam,bib){
   if(bib!=null&&RENNERS[bib])return RENNERS[bib];
-  return rennerNaamIndex[normNaam(naam)]||null;
+  return zoekRenner(naam);
 }
+function bibVoor(naam,bib){const r=rennerVan(naam,bib);return r?r.bib:null;}
 function initialen(naam){
   const w=(naam||"").replace(/^[A-Z]\.\s*/,"").split(/\s+/).filter(Boolean);
   return (((w[0]||"")[0]||"")+((w[w.length-1]||"")[0]||"")).toUpperCase();
