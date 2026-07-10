@@ -485,7 +485,16 @@ def claude_samenvatting(f):
 
 
 def main():
-    stand = json.loads(STAND_PAD.read_text(encoding="utf-8")) if STAND_PAD.exists() else {}
+    # stand.json inlezen; bij een beschadigd bestand stoppen zonder iets te
+    # overschrijven, zodat een kapotte versie nooit wordt gepubliceerd
+    if STAND_PAD.exists():
+        try:
+            stand = json.loads(STAND_PAD.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"stand.json onleesbaar ({e}); geen wijzigingen doorgevoerd.")
+            return 0
+    else:
+        stand = {}
     stand.setdefault("uitslagen", {})
     nu = datetime.now(NL_TZ)
     vandaag = nu.strftime("%Y-%m-%d")

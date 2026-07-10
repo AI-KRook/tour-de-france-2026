@@ -70,21 +70,27 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           einde=$(( $(date +%s) + 3000 ))   # maximaal ~50 minuten doorlussen
           while : ; do
+            # schone basis: voorkomt rebase-conflicten en beschadigde bestanden
+            git fetch -q origin main && git reset -q --hard origin/main
             hu=$(date -u +%H)
             venster=0; { [ "$hu" -ge 10 ] && [ "$hu" -le 18 ]; } && venster=1
             if [ "$venster" = 1 ]; then
-              node scripts/capture_live.js
+              node scripts/capture_live.js || true
             else
               rm -f scripts/live_out.json
             fi
-            python scripts/update_stand.py
-            git add data/
-            if ! git diff --cached --quiet; then
-              git commit -m "Data-update $(date -u +'%Y-%m-%d %H:%M') UTC"
-              git pull --rebase origin main || true
-              git push origin main || true
+            python scripts/update_stand.py || true
+            # alleen publiceren als stand.json geldig JSON is (nooit een kapotte versie pushen)
+            if python -c "import json,sys; json.load(open('data/stand.json'))" 2>/dev/null; then
+              git add data/
+              if ! git diff --cached --quiet; then
+                git commit -m "Data-update $(date -u +'%Y-%m-%d %H:%M') UTC"
+                git push origin main || true
+              fi
+              git push origin HEAD:gh-pages --force || true
+            else
+              echo "stand.json ongeldig; publicatie overgeslagen"
             fi
-            git push origin HEAD:gh-pages --force || true
             # buiten het koersvenster: eenmalige update (bijv. dagelijkse 05:00-run)
             [ "$venster" = 0 ] && break
             [ "$(date +%s)" -ge "$einde" ] && break
