@@ -277,6 +277,39 @@
   /* toast */
   #toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%) translateY(12px);background:#16160f;color:#fff;padding:10px 16px;border-radius:999px;font-size:.86rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:1000}
   #toast.aan{opacity:1;transform:translateX(-50%) translateY(0)}
+  /* klikbare rennernaam */
+  .rennerlink{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;text-align:left;border-bottom:1px dotted rgba(22,22,15,.35)}
+  .rennerlink:hover,.rennerlink:focus-visible{color:#a3230f;border-bottom-color:#a3230f;outline:none}
+  .trui .rennerlink{border-bottom:0}
+  /* rennerprofiel-venster */
+  .modal{position:fixed;inset:0;z-index:2000;background:rgba(22,22,15,.55);display:flex;align-items:flex-end;justify-content:center;padding:0}
+  @media(min-width:560px){.modal{align-items:center;padding:20px}}
+  .modalkaart{position:relative;background:#fff;width:100%;max-width:460px;max-height:88vh;overflow:auto;border-radius:20px 20px 0 0;padding:20px 18px 26px;box-shadow:0 -8px 40px rgba(0,0,0,.25);animation:omhoog .22s ease}
+  @media(min-width:560px){.modalkaart{border-radius:20px}}
+  @keyframes omhoog{from{transform:translateY(24px);opacity:.4}to{transform:translateY(0);opacity:1}}
+  .modalsluit{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:0;background:#efede6;font-size:1rem;cursor:pointer;line-height:1}
+  .rmkop{display:flex;align-items:center;gap:13px;padding-right:34px}
+  .rmfoto{width:66px;height:66px;border-radius:50%;object-fit:cover;background:#efede6;flex:0 0 auto}
+  .rmnaam{font-size:1.3rem;font-weight:800;line-height:1.15}
+  .rmploeg{color:var(--grijs);font-size:.92rem;margin-top:2px}
+  .rmfeiten{display:flex;gap:10px;margin:16px 0 4px}
+  .rmfeiten>div{flex:1;background:#f7f5ee;border-radius:12px;padding:10px 6px;text-align:center}
+  .rmfeiten b{display:block;font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .rmfeiten span{font-size:.72rem;color:var(--grijs);text-transform:uppercase;letter-spacing:.05em}
+  .rmsub,.rmbron{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+  .rmklass{margin-top:14px}
+  .rmsub{margin-bottom:6px}
+  .rmpos{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px solid var(--lijn);font-size:.92rem}
+  .rmpos .rml{flex:1}
+  .rmpos b{font-variant-numeric:tabular-nums}
+  .rmpos small{color:var(--grijs);min-width:64px;text-align:right;font-variant-numeric:tabular-nums}
+  .rmtrui{width:13px;height:13px;border-radius:50%;flex:0 0 auto;border:1px solid rgba(0,0,0,.12)}
+  .rmtrui.geel{background:var(--geel)}.rmtrui.groen{background:var(--groen)}
+  .rmtrui.bollen{background:#fff;background-image:radial-gradient(#d9331f 34%,transparent 36%);background-size:6px 6px}
+  .rmtrui.wit{background:#fff}
+  .rmbeste{margin-top:14px;background:#f4faee;border:1px solid #d7e6c9;border-radius:12px;padding:10px 12px;font-size:.9rem}
+  .rmleeg{margin-top:14px;color:var(--grijs);font-size:.9rem}
+  .rmbron{margin-top:16px;opacity:.7}
   #chartWrap{margin-top:16px;height:210px;position:relative}
   #chartWrap .titel{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs);margin-bottom:6px}
   #profielChart{max-height:180px}
@@ -409,6 +442,13 @@
     <button id="nav-uitslagen" type="button"><span class="ico" aria-hidden="true">🏁</span>Uitslagen</button>
   </div>
 </nav>
+
+<div id="rennerModal" class="modal" hidden>
+  <div class="modalkaart" role="dialog" aria-modal="true" aria-labelledby="rmNaam">
+    <button class="modalsluit" id="rmSluit" type="button" aria-label="Sluiten">✕</button>
+    <div id="rmBody"></div>
+  </div>
+</div>
 
 <script>
 const KLEUR = {vlak:"#20853f", heuvels:"#c67a00", berg:"#d9331f", tijdrit:"#2b6fd4"};
@@ -736,12 +776,74 @@ function samenvattingHtml(n){
   </div>`;
 }
 
+// ---------- renners: profiel bij klik op de naam ----------
+let RENNERS={}, rennerNaamIndex={};
+function normNaam(s){
+  return (s||"").normalize("NFKD").replace(/[̀-ͯ]/g,"").toLowerCase().split(/\s+/).filter(Boolean).join(" ");
+}
+function laadRenners(data){
+  RENNERS=data||{};
+  rennerNaamIndex={};
+  for(const b in RENNERS){
+    const r=RENNERS[b];
+    if(r.naam)rennerNaamIndex[normNaam(r.naam)]=r;
+    if(r.kort)rennerNaamIndex[normNaam(r.kort)]=r;
+  }
+}
+function bibVoor(naam,bib){
+  if(bib!=null&&RENNERS[bib])return bib;
+  const r=rennerNaamIndex[normNaam(naam)];
+  return r?r.bib:null;
+}
+// naam met vlag, klikbaar wanneer we een profiel hebben
+function rennerHtml(naam,land,bib){
+  const b=bibVoor(naam,bib);
+  const inner=metVlag(naam,land);
+  return b!=null?`<button type="button" class="rennerlink" data-r="${b}">${inner}</button>`:inner;
+}
+const RM_TRUI={geel:["Algemeen","geel"],groen:["Punten","groen"],bollen:["Bergen","bollen"],wit:["Jongeren","wit"]};
+function openRenner(bib){
+  const r=RENNERS[bib];if(!r)return;
+  const posrij=(k)=>{const d=r[k];if(!d)return "";const[label,cls]=RM_TRUI[k];
+    return `<div class="rmpos"><span class="rmtrui ${cls}"></span><span class="rml">${label}</span>`
+      +`<b>${d.pos}e</b><small>${d.waarde&&d.waarde!=="—"?d.waarde:""}</small></div>`;};
+  const kl=["geel","groen","bollen","wit"].map(posrij).join("");
+  const body=document.getElementById("rmBody");
+  body.innerHTML=`
+    <div class="rmkop">
+      ${r.foto?`<img class="rmfoto" src="${r.foto}" alt="" loading="lazy" onerror="this.remove()">`:""}
+      <div class="rmkopt">
+        <div class="rmnaam" id="rmNaam">${metVlag(r.naam,r.land)}</div>
+        ${r.ploeg?`<div class="rmploeg">${r.ploeg}</div>`:""}
+      </div>
+    </div>
+    <div class="rmfeiten">
+      ${r.leeftijd?`<div><b>${r.leeftijd}</b><span>jaar</span></div>`:""}
+      <div><b>${r.zeges??0}</b><span>zeges</span></div>
+      <div><b>${r.podia??0}</b><span>podia</span></div>
+    </div>
+    ${kl?`<div class="rmklass"><div class="rmsub">In de klassementen</div>${kl}</div>`
+        :`<p class="rmleeg">Staat op dit moment niet in de klassementen.</p>`}
+    ${r.beste?`<div class="rmbeste">🏁 Beste rituitslag: <b>${r.beste.pos}e</b> in etappe ${r.beste.etappe}</div>`:""}
+    <p class="rmbron">Gegevens: letour.fr</p>`;
+  const m=document.getElementById("rennerModal");
+  m.hidden=false;document.body.style.overflow="hidden";
+  document.getElementById("rmSluit").focus();
+}
+function sluitRenner(){document.getElementById("rennerModal").hidden=true;document.body.style.overflow="";}
+document.addEventListener("click",ev=>{
+  const link=ev.target.closest(".rennerlink");
+  if(link){ev.preventDefault();openRenner(parseInt(link.dataset.r,10));return;}
+  if(ev.target.id==="rennerModal"||ev.target.id==="rmSluit")sluitRenner();
+});
+document.addEventListener("keydown",ev=>{if(ev.key==="Escape")sluitRenner();});
+
 // ---------- renner-rijen ----------
 function podRij(r){
   const tijd=r.tijd==null?"":r.tijd;
   return `<div class="rij">
     <span class="pos">${r.pos}</span>
-    <span class="wie"><span class="naam">${metVlag(r.naam,r.land)}</span>${r.ploeg?`<span class="ploeg">${r.ploeg}</span>`:""}</span>
+    <span class="wie"><span class="naam">${rennerHtml(r.naam,r.land,r.bib)}</span>${r.ploeg?`<span class="ploeg">${r.ploeg}</span>`:""}</span>
     <span class="tijd">${tijd}</span></div>`;
 }
 
@@ -1156,7 +1258,7 @@ function updateNu(){
         grp.hidden=false;
         grp.innerHTML=`<div class="gkop">Koerssituatie · stand van ${hhmm} uur</div>`
           +KOERS.groepen.map(g=>{
-            let renners=(g.renners||[]).map(r=>Array.isArray(r)?metVlag(r[0],r[1]):metVlag(r,null)).join(", ");
+            let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
             if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
             return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal?` (${g.aantal})`:""}</span>`
               +(g.gat?`<span class="ggat">${g.gat}</span>`:`<span class="ggat">kop</span>`)
@@ -1281,7 +1383,7 @@ function renderTruien(el,inKlassement){
     return `<button type="button" class="trui ${inf.cls}" data-trui="${k}" aria-pressed="${actief}"
       aria-label="${inf.label}: ${t.naam||t.kort}. Toon de top 10 van dit klassement.">
       <div class="tl">${inf.label} ▸</div>
-      <div class="tn">${metVlag(t.naam||t.kort,t.land)}</div>
+      <div class="tn">${rennerHtml(t.naam||t.kort,t.land)}</div>
       ${t.ploeg?`<div class="tp">${t.ploeg}</div>`:""}
     </button>`;
   }).join("");
@@ -1359,6 +1461,10 @@ async function laadStand(){
     KOERS=st.koers||null;
     SAMENVATTING=st.samenvattingen||{};
   }catch(err){/* offline of lokaal geopend */}
+  try{
+    const rr=await fetch("data/renners.json?t="+Date.now(),{cache:"no-store"});
+    if(rr.ok)laadRenners(await rr.json());
+  }catch(err){/* renners optioneel */}
   renderUitslagen();
   renderKlassement();
   renderVandaag();

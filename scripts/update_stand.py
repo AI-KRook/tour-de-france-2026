@@ -754,6 +754,47 @@ def main():
         gewijzigd = True
         print("Koerssituatie verwijderd (geen livedata)")
 
+    # 2c) rennerprofielen (data/renners.json): posities, ploeg, leeftijd,
+    #     carrièrecijfers en de beste rituitslag tot nu toe
+    renners_pad = STAND_PAD.parent / "renners.json"
+    if live and live.get("renners"):
+        renners = live["renners"]
+        import unicodedata
+
+        def _norm(s):
+            s = unicodedata.normalize("NFKD", s or "")
+            return " ".join("".join(c for c in s if not unicodedata.combining(c)).lower().split())
+
+        naam2bib = {_norm(r.get("naam")): b for b, r in renners.items()}
+        beste = {}
+        for sl, u in stand.get("uitslagen", {}).items():
+            try:
+                et = int(sl)
+            except ValueError:
+                continue
+            for p in (u.get("pod") or []):
+                b = naam2bib.get(_norm(p.get("naam")))
+                pos = p.get("pos")
+                if b is None or not isinstance(pos, int) or pos < 1:
+                    continue
+                cur = beste.get(b)
+                if cur is None or pos < cur[0] or (pos == cur[0] and et > cur[1]):
+                    beste[b] = (pos, et)
+        for b, (pos, et) in beste.items():
+            renners[b]["beste"] = {"pos": pos, "etappe": et}
+        nieuw_r = json.dumps(renners, ensure_ascii=False, sort_keys=True)
+        oud_r = ""
+        if renners_pad.exists():
+            try:
+                oud_r = json.dumps(json.loads(renners_pad.read_text(encoding="utf-8")),
+                                   ensure_ascii=False, sort_keys=True)
+            except Exception:
+                oud_r = ""
+        if nieuw_r != oud_r:
+            renners_pad.write_text(json.dumps(renners, ensure_ascii=False) + "\n", encoding="utf-8")
+            gewijzigd = True
+            print(f"renners.json bijgewerkt ({len(renners)} renners)")
+
     # 3) dagcommentaar voor de eerstvolgende rit; vernieuwt zodra de feiten wijzigen
     feiten = maak_feiten(stand)
     if feiten:

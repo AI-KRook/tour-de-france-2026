@@ -128,6 +128,52 @@ function buildKlassementen(rankArr, idx) {
   return Object.keys(out).length ? out : null;
 }
 
+// ---------- rennerprofielen ----------
+function leeftijd(birthISO, isoNu) {
+  if (!birthISO) return null;
+  const b = new Date(birthISO), n = new Date(isoNu);
+  if (isNaN(b)) return null;
+  let a = n.getFullYear() - b.getFullYear();
+  const m = n.getMonth() - b.getMonth();
+  if (m < 0 || (m === 0 && n.getDate() < b.getDate())) a--;
+  return a > 0 && a < 120 ? a : null;
+}
+// bib -> {pos, waarde} voor één klassement
+function posMapUit(rankArr, code, eenheid) {
+  let rk = null;
+  for (const it of rankArr || []) {
+    if (it && it.type === code && Array.isArray(it.rankings) && it.rankings.length) { rk = it.rankings; break; }
+  }
+  const m = {};
+  for (const r of rk || []) {
+    if ((r.position || 0) >= 1 && r.bib != null) {
+      m[r.bib] = { pos: r.position, waarde: eenheid === "punten"
+        ? `${r.absolute || 0} ptn` : (r.position === 1 ? "—" : fmtTijd(r.relative)) };
+    }
+  }
+  return m;
+}
+function buildRenners(compArr, rankArr, codeNaam, isoNu) {
+  if (!Array.isArray(compArr) || !compArr.length) return null;
+  const pos = {
+    geel: posMapUit(rankArr, "itg", "tijd"), groen: posMapUit(rankArr, "ipg", "punten"),
+    bollen: posMapUit(rankArr, "img", "punten"), wit: posMapUit(rankArr, "ijg", "tijd"),
+  };
+  const out = {};
+  for (const r of compArr) {
+    if (!r || r.bib == null || (r.lastname == null && r.firstname == null)) continue;
+    const code = (r._origin || "").split("-").pop();
+    const rec = {
+      bib: r.bib, naam: volNaam(r), kort: kortNaam(r), land: (r.nationality || "").toUpperCase(),
+      ploeg: ploegNet(codeNaam[code] || ""), leeftijd: leeftijd(r.birthdate, isoNu),
+      zeges: r.victories || 0, podia: r.podiums || 0, foto: r.profile_sm || r.profile || "",
+    };
+    for (const t of ["geel", "groen", "bollen", "wit"]) if (pos[t][r.bib]) rec[t] = pos[t][r.bib];
+    out[r.bib] = rec;
+  }
+  return Object.keys(out).length ? out : null;
+}
+
 // rituitslag uit de aankomst (rankingTypeArrival, finish-doorkomst)
 function buildUitslag(arrivalArr, idx) {
   if (!Array.isArray(arrivalArr) || !arrivalArr.length) return null;
@@ -161,7 +207,8 @@ function buildKoers(packArr, idx, etappe, isoNu) {
   if (rest <= 0) return null; // koers voorbij -> geen live groepen
   const groepen = gesorteerd.map((g) => {
     const bibs = (g.bibs || []).map((b) => b.bib);
-    const renners = bibs.map((b) => idx.perBib[b]).filter(Boolean).slice(0, 8).map((r) => [r.kort, r.land]);
+    const renners = bibs.map((b) => { const w = idx.perBib[b]; return w ? [w.kort, w.land, b] : null; })
+      .filter(Boolean).slice(0, 8);
     const meer = bibs.length - renners.length;
     return {
       naam: vertaalGroep(g.name),
@@ -206,6 +253,7 @@ function bouwAlles(data, etappe, isoNu) {
     koers: buildKoers(data.pack, idx, etappe, isoNu),
     uitslag: buildUitslag(arrival, idx),
     klassementen: buildKlassementen(rank, idx),
+    renners: buildRenners(data.comp, rank, codeNaam, isoNu),
   };
 }
 
@@ -232,7 +280,7 @@ async function main() {
   const etappe = parseInt(process.env.KOERS_ETAPPE || stage || "0", 10) || null;
   const nu = process.env.KOERS_NU || new Date().toISOString();
   const res = bouwAlles(data, etappe, nu);
-  const heeftIets = res.uitslag || res.klassementen || res.koers;
+  const heeftIets = res.uitslag || res.klassementen || res.koers || res.renners;
   if (heeftIets) {
     fs.writeFileSync(UIT, JSON.stringify(res));
     console.log(`live weggeschreven: etappe ${res.etappe}, klaar=${res.klaar}, ` +
@@ -244,7 +292,7 @@ async function main() {
   }
 }
 
-module.exports = { bouwAlles, buildUitslag, buildKlassementen, buildKoers, bouwIndex, fmtTijd, ploegNet };
+module.exports = { bouwAlles, buildUitslag, buildKlassementen, buildKoers, buildRenners, bouwIndex, fmtTijd, ploegNet };
 
 if (require.main === module) {
   main().catch((e) => { console.error(e); process.exit(0); });
