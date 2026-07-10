@@ -289,7 +289,13 @@
   @keyframes omhoog{from{transform:translateY(24px);opacity:.4}to{transform:translateY(0);opacity:1}}
   .modalsluit{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:0;background:#efede6;font-size:1rem;cursor:pointer;line-height:1}
   .rmkop{display:flex;align-items:center;gap:13px;padding-right:34px}
-  .rmfoto{width:66px;height:66px;border-radius:50%;object-fit:cover;background:#efede6;flex:0 0 auto}
+  /* ronde avatar met foto + initialen-terugval */
+  .avatar{position:relative;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#e7e3d6;color:#6b6a5f;font-weight:800;font-size:.78rem;overflow:hidden;flex:0 0 auto;vertical-align:middle}
+  .avatar .ini{line-height:1}
+  .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#e7e3d6}
+  .avatar.klein{width:30px;height:30px;font-size:.7rem}
+  .avatar.groot{width:66px;height:66px;font-size:1.3rem}
+  .trui .tn{display:flex;align-items:center;gap:8px}
   .rmnaam{font-size:1.3rem;font-weight:800;line-height:1.15}
   .rmploeg{color:var(--grijs);font-size:.92rem;margin-top:2px}
   .rmfeiten{display:flex;gap:10px;margin:16px 0 4px}
@@ -795,6 +801,21 @@ function bibVoor(naam,bib){
   const r=rennerNaamIndex[normNaam(naam)];
   return r?r.bib:null;
 }
+function rennerVan(naam,bib){
+  if(bib!=null&&RENNERS[bib])return RENNERS[bib];
+  return rennerNaamIndex[normNaam(naam)]||null;
+}
+function initialen(naam){
+  const w=(naam||"").replace(/^[A-Z]\.\s*/,"").split(/\s+/).filter(Boolean);
+  return (((w[0]||"")[0]||"")+((w[w.length-1]||"")[0]||"")).toUpperCase();
+}
+// ronde avatar: toont de foto, met initialen als terugval wanneer er geen foto is
+function avatarHtml(naam,bib,extraCls){
+  const r=rennerVan(naam,bib);
+  const cls="avatar"+(extraCls?" "+extraCls:"");
+  const img=(r&&r.foto)?`<img src="${r.foto}" alt="" loading="lazy" onerror="this.remove()">`:"";
+  return `<span class="${cls}" aria-hidden="true"><span class="ini">${initialen(naam)}</span>${img}</span>`;
+}
 // naam met vlag, klikbaar wanneer we een profiel hebben
 function rennerHtml(naam,land,bib){
   const b=bibVoor(naam,bib);
@@ -811,7 +832,7 @@ function openRenner(bib){
   const body=document.getElementById("rmBody");
   body.innerHTML=`
     <div class="rmkop">
-      ${r.foto?`<img class="rmfoto" src="${r.foto}" alt="" loading="lazy" onerror="this.remove()">`:""}
+      ${avatarHtml(r.naam,r.bib,"groot")}
       <div class="rmkopt">
         <div class="rmnaam" id="rmNaam">${metVlag(r.naam,r.land)}</div>
         ${r.ploeg?`<div class="rmploeg">${r.ploeg}</div>`:""}
@@ -1383,7 +1404,7 @@ function renderTruien(el,inKlassement){
     return `<button type="button" class="trui ${inf.cls}" data-trui="${k}" aria-pressed="${actief}"
       aria-label="${inf.label}: ${t.naam||t.kort}. Toon de top 10 van dit klassement.">
       <div class="tl">${inf.label} ▸</div>
-      <div class="tn">${rennerHtml(t.naam||t.kort,t.land)}</div>
+      <div class="tn">${avatarHtml(t.naam||t.kort,null,"klein")}<span>${metVlag(t.naam||t.kort,t.land)}</span></div>
       ${t.ploeg?`<div class="tp">${t.ploeg}</div>`:""}
     </button>`;
   }).join("");
