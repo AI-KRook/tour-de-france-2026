@@ -529,8 +529,9 @@ def main():
             su, sm = map(int, start.split(":"))
             if (nu.hour * 60 + nu.minute) < su * 60 + sm + 150:
                 continue
-        if bestaand and bestaand.get("bron") and datum < vandaag:
-            continue  # eerdere etappe al binnen; niet blijven herscrapen
+        if bestaand and bestaand.get("bron") == "en.wikipedia.org" and datum < vandaag:
+            continue  # eerdere etappe al via Wikipedia binnen; niet blijven herscrapen
+        # (letour-uitslagen worden bewust wél opnieuw gecontroleerd tegen Wikipedia)
         soup = pagina("1-11" if n <= 11 else "12-21")
         if soup is None:
             continue
@@ -694,20 +695,14 @@ def main():
         n = live["etappe"]
         sl = str(n)
 
-        # rituitslag: alleen als de rit klaar is en er een winnaar staat
-        u = live.get("uitslag")
-        if live.get("klaar") and u and u.get("pod") and u["pod"][0].get("pos") == 1:
-            best = stand["uitslagen"].get(sl)
-            if not (best and best.get("lock")):
-                nieuw = {"w": u["w"], "wLand": u.get("wLand"), "wPloeg": u.get("wPloeg") or "",
-                         "note": (best or {}).get("note") or "", "pod": u["pod"],
-                         "bron": u.get("bron") or "letour.fr"}
-                if best != nieuw:
-                    stand["uitslagen"][sl] = nieuw
-                    gewijzigd = True
-                    print(f"Etappe {n}: uitslag van letour.fr ({u['w']})")
+        # LET OP: de officiële RITUITSLAG (podium) komt bewust NIET meer van de
+        # live letour-aankomstdata. Die bleek onbetrouwbaar voor het eindresultaat
+        # (o.a. verkeerde sprintvolgorde in Bordeaux), dus Wikipedia is weer de
+        # gezaghebbende bron voor de rituitslag. Het algemeen klassement (GC, op
+        # cumulatieve tijd) is wél betrouwbaar en actueel via letour, dus dat
+        # houden we; Wikipedia blijft daar het vangnet voor.
 
-        # de vier klassementen: alleen als de rit klaar is
+        # de vier klassementen van letour: alleen als de rit klaar is
         kl = live.get("klassementen")
         if live.get("klaar") and kl:
             oud = stand.get("klassement") or {}
@@ -739,7 +734,9 @@ def main():
                 "voetnoot": f"Stand na etappe {n}, automatisch bijgewerkt "
                             f"{nu.day} {MAAND[nu.month]} {nu.strftime('%H:%M')} uur (bron: letour.fr).",
             }
-            if gc_top and {k: v for k, v in oud.items() if k != "voetnoot"} != \
+            # nooit terugvallen naar een eerdere etappe
+            if gc_top and (oud.get("naEtappe") or 0) <= n and \
+               {k: v for k, v in oud.items() if k != "voetnoot"} != \
                {k: v for k, v in nieuw_kl.items() if k != "voetnoot"}:
                 stand["klassement"] = nieuw_kl
                 gewijzigd = True
