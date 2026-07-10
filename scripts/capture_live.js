@@ -228,13 +228,26 @@ function koersKlaar(packArr) {
   return (g.computedRemainingDistance ?? g.remainingDistance ?? 1) <= 0;
 }
 
+// Vaste ploegcode -> naam (uit competitor-2026-XXX). De live-ranglijst bevat de
+// teamnamen tijdens de rit vaak niet, dus dit is de betrouwbare basis.
+const PLOEGCODE = {
+  COF: "COFIDIS", UXM: "UNO-X MOBILITY", EFE: "EF EDUCATION - EASYPOST",
+  APT: "ALPECIN-PREMIER TECH", LTK: "LIDL-TREK", XAT: "XDS ASTANA TEAM",
+  CJR: "CAJA RURAL-SEGUROS RGA", TVL: "TEAM VISMA | LEASE A BIKE", MOV: "MOVISTAR TEAM",
+  TPP: "TEAM PICNIC POSTNL", TBV: "BAHRAIN VICTORIOUS", NCI: "NETCOMPANY INEOS CYCLING TEAM",
+  LOI: "LOTTO INTERMARCHE", GFC: "GROUPAMA-FDJ UNITED", NSN: "NSN CYCLING TEAM",
+  PQT: "PINARELLO-Q36.5 PRO CYCLING TEAM", TUD: "TUDOR PRO CYCLING TEAM",
+  RBH: "RED BULL - BORA - HANSGROHE", DCT: "DECATHLON CMA CGM TEAM", SOQ: "SOUDAL QUICK-STEP",
+  TEN: "TOTALENERGIES", JAY: "TEAM JAYCO ALULA", UEX: "UAE TEAM EMIRATES XRG",
+};
+
 function bouwAlles(data, etappe, isoNu) {
   // uitslag en klassement moeten van EXACT de huidige etappe komen; de pagina
   // laadt soms ook naburige etappes. Ontbreekt de data van deze etappe, dan
   // liever niets bijwerken dan de stand van een andere etappe tonen.
   const rank = (data.rankByStage || {})[etappe] || null;
+  const codeNaam = { ...PLOEGCODE };
   const arrival = (data.arrivalByStage || {})[etappe] || null;
-  const codeNaam = {};
   for (const it of rank || []) if (it && it.code && it.name) codeNaam[it.code] = it.name;
   const idx = bouwIndex(data.comp, codeNaam);
   return {
