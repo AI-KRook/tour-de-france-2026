@@ -529,9 +529,8 @@ def main():
             su, sm = map(int, start.split(":"))
             if (nu.hour * 60 + nu.minute) < su * 60 + sm + 150:
                 continue
-        if bestaand and bestaand.get("bron") == "en.wikipedia.org" and datum < vandaag:
-            continue  # eerdere etappe al via Wikipedia binnen; niet blijven herscrapen
-        # (letour-uitslagen worden bewust wél opnieuw gecontroleerd tegen Wikipedia)
+        if bestaand and bestaand.get("bron") and datum < vandaag:
+            continue  # eerdere etappe al binnen; niet blijven herscrapen
         soup = pagina("1-11" if n <= 11 else "12-21")
         if soup is None:
             continue
@@ -695,12 +694,20 @@ def main():
         n = live["etappe"]
         sl = str(n)
 
-        # LET OP: de officiële RITUITSLAG (podium) komt bewust NIET meer van de
-        # live letour-aankomstdata. Die bleek onbetrouwbaar voor het eindresultaat
-        # (o.a. verkeerde sprintvolgorde in Bordeaux), dus Wikipedia is weer de
-        # gezaghebbende bron voor de rituitslag. Het algemeen klassement (GC, op
-        # cumulatieve tijd) is wél betrouwbaar en actueel via letour, dus dat
-        # houden we; Wikipedia blijft daar het vangnet voor.
+        # rituitslag van letour: nu uit de officiële 'ite'-lijst (volledig veld;
+        # capture_live geeft alleen een uitslag terug bij >=30 finishers). Dit is
+        # snel én correct; Wikipedia blijft het vangnet als letour niets levert.
+        u = live.get("uitslag")
+        if live.get("klaar") and u and u.get("pod") and u["pod"][0].get("pos") == 1 and len(u["pod"]) >= 3:
+            best = stand["uitslagen"].get(sl)
+            if not (best and best.get("lock")):
+                nieuw = {"w": u["w"], "wLand": u.get("wLand"), "wPloeg": u.get("wPloeg") or "",
+                         "note": (best or {}).get("note") or "", "pod": u["pod"],
+                         "bron": u.get("bron") or "letour.fr"}
+                if best != nieuw:
+                    stand["uitslagen"][sl] = nieuw
+                    gewijzigd = True
+                    print(f"Etappe {n}: officiële uitslag van letour.fr ({u['w']})")
 
         # de vier klassementen van letour: alleen als de rit klaar is
         kl = live.get("klassementen")

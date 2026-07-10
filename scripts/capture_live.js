@@ -174,13 +174,17 @@ function buildRenners(compArr, rankArr, codeNaam, isoNu) {
   return Object.keys(out).length ? out : null;
 }
 
-// rituitslag uit de aankomst (rankingTypeArrival, finish-doorkomst)
-function buildUitslag(arrivalArr, idx) {
-  if (!Array.isArray(arrivalArr) || !arrivalArr.length) return null;
-  // finish = doorkomst met de grootste checkpoint-waarde
-  const fin = arrivalArr.reduce((a, b) => ((b.checkpoint || 0) > (a.checkpoint || 0) ? b : a));
-  const rk = (fin.rankings || []).filter((r) => (r.position || 0) >= 1);
-  if (rk.length < 1) return null;
+// officiële rituitslag = type "ite" (individueel, tijd, per etappe) uit de
+// ranglijst. NIET de aankomst-feed of "ete" (dat is een ploeg/subgroep en gaf
+// eerder de verkeerde winnaar). We eisen een vrijwel volledig deelnemersveld,
+// zodat een half-afgemaakte tussenstand niet als einduitslag wordt genomen.
+function buildUitslag(rankArr, idx) {
+  let rk = null;
+  for (const it of rankArr || []) {
+    if (it && it.type === "ite" && Array.isArray(it.rankings)) { rk = it.rankings; break; }
+  }
+  rk = (rk || []).filter((r) => (r.position || 0) >= 1);
+  if (rk.length < 30) return null; // te weinig finishers: nog geen einduitslag
   rk.sort((a, b) => a.position - b.position);
   const pod = [];
   for (const r of rk.slice(0, 10)) {
@@ -247,7 +251,6 @@ function bouwAlles(data, etappe, isoNu) {
   // liever niets bijwerken dan de stand van een andere etappe tonen.
   const rank = (data.rankByStage || {})[etappe] || null;
   const codeNaam = { ...PLOEGCODE };
-  const arrival = (data.arrivalByStage || {})[etappe] || null;
   for (const it of rank || []) if (it && it.code && it.name) codeNaam[it.code] = it.name;
   const idx = bouwIndex(data.comp, codeNaam);
   return {
@@ -255,7 +258,7 @@ function bouwAlles(data, etappe, isoNu) {
     bijgewerkt: isoNu,
     klaar: koersKlaar(data.pack),
     koers: buildKoers(data.pack, idx, etappe, isoNu),
-    uitslag: buildUitslag(arrival, idx),
+    uitslag: buildUitslag(rank, idx),
     klassementen: buildKlassementen(rank, idx),
     renners: buildRenners(data.comp, rank, codeNaam, isoNu),
   };
