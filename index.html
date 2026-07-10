@@ -126,14 +126,16 @@
   }
   #nuKm{font-size:.84rem;font-weight:700;margin-top:9px;position:relative;z-index:1}
   #nuSamen{font-size:.86rem;color:rgba(22,22,15,.85);margin-top:10px;position:relative;z-index:1;max-width:62ch;line-height:1.5}
-  #nuGroepen{margin-top:10px;position:relative;z-index:1;background:rgba(255,255,255,.42);border-radius:12px;padding:10px 12px;text-align:left}
-  #nuGroepen .gkop{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(22,22,15,.65);margin-bottom:6px}
-  #nuGroepen .groepRij{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding:4px 0;border-top:1px solid rgba(22,22,15,.1)}
-  #nuGroepen .groepRij:first-of-type{border-top:0}
-  #nuGroepen .gnaam{font-weight:700;font-size:.88rem}
-  #nuGroepen .ggat{font-variant-numeric:tabular-nums;font-weight:700;font-size:.85rem;color:#a3230f;margin-left:auto}
-  #nuGroepen .grenners{flex-basis:100%;font-size:.82rem;color:rgba(22,22,15,.8);line-height:1.45}
-  #nuGroepen .gmeer{color:rgba(22,22,15,.55);font-style:italic}
+  .koersgroepen{margin-top:10px;position:relative;z-index:1;background:rgba(255,255,255,.42);border:1px solid rgba(22,22,15,.08);border-radius:12px;padding:10px 12px;text-align:left}
+  .koersgroepen .gkop{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(22,22,15,.65);margin-bottom:6px}
+  .koersgroepen .groepRij{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding:4px 0;border-top:1px solid rgba(22,22,15,.1)}
+  .koersgroepen .groepRij:first-of-type{border-top:0}
+  .koersgroepen .gnaam{font-weight:700;font-size:.88rem}
+  .koersgroepen .ggat{font-variant-numeric:tabular-nums;font-weight:700;font-size:.85rem;color:#a3230f;margin-left:auto}
+  .koersgroepen .grenners{flex-basis:100%;font-size:.82rem;color:rgba(22,22,15,.8);line-height:1.45}
+  .koersgroepen .gmeer{color:rgba(22,22,15,.55);font-style:italic}
+  #dLive{margin:12px 0 2px}
+  #dLive .dLiveStatus{font-weight:700;font-size:.9rem;color:#a3230f;margin-bottom:2px}
   #nuTik{
     font-size:.76rem;font-weight:700;margin-top:12px;position:relative;z-index:1;
     display:inline-flex;align-items:center;gap:6px;
@@ -373,7 +375,7 @@
     </div>
     <div id="nuKm"></div>
     <div id="nuSamen"></div>
-    <div id="nuGroepen" hidden></div>
+    <div id="nuGroepen" class="koersgroepen" hidden></div>
     <div id="nuTik" hidden>📍 Tik om live op de kaart te volgen</div>
   </button>
 
@@ -406,6 +408,7 @@
       <div class="stat"><div class="w" id="dTop">—</div><div class="l">Hoogste punt</div></div>
     </div>
     <div class="cols" id="dCols"></div>
+    <div id="dLive" hidden></div>
     <div id="klimmen" hidden></div>
     <div id="dUitslag" style="display:none"></div>
     <div id="dPreview" style="display:none"></div>
@@ -1041,6 +1044,7 @@ function kies(n,zoom=true){
   const top=(ex&&ex.top)?ex.top:Math.max(...e.prof.map(p=>p[1]));
   document.getElementById("dTop").textContent=top.toLocaleString("nl-NL")+" m";
   document.getElementById("dCols").innerHTML=e.cols;
+  toonDetailLive(n);
   renderKlimmen(n);
   const uB=document.getElementById("dUitslag");
   const pB=document.getElementById("dPreview");
@@ -1331,33 +1335,58 @@ function updateNu(){
   // live koerssituatie: tonen zodra er verse letourdata is (jonger dan 45 min),
   // ongeacht de tijdschatting hierboven, want dan wordt er echt gekoerst
   toonKoersGroepen(e.n);
+  // houd ook het live-blok op het etappedetail actueel
+  if(getoondEtappe!=null)toonDetailLive(getoondEtappe);
 }
-// rendert #nuGroepen met kopgroep/achtervolgers/peloton + tijdsgaten
+// HTML van het live-groepenblok (kopgroep/achtervolgers/peloton + tijdsgaten),
+// leeg wanneer er geen verse (jonger dan 45 min) koersdata voor deze etappe is
+function koersGroepenHtml(etNr){
+  if(!(KOERS&&KOERS.etappe===etNr&&Array.isArray(KOERS.groepen)&&KOERS.groepen.length))return "";
+  const bijg=KOERS.bijgewerkt?new Date(KOERS.bijgewerkt):null;
+  if(!(bijg&&(new Date()-bijg)<45*60000))return "";
+  const hhmm=bijg.toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Amsterdam"});
+  return `<div class="gkop">🔴 Live koers · stand van ${hhmm} uur</div>`
+    +KOERS.groepen.map((g,i)=>{
+      let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
+      if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
+      // alleen de voorste groep is 'kop'; groepen erachter zonder gemeten gat tonen niets
+      const gat=g.gat?g.gat:(i===0?"kop":"");
+      return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal&&g.aantal<250?` (${g.aantal})`:""}</span>`
+        +(gat?`<span class="ggat">${gat}</span>`:"")
+        +(renners?`<div class="grenners">${renners}</div>`:"")
+        +`</div>`;
+    }).join("");
+}
+// vult het #nuGroepen-blok op het Vandaag-scherm
 function toonKoersGroepen(etNr){
   const grp=document.getElementById("nuGroepen");
   if(!grp)return false;
-  const nu=new Date();
-  if(KOERS&&KOERS.etappe===etNr&&Array.isArray(KOERS.groepen)&&KOERS.groepen.length){
-    const bijg=KOERS.bijgewerkt?new Date(KOERS.bijgewerkt):null;
-    if(bijg&&(nu-bijg)<45*60000){
-      const hhmm=bijg.toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Amsterdam"});
-      grp.hidden=false;
-      grp.innerHTML=`<div class="gkop">🔴 Live koers · stand van ${hhmm} uur</div>`
-        +KOERS.groepen.map((g,i)=>{
-          let renners=(g.renners||[]).map(r=>Array.isArray(r)?rennerHtml(r[0],r[1],r[2]):rennerHtml(r,null)).join(", ");
-          if(g.meer>0)renners+=(renners?" ":"")+`<span class="gmeer">+${g.meer} ${g.meer===1?"ander":"anderen"}</span>`;
-          // alleen de voorste groep is 'kop'; groepen erachter zonder gemeten gat tonen niets
-          const gat=g.gat?g.gat:(i===0?"kop":"");
-          return `<div class="groepRij"><span class="gnaam">${g.naam}${g.aantal&&g.aantal<250?` (${g.aantal})`:""}</span>`
-            +(gat?`<span class="ggat">${gat}</span>`:"")
-            +(renners?`<div class="grenners">${renners}</div>`:"")
-            +`</div>`;
-        }).join("");
-      return true;
-    }
-  }
-  grp.hidden=true;grp.innerHTML="";
-  return false;
+  const h=koersGroepenHtml(etNr);
+  grp.hidden=!h;grp.innerHTML=h;
+  return !!h;
+}
+// live-blok op het etappedetail: status-lijn + groepen, alleen voor de rit van vandaag
+function toonDetailLive(n){
+  const el=document.getElementById("dLive");
+  if(!el)return;
+  const e=ETAPPES.find(x=>x.n===n);
+  const groepen=e?koersGroepenHtml(n):"";
+  if(!e||e.d!==vandaagISO){el.hidden=true;el.innerHTML="";return;}
+  const ex=EXACT[n], totKm=ex?ex.km:e.km, nu=new Date();
+  const [uu,mm]=e.st.split(":").map(Number);
+  const startT=new Date(nu);startT.setHours(uu,mm,0,0);
+  const snelheid=e.type==="tijdrit"?TT_SNELHEID:GEM_SNELHEID;
+  const duurMin=totKm/snelheid*60, verstreken=(nu-startT)/60000;
+  const bezig=verstreken>=0&&verstreken<=duurMin;
+  if(!groepen&&!bezig){el.hidden=true;el.innerHTML="";return;} // niets live te tonen
+  const finishTijd=new Date(startT.getTime()+duurMin*60000).toTimeString().slice(0,5);
+  let status;
+  if(verstreken<0)status=`Start rond ${e.st} uur`;
+  else if(bezig)status=`± km ${((verstreken/duurMin)*totKm).toFixed(0)} van ${totKm} · finish rond ${finishTijd} uur`;
+  else status=`Finale richting ${e.fin[0].split(" (")[0]}`;
+  el.hidden=false;
+  el.innerHTML=`<div class="dLiveStatus">🔴 ${status}</div>`
+    +(groepen?`<div class="koersgroepen">${groepen}</div>`:"");
 }
 
 // ---------- vandaag-tab ----------
