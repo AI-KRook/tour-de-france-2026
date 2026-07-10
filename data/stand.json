@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-10T15:03:24Z",
+ "bijgewerkt": "2026-07-10T15:35:51Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -467,14 +467,93 @@
     }
    ],
    "bron": "letour.fr"
+  },
+  "7": {
+   "w": "Sergio Higuita Garcia",
+   "wLand": "COL",
+   "wPloeg": "XDS Astana Team",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Sergio Higuita Garcia",
+     "land": "COL",
+     "ploeg": "XDS Astana Team",
+     "tijd": ""
+    },
+    {
+     "pos": 2,
+     "naam": "Tobias Johannessen",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "—"
+    },
+    {
+     "pos": 3,
+     "naam": "Lenny Martinez",
+     "land": "FRA",
+     "ploeg": "Bahrain Victorious",
+     "tijd": "—"
+    },
+    {
+     "pos": 4,
+     "naam": "Tom Pidcock",
+     "land": "GBR",
+     "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+     "tijd": "—"
+    },
+    {
+     "pos": 5,
+     "naam": "Juan Ayuso Pesquera",
+     "land": "ESP",
+     "ploeg": "Lidl-Trek",
+     "tijd": "—"
+    },
+    {
+     "pos": 6,
+     "naam": "Arnaud De Lie",
+     "land": "BEL",
+     "ploeg": "Lotto Intermarche",
+     "tijd": "—"
+    },
+    {
+     "pos": 7,
+     "naam": "Biniam Girmay",
+     "land": "ERI",
+     "ploeg": "NSN Cycling Team",
+     "tijd": "—"
+    },
+    {
+     "pos": 8,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM Team",
+     "tijd": "—"
+    },
+    {
+     "pos": 9,
+     "naam": "Tim Merlier",
+     "land": "BEL",
+     "ploeg": "Soudal Quick-Step",
+     "tijd": "—"
+    },
+    {
+     "pos": 10,
+     "naam": "Mathieu Van Der Poel",
+     "land": "NED",
+     "ploeg": "Alpecin-Premier Tech",
+     "tijd": "—"
+    }
+   ],
+   "bron": "letour.fr"
   }
  },
  "klassement": {
-  "naEtappe": 6,
+  "naEtappe": 7,
   "truien": {
    "geel": {
-    "naam": "Tadej Pogačar",
-    "kort": "T. Pogačar",
+    "naam": "Tadej Pogacar",
+    "kort": "T. Pogacar",
     "land": "SLO",
     "ploeg": "UAE Team Emirates XRG"
    },
@@ -482,17 +561,17 @@
     "naam": "Mads Pedersen",
     "kort": "M. Pedersen",
     "land": "DEN",
-    "ploeg": "Lidl–Trek"
+    "ploeg": "Lidl-Trek"
    },
    "bollen": {
-    "naam": "Tadej Pogačar",
-    "kort": "T. Pogačar",
+    "naam": "Tadej Pogacar",
+    "kort": "T. Pogacar",
     "land": "SLO",
     "ploeg": "UAE Team Emirates XRG"
    },
    "wit": {
-    "naam": "Isaac del Toro",
-    "kort": "I. del Toro",
+    "naam": "Isaac Del Toro Romero",
+    "kort": "I. Del Toro Romero",
     "land": "MEX",
     "ploeg": "UAE Team Emirates XRG"
    }
@@ -500,21 +579,21 @@
   "top10": [
    {
     "pos": 1,
-    "naam": "Tadej Pogačar",
+    "naam": "Tadej Pogacar",
     "land": "SLO",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "—"
    },
    {
     "pos": 2,
-    "naam": "Jonas Vingegaard",
+    "naam": "Jonas Vingegaard Hansen",
     "land": "DEN",
-    "ploeg": "Visma–Lease a Bike",
+    "ploeg": "Team Visma | Lease A Bike",
     "tijd": "+ 2:42"
    },
    {
     "pos": 3,
-    "naam": "Isaac del Toro",
+    "naam": "Isaac Del Toro Romero",
     "land": "MEX",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "+ 3:27"
@@ -523,74 +602,74 @@
     "pos": 4,
     "naam": "Remco Evenepoel",
     "land": "BEL",
-    "ploeg": "Red Bull–Bora–Hansgrohe",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
     "tijd": "+ 3:30"
    },
    {
     "pos": 5,
-    "naam": "Juan Ayuso",
+    "naam": "Juan Ayuso Pesquera",
     "land": "ESP",
-    "ploeg": "Lidl–Trek",
+    "ploeg": "Lidl-Trek",
     "tijd": "+ 3:34"
    },
    {
     "pos": 6,
     "naam": "Paul Seixas",
     "land": "FRA",
-    "ploeg": "Decathlon CMA CGM",
+    "ploeg": "Decathlon CMA CGM Team",
     "tijd": "+ 3:55"
    },
    {
     "pos": 7,
     "naam": "Florian Lipowitz",
     "land": "GER",
-    "ploeg": "Red Bull–Bora–Hansgrohe",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
     "tijd": "+ 4:00"
    },
    {
     "pos": 8,
     "naam": "Lenny Martinez",
     "land": "FRA",
-    "ploeg": "Team Bahrain Victorious",
+    "ploeg": "Bahrain Victorious",
     "tijd": "+ 4:21"
    },
    {
     "pos": 9,
     "naam": "Mattias Skjelmose",
     "land": "DEN",
-    "ploeg": "Lidl–Trek",
+    "ploeg": "Lidl-Trek",
     "tijd": "+ 4:57"
    },
    {
     "pos": 10,
     "naam": "Mathias Vacek",
     "land": "CZE",
-    "ploeg": "Lidl–Trek",
+    "ploeg": "Lidl-Trek",
     "tijd": "+ 7:10"
    }
   ],
   "klassementen": {
    "geel": {
-    "naEtappe": 6,
+    "naEtappe": 7,
     "eenheid": "tijd",
     "top10": [
      {
       "pos": 1,
-      "naam": "Tadej Pogačar",
+      "naam": "Tadej Pogacar",
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "—"
      },
      {
       "pos": 2,
-      "naam": "Jonas Vingegaard",
+      "naam": "Jonas Vingegaard Hansen",
       "land": "DEN",
-      "ploeg": "Visma–Lease a Bike",
+      "ploeg": "Team Visma | Lease A Bike",
       "tijd": "+ 2:42"
      },
      {
       "pos": 3,
-      "naam": "Isaac del Toro",
+      "naam": "Isaac Del Toro Romero",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "+ 3:27"
@@ -599,178 +678,178 @@
       "pos": 4,
       "naam": "Remco Evenepoel",
       "land": "BEL",
-      "ploeg": "Red Bull–Bora–Hansgrohe",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
       "tijd": "+ 3:30"
      },
      {
       "pos": 5,
-      "naam": "Juan Ayuso",
+      "naam": "Juan Ayuso Pesquera",
       "land": "ESP",
-      "ploeg": "Lidl–Trek",
+      "ploeg": "Lidl-Trek",
       "tijd": "+ 3:34"
      },
      {
       "pos": 6,
       "naam": "Paul Seixas",
       "land": "FRA",
-      "ploeg": "Decathlon CMA CGM",
+      "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 3:55"
      },
      {
       "pos": 7,
       "naam": "Florian Lipowitz",
       "land": "GER",
-      "ploeg": "Red Bull–Bora–Hansgrohe",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
       "tijd": "+ 4:00"
      },
      {
       "pos": 8,
       "naam": "Lenny Martinez",
       "land": "FRA",
-      "ploeg": "Team Bahrain Victorious",
+      "ploeg": "Bahrain Victorious",
       "tijd": "+ 4:21"
      },
      {
       "pos": 9,
       "naam": "Mattias Skjelmose",
       "land": "DEN",
-      "ploeg": "Lidl–Trek",
+      "ploeg": "Lidl-Trek",
       "tijd": "+ 4:57"
      },
      {
       "pos": 10,
       "naam": "Mathias Vacek",
       "land": "CZE",
-      "ploeg": "Lidl–Trek",
+      "ploeg": "Lidl-Trek",
       "tijd": "+ 7:10"
      }
     ]
    },
    "groen": {
-    "naEtappe": 6,
+    "naEtappe": 7,
     "eenheid": "punten",
     "top10": [
      {
       "pos": 1,
       "naam": "Mads Pedersen",
       "land": "DEN",
-      "ploeg": "Lidl–Trek",
-      "tijd": "168 ptn"
+      "ploeg": "Lidl-Trek",
+      "tijd": "204 ptn"
      },
      {
       "pos": 2,
-      "naam": "Max Kanter",
-      "land": "GER",
-      "ploeg": "XDS Astana Team",
-      "tijd": "93 ptn"
-     },
-     {
-      "pos": 3,
       "naam": "Biniam Girmay",
       "land": "ERI",
       "ploeg": "NSN Cycling Team",
-      "tijd": "91 ptn"
+      "tijd": "145 ptn"
+     },
+     {
+      "pos": 3,
+      "naam": "Max Kanter",
+      "land": "GER",
+      "ploeg": "XDS Astana Team",
+      "tijd": "140 ptn"
      },
      {
       "pos": 4,
-      "naam": "Jasper Philipsen",
+      "naam": "Tim Merlier",
       "land": "BEL",
-      "ploeg": "Alpecin–Premier Tech",
-      "tijd": "86 ptn"
+      "ploeg": "Soudal Quick-Step",
+      "tijd": "134 ptn"
      },
      {
       "pos": 5,
-      "naam": "Tadej Pogačar",
+      "naam": "Jasper Philipsen",
+      "land": "BEL",
+      "ploeg": "Alpecin-Premier Tech",
+      "tijd": "126 ptn"
+     },
+     {
+      "pos": 6,
+      "naam": "Tadej Pogacar",
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "75 ptn"
      },
      {
-      "pos": 6,
-      "naam": "Olav Kooij",
-      "land": "NED",
-      "ploeg": "Decathlon CMA CGM",
-      "tijd": "70 ptn"
-     },
-     {
       "pos": 7,
-      "naam": "Jonas Vingegaard",
-      "land": "DEN",
-      "ploeg": "Visma–Lease a Bike",
-      "tijd": "61 ptn"
+      "naam": "Soren Wærenskjold",
+      "land": "NOR",
+      "ploeg": "Uno-X Mobility",
+      "tijd": "73 ptn"
      },
      {
       "pos": 8,
-      "naam": "Tim Merlier",
-      "land": "BEL",
-      "ploeg": "Soudal–Quick-Step",
-      "tijd": "55 ptn"
+      "naam": "Olav Kooij",
+      "land": "NED",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "70 ptn"
      },
      {
       "pos": 9,
-      "naam": "Isaac del Toro",
-      "land": "MEX",
-      "ploeg": "UAE Team Emirates XRG",
-      "tijd": "54 ptn"
+      "naam": "Anthony Turgis",
+      "land": "FRA",
+      "ploeg": "Totalenergies",
+      "tijd": "64 ptn"
      },
      {
       "pos": 10,
-      "naam": "Quinn Simmons",
-      "land": "USA",
-      "ploeg": "Lidl–Trek",
-      "tijd": "53 ptn"
+      "naam": "Jonas Vingegaard Hansen",
+      "land": "DEN",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "61 ptn"
      }
     ]
    },
    "bollen": {
-    "naEtappe": 6,
+    "naEtappe": 7,
     "eenheid": "punten",
     "top10": [
      {
       "pos": 1,
-      "naam": "Tadej Pogačar",
+      "naam": "Tadej Pogacar",
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "28 ptn"
      },
      {
       "pos": 2,
-      "naam": "Jonas Vingegaard",
+      "naam": "Jonas Vingegaard Hansen",
       "land": "DEN",
-      "ploeg": "Visma–Lease a Bike",
+      "ploeg": "Team Visma | Lease A Bike",
       "tijd": "19 ptn"
      },
      {
       "pos": 3,
       "naam": "Lenny Martinez",
       "land": "FRA",
-      "ploeg": "Team Bahrain Victorious",
+      "ploeg": "Bahrain Victorious",
       "tijd": "16 ptn"
      },
      {
       "pos": 4,
       "naam": "Alex Baudin",
       "land": "FRA",
-      "ploeg": "EF Education–EasyPost",
+      "ploeg": "EF Education - Easypost",
       "tijd": "13 ptn"
      },
      {
       "pos": 5,
       "naam": "Paul Seixas",
       "land": "FRA",
-      "ploeg": "Decathlon CMA CGM",
+      "ploeg": "Decathlon CMA CGM Team",
       "tijd": "12 ptn"
      },
      {
       "pos": 6,
-      "naam": "Valentin Paret-Peintre",
+      "naam": "Valentin Paret Peintre",
       "land": "FRA",
-      "ploeg": "Soudal–Quick-Step",
+      "ploeg": "Soudal Quick-Step",
       "tijd": "10 ptn"
      },
      {
       "pos": 7,
-      "naam": "Isaac del Toro",
+      "naam": "Isaac Del Toro Romero",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "10 ptn"
@@ -779,19 +858,19 @@
       "pos": 8,
       "naam": "Florian Lipowitz",
       "land": "GER",
-      "ploeg": "Red Bull–Bora–Hansgrohe",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
       "tijd": "10 ptn"
      },
      {
       "pos": 9,
       "naam": "Nicolas Prodhomme",
       "land": "FRA",
-      "ploeg": "Decathlon CMA CGM",
+      "ploeg": "Decathlon CMA CGM Team",
       "tijd": "9 ptn"
      },
      {
       "pos": 10,
-      "naam": "Raúl García Pierna",
+      "naam": "Raul Garcia Pierna",
       "land": "ESP",
       "ploeg": "Movistar Team",
       "tijd": "7 ptn"
@@ -799,68 +878,68 @@
     ]
    },
    "wit": {
-    "naEtappe": 6,
+    "naEtappe": 7,
     "eenheid": "tijd",
     "top10": [
      {
       "pos": 1,
-      "naam": "Isaac del Toro",
+      "naam": "Isaac Del Toro Romero",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "—"
      },
      {
       "pos": 2,
-      "naam": "Juan Ayuso",
+      "naam": "Juan Ayuso Pesquera",
       "land": "ESP",
-      "ploeg": "Lidl–Trek",
+      "ploeg": "Lidl-Trek",
       "tijd": "+ 0:07"
      },
      {
       "pos": 3,
       "naam": "Paul Seixas",
       "land": "FRA",
-      "ploeg": "Decathlon CMA CGM",
+      "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 0:28"
      },
      {
       "pos": 4,
       "naam": "Lenny Martinez",
       "land": "FRA",
-      "ploeg": "Team Bahrain Victorious",
+      "ploeg": "Bahrain Victorious",
       "tijd": "+ 0:54"
      },
      {
       "pos": 5,
       "naam": "Mathias Vacek",
       "land": "CZE",
-      "ploeg": "Lidl–Trek",
+      "ploeg": "Lidl-Trek",
       "tijd": "+ 3:43"
      },
      {
       "pos": 6,
       "naam": "Davide Piganzoli",
       "land": "ITA",
-      "ploeg": "Visma–Lease a Bike",
+      "ploeg": "Team Visma | Lease A Bike",
       "tijd": "+ 7:19"
      },
      {
       "pos": 7,
       "naam": "Lennert Van Eetvelt",
       "land": "BEL",
-      "ploeg": "Lotto–Intermarché",
+      "ploeg": "Lotto Intermarche",
       "tijd": "+ 7:24"
      },
      {
       "pos": 8,
       "naam": "Ramses Debruyne",
       "land": "BEL",
-      "ploeg": "Alpecin–Premier Tech",
+      "ploeg": "Alpecin-Premier Tech",
       "tijd": "+ 7:59"
      },
      {
       "pos": 9,
-      "naam": "Pablo Castrillo",
+      "naam": "Pablo Castrillo Zapater",
       "land": "ESP",
       "ploeg": "Movistar Team",
       "tijd": "+ 9:57"
@@ -869,97 +948,31 @@
       "pos": 10,
       "naam": "Antonio Tiberi",
       "land": "ITA",
-      "ploeg": "Team Bahrain Victorious",
+      "ploeg": "Bahrain Victorious",
       "tijd": "+ 23:36"
      }
     ]
    }
   },
-  "wissels": [
-   {
-    "trui": "geel",
-    "van": "Torstein Træen",
-    "naar": "Tadej Pogacar"
-   },
-   {
-    "trui": "bollen",
-    "van": "Alex Baudin",
-    "naar": "Tadej Pogacar"
-   },
-   {
-    "trui": "wit",
-    "van": "Mathias Vacek",
-    "naar": "Isaac Del Toro Romero"
-   }
-  ],
-  "voetnoot": "Stand na etappe 6, automatisch bijgewerkt 10 juli 14:39 uur (bron: Wikipedia)."
+  "wissels": [],
+  "voetnoot": "Stand na etappe 7, automatisch bijgewerkt 10 juli 17:35 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
-  "voorEtappe": 7,
-  "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Gavarnie-Gèdre, voor Jonas Vingegaard Hansen en Juan Ayuso Pesquera. Tadej Pogacar neemt de gele trui over van Torstein Træen en Tadej Pogacar neemt de bollentrui over van Alex Baudin en Isaac Del Toro Romero neemt de witte trui over van Mathias Vacek. In het algemeen klassement leidt Tadej Pogačar, met Jonas Vingegaard als eerste achtervolger op 2:42.",
+  "voorEtappe": 8,
+  "tekst": "Sergio Higuita Garcia (XDS Astana Team) sprintte naar de zege in Bordeaux, voor Tobias Johannessen en Lenny Martinez. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
   "bron": "vast patroon",
-  "feiten": "7eb74fa3d917406a"
+  "feiten": "ae0a3e073ae005d5"
  },
  "samenvattingen": {
   "6": {
    "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Gavarnie-Gèdre, met Jonas Vingegaard Hansen op +2:47. Tadej Pogacar pakt de gele trui en de bollentrui. Isaac Del Toro Romero pakt de witte trui. In het algemeen klassement leidt Tadej Pogačar, met Jonas Vingegaard op 2:42.",
    "bron": "vast patroon",
    "feiten": "786660409782d812"
+  },
+  "7": {
+   "tekst": "Sergio Higuita Garcia (XDS Astana Team) sprintte naar de zege in Bordeaux, voor Tobias Johannessen. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
+   "bron": "vast patroon",
+   "feiten": "1e565dc70306e5b7"
   }
- },
- "koers": {
-  "etappe": 7,
-  "bijgewerkt": "2026-07-10T15:03:23.121Z",
-  "groepen": [
-   {
-    "naam": "Peloton",
-    "aantal": 999,
-    "gat": "",
-    "renners": [
-     [
-      "T. Pogacar",
-      "SLO",
-      1
-     ],
-     [
-      "I. Del Toro Romero",
-      "MEX",
-      2
-     ],
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
-     ],
-     [
-      "B. Mcnulty",
-      "USA",
-      4
-     ],
-     [
-      "N. Politt",
-      "GER",
-      5
-     ],
-     [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
-      "A. Yates",
-      "GBR",
-      8
-     ]
-    ],
-    "meer": 168
-   }
-  ],
-  "bron": "racecenter.letour.fr"
  }
 }
