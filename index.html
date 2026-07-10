@@ -283,6 +283,7 @@
   .trui .rennerlink{border-bottom:0}
   /* rennerprofiel-venster */
   .modal{position:fixed;inset:0;z-index:2000;background:rgba(22,22,15,.55);display:flex;align-items:flex-end;justify-content:center;padding:0}
+  .modal[hidden]{display:none} /* moet het hidden-attribuut respecteren */
   @media(min-width:560px){.modal{align-items:center;padding:20px}}
   .modalkaart{position:relative;background:#fff;width:100%;max-width:460px;max-height:88vh;overflow:auto;border-radius:20px 20px 0 0;padding:20px 18px 26px;box-shadow:0 -8px 40px rgba(0,0,0,.25);animation:omhoog .22s ease}
   @media(min-width:560px){.modalkaart{border-radius:20px}}
