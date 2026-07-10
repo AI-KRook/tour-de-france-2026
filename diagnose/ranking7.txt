@@ -1,0 +1,12 @@
+type=ite n=177 :: 1.Tim MERLIER | 2.Soren WÆRENSKJOLD | 3.Biniam GIRMAY
+type=itg n=176 :: 1.Tadej POGACAR | 2.Jonas VINGEGAARD HANSEN | 3.Isaac DEL TORO ROMERO
+type=ice n=1 :: 1.Baptiste VEISTROFFER
+type=ijg n=39 :: 1.Isaac DEL TORO ROMERO | 2.Juan AYUSO PESQUERA | 3.Paul SEIXAS
+type=img n=36 :: 1.Tadej POGACAR | 2.Jonas VINGEGAARD HANSEN | 3.Lenny MARTINEZ
+type=ipg n=85 :: 1.Mads PEDERSEN | 2.Biniam GIRMAY | 3.Max KANTER
+type=ime n=1 :: 1.Baptiste VEISTROFFER
+type=ipe n=18 :: 1.Tim MERLIER | 2.Soren WÆRENSKJOLD | 3.Biniam GIRMAY
+type=ipe n=15 :: 1.Baptiste VEISTROFFER | 2.Jakub OTRUBA | 3.Mads PEDERSEN
+type=ete n=23 :: 1.Sergio HIGUITA GARCIA | 2.Tobias JOHANNESSEN | 3.Lenny MARTINEZ
+type=ije n=39 :: 1.Huub ARTZ | 2.Pavel BITTNER | 3.Milan FRETIN
+type=etg n=23 :: 1.Juan AYUSO PESQUERA | 2.Remco EVENEPOEL | 3.Tadej POGACAR
