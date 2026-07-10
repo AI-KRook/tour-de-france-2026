@@ -228,21 +228,12 @@ function koersKlaar(packArr) {
   return (g.computedRemainingDistance ?? g.remainingDistance ?? 1) <= 0;
 }
 
-// kies de data die bij de gevraagde etappe hoort; anders de hoogste beschikbare
-function voorEtappe(perStage, etappe) {
-  if (!perStage) return null;
-  if (perStage[etappe]) return perStage[etappe];
-  const keys = Object.keys(perStage).map(Number).filter(k => k <= etappe);
-  if (keys.length) return perStage[Math.max(...keys)];
-  const alle = Object.keys(perStage).map(Number);
-  return alle.length ? perStage[Math.max(...alle)] : null;
-}
-
 function bouwAlles(data, etappe, isoNu) {
-  // uitslag en klassement moeten van DEZELFDE (huidige) etappe komen; de pagina
-  // laadt soms ook naburige etappes, dus sleutelen we per etappenummer
-  const rank = voorEtappe(data.rankByStage, etappe);
-  const arrival = voorEtappe(data.arrivalByStage, etappe);
+  // uitslag en klassement moeten van EXACT de huidige etappe komen; de pagina
+  // laadt soms ook naburige etappes. Ontbreekt de data van deze etappe, dan
+  // liever niets bijwerken dan de stand van een andere etappe tonen.
+  const rank = (data.rankByStage || {})[etappe] || null;
+  const arrival = (data.arrivalByStage || {})[etappe] || null;
   const codeNaam = {};
   for (const it of rank || []) if (it && it.code && it.name) codeNaam[it.code] = it.name;
   const idx = bouwIndex(data.comp, codeNaam);
