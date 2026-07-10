@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-10T18:31:37Z",
+ "bijgewerkt": "2026-07-10T18:36:28Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -478,81 +478,81 @@
   "7": {
    "w": "Tim Merlier",
    "wLand": "BEL",
-   "wPloeg": "Soudal–Quick-Step",
+   "wPloeg": "Soudal Quick-Step",
    "note": "",
    "pod": [
     {
      "pos": 1,
      "naam": "Tim Merlier",
      "land": "BEL",
-     "ploeg": "Soudal–Quick-Step",
-     "tijd": "3:44:20"
+     "ploeg": "Soudal Quick-Step",
+     "tijd": ""
     },
     {
      "pos": 2,
-     "naam": "Søren Wærenskjold",
+     "naam": "Soren Wærenskjold",
      "land": "NOR",
      "ploeg": "Uno-X Mobility",
-     "tijd": "z.t."
+     "tijd": "—"
     },
     {
      "pos": 3,
      "naam": "Biniam Girmay",
      "land": "ERI",
      "ploeg": "NSN Cycling Team",
-     "tijd": "z.t."
+     "tijd": "—"
     },
     {
      "pos": 4,
      "naam": "Max Kanter",
      "land": "GER",
      "ploeg": "XDS Astana Team",
-     "tijd": "z.t."
+     "tijd": "—"
     },
     {
      "pos": 5,
      "naam": "Jasper Philipsen",
      "land": "BEL",
-     "ploeg": "Alpecin–Premier Tech",
-     "tijd": "z.t."
+     "ploeg": "Alpecin-Premier Tech",
+     "tijd": "—"
     },
     {
      "pos": 6,
      "naam": "Phil Bauhaus",
      "land": "GER",
-     "ploeg": "Team Bahrain Victorious",
-     "tijd": "z.t."
+     "ploeg": "Bahrain Victorious",
+     "tijd": "—"
     },
     {
      "pos": 7,
      "naam": "Huub Artz",
      "land": "NED",
-     "ploeg": "Lotto–Intermarché",
-     "tijd": "z.t."
+     "ploeg": "Lotto Intermarche",
+     "tijd": "—"
     },
     {
      "pos": 8,
      "naam": "Dorian Godon",
      "land": "FRA",
-     "ploeg": "Netcompany INEOS",
-     "tijd": "z.t."
+     "ploeg": "Netcompany Ineos Cycling Team",
+     "tijd": "—"
     },
     {
      "pos": 9,
      "naam": "Mads Pedersen",
      "land": "DEN",
-     "ploeg": "Lidl–Trek",
-     "tijd": "z.t."
+     "ploeg": "Lidl-Trek",
+     "tijd": "—"
     },
     {
      "pos": 10,
      "naam": "Tom Van Asbroeck",
      "land": "BEL",
      "ploeg": "NSN Cycling Team",
-     "tijd": "z.t."
+     "tijd": "—"
     }
    ],
-   "bron": "en.wikipedia.org"
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -962,13 +962,13 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 7, automatisch bijgewerkt 10 juli 20:31 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 7, automatisch bijgewerkt 10 juli 20:36 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 8,
-  "tekst": "Tim Merlier (Soudal–Quick-Step) sprintte naar de zege in Bordeaux, voor Søren Wærenskjold en Biniam Girmay. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
+  "tekst": "Tim Merlier (Soudal Quick-Step) sprintte naar de zege in Bordeaux, voor Soren Wærenskjold en Biniam Girmay. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
   "bron": "vast patroon",
-  "feiten": "a3c9084cd9b81cc8"
+  "feiten": "4afe8b0887221459"
  },
  "samenvattingen": {
   "6": {
@@ -977,9 +977,9 @@
    "feiten": "786660409782d812"
   },
   "7": {
-   "tekst": "Tim Merlier (Soudal–Quick-Step) sprintte naar de zege in Bordeaux, met Søren Wærenskjold op z.t.. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
+   "tekst": "Tim Merlier (Soudal Quick-Step) sprintte naar de zege in Bordeaux, voor Soren Wærenskjold. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
    "bron": "vast patroon",
-   "feiten": "c98283ba64efae5b"
+   "feiten": "06437e280c368dbd"
   }
  }
 }
