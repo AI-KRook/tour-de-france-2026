@@ -213,7 +213,7 @@ function buildKoers(packArr, idx, etappe, isoNu) {
     return {
       naam: vertaalGroep(g.name),
       aantal: g.size || bibs.length || 0,
-      gat: fmtGatKort((g.computedRelative ?? g.relative ?? 0) / 1000),
+      gat: fmtGatKort(g.computedRelative ?? g.relative ?? 0), // pack-gaten zijn in seconden
       renners, meer: meer > 0 ? meer : 0,
     };
   });
