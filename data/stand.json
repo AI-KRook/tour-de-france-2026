@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-10T16:27:45Z",
+ "bijgewerkt": "2026-07-10T17:31:20Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -391,6 +391,164 @@
      "naam": "Søren Wærenskjold",
      "land": "NOR",
      "ploeg": "Uno-X Mobility",
+     "tijd": "z.t."
+    }
+   ],
+   "bron": "en.wikipedia.org"
+  },
+  "6": {
+   "w": "Tadej Pogačar",
+   "wLand": "SLO",
+   "wPloeg": "UAE Team Emirates XRG",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Tadej Pogačar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "4:32:07"
+    },
+    {
+     "pos": 2,
+     "naam": "Jonas Vingegaard",
+     "land": "DEN",
+     "ploeg": "Visma–Lease a Bike",
+     "tijd": "+ 2:38"
+    },
+    {
+     "pos": 3,
+     "naam": "Isaac del Toro",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 2:57"
+    },
+    {
+     "pos": 4,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "+ 2:57"
+    },
+    {
+     "pos": 5,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM",
+     "tijd": "+ 2:57"
+    },
+    {
+     "pos": 6,
+     "naam": "Florian Lipowitz",
+     "land": "GER",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "+ 2:57"
+    },
+    {
+     "pos": 7,
+     "naam": "Juan Ayuso",
+     "land": "ESP",
+     "ploeg": "Lidl–Trek",
+     "tijd": "+ 2:57"
+    },
+    {
+     "pos": 8,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl–Trek",
+     "tijd": "+ 2:57"
+    },
+    {
+     "pos": 9,
+     "naam": "Lenny Martinez",
+     "land": "FRA",
+     "ploeg": "Team Bahrain Victorious",
+     "tijd": "+ 3:02"
+    },
+    {
+     "pos": 10,
+     "naam": "Sepp Kuss",
+     "land": "USA",
+     "ploeg": "Visma–Lease a Bike",
+     "tijd": "+ 3:06"
+    }
+   ],
+   "bron": "en.wikipedia.org"
+  },
+  "7": {
+   "w": "Tim Merlier",
+   "wLand": "BEL",
+   "wPloeg": "Soudal–Quick-Step",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Tim Merlier",
+     "land": "BEL",
+     "ploeg": "Soudal–Quick-Step",
+     "tijd": "3:44:20"
+    },
+    {
+     "pos": 2,
+     "naam": "Søren Wærenskjold",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 3,
+     "naam": "Biniam Girmay",
+     "land": "ERI",
+     "ploeg": "NSN Cycling Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 4,
+     "naam": "Max Kanter",
+     "land": "GER",
+     "ploeg": "XDS Astana Team",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 5,
+     "naam": "Jasper Philipsen",
+     "land": "BEL",
+     "ploeg": "Alpecin–Premier Tech",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 6,
+     "naam": "Phil Bauhaus",
+     "land": "GER",
+     "ploeg": "Team Bahrain Victorious",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 7,
+     "naam": "Huub Artz",
+     "land": "NED",
+     "ploeg": "Lotto–Intermarché",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 8,
+     "naam": "Dorian Godon",
+     "land": "FRA",
+     "ploeg": "Netcompany INEOS",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 9,
+     "naam": "Mads Pedersen",
+     "land": "DEN",
+     "ploeg": "Lidl–Trek",
+     "tijd": "z.t."
+    },
+    {
+     "pos": 10,
+     "naam": "Tom Van Asbroeck",
+     "land": "BEL",
+     "ploeg": "NSN Cycling Team",
      "tijd": "z.t."
     }
    ],
@@ -804,13 +962,13 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 7, automatisch bijgewerkt 10 juli 18:27 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 7, automatisch bijgewerkt 10 juli 19:31 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 8,
-  "tekst": "Sergio Higuita Garcia (XDS Astana Team) sprintte naar de zege in Bordeaux, voor Tobias Johannessen en Lenny Martinez. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
+  "tekst": "Tim Merlier (Soudal–Quick-Step) sprintte naar de zege in Bordeaux, voor Søren Wærenskjold en Biniam Girmay. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 2:42.",
   "bron": "vast patroon",
-  "feiten": "ae0a3e073ae005d5"
+  "feiten": "a3c9084cd9b81cc8"
  },
  "samenvattingen": {
   "6": {
@@ -819,9 +977,9 @@
    "feiten": "786660409782d812"
   },
   "7": {
-   "tekst": "Sergio Higuita Garcia (XDS Astana Team) sprintte naar de zege in Bordeaux, voor Tobias Johannessen. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
+   "tekst": "Tim Merlier (Soudal–Quick-Step) sprintte naar de zege in Bordeaux, met Søren Wærenskjold op z.t.. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 2:42.",
    "bron": "vast patroon",
-   "feiten": "1e565dc70306e5b7"
+   "feiten": "c98283ba64efae5b"
   }
  }
 }
