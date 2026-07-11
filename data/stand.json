@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-11T15:28:31Z",
+ "bijgewerkt": "2026-07-11T15:33:17Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -990,37 +990,58 @@
      },
      {
       "pos": 4,
-      "naam": "Jenno Berckmoes",
-      "land": "BEL",
-      "ploeg": "Lotto Intermarche",
-      "tijd": "+ 1:16:06"
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 0:54"
      },
      {
       "pos": 5,
-      "naam": "Pavel Bittner",
+      "naam": "Mathias Vacek",
       "land": "CZE",
-      "ploeg": "Team Picnic Postnl",
-      "tijd": "+ 1:40:58"
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 3:43"
      },
      {
       "pos": 6,
-      "naam": "Milan Fretin",
-      "land": "BEL",
-      "ploeg": "Cofidis",
-      "tijd": "+ 1:42:38"
+      "naam": "Davide Piganzoli",
+      "land": "ITA",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "+ 7:19"
      },
      {
       "pos": 7,
-      "naam": "Olav Kooij",
-      "land": "NED",
-      "ploeg": "Decathlon CMA CGM Team",
-      "tijd": "+ 1:47:46"
+      "naam": "Lennert Van Eetvelt",
+      "land": "BEL",
+      "ploeg": "Lotto Intermarche",
+      "tijd": "+ 7:24"
+     },
+     {
+      "pos": 8,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 9:57"
+     },
+     {
+      "pos": 9,
+      "naam": "Antonio Tiberi",
+      "land": "ITA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 23:36"
+     },
+     {
+      "pos": 10,
+      "naam": "Kévin Vauquelin",
+      "land": "FRA",
+      "ploeg": "Netcompany Ineos Cycling Team",
+      "tijd": "+ 36:54"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 8, automatisch bijgewerkt 11 juli 17:28 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 8, automatisch bijgewerkt 11 juli 17:33 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 9,
