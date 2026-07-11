@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-11T15:33:17Z",
+ "bijgewerkt": "2026-07-11T15:38:37Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1018,30 +1018,30 @@
      },
      {
       "pos": 8,
+      "naam": "Ramses Debruyne",
+      "land": "BEL",
+      "ploeg": "Alpecin-Premier Tech",
+      "tijd": "+ 9:48"
+     },
+     {
+      "pos": 9,
       "naam": "Pablo Castrillo Zapater",
       "land": "ESP",
       "ploeg": "Movistar Team",
       "tijd": "+ 9:57"
      },
      {
-      "pos": 9,
+      "pos": 10,
       "naam": "Antonio Tiberi",
       "land": "ITA",
       "ploeg": "Bahrain Victorious",
       "tijd": "+ 23:36"
-     },
-     {
-      "pos": 10,
-      "naam": "Kévin Vauquelin",
-      "land": "FRA",
-      "ploeg": "Netcompany Ineos Cycling Team",
-      "tijd": "+ 36:54"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 8, automatisch bijgewerkt 11 juli 17:33 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 8, automatisch bijgewerkt 11 juli 17:38 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 9,
