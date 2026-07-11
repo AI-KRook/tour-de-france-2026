@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-11T12:52:03Z",
+ "bijgewerkt": "2026-07-11T12:57:22Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -984,7 +984,7 @@
  },
  "koers": {
   "etappe": 8,
-  "bijgewerkt": "2026-07-11T12:52:02.296Z",
+  "bijgewerkt": "2026-07-11T12:57:21.931Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1012,7 +1012,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:16",
+    "gat": "+2:02",
     "renners": [
      [
       "T. Pogacar",
@@ -1055,7 +1055,20 @@
       8
      ]
     ],
-    "meer": 165
+    "meer": 164
+   },
+   {
+    "naam": "Crevaison",
+    "aantal": 1,
+    "gat": "+2:56",
+    "renners": [
+     [
+      "C. Verona Quintanilla",
+      "ESP",
+      38
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
