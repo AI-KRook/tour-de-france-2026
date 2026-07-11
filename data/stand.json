@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-11T15:12:53Z",
+ "bijgewerkt": "2026-07-11T15:17:47Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -984,7 +984,7 @@
  },
  "koers": {
   "etappe": 8,
-  "bijgewerkt": "2026-07-11T15:12:52.903Z",
+  "bijgewerkt": "2026-07-11T15:17:47.044Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1002,7 +1002,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+57s",
+    "gat": "+20s",
     "renners": [
      [
       "T. Pogacar",
@@ -1045,17 +1045,27 @@
       8
      ]
     ],
-    "meer": 166
+    "meer": 164
    },
    {
-    "naam": "E. Verstrynge",
-    "aantal": 1,
-    "gat": "+2:23",
+    "naam": "Distancés",
+    "aantal": 3,
+    "gat": "+3:27",
     "renners": [
+     [
+      "P. Eenkhoorn",
+      "NED",
+      92
+     ],
      [
       "E. Verstrynge",
       "BEL",
       108
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
      ]
     ],
     "meer": 0
