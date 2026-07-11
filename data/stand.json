@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-11T14:40:04Z",
+ "bijgewerkt": "2026-07-11T14:45:26Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -984,7 +984,7 @@
  },
  "koers": {
   "etappe": 8,
-  "bijgewerkt": "2026-07-11T14:40:03.293Z",
+  "bijgewerkt": "2026-07-11T14:45:25.242Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1002,7 +1002,7 @@
    {
     "naam": "J. Otruba",
     "aantal": 1,
-    "gat": "+10s",
+    "gat": "+24s",
     "renners": [
      [
       "J. Otruba",
@@ -1015,7 +1015,7 @@
    {
     "naam": "T. Guernalec",
     "aantal": 1,
-    "gat": "+18s",
+    "gat": "+35s",
     "renners": [
      [
       "T. Guernalec",
@@ -1028,7 +1028,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:39",
+    "gat": "+1:37",
     "renners": [
      [
       "T. Pogacar",
