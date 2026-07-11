@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-11T14:50:41Z",
+ "bijgewerkt": "2026-07-11T14:56:00Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -984,7 +984,7 @@
  },
  "koers": {
   "etappe": 8,
-  "bijgewerkt": "2026-07-11T14:50:40.154Z",
+  "bijgewerkt": "2026-07-11T14:55:59.724Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1002,7 +1002,7 @@
    {
     "naam": "J. Otruba",
     "aantal": 1,
-    "gat": "+34s",
+    "gat": "+1:14",
     "renners": [
      [
       "J. Otruba",
@@ -1015,7 +1015,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:27",
+    "gat": "+1:20",
     "renners": [
      [
       "T. Pogacar",
@@ -1058,20 +1058,7 @@
       8
      ]
     ],
-    "meer": 165
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+2:12",
-    "renners": [
-     [
-      "L. Germani",
-      "ITA",
-      185
-     ]
-    ],
-    "meer": 0
+    "meer": 166
    }
   ],
   "bron": "racecenter.letour.fr"
