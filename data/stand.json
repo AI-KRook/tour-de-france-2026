@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T12:35:04Z",
+ "bijgewerkt": "2026-07-12T12:39:55Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,7 +1068,7 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T12:35:04.004Z",
+  "bijgewerkt": "2026-07-12T12:39:54.588Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1121,7 +1121,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 22,
-    "gat": "+1:50",
+    "gat": "+1:59",
     "renners": [
      [
       "E. Affini",
