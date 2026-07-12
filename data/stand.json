@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T12:55:24Z",
+ "bijgewerkt": "2026-07-12T13:00:45Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,12 +1068,30 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T12:55:24.054Z",
+  "bijgewerkt": "2026-07-12T13:00:45.110Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 2,
+    "gat": "",
+    "renners": [
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "K. Vauquelin",
+      "FRA",
+      88
+     ]
+    ],
+    "meer": 0
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+5s",
     "renners": [
      [
       "T. Pogacar",
@@ -1116,17 +1134,55 @@
       8
      ]
     ],
-    "meer": 137
+    "meer": 126
    },
    {
-    "naam": "Distancés",
-    "aantal": 9,
-    "gat": "+1:32",
+    "naam": "Groep Tarling",
+    "aantal": 5,
+    "gat": "+21s",
     "renners": [
      [
       "C. Bol",
       "NED",
       53
+     ],
+     [
+      "J. Tarling",
+      "GBR",
+      87
+     ],
+     [
+      "L. Germani",
+      "ITA",
+      185
+     ],
+     [
+      "M. Vercher",
+      "FRA",
+      208
+     ],
+     [
+      "F. Biesterbos",
+      "NED",
+      212
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 13,
+    "gat": "+2:22",
+    "renners": [
+     [
+      "M. Walker",
+      "GBR",
+      48
+     ],
+     [
+      "A. Gate",
+      "NZL",
+      63
      ],
      [
       "M. Kanter",
@@ -1154,22 +1210,17 @@
       132
      ],
      [
-      "B. Veistroffer",
-      "FRA",
-      157
-     ],
-     [
-      "A. Turgis",
-      "FRA",
-      207
+      "K. Neilands",
+      "LAT",
+      136
      ]
     ],
-    "meer": 1
+    "meer": 5
    },
    {
     "naam": "Groep Merlier",
     "aantal": 22,
-    "gat": "+2:57",
+    "gat": "+4:03",
     "renners": [
      [
       "E. Affini",
