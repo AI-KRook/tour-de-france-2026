@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T12:30:28Z",
+ "bijgewerkt": "2026-07-12T12:35:04Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,45 +1068,12 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T12:30:28.070Z",
+  "bijgewerkt": "2026-07-12T12:35:04.004Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 5,
-    "gat": "",
-    "renners": [
-     [
-      "F. Engelhardt",
-      "GER",
-      114
-     ],
-     [
-      "A. Johannessen",
-      "NOR",
-      125
-     ],
-     [
-      "N. Oliveira",
-      "POR",
-      146
-     ],
-     [
-      "A. Kirsch",
-      "LUX",
-      166
-     ],
-     [
-      "J. Alaphilippe",
-      "FRA",
-      191
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+7s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
@@ -1149,31 +1116,18 @@
       8
      ]
     ],
-    "meer": 141
+    "meer": 146
    },
    {
-    "naam": "Distancés",
-    "aantal": 2,
-    "gat": "+1:16",
+    "naam": "Groep Merlier",
+    "aantal": 22,
+    "gat": "+1:50",
     "renners": [
      [
       "E. Affini",
       "ITA",
       12
      ],
-     [
-      "J. Rickaert",
-      "BEL",
-      107
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Merlier",
-    "aantal": 20,
-    "gat": "+1:43",
-    "renners": [
      [
       "T. Skujins",
       "LAT",
@@ -1208,14 +1162,9 @@
       "S. Dillier",
       "SUI",
       103
-     ],
-     [
-      "J. Philipsen",
-      "BEL",
-      105
      ]
     ],
-    "meer": 12
+    "meer": 14
    }
   ],
   "bron": "racecenter.letour.fr"
