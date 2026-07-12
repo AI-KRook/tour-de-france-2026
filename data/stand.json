@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T13:05:34Z",
+ "bijgewerkt": "2026-07-12T13:10:55Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,7 +1068,7 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T13:05:33.901Z",
+  "bijgewerkt": "2026-07-12T13:10:55.034Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1101,11 +1101,6 @@
       5
      ],
      [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
       "T. Wellens",
       "BEL",
       7
@@ -1114,19 +1109,49 @@
       "A. Yates",
       "GBR",
       8
+     ],
+     [
+      "J. Vingegaard Hansen",
+      "DEN",
+      11
      ]
     ],
-    "meer": 111
+    "meer": 91
    },
    {
     "naam": "Groep Tarling",
-    "aantal": 23,
-    "gat": "+56s",
+    "aantal": 44,
+    "gat": "+1:28",
     "renners": [
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
      [
       "J. Tratnik",
       "SLO",
       26
+     ],
+     [
+      "M. Vacek",
+      "CZE",
+      37
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
      ],
      [
       "D. Hoole",
@@ -1134,42 +1159,17 @@
       54
      ],
      [
-      "M. Teunissen",
-      "NED",
-      66
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
-     ],
-     [
-      "V. Van Mechelen",
-      "BEL",
-      78
-     ],
-     [
-      "E. Verstrynge",
-      "BEL",
-      108
-     ],
-     [
-      "L. Durbridge",
-      "AUS",
-      113
-     ],
-     [
-      "L. Plapp",
-      "AUS",
-      117
+      "M. Riccitello",
+      "USA",
+      58
      ]
     ],
-    "meer": 15
+    "meer": 36
    },
    {
     "naam": "Distancés",
     "aantal": 12,
-    "gat": "+4:23",
+    "gat": "+5:19",
     "renners": [
      [
       "M. Walker",
@@ -1216,8 +1216,8 @@
    },
    {
     "naam": "Groep Merlier",
-    "aantal": 22,
-    "gat": "+4:44",
+    "aantal": 21,
+    "gat": "+5:20",
     "renners": [
      [
       "E. Affini",
@@ -1250,17 +1250,17 @@
       91
      ],
      [
-      "P. Eenkhoorn",
-      "NED",
-      92
-     ],
-     [
       "S. Dillier",
       "SUI",
       103
+     ],
+     [
+      "J. Philipsen",
+      "BEL",
+      105
      ]
     ],
-    "meer": 14
+    "meer": 13
    }
   ],
   "bron": "racecenter.letour.fr"
