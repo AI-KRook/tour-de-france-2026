@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T14:54:37Z",
+ "bijgewerkt": "2026-07-12T14:59:20Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,23 +1068,13 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T14:54:36.560Z",
+  "bijgewerkt": "2026-07-12T14:59:19.391Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 8,
+    "aantal": 6,
     "gat": "",
     "renners": [
-     [
-      "D. Gee",
-      "CAN",
-      32
-     ],
-     [
-      "Q. Simmons",
-      "USA",
-      34
-     ],
      [
       "A. Baudin",
       "FRA",
@@ -1119,9 +1109,22 @@
     "meer": 0
    },
    {
+    "naam": "D. Gee-West",
+    "aantal": 1,
+    "gat": "+12s",
+    "renners": [
+     [
+      "D. Gee",
+      "CAN",
+      32
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep gele trui",
-    "aantal": 39,
-    "gat": "+48s",
+    "aantal": 38,
+    "gat": "+50s",
     "renners": [
      [
       "T. Pogacar",
@@ -1144,11 +1147,6 @@
       4
      ],
      [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
       "A. Yates",
       "GBR",
       8
@@ -1162,14 +1160,19 @@
       "M. Jorgenson",
       "USA",
       16
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
      ]
     ],
-    "meer": 31
+    "meer": 30
    },
    {
     "naam": "Distancés",
     "aantal": 62,
-    "gat": "+10:29",
+    "gat": "+11:12",
     "renners": [
      [
       "F. Vermeersch",
@@ -1217,7 +1220,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 33,
-    "gat": "+19:10",
+    "gat": "+19:46",
     "renners": [
      [
       "E. Affini",
