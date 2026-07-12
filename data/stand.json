@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T13:16:13Z",
+ "bijgewerkt": "2026-07-12T13:21:34Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,11 +1068,11 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T13:16:12.888Z",
+  "bijgewerkt": "2026-07-12T13:21:33.984Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 12,
+    "aantal": 15,
     "gat": "",
     "renners": [
      [
@@ -1091,6 +1091,11 @@
       43
      ],
      [
+      "T. Foss",
+      "NOR",
+      83
+     ],
+     [
       "V. Paret Peintre",
       "FRA",
       93
@@ -1101,27 +1106,22 @@
       101
      ],
      [
+      "T. Johannessen",
+      "NOR",
+      121
+     ],
+     [
       "P. Castrillo Zapater",
       "ESP",
       142
-     ],
-     [
-      "L. Craps",
-      "BEL",
-      154
-     ],
-     [
-      "L. Van Eetvelt",
-      "BEL",
-      156
      ]
     ],
-    "meer": 4
+    "meer": 7
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+10s",
+    "gat": "+15s",
     "renners": [
      [
       "T. Pogacar",
@@ -1164,12 +1164,12 @@
       11
      ]
     ],
-    "meer": 67
+    "meer": 61
    },
    {
     "naam": "Distancés",
-    "aantal": 56,
-    "gat": "+1:44",
+    "aantal": 59,
+    "gat": "+2:06",
     "renners": [
      [
       "F. Vermeersch",
@@ -1212,12 +1212,12 @@
       37
      ]
     ],
-    "meer": 48
+    "meer": 51
    },
    {
     "naam": "Groep Merlier",
     "aantal": 33,
-    "gat": "+6:57",
+    "gat": "+7:28",
     "renners": [
      [
       "E. Affini",
