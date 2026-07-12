@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T14:12:46Z",
+ "bijgewerkt": "2026-07-12T14:18:09Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,7 +1068,7 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T14:12:46.052Z",
+  "bijgewerkt": "2026-07-12T14:18:07.864Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1169,7 +1169,7 @@
    {
     "naam": "Distancés",
     "aantal": 62,
-    "gat": "+4:28",
+    "gat": "+5:40",
     "renners": [
      [
       "F. Vermeersch",
@@ -1217,7 +1217,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 33,
-    "gat": "+13:24",
+    "gat": "+14:01",
     "renners": [
      [
       "E. Affini",
