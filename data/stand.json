@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T15:41:30Z",
+ "bijgewerkt": "2026-07-12T15:46:52Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1104,23 +1104,23 @@
      },
      {
       "pos": 9,
+      "naam": "Mathias Vacek",
+      "land": "CZE",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 13:31"
+     },
+     {
+      "pos": 10,
       "naam": "Kévin Vauquelin",
       "land": "FRA",
       "ploeg": "Netcompany Ineos Cycling Team",
       "tijd": "+ 37:30"
-     },
-     {
-      "pos": 10,
-      "naam": "Alex Baudin",
-      "land": "FRA",
-      "ploeg": "EF Education - Easypost",
-      "tijd": "+ 40:10"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 9, automatisch bijgewerkt 12 juli 17:41 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 9, automatisch bijgewerkt 12 juli 17:46 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 10,
