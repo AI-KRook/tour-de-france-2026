@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T12:02:38Z",
+ "bijgewerkt": "2026-07-12T12:07:57Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,13 +1068,18 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T12:02:37.577Z",
+  "bijgewerkt": "2026-07-12T12:07:57.209Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 3,
+    "aantal": 5,
     "gat": "",
     "renners": [
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
      [
       "A. Kirsch",
       "LUX",
@@ -1086,6 +1091,11 @@
       174
      ],
      [
+      "E. Costiou",
+      "FRA",
+      184
+     ],
+     [
       "S. Oldani",
       "ITA",
       226
@@ -1094,22 +1104,9 @@
     "meer": 0
    },
    {
-    "naam": "G. Steinhauser",
-    "aantal": 1,
-    "gat": "+8s",
-    "renners": [
-     [
-      "G. Steinhauser",
-      "GER",
-      46
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+21s",
+    "gat": "+6s",
     "renners": [
      [
       "T. Pogacar",
@@ -1152,7 +1149,7 @@
       8
      ]
     ],
-    "meer": 164
+    "meer": 163
    }
   ],
   "bron": "racecenter.letour.fr"
