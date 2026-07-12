@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T13:10:55Z",
+ "bijgewerkt": "2026-07-12T13:16:13Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,12 +1068,60 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T13:10:55.034Z",
+  "bijgewerkt": "2026-07-12T13:16:12.888Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 12,
+    "gat": "",
+    "renners": [
+     [
+      "D. Gee",
+      "CAN",
+      32
+     ],
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "M. Van Der Poel",
+      "NED",
+      101
+     ],
+     [
+      "P. Castrillo Zapater",
+      "ESP",
+      142
+     ],
+     [
+      "L. Craps",
+      "BEL",
+      154
+     ],
+     [
+      "L. Van Eetvelt",
+      "BEL",
+      156
+     ]
+    ],
+    "meer": 4
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+10s",
     "renners": [
      [
       "T. Pogacar",
@@ -1116,17 +1164,22 @@
       11
      ]
     ],
-    "meer": 91
+    "meer": 67
    },
    {
-    "naam": "Groep Tarling",
-    "aantal": 44,
-    "gat": "+1:28",
+    "naam": "Distancés",
+    "aantal": 56,
+    "gat": "+1:44",
     "renners": [
      [
       "F. Vermeersch",
       "BEL",
       6
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
      ],
      [
       "V. Campenaerts",
@@ -1139,42 +1192,57 @@
       22
      ],
      [
+      "N. Denz",
+      "GER",
+      23
+     ],
+     [
       "J. Tratnik",
       "SLO",
       26
      ],
      [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
       "M. Vacek",
       "CZE",
       37
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "D. Hoole",
-      "NED",
-      54
-     ],
-     [
-      "M. Riccitello",
-      "USA",
-      58
      ]
     ],
-    "meer": 36
+    "meer": 48
    },
    {
-    "naam": "Distancés",
-    "aantal": 12,
-    "gat": "+5:19",
+    "naam": "Groep Merlier",
+    "aantal": 33,
+    "gat": "+6:57",
     "renners": [
+     [
+      "E. Affini",
+      "ITA",
+      12
+     ],
+     [
+      "T. Skujins",
+      "LAT",
+      36
+     ],
      [
       "M. Walker",
       "GBR",
       48
+     ],
+     [
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "D. Ballerini",
+      "ITA",
+      62
      ],
      [
       "A. Gate",
@@ -1190,77 +1258,9 @@
       "N. Vinokurov",
       "KAZ",
       68
-     ],
-     [
-      "P. Ackermann",
-      "GER",
-      112
-     ],
-     [
-      "A. Johannessen",
-      "NOR",
-      125
-     ],
-     [
-      "L. Askey",
-      "GBR",
-      132
-     ],
-     [
-      "K. Neilands",
-      "LAT",
-      136
      ]
     ],
-    "meer": 4
-   },
-   {
-    "naam": "Groep Merlier",
-    "aantal": 21,
-    "gat": "+5:20",
-    "renners": [
-     [
-      "E. Affini",
-      "ITA",
-      12
-     ],
-     [
-      "T. Skujins",
-      "LAT",
-      36
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
-     ],
-     [
-      "D. Ballerini",
-      "ITA",
-      62
-     ],
-     [
-      "P. Bauhaus",
-      "GER",
-      72
-     ],
-     [
-      "T. Merlier",
-      "BEL",
-      91
-     ],
-     [
-      "S. Dillier",
-      "SUI",
-      103
-     ],
-     [
-      "J. Philipsen",
-      "BEL",
-      105
-     ]
-    ],
-    "meer": 13
+    "meer": 25
    }
   ],
   "bron": "racecenter.letour.fr"
