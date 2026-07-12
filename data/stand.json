@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T13:00:45Z",
+ "bijgewerkt": "2026-07-12T13:05:34Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,30 +1068,12 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T13:00:45.110Z",
+  "bijgewerkt": "2026-07-12T13:05:33.901Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 2,
-    "gat": "",
-    "renners": [
-     [
-      "M. Jorgenson",
-      "USA",
-      16
-     ],
-     [
-      "K. Vauquelin",
-      "FRA",
-      88
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+5s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
@@ -1134,45 +1116,60 @@
       8
      ]
     ],
-    "meer": 126
+    "meer": 111
    },
    {
     "naam": "Groep Tarling",
-    "aantal": 5,
-    "gat": "+21s",
+    "aantal": 23,
+    "gat": "+56s",
     "renners": [
      [
-      "C. Bol",
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
+      "D. Hoole",
       "NED",
-      53
+      54
      ],
      [
-      "J. Tarling",
-      "GBR",
-      87
-     ],
-     [
-      "L. Germani",
-      "ITA",
-      185
-     ],
-     [
-      "M. Vercher",
-      "FRA",
-      208
-     ],
-     [
-      "F. Biesterbos",
+      "M. Teunissen",
       "NED",
-      212
+      66
+     ],
+     [
+      "M. Mohoric",
+      "SLO",
+      75
+     ],
+     [
+      "V. Van Mechelen",
+      "BEL",
+      78
+     ],
+     [
+      "E. Verstrynge",
+      "BEL",
+      108
+     ],
+     [
+      "L. Durbridge",
+      "AUS",
+      113
+     ],
+     [
+      "L. Plapp",
+      "AUS",
+      117
      ]
     ],
-    "meer": 0
+    "meer": 15
    },
    {
     "naam": "Distancés",
-    "aantal": 13,
-    "gat": "+2:22",
+    "aantal": 12,
+    "gat": "+4:23",
     "renners": [
      [
       "M. Walker",
@@ -1215,12 +1212,12 @@
       136
      ]
     ],
-    "meer": 5
+    "meer": 4
    },
    {
     "naam": "Groep Merlier",
     "aantal": 22,
-    "gat": "+4:03",
+    "gat": "+4:44",
     "renners": [
      [
       "E. Affini",
