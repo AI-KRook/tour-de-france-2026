@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T14:43:53Z",
+ "bijgewerkt": "2026-07-12T14:49:15Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,7 +1068,7 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T14:43:52.653Z",
+  "bijgewerkt": "2026-07-12T14:49:14.640Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1121,7 +1121,7 @@
    {
     "naam": "Groep gele trui",
     "aantal": 39,
-    "gat": "+1:17",
+    "gat": "+1:11",
     "renners": [
      [
       "T. Pogacar",
@@ -1169,7 +1169,7 @@
    {
     "naam": "Distancés",
     "aantal": 62,
-    "gat": "+8:59",
+    "gat": "+9:45",
     "renners": [
      [
       "F. Vermeersch",
@@ -1217,7 +1217,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 33,
-    "gat": "+18:18",
+    "gat": "+18:30",
     "renners": [
      [
       "E. Affini",
