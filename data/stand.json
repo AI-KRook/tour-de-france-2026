@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T12:50:36Z",
+ "bijgewerkt": "2026-07-12T12:55:24Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,45 +1068,12 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T12:50:35.236Z",
+  "bijgewerkt": "2026-07-12T12:55:24.054Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 5,
-    "gat": "",
-    "renners": [
-     [
-      "D. Godon",
-      "FRA",
-      85
-     ],
-     [
-      "M. Heßmann",
-      "GER",
-      145
-     ],
-     [
-      "X. Azparren Irurzun",
-      "ESP",
-      172
-     ],
-     [
-      "J. Alaphilippe",
-      "FRA",
-      191
-     ],
-     [
-      "M. Haller",
-      "AUT",
-      193
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+31s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
@@ -1149,12 +1116,60 @@
       8
      ]
     ],
-    "meer": 141
+    "meer": 137
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 9,
+    "gat": "+1:32",
+    "renners": [
+     [
+      "C. Bol",
+      "NED",
+      53
+     ],
+     [
+      "M. Kanter",
+      "GER",
+      64
+     ],
+     [
+      "N. Vinokurov",
+      "KAZ",
+      68
+     ],
+     [
+      "P. Ackermann",
+      "GER",
+      112
+     ],
+     [
+      "A. Johannessen",
+      "NOR",
+      125
+     ],
+     [
+      "L. Askey",
+      "GBR",
+      132
+     ],
+     [
+      "B. Veistroffer",
+      "FRA",
+      157
+     ],
+     [
+      "A. Turgis",
+      "FRA",
+      207
+     ]
+    ],
+    "meer": 1
    },
    {
     "naam": "Groep Merlier",
     "aantal": 22,
-    "gat": "+2:42",
+    "gat": "+2:57",
     "renners": [
      [
       "E. Affini",
