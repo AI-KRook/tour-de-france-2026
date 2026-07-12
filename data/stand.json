@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T12:39:55Z",
+ "bijgewerkt": "2026-07-12T12:45:14Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1068,12 +1068,45 @@
  },
  "koers": {
   "etappe": 9,
-  "bijgewerkt": "2026-07-12T12:39:54.588Z",
+  "bijgewerkt": "2026-07-12T12:45:14.161Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 5,
+    "gat": "",
+    "renners": [
+     [
+      "D. Godon",
+      "FRA",
+      85
+     ],
+     [
+      "M. Heßmann",
+      "GER",
+      145
+     ],
+     [
+      "X. Azparren Irurzun",
+      "ESP",
+      172
+     ],
+     [
+      "J. Alaphilippe",
+      "FRA",
+      191
+     ],
+     [
+      "M. Haller",
+      "AUT",
+      193
+     ]
+    ],
+    "meer": 0
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+14s",
     "renners": [
      [
       "T. Pogacar",
@@ -1116,12 +1149,12 @@
       8
      ]
     ],
-    "meer": 146
+    "meer": 141
    },
    {
     "naam": "Groep Merlier",
     "aantal": 22,
-    "gat": "+1:59",
+    "gat": "+2:11",
     "renners": [
      [
       "E. Affini",
