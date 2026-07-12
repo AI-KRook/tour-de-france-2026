@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-12T15:36:07Z",
+ "bijgewerkt": "2026-07-12T15:41:30Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -804,6 +804,13 @@
     "land": "DEN",
     "ploeg": "Lidl-Trek",
     "tijd": "+ 4:57"
+   },
+   {
+    "pos": 10,
+    "naam": "Egan Bernal Gomez",
+    "land": "COL",
+    "ploeg": "Netcompany Ineos Cycling Team",
+    "tijd": "+ 9:12"
    }
   ],
   "klassementen": {
@@ -873,6 +880,13 @@
       "land": "DEN",
       "ploeg": "Lidl-Trek",
       "tijd": "+ 4:57"
+     },
+     {
+      "pos": 10,
+      "naam": "Egan Bernal Gomez",
+      "land": "COL",
+      "ploeg": "Netcompany Ineos Cycling Team",
+      "tijd": "+ 9:12"
      }
     ]
    },
@@ -1106,7 +1120,7 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 9, automatisch bijgewerkt 12 juli 17:36 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 9, automatisch bijgewerkt 12 juli 17:41 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 10,
