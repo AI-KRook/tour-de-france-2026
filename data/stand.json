@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T13:01:32Z",
+ "bijgewerkt": "2026-07-14T13:06:38Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T13:01:31.518Z",
+  "bijgewerkt": "2026-07-14T13:06:37.601Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1173,15 +1173,10 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 23,
-    "gat": "+40s",
+    "naam": "Groep Higuita - Healy",
+    "aantal": 3,
+    "gat": "+29s",
     "renners": [
-     [
-      "A. Baudin",
-      "FRA",
-      43
-     ],
      [
       "B. Healy",
       "IRL",
@@ -1191,6 +1186,24 @@
       "S. Higuita Garcia",
       "COL",
       61
+     ],
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 20,
+    "gat": "+41s",
+    "renners": [
+     [
+      "A. Baudin",
+      "FRA",
+      43
      ],
      [
       "T. Arensman",
@@ -1203,11 +1216,6 @@
       93
      ],
      [
-      "L. Vervaeke",
-      "BEL",
-      98
-     ],
-     [
       "M. Van Der Poel",
       "NED",
       101
@@ -1216,27 +1224,29 @@
       "R. Debruyne",
       "BEL",
       102
-     ]
-    ],
-    "meer": 15
-   },
-   {
-    "naam": "K. Vauquelin",
-    "aantal": 1,
-    "gat": "+1:07",
-    "renners": [
+     ],
      [
-      "K. Vauquelin",
-      "FRA",
-      88
+      "B. O'Connor",
+      "AUS",
+      111
+     ],
+     [
+      "L. Plapp",
+      "AUS",
+      117
+     ],
+     [
+      "J. Abrahamsen",
+      "NOR",
+      122
      ]
     ],
-    "meer": 0
+    "meer": 12
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:25",
+    "gat": "+1:19",
     "renners": [
      [
       "T. Pogacar",
@@ -1279,12 +1289,30 @@
       8
      ]
     ],
-    "meer": 107
+    "meer": 106
+   },
+   {
+    "naam": "Groep Ganna",
+    "aantal": 2,
+    "gat": "+2:25",
+    "renners": [
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "F. Ganna",
+      "ITA",
+      84
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Distancés",
     "aantal": 28,
-    "gat": "+4:53",
+    "gat": "+5:36",
     "renners": [
      [
       "V. Campenaerts",
@@ -1332,7 +1360,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+9:59",
+    "gat": "+10:25",
     "renners": [
      [
       "P. Bauhaus",
