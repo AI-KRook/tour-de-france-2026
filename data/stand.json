@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T13:22:07Z",
+ "bijgewerkt": "2026-07-14T13:27:29Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T13:22:07.043Z",
+  "bijgewerkt": "2026-07-14T13:27:28.967Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1168,40 +1168,9 @@
     "meer": 0
    },
    {
-    "naam": "H. Tejada",
-    "aantal": 1,
-    "gat": "+19s",
-    "renners": [
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Healy",
-    "aantal": 2,
-    "gat": "+32s",
-    "renners": [
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "L. Vervaeke",
-      "BEL",
-      98
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Poursuivants",
-    "aantal": 18,
-    "gat": "+44s",
+    "aantal": 9,
+    "gat": "+48s",
     "renners": [
      [
       "A. Baudin",
@@ -1209,14 +1178,14 @@
       43
      ],
      [
-      "S. Higuita Garcia",
-      "COL",
-      61
+      "B. Healy",
+      "IRL",
+      44
      ],
      [
-      "T. Arensman",
-      "NED",
-      82
+      "H. Tejada Canacue",
+      "COL",
+      65
      ],
      [
       "V. Paret Peintre",
@@ -1224,14 +1193,14 @@
       93
      ],
      [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
       "R. Debruyne",
       "BEL",
       102
-     ],
-     [
-      "B. O'Connor",
-      "AUS",
-      111
      ],
      [
       "L. Plapp",
@@ -1239,17 +1208,17 @@
       117
      ],
      [
-      "J. Cepeda",
-      "ECU",
-      143
+      "C. Braz Afonso",
+      "FRA",
+      183
      ]
     ],
-    "meer": 10
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:38",
+    "gat": "+1:18",
     "renners": [
      [
       "T. Pogacar",
@@ -1272,6 +1241,34 @@
       4
      ],
      [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "J. Vingegaard Hansen",
+      "DEN",
+      11
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ]
+    ],
+    "meer": 86
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 66,
+    "gat": "+8:18",
+    "renners": [
+     [
       "N. Politt",
       "GER",
       5
@@ -1282,27 +1279,14 @@
       6
      ],
      [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
-      "A. Yates",
-      "GBR",
-      8
-     ]
-    ],
-    "meer": 96
-   },
-   {
-    "naam": "Distancés",
-    "aantal": 43,
-    "gat": "+7:01",
-    "renners": [
-     [
       "E. Affini",
       "ITA",
       12
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
      ],
      [
       "V. Campenaerts",
@@ -1310,42 +1294,27 @@
       14
      ],
      [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
       "N. Denz",
       "GER",
       23
      ],
      [
-      "G. Steinhauser",
-      "GER",
-      46
-     ],
-     [
-      "C. Bol",
-      "NED",
-      53
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
-     ],
-     [
-      "D. Ballerini",
-      "ITA",
-      62
-     ],
-     [
-      "M. Kanter",
-      "GER",
-      64
+      "T. Skujins",
+      "LAT",
+      36
      ]
     ],
-    "meer": 35
+    "meer": 58
    },
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+11:24",
+    "gat": "+11:52",
     "renners": [
      [
       "P. Bauhaus",
