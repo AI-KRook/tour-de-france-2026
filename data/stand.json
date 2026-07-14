@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T13:43:28Z",
+ "bijgewerkt": "2026-07-14T14:58:48Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T13:43:27.691Z",
+  "bijgewerkt": "2026-07-14T14:58:47.886Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1160,51 +1160,92 @@
     "gat": "",
     "renners": [
      [
-      "J. Romo Oliver",
-      "ESP",
-      147
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Poursuivants",
-    "aantal": 3,
-    "gat": "+42s",
-    "renners": [
-     [
-      "A. Baudin",
-      "FRA",
-      43
-     ],
-     [
-      "V. Paret Peintre",
-      "FRA",
-      93
-     ],
-     [
-      "R. Debruyne",
-      "BEL",
-      102
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Peloton",
-    "aantal": 999,
-    "gat": "+53s",
-    "renners": [
-     [
       "T. Pogacar",
       "SLO",
       1
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "R. Carapaz",
+    "aantal": 1,
+    "gat": "+5s",
+    "renners": [
+     [
+      "R. Carapaz",
+      "ECU",
+      41
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Vingegaard",
+    "aantal": 6,
+    "gat": "+18s",
+    "renners": [
+     [
+      "J. Vingegaard Hansen",
+      "DEN",
+      11
      ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "F. Lipowitz",
+      "GER",
+      25
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
+     ],
+     [
+      "M. Skjelmose",
+      "DEN",
+      35
+     ],
+     [
+      "P. Seixas",
+      "FRA",
+      51
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep witte trui",
+    "aantal": 3,
+    "gat": "+27s",
+    "renners": [
      [
       "I. Del Toro Romero",
       "MEX",
       2
      ],
+     [
+      "L. Martinez",
+      "FRA",
+      71
+     ],
+     [
+      "T. Pidcock",
+      "GBR",
+      171
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Hindley",
+    "aantal": 26,
+    "gat": "+3:26",
+    "renners": [
      [
       "F. Grossschartner",
       "AUT",
@@ -1216,65 +1257,90 @@
       4
      ],
      [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
       "A. Yates",
       "GBR",
       8
      ],
      [
-      "J. Vingegaard Hansen",
-      "DEN",
-      11
+      "M. Jorgenson",
+      "USA",
+      16
      ],
      [
-      "P. Hagenes",
-      "NOR",
-      15
+      "S. Kuss",
+      "USA",
+      17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ],
+     [
+      "D. Gee",
+      "CAN",
+      32
      ]
     ],
-    "meer": 84
+    "meer": 18
    },
    {
-    "naam": "Groep Grégoire",
-    "aantal": 5,
-    "gat": "+2:51",
+    "naam": "Groep groene trui",
+    "aantal": 27,
+    "gat": "+13:10",
     "renners": [
      [
-      "L. Vervaeke",
+      "T. Wellens",
       "BEL",
-      98
+      7
      ],
      [
-      "L. Plapp",
-      "AUS",
-      117
+      "M. Pedersen",
+      "DEN",
+      33
      ],
      [
-      "R. Garcia Pierna",
-      "ESP",
-      144
+      "Q. Simmons",
+      "USA",
+      34
      ],
      [
-      "R. Gregoire",
+      "A. Baudin",
       "FRA",
-      181
+      43
      ],
      [
-      "C. Braz Afonso",
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "K. Vauquelin",
       "FRA",
-      183
+      88
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
      ]
     ],
-    "meer": 0
+    "meer": 9
    },
    {
-    "naam": "Distancés",
-    "aantal": 68,
-    "gat": "+12:30",
+    "naam": "Groep Merlier",
+    "aantal": 76,
+    "gat": "+27:31",
     "renners": [
      [
       "N. Politt",
@@ -1317,45 +1383,7 @@
       28
      ]
     ],
-    "meer": 60
-   },
-   {
-    "naam": "Groep Merlier",
-    "aantal": 6,
-    "gat": "+15:35",
-    "renners": [
-     [
-      "P. Bauhaus",
-      "GER",
-      72
-     ],
-     [
-      "T. Merlier",
-      "BEL",
-      91
-     ],
-     [
-      "P. Eenkhoorn",
-      "NED",
-      92
-     ],
-     [
-      "D. Van Baarle",
-      "NED",
-      95
-     ],
-     [
-      "B. Veistroffer",
-      "FRA",
-      157
-     ],
-     [
-      "F. Gaviria Rendon",
-      "COL",
-      221
-     ]
-    ],
-    "meer": 0
+    "meer": 68
    }
   ],
   "bron": "racecenter.letour.fr"
