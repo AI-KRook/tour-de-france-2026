@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T15:30:27Z",
+ "bijgewerkt": "2026-07-14T15:35:44Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1145,6 +1145,41 @@
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "+ 0:46"
+     },
+     {
+      "pos": 4,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 2:12"
+     },
+     {
+      "pos": 5,
+      "naam": "Davide Piganzoli",
+      "land": "ITA",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "+ 9:16"
+     },
+     {
+      "pos": 6,
+      "naam": "Ramses Debruyne",
+      "land": "BEL",
+      "ploeg": "Alpecin-Premier Tech",
+      "tijd": "+ 11:51"
+     },
+     {
+      "pos": 7,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 16:10"
+     },
+     {
+      "pos": 8,
+      "naam": "Matthew Riccitello",
+      "land": "USA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 1:35:16"
      }
     ]
    }
@@ -1156,7 +1191,7 @@
     "naar": "Juan Ayuso Pesquera"
    }
   ],
-  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:30 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:35 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 11,
