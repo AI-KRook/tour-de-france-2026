@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T11:44:23Z",
+ "bijgewerkt": "2026-07-14T11:49:40Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T11:44:22.330Z",
+  "bijgewerkt": "2026-07-14T11:49:39.674Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1200,23 +1200,13 @@
       8
      ]
     ],
-    "meer": 158
+    "meer": 161
    },
    {
-    "naam": "Arrière du peloton",
-    "aantal": 9,
-    "gat": "+1:23",
+    "naam": "Groep Merlier",
+    "aantal": 6,
+    "gat": "+1:01",
     "renners": [
-     [
-      "C. Bol",
-      "NED",
-      53
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
-     ],
      [
       "P. Bauhaus",
       "GER",
@@ -1233,9 +1223,9 @@
       92
      ],
      [
-      "M. Louvel",
-      "FRA",
-      135
+      "J. Stuyven",
+      "BEL",
+      94
      ],
      [
       "B. Veistroffer",
@@ -1243,12 +1233,12 @@
       157
      ],
      [
-      "J. Alaphilippe",
-      "FRA",
-      191
+      "F. Gaviria Rendon",
+      "COL",
+      221
      ]
     ],
-    "meer": 1
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
