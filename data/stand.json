@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T12:11:00Z",
+ "bijgewerkt": "2026-07-14T12:16:22Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,12 +1152,60 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T12:10:59.692Z",
+  "bijgewerkt": "2026-07-14T12:16:21.569Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 14,
+    "gat": "",
+    "renners": [
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "S. Velasco",
+      "ITA",
+      67
+     ],
+     [
+      "F. Ganna",
+      "ITA",
+      84
+     ],
+     [
+      "K. Vauquelin",
+      "FRA",
+      88
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
+      "J. Abrahamsen",
+      "NOR",
+      122
+     ],
+     [
+      "R. Garcia Pierna",
+      "ESP",
+      144
+     ]
+    ],
+    "meer": 6
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+11s",
     "renners": [
      [
       "T. Pogacar",
@@ -1200,12 +1248,38 @@
       8
      ]
     ],
-    "meer": 161
+    "meer": 145
+   },
+   {
+    "naam": "G. Steinhauser",
+    "aantal": 1,
+    "gat": "+24s",
+    "renners": [
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Crevaison",
+    "aantal": 1,
+    "gat": "+46s",
+    "renners": [
+     [
+      "A. Tiberi",
+      "ITA",
+      77
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+3:48",
+    "gat": "+4:30",
     "renners": [
      [
       "P. Bauhaus",
