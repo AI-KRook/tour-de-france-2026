@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T12:16:22Z",
+ "bijgewerkt": "2026-07-14T12:21:43Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,12 +1152,30 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T12:16:21.569Z",
+  "bijgewerkt": "2026-07-14T12:21:42.769Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 14,
+    "aantal": 2,
     "gat": "",
+    "renners": [
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
+      "J. Romo Oliver",
+      "ESP",
+      147
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 20,
+    "gat": "+2s",
     "renners": [
      [
       "A. Baudin",
@@ -1170,11 +1188,6 @@
       67
      ],
      [
-      "F. Ganna",
-      "ITA",
-      84
-     ],
-     [
       "K. Vauquelin",
       "FRA",
       88
@@ -1185,27 +1198,32 @@
       93
      ],
      [
-      "L. Vervaeke",
+      "M. Van Der Poel",
+      "NED",
+      101
+     ],
+     [
+      "R. Debruyne",
       "BEL",
-      98
+      102
+     ],
+     [
+      "L. Plapp",
+      "AUS",
+      117
      ],
      [
       "J. Abrahamsen",
       "NOR",
       122
-     ],
-     [
-      "R. Garcia Pierna",
-      "ESP",
-      144
      ]
     ],
-    "meer": 6
+    "meer": 12
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+11s",
+    "gat": "+8s",
     "renners": [
      [
       "T. Pogacar",
@@ -1248,38 +1266,12 @@
       8
      ]
     ],
-    "meer": 145
-   },
-   {
-    "naam": "G. Steinhauser",
-    "aantal": 1,
-    "gat": "+24s",
-    "renners": [
-     [
-      "G. Steinhauser",
-      "GER",
-      46
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+46s",
-    "renners": [
-     [
-      "A. Tiberi",
-      "ITA",
-      77
-     ]
-    ],
-    "meer": 0
+    "meer": 138
    },
    {
     "naam": "Groep Merlier",
-    "aantal": 6,
-    "gat": "+4:30",
+    "aantal": 7,
+    "gat": "+5:22",
     "renners": [
      [
       "P. Bauhaus",
@@ -1300,6 +1292,11 @@
       "D. Van Baarle",
       "NED",
       95
+     ],
+     [
+      "J. Philipsen",
+      "BEL",
+      105
      ],
      [
       "B. Veistroffer",
