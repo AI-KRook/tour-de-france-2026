@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T12:00:19Z",
+ "bijgewerkt": "2026-07-14T12:05:38Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,60 +1152,35 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T12:00:18.653Z",
+  "bijgewerkt": "2026-07-14T12:05:38.092Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 11,
+    "aantal": 3,
     "gat": "",
     "renners": [
      [
-      "R. Carapaz",
-      "ECU",
-      41
+      "L. Craps",
+      "BEL",
+      154
      ],
      [
-      "T. Foss",
-      "NOR",
-      83
-     ],
-     [
-      "M. Kwiatkowski",
-      "POL",
-      86
-     ],
-     [
-      "J. Tarling",
-      "GBR",
-      87
-     ],
-     [
-      "G. Bennett",
-      "NZL",
-      133
-     ],
-     [
-      "P. Castrillo Zapater",
+      "I. Izagirre Insausti",
       "ESP",
-      142
+      161
      ],
      [
-      "M. Heßmann",
-      "GER",
-      145
-     ],
-     [
-      "N. Oliveira",
-      "POR",
-      146
+      "S. Oldani",
+      "ITA",
+      226
      ]
     ],
-    "meer": 3
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+14s",
+    "gat": "+6s",
     "renners": [
      [
       "T. Pogacar",
@@ -1248,12 +1223,12 @@
       8
      ]
     ],
-    "meer": 151
+    "meer": 158
    },
    {
     "naam": "Groep Merlier",
-    "aantal": 5,
-    "gat": "+2:39",
+    "aantal": 6,
+    "gat": "+3:15",
     "renners": [
      [
       "P. Bauhaus",
@@ -1269,6 +1244,11 @@
       "P. Eenkhoorn",
       "NED",
       92
+     ],
+     [
+      "D. Van Baarle",
+      "NED",
+      95
      ],
      [
       "B. Veistroffer",
