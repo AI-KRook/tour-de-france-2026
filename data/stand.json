@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T15:51:14Z",
+ "bijgewerkt": "2026-07-14T16:20:47Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1176,24 +1176,24 @@
      },
      {
       "pos": 8,
+      "naam": "Lennert Van Eetvelt",
+      "land": "BEL",
+      "ploeg": "Lotto Intermarche",
+      "tijd": "+ 33:51"
+     },
+     {
+      "pos": 9,
+      "naam": "Mathias Vacek",
+      "land": "CZE",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 48:57"
+     },
+     {
+      "pos": 10,
       "naam": "Alex Baudin",
       "land": "FRA",
       "ploeg": "EF Education - Easypost",
       "tijd": "+ 1:00:48"
-     },
-     {
-      "pos": 9,
-      "naam": "Quinn Simmons",
-      "land": "USA",
-      "ploeg": "Lidl-Trek",
-      "tijd": "+ 1:04:49"
-     },
-     {
-      "pos": 10,
-      "naam": "Valentin Paret Peintre",
-      "land": "FRA",
-      "ploeg": "Soudal Quick-Step",
-      "tijd": "+ 1:13:57"
      }
     ]
    }
@@ -1205,7 +1205,7 @@
     "naar": "Juan Ayuso Pesquera"
    }
   ],
-  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:51 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 18:20 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 11,
