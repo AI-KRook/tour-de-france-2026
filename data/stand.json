@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T15:09:33Z",
+ "bijgewerkt": "2026-07-14T15:14:55Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T15:09:32.307Z",
+  "bijgewerkt": "2026-07-14T15:14:54.561Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1170,7 +1170,7 @@
    {
     "naam": "Groep bollentrui",
     "aantal": 5,
-    "gat": "+26s",
+    "gat": "+41s",
     "renners": [
      [
       "J. Vingegaard Hansen",
@@ -1203,7 +1203,7 @@
    {
     "naam": "R. Evenepoel",
     "aantal": 1,
-    "gat": "+29s",
+    "gat": "+46s",
     "renners": [
      [
       "R. Evenepoel",
@@ -1214,15 +1214,23 @@
     "meer": 0
    },
    {
-    "naam": "Groep witte trui",
-    "aantal": 4,
-    "gat": "+1:06",
+    "naam": "I. del Toro",
+    "aantal": 1,
+    "gat": "+1:26",
     "renners": [
      [
       "I. Del Toro Romero",
       "MEX",
       2
-     ],
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Martinez",
+    "aantal": 3,
+    "gat": "+1:53",
+    "renners": [
      [
       "R. Carapaz",
       "ECU",
@@ -1244,7 +1252,7 @@
    {
     "naam": "Groep Hindley",
     "aantal": 26,
-    "gat": "+4:53",
+    "gat": "+5:49",
     "renners": [
      [
       "F. Grossschartner",
@@ -1292,7 +1300,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 27,
-    "gat": "+16:20",
+    "gat": "+18:31",
     "renners": [
      [
       "T. Wellens",
@@ -1340,7 +1348,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 76,
-    "gat": "+28:10",
+    "gat": "+28:59",
     "renners": [
      [
       "N. Politt",
