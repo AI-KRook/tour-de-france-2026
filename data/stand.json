@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T11:49:40Z",
+ "bijgewerkt": "2026-07-14T11:55:01Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T11:49:39.674Z",
+  "bijgewerkt": "2026-07-14T11:55:00.779Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1200,12 +1200,12 @@
       8
      ]
     ],
-    "meer": 161
+    "meer": 162
    },
    {
     "naam": "Groep Merlier",
-    "aantal": 6,
-    "gat": "+1:01",
+    "aantal": 5,
+    "gat": "+1:45",
     "renners": [
      [
       "P. Bauhaus",
@@ -1221,11 +1221,6 @@
       "P. Eenkhoorn",
       "NED",
       92
-     ],
-     [
-      "J. Stuyven",
-      "BEL",
-      94
      ],
      [
       "B. Veistroffer",
