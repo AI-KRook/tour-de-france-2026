@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T11:33:41Z",
+ "bijgewerkt": "2026-07-14T11:39:01Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T11:33:41.219Z",
+  "bijgewerkt": "2026-07-14T11:39:00.766Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1200,20 +1200,7 @@
       8
      ]
     ],
-    "meer": 166
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+41s",
-    "renners": [
-     [
-      "J. Abrahamsen",
-      "NOR",
-      122
-     ]
-    ],
-    "meer": 0
+    "meer": 167
    }
   ],
   "bron": "racecenter.letour.fr"
