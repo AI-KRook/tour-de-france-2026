@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T13:06:38Z",
+ "bijgewerkt": "2026-07-14T13:11:57Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T13:06:37.601Z",
+  "bijgewerkt": "2026-07-14T13:11:57.127Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1175,7 +1175,7 @@
    {
     "naam": "Groep Higuita - Healy",
     "aantal": 3,
-    "gat": "+29s",
+    "gat": "+20s",
     "renners": [
      [
       "B. Healy",
@@ -1196,9 +1196,9 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
+    "naam": "Groep Jegat",
     "aantal": 20,
-    "gat": "+41s",
+    "gat": "+45s",
     "renners": [
      [
       "A. Baudin",
@@ -1246,7 +1246,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:19",
+    "gat": "+1:32",
     "renners": [
      [
       "T. Pogacar",
@@ -1289,13 +1289,18 @@
       8
      ]
     ],
-    "meer": 106
+    "meer": 105
    },
    {
     "naam": "Groep Ganna",
-    "aantal": 2,
-    "gat": "+2:25",
+    "aantal": 4,
+    "gat": "+2:44",
     "renners": [
+     [
+      "N. Denz",
+      "GER",
+      23
+     ],
      [
       "D. Ballerini",
       "ITA",
@@ -1305,24 +1310,24 @@
       "F. Ganna",
       "ITA",
       84
+     ],
+     [
+      "F. Biesterbos",
+      "NED",
+      212
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Distancés",
-    "aantal": 28,
-    "gat": "+5:36",
+    "aantal": 27,
+    "gat": "+6:01",
     "renners": [
      [
       "V. Campenaerts",
       "BEL",
       14
-     ],
-     [
-      "N. Denz",
-      "GER",
-      23
      ],
      [
       "G. Steinhauser",
@@ -1353,14 +1358,19 @@
       "J. Philipsen",
       "BEL",
       105
+     ],
+     [
+      "E. Planckaert",
+      "BEL",
+      106
      ]
     ],
-    "meer": 20
+    "meer": 19
    },
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+10:25",
+    "gat": "+10:53",
     "renners": [
      [
       "P. Bauhaus",
