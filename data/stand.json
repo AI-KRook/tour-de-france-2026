@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T15:25:05Z",
+ "bijgewerkt": "2026-07-14T15:30:27Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -711,6 +711,85 @@
     }
    ],
    "bron": "letour.fr"
+  },
+  "10": {
+   "w": "Tadej Pogacar",
+   "wLand": "SLO",
+   "wPloeg": "UAE Team Emirates XRG",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Tadej Pogacar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": ""
+    },
+    {
+     "pos": 2,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": "+ 0:32"
+    },
+    {
+     "pos": 3,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM Team",
+     "tijd": "+ 0:34"
+    },
+    {
+     "pos": 4,
+     "naam": "Florian Lipowitz",
+     "land": "GER",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": "+ 0:34"
+    },
+    {
+     "pos": 5,
+     "naam": "Juan Ayuso Pesquera",
+     "land": "ESP",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 0:38"
+    },
+    {
+     "pos": 6,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 0:38"
+    },
+    {
+     "pos": 7,
+     "naam": "Jonas Vingegaard Hansen",
+     "land": "DEN",
+     "ploeg": "Team Visma | Lease A Bike",
+     "tijd": "+ 0:44"
+    },
+    {
+     "pos": 8,
+     "naam": "Isaac Del Toro Romero",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 1:31"
+    },
+    {
+     "pos": 9,
+     "naam": "Tom Pidcock",
+     "land": "GBR",
+     "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+     "tijd": "+ 1:59"
+    },
+    {
+     "pos": 10,
+     "naam": "Lenny Martinez",
+     "land": "FRA",
+     "ploeg": "Bahrain Victorious",
+     "tijd": "+ 2:03"
+    }
+   ],
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -1077,13 +1156,13 @@
     "naar": "Juan Ayuso Pesquera"
    }
   ],
-  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:25 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:30 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
-  "voorEtappe": 10,
-  "tekst": "Mathieu Van Der Poel (Alpecin-Premier Tech) sloeg toe in Ussel, voor Tobias Johannessen en Tom Pidcock. Juan Ayuso Pesquera neemt de witte trui over van Isaac del Toro. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 3:36.",
+  "voorEtappe": 11,
+  "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Le Lioran, voor Remco Evenepoel en Paul Seixas. Juan Ayuso Pesquera neemt de witte trui over van Isaac del Toro. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 3:36.",
   "bron": "vast patroon",
-  "feiten": "c30cc74bf40291e7"
+  "feiten": "38eea149994ac29d"
  },
  "samenvattingen": {
   "6": {
@@ -1105,6 +1184,11 @@
    "tekst": "Mathieu Van Der Poel (Alpecin-Premier Tech) sloeg toe in Ussel, voor Tobias Johannessen. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 3:36.",
    "bron": "vast patroon",
    "feiten": "0a10ee7739ab8a8e"
+  },
+  "10": {
+   "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Le Lioran, met Remco Evenepoel op +0:32. Juan Ayuso Pesquera pakt de witte trui. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 3:36.",
+   "bron": "vast patroon",
+   "feiten": "56f969ba6889360c"
   }
  }
 }
