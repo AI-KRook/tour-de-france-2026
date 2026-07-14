@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T12:21:43Z",
+ "bijgewerkt": "2026-07-14T12:50:48Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T12:21:42.769Z",
+  "bijgewerkt": "2026-07-14T12:50:47.678Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1160,9 +1160,9 @@
     "gat": "",
     "renners": [
      [
-      "L. Vervaeke",
-      "BEL",
-      98
+      "H. Tejada Canacue",
+      "COL",
+      65
      ],
      [
       "J. Romo Oliver",
@@ -1174,8 +1174,8 @@
    },
    {
     "naam": "Poursuivants",
-    "aantal": 20,
-    "gat": "+2s",
+    "aantal": 24,
+    "gat": "+25s",
     "renners": [
      [
       "A. Baudin",
@@ -1183,9 +1183,19 @@
       43
      ],
      [
-      "S. Velasco",
-      "ITA",
-      67
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "S. Higuita Garcia",
+      "COL",
+      61
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
      ],
      [
       "K. Vauquelin",
@@ -1198,32 +1208,22 @@
       93
      ],
      [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
       "M. Van Der Poel",
       "NED",
       101
-     ],
-     [
-      "R. Debruyne",
-      "BEL",
-      102
-     ],
-     [
-      "L. Plapp",
-      "AUS",
-      117
-     ],
-     [
-      "J. Abrahamsen",
-      "NOR",
-      122
      ]
     ],
-    "meer": 12
+    "meer": 16
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8s",
+    "gat": "+1:18",
     "renners": [
      [
       "T. Pogacar",
@@ -1266,12 +1266,73 @@
       8
      ]
     ],
-    "meer": 138
+    "meer": 104
+   },
+   {
+    "naam": "Chute",
+    "aantal": 1,
+    "gat": "+3:01",
+    "renners": [
+     [
+      "R. Dhondt",
+      "BEL",
+      215
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 30,
+    "gat": "+3:56",
+    "renners": [
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "N. Denz",
+      "GER",
+      23
+     ],
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
+     [
+      "C. Bol",
+      "NED",
+      53
+     ],
+     [
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "M. Kanter",
+      "GER",
+      64
+     ],
+     [
+      "K. Gradek",
+      "POL",
+      74
+     ]
+    ],
+    "meer": 22
    },
    {
     "naam": "Groep Merlier",
-    "aantal": 7,
-    "gat": "+5:22",
+    "aantal": 6,
+    "gat": "+8:38",
     "renners": [
      [
       "P. Bauhaus",
@@ -1292,11 +1353,6 @@
       "D. Van Baarle",
       "NED",
       95
-     ],
-     [
-      "J. Philipsen",
-      "BEL",
-      105
      ],
      [
       "B. Veistroffer",
