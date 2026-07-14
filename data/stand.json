@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T15:20:17Z",
+ "bijgewerkt": "2026-07-14T15:25:05Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -776,6 +776,41 @@
     "land": "FRA",
     "ploeg": "Decathlon CMA CGM Team",
     "tijd": "+ 4:35"
+   },
+   {
+    "pos": 6,
+    "naam": "Florian Lipowitz",
+    "land": "GER",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
+    "tijd": "+ 4:44"
+   },
+   {
+    "pos": 7,
+    "naam": "Isaac Del Toro Romero",
+    "land": "MEX",
+    "ploeg": "UAE Team Emirates XRG",
+    "tijd": "+ 5:08"
+   },
+   {
+    "pos": 8,
+    "naam": "Mattias Skjelmose",
+    "land": "DEN",
+    "ploeg": "Lidl-Trek",
+    "tijd": "+ 5:45"
+   },
+   {
+    "pos": 9,
+    "naam": "Lenny Martinez",
+    "land": "FRA",
+    "ploeg": "Bahrain Victorious",
+    "tijd": "+ 6:34"
+   },
+   {
+    "pos": 10,
+    "naam": "Tom Pidcock",
+    "land": "GBR",
+    "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+    "tijd": "+ 11:49"
    }
   ],
   "klassementen": {
@@ -817,6 +852,41 @@
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 4:35"
+     },
+     {
+      "pos": 6,
+      "naam": "Florian Lipowitz",
+      "land": "GER",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "+ 4:44"
+     },
+     {
+      "pos": 7,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "+ 5:08"
+     },
+     {
+      "pos": 8,
+      "naam": "Mattias Skjelmose",
+      "land": "DEN",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 5:45"
+     },
+     {
+      "pos": 9,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 6:34"
+     },
+     {
+      "pos": 10,
+      "naam": "Tom Pidcock",
+      "land": "GBR",
+      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+      "tijd": "+ 11:49"
      }
     ]
    },
@@ -868,31 +938,31 @@
      },
      {
       "pos": 7,
+      "naam": "Tadej Pogacar",
+      "land": "SLO",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "107 ptn"
+     },
+     {
+      "pos": 8,
       "naam": "Soren Wærenskjold",
       "land": "NOR",
       "ploeg": "Uno-X Mobility",
       "tijd": "89 ptn"
      },
      {
-      "pos": 8,
-      "naam": "Tadej Pogacar",
-      "land": "SLO",
+      "pos": 9,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "87 ptn"
+      "tijd": "80 ptn"
      },
      {
-      "pos": 9,
+      "pos": 10,
       "naam": "Anthony Turgis",
       "land": "FRA",
       "ploeg": "Totalenergies",
       "tijd": "79 ptn"
-     },
-     {
-      "pos": 10,
-      "naam": "Isaac Del Toro Romero",
-      "land": "MEX",
-      "ploeg": "UAE Team Emirates XRG",
-      "tijd": "72 ptn"
      }
     ]
    },
@@ -1007,7 +1077,7 @@
     "naar": "Juan Ayuso Pesquera"
    }
   ],
-  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:20 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 10, automatisch bijgewerkt 14 juli 17:25 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 10,
