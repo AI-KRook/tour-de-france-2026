@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T12:50:48Z",
+ "bijgewerkt": "2026-07-14T12:56:10Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T12:50:47.678Z",
+  "bijgewerkt": "2026-07-14T12:56:09.430Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1174,8 +1174,8 @@
    },
    {
     "naam": "Poursuivants",
-    "aantal": 24,
-    "gat": "+25s",
+    "aantal": 23,
+    "gat": "+43s",
     "renners": [
      [
       "A. Baudin",
@@ -1198,11 +1198,6 @@
       82
      ],
      [
-      "K. Vauquelin",
-      "FRA",
-      88
-     ],
-     [
       "V. Paret Peintre",
       "FRA",
       93
@@ -1216,14 +1211,19 @@
       "M. Van Der Poel",
       "NED",
       101
+     ],
+     [
+      "R. Debruyne",
+      "BEL",
+      102
      ]
     ],
-    "meer": 16
+    "meer": 15
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:18",
+    "gat": "+1:23",
     "renners": [
      [
       "T. Pogacar",
@@ -1266,17 +1266,17 @@
       8
      ]
     ],
-    "meer": 104
+    "meer": 105
    },
    {
-    "naam": "Chute",
+    "naam": "A. Kirsch",
     "aantal": 1,
-    "gat": "+3:01",
+    "gat": "+2:13",
     "renners": [
      [
-      "R. Dhondt",
-      "BEL",
-      215
+      "A. Kirsch",
+      "LUX",
+      166
      ]
     ],
     "meer": 0
@@ -1284,7 +1284,7 @@
    {
     "naam": "Distancés",
     "aantal": 30,
-    "gat": "+3:56",
+    "gat": "+4:24",
     "renners": [
      [
       "V. Campenaerts",
@@ -1332,7 +1332,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+8:38",
+    "gat": "+9:39",
     "renners": [
      [
       "P. Bauhaus",
