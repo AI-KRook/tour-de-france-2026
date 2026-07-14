@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T13:27:29Z",
+ "bijgewerkt": "2026-07-14T13:32:51Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,7 +1152,7 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T13:27:28.967Z",
+  "bijgewerkt": "2026-07-14T13:32:51.048Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1168,15 +1168,33 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 9,
-    "gat": "+48s",
+    "naam": "Groep Baudin",
+    "aantal": 3,
+    "gat": "+35s",
     "renners": [
      [
       "A. Baudin",
       "FRA",
       43
      ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "R. Debruyne",
+      "BEL",
+      102
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Healy",
+    "aantal": 3,
+    "gat": "+56s",
+    "renners": [
      [
       "B. Healy",
       "IRL",
@@ -1188,26 +1206,6 @@
       65
      ],
      [
-      "V. Paret Peintre",
-      "FRA",
-      93
-     ],
-     [
-      "L. Vervaeke",
-      "BEL",
-      98
-     ],
-     [
-      "R. Debruyne",
-      "BEL",
-      102
-     ],
-     [
-      "L. Plapp",
-      "AUS",
-      117
-     ],
-     [
       "C. Braz Afonso",
       "FRA",
       183
@@ -1216,9 +1214,22 @@
     "meer": 0
    },
    {
+    "naam": "L. Vervaeke",
+    "aantal": 1,
+    "gat": "+1:07",
+    "renners": [
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:18",
+    "gat": "+1:10",
     "renners": [
      [
       "T. Pogacar",
@@ -1261,12 +1272,25 @@
       15
      ]
     ],
-    "meer": 86
+    "meer": 84
+   },
+   {
+    "naam": "R. Grégoire",
+    "aantal": 1,
+    "gat": "+1:40",
+    "renners": [
+     [
+      "R. Gregoire",
+      "FRA",
+      181
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Distancés",
-    "aantal": 66,
-    "gat": "+8:18",
+    "aantal": 68,
+    "gat": "+9:46",
     "renners": [
      [
       "N. Politt",
@@ -1304,17 +1328,17 @@
       23
      ],
      [
-      "T. Skujins",
-      "LAT",
-      36
+      "M. Van Gils",
+      "BEL",
+      28
      ]
     ],
-    "meer": 58
+    "meer": 60
    },
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+11:52",
+    "gat": "+13:08",
     "renners": [
      [
       "P. Bauhaus",
