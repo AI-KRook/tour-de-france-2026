@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-14T12:05:38Z",
+ "bijgewerkt": "2026-07-14T12:11:00Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1152,35 +1152,12 @@
  },
  "koers": {
   "etappe": 10,
-  "bijgewerkt": "2026-07-14T12:05:38.092Z",
+  "bijgewerkt": "2026-07-14T12:10:59.692Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 3,
-    "gat": "",
-    "renners": [
-     [
-      "L. Craps",
-      "BEL",
-      154
-     ],
-     [
-      "I. Izagirre Insausti",
-      "ESP",
-      161
-     ],
-     [
-      "S. Oldani",
-      "ITA",
-      226
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+6s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
@@ -1223,12 +1200,12 @@
       8
      ]
     ],
-    "meer": 158
+    "meer": 161
    },
    {
     "naam": "Groep Merlier",
     "aantal": 6,
-    "gat": "+3:15",
+    "gat": "+3:48",
     "renners": [
      [
       "P. Bauhaus",
