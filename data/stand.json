@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-15T12:22:01Z",
+ "bijgewerkt": "2026-07-15T12:27:22Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1242,7 +1242,7 @@
  },
  "koers": {
   "etappe": 11,
-  "bijgewerkt": "2026-07-15T12:22:00.743Z",
+  "bijgewerkt": "2026-07-15T12:27:22.221Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1273,9 +1273,22 @@
     "meer": 0
    },
    {
+    "naam": "L. Slock",
+    "aantal": 1,
+    "gat": "+22s",
+    "renners": [
+     [
+      "L. Slock",
+      "BEL",
+      155
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+5s",
+    "gat": "+1:15",
     "renners": [
      [
       "T. Pogacar",
@@ -1318,7 +1331,20 @@
       8
      ]
     ],
-    "meer": 162
+    "meer": 160
+   },
+   {
+    "naam": "J. Tarling",
+    "aantal": 1,
+    "gat": "+1:36",
+    "renners": [
+     [
+      "J. Tarling",
+      "GBR",
+      87
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
