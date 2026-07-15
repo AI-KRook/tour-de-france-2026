@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-15T15:39:40Z",
+ "bijgewerkt": "2026-07-15T15:44:53Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1057,35 +1057,35 @@
       "naam": "Mads Pedersen",
       "land": "DEN",
       "ploeg": "Lidl-Trek",
-      "tijd": "317 ptn"
+      "tijd": "319 ptn"
      },
      {
       "pos": 2,
       "naam": "Biniam Girmay",
       "land": "ERI",
       "ploeg": "NSN Cycling Team",
-      "tijd": "272 ptn"
+      "tijd": "276 ptn"
      },
      {
       "pos": 3,
-      "naam": "Jasper Philipsen",
-      "land": "BEL",
-      "ploeg": "Alpecin-Premier Tech",
-      "tijd": "255 ptn"
-     },
-     {
-      "pos": 4,
       "naam": "Tim Merlier",
       "land": "BEL",
       "ploeg": "Soudal Quick-Step",
-      "tijd": "223 ptn"
+      "tijd": "225 ptn"
+     },
+     {
+      "pos": 4,
+      "naam": "Jasper Philipsen",
+      "land": "BEL",
+      "ploeg": "Alpecin-Premier Tech",
+      "tijd": "215 ptn"
      },
      {
       "pos": 5,
       "naam": "Max Kanter",
       "land": "GER",
       "ploeg": "XDS Astana Team",
-      "tijd": "203 ptn"
+      "tijd": "205 ptn"
      },
      {
       "pos": 6,
@@ -1113,14 +1113,14 @@
       "naam": "Anthony Turgis",
       "land": "FRA",
       "ploeg": "Totalenergies",
-      "tijd": "103 ptn"
+      "tijd": "105 ptn"
      },
      {
       "pos": 10,
       "naam": "Huub Artz",
       "land": "NED",
       "ploeg": "Lotto Intermarche",
-      "tijd": "89 ptn"
+      "tijd": "94 ptn"
      }
     ]
    },
@@ -1278,7 +1278,7 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 11, automatisch bijgewerkt 15 juli 17:39 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 11, automatisch bijgewerkt 15 juli 17:44 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 12,
