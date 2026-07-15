@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-15T14:23:32Z",
+ "bijgewerkt": "2026-07-15T14:28:52Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1242,7 +1242,7 @@
  },
  "koers": {
   "etappe": 11,
-  "bijgewerkt": "2026-07-15T14:23:32.266Z",
+  "bijgewerkt": "2026-07-15T14:28:51.811Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1275,7 +1275,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:07",
+    "gat": "+1:06",
     "renners": [
      [
       "T. Pogacar",
