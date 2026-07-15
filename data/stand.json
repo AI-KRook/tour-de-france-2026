@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-15T16:21:16Z",
+ "bijgewerkt": "2026-07-15T16:53:18Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -813,58 +813,58 @@
     },
     {
      "pos": 3,
+     "naam": "Jasper Philipsen",
+     "land": "BEL",
+     "ploeg": "Alpecin-Premier Tech",
+     "tijd": "—"
+    },
+    {
+     "pos": 4,
      "naam": "Milan Fretin",
      "land": "BEL",
      "ploeg": "Cofidis",
      "tijd": "—"
     },
     {
-     "pos": 4,
+     "pos": 5,
      "naam": "Huub Artz",
      "land": "NED",
      "ploeg": "Lotto Intermarche",
      "tijd": "—"
     },
     {
-     "pos": 5,
+     "pos": 6,
      "naam": "Biniam Girmay",
      "land": "ERI",
      "ploeg": "NSN Cycling Team",
      "tijd": "—"
     },
     {
-     "pos": 6,
+     "pos": 7,
      "naam": "Anthony Turgis",
      "land": "FRA",
      "ploeg": "Totalenergies",
      "tijd": "—"
     },
     {
-     "pos": 7,
+     "pos": 8,
      "naam": "Clément Russo",
      "land": "FRA",
      "ploeg": "Groupama-Fdj United",
      "tijd": "—"
     },
     {
-     "pos": 8,
+     "pos": 9,
      "naam": "Fernando Gaviria Rendon",
      "land": "COL",
      "ploeg": "Caja Rural-Seguros RGA",
      "tijd": "—"
     },
     {
-     "pos": 9,
+     "pos": 10,
      "naam": "Pascal Ackermann",
      "land": "GER",
      "ploeg": "Team Jayco Alula",
-     "tijd": "—"
-    },
-    {
-     "pos": 10,
-     "naam": "Mads Pedersen",
-     "land": "DEN",
-     "ploeg": "Lidl-Trek",
      "tijd": "—"
     }
    ],
@@ -1057,35 +1057,35 @@
       "naam": "Mads Pedersen",
       "land": "DEN",
       "ploeg": "Lidl-Trek",
-      "tijd": "319 ptn"
+      "tijd": "317 ptn"
      },
      {
       "pos": 2,
       "naam": "Biniam Girmay",
       "land": "ERI",
       "ploeg": "NSN Cycling Team",
-      "tijd": "276 ptn"
+      "tijd": "272 ptn"
      },
      {
       "pos": 3,
-      "naam": "Tim Merlier",
-      "land": "BEL",
-      "ploeg": "Soudal Quick-Step",
-      "tijd": "225 ptn"
-     },
-     {
-      "pos": 4,
       "naam": "Jasper Philipsen",
       "land": "BEL",
       "ploeg": "Alpecin-Premier Tech",
-      "tijd": "215 ptn"
+      "tijd": "255 ptn"
+     },
+     {
+      "pos": 4,
+      "naam": "Tim Merlier",
+      "land": "BEL",
+      "ploeg": "Soudal Quick-Step",
+      "tijd": "223 ptn"
      },
      {
       "pos": 5,
       "naam": "Max Kanter",
       "land": "GER",
       "ploeg": "XDS Astana Team",
-      "tijd": "205 ptn"
+      "tijd": "203 ptn"
      },
      {
       "pos": 6,
@@ -1113,14 +1113,14 @@
       "naam": "Anthony Turgis",
       "land": "FRA",
       "ploeg": "Totalenergies",
-      "tijd": "105 ptn"
+      "tijd": "103 ptn"
      },
      {
       "pos": 10,
       "naam": "Huub Artz",
       "land": "NED",
       "ploeg": "Lotto Intermarche",
-      "tijd": "94 ptn"
+      "tijd": "89 ptn"
      }
     ]
    },
@@ -1278,13 +1278,13 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 11, automatisch bijgewerkt 15 juli 18:21 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 11, automatisch bijgewerkt 15 juli 18:53 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 12,
-  "tekst": "Soren Wærenskjold (Uno-X Mobility) sprintte naar de zege in Nevers, voor Olav Kooij en Milan Fretin. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 3:36.",
+  "tekst": "Soren Wærenskjold (Uno-X Mobility) sprintte naar de zege in Nevers, voor Olav Kooij en Jasper Philipsen. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 3:36.",
   "bron": "vast patroon",
-  "feiten": "e4dc6f1e2415d568"
+  "feiten": "3c26e9ef8f4ca90f"
  },
  "samenvattingen": {
   "6": {
@@ -1315,7 +1315,7 @@
   "11": {
    "tekst": "Soren Wærenskjold (Uno-X Mobility) sprintte naar de zege in Nevers, voor Olav Kooij. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 3:36.",
    "bron": "vast patroon",
-   "feiten": "97a5a3b2cd62f9d1"
+   "feiten": "c71a1029c73d80b2"
   }
  }
 }
