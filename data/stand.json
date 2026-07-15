@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-15T15:35:04Z",
+ "bijgewerkt": "2026-07-15T15:39:40Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -813,58 +813,58 @@
     },
     {
      "pos": 3,
-     "naam": "Jasper Philipsen",
-     "land": "BEL",
-     "ploeg": "Alpecin-Premier Tech",
-     "tijd": "—"
-    },
-    {
-     "pos": 4,
      "naam": "Milan Fretin",
      "land": "BEL",
      "ploeg": "Cofidis",
      "tijd": "—"
     },
     {
-     "pos": 5,
+     "pos": 4,
      "naam": "Huub Artz",
      "land": "NED",
      "ploeg": "Lotto Intermarche",
      "tijd": "—"
     },
     {
-     "pos": 6,
+     "pos": 5,
      "naam": "Biniam Girmay",
      "land": "ERI",
      "ploeg": "NSN Cycling Team",
      "tijd": "—"
     },
     {
-     "pos": 7,
+     "pos": 6,
      "naam": "Anthony Turgis",
      "land": "FRA",
      "ploeg": "Totalenergies",
      "tijd": "—"
     },
     {
-     "pos": 8,
+     "pos": 7,
      "naam": "Clément Russo",
      "land": "FRA",
      "ploeg": "Groupama-Fdj United",
      "tijd": "—"
     },
     {
-     "pos": 9,
+     "pos": 8,
      "naam": "Fernando Gaviria Rendon",
      "land": "COL",
      "ploeg": "Caja Rural-Seguros RGA",
      "tijd": "—"
     },
     {
-     "pos": 10,
+     "pos": 9,
      "naam": "Pascal Ackermann",
      "land": "GER",
      "ploeg": "Team Jayco Alula",
+     "tijd": "—"
+    },
+    {
+     "pos": 10,
+     "naam": "Mads Pedersen",
+     "land": "DEN",
+     "ploeg": "Lidl-Trek",
      "tijd": "—"
     }
    ],
@@ -1210,18 +1210,81 @@
       "land": "ESP",
       "ploeg": "Lidl-Trek",
       "tijd": "—"
+     },
+     {
+      "pos": 2,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 0:13"
+     },
+     {
+      "pos": 3,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "+ 0:46"
+     },
+     {
+      "pos": 4,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 2:12"
+     },
+     {
+      "pos": 5,
+      "naam": "Davide Piganzoli",
+      "land": "ITA",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "+ 9:16"
+     },
+     {
+      "pos": 6,
+      "naam": "Ramses Debruyne",
+      "land": "BEL",
+      "ploeg": "Alpecin-Premier Tech",
+      "tijd": "+ 11:51"
+     },
+     {
+      "pos": 7,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 16:10"
+     },
+     {
+      "pos": 8,
+      "naam": "Lennert Van Eetvelt",
+      "land": "BEL",
+      "ploeg": "Lotto Intermarche",
+      "tijd": "+ 34:24"
+     },
+     {
+      "pos": 9,
+      "naam": "Mathias Vacek",
+      "land": "CZE",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 48:57"
+     },
+     {
+      "pos": 10,
+      "naam": "Alex Baudin",
+      "land": "FRA",
+      "ploeg": "EF Education - Easypost",
+      "tijd": "+ 1:01:24"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 11, automatisch bijgewerkt 15 juli 17:35 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 11, automatisch bijgewerkt 15 juli 17:39 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 12,
-  "tekst": "Soren Wærenskjold (Uno-X Mobility) sprintte naar de zege in Nevers, voor Olav Kooij en Jasper Philipsen. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 3:36.",
+  "tekst": "Soren Wærenskjold (Uno-X Mobility) sprintte naar de zege in Nevers, voor Olav Kooij en Milan Fretin. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 3:36.",
   "bron": "vast patroon",
-  "feiten": "3c26e9ef8f4ca90f"
+  "feiten": "e4dc6f1e2415d568"
  },
  "samenvattingen": {
   "6": {
@@ -1252,7 +1315,7 @@
   "11": {
    "tekst": "Soren Wærenskjold (Uno-X Mobility) sprintte naar de zege in Nevers, voor Olav Kooij. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 3:36.",
    "bron": "vast patroon",
-   "feiten": "c71a1029c73d80b2"
+   "feiten": "97a5a3b2cd62f9d1"
   }
  }
 }
