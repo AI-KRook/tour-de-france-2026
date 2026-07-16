@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-16T11:45:06Z",
+ "bijgewerkt": "2026-07-16T11:49:56Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1320,7 +1320,7 @@
  },
  "koers": {
   "etappe": 12,
-  "bijgewerkt": "2026-07-16T11:45:05.725Z",
+  "bijgewerkt": "2026-07-16T11:49:56.234Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1368,7 +1368,20 @@
       8
      ]
     ],
-    "meer": 166
+    "meer": 165
+   },
+   {
+    "naam": "M. Storer",
+    "aantal": 1,
+    "gat": "+53s",
+    "renners": [
+     [
+      "M. Storer",
+      "AUS",
+      196
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
