@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-16T12:05:28Z",
+ "bijgewerkt": "2026-07-16T12:10:49Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1320,25 +1320,12 @@
  },
  "koers": {
   "etappe": 12,
-  "bijgewerkt": "2026-07-16T12:05:27.889Z",
+  "bijgewerkt": "2026-07-16T12:10:49.291Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 1,
-    "gat": "",
-    "renners": [
-     [
-      "H. Page",
-      "FRA",
-      167
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
@@ -1381,7 +1368,7 @@
       8
      ]
     ],
-    "meer": 165
+    "meer": 166
    }
   ],
   "bron": "racecenter.letour.fr"
