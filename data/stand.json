@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-16T14:18:36Z",
+ "bijgewerkt": "2026-07-16T14:23:58Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1320,18 +1320,26 @@
  },
  "koers": {
   "etappe": 12,
-  "bijgewerkt": "2026-07-16T14:18:35.564Z",
+  "bijgewerkt": "2026-07-16T14:23:57.263Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 2,
+    "aantal": 1,
     "gat": "",
     "renners": [
      [
       "B. Veistroffer",
       "FRA",
       157
-     ],
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "E. Costiou",
+    "aantal": 1,
+    "gat": "+11s",
+    "renners": [
      [
       "E. Costiou",
       "FRA",
@@ -1386,30 +1394,7 @@
       8
      ]
     ],
-    "meer": 161
-   },
-   {
-    "naam": "Groep Vingegaard",
-    "aantal": 3,
-    "gat": "+1:02",
-    "renners": [
-     [
-      "J. Vingegaard Hansen",
-      "DEN",
-      11
-     ],
-     [
-      "E. Affini",
-      "ITA",
-      12
-     ],
-     [
-      "V. Campenaerts",
-      "BEL",
-      14
-     ]
-    ],
-    "meer": 0
+    "meer": 164
    }
   ],
   "bron": "racecenter.letour.fr"
