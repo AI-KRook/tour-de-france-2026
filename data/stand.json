@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-16T12:00:07Z",
+ "bijgewerkt": "2026-07-16T12:05:28Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1320,32 +1320,17 @@
  },
  "koers": {
   "etappe": 12,
-  "bijgewerkt": "2026-07-16T12:00:06.380Z",
+  "bijgewerkt": "2026-07-16T12:05:27.889Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 4,
+    "aantal": 1,
     "gat": "",
     "renners": [
      [
-      "M. Teunissen",
-      "NED",
-      66
-     ],
-     [
-      "M. Heßmann",
-      "GER",
-      145
-     ],
-     [
-      "X. Azparren Irurzun",
-      "ESP",
-      172
-     ],
-     [
-      "T. Guernalec",
+      "H. Page",
       "FRA",
-      205
+      167
      ]
     ],
     "meer": 0
@@ -1353,7 +1338,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+7s",
+    "gat": "+2s",
     "renners": [
      [
       "T. Pogacar",
@@ -1396,7 +1381,7 @@
       8
      ]
     ],
-    "meer": 162
+    "meer": 165
    }
   ],
   "bron": "racecenter.letour.fr"
