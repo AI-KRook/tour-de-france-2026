@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T13:00:34Z",
+ "bijgewerkt": "2026-07-17T13:05:56Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,7 +1404,7 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T13:00:33.149Z",
+  "bijgewerkt": "2026-07-17T13:05:55.454Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1457,7 +1457,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 20,
-    "gat": "+50s",
+    "gat": "+43s",
     "renners": [
      [
       "M. Pedersen",
