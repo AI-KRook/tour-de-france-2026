@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T15:09:22Z",
+ "bijgewerkt": "2026-07-17T15:14:44Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,7 +1404,7 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T15:09:21.975Z",
+  "bijgewerkt": "2026-07-17T15:14:43.548Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1456,9 +1456,14 @@
    },
    {
     "naam": "Groep Matthews",
-    "aantal": 6,
-    "gat": "+53s",
+    "aantal": 7,
+    "gat": "+33s",
     "renners": [
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
      [
       "M. Matthews",
       "AUS",
@@ -1494,8 +1499,8 @@
    },
    {
     "naam": "Groep Grégoire",
-    "aantal": 18,
-    "gat": "+2:14",
+    "aantal": 16,
+    "gat": "+2:13",
     "renners": [
      [
       "V. Campenaerts",
@@ -1513,19 +1518,9 @@
       27
      ],
      [
-      "K. Asgreen",
-      "DEN",
-      42
-     ],
-     [
       "B. Healy",
       "IRL",
       44
-     ],
-     [
-      "M. Valgren",
-      "DEN",
-      47
      ],
      [
       "N. Vinokurov",
@@ -1536,14 +1531,24 @@
       "M. Cort Nielsen",
       "DEN",
       124
+     ],
+     [
+      "M. Heßmann",
+      "GER",
+      145
+     ],
+     [
+      "N. Oliveira",
+      "POR",
+      146
      ]
     ],
-    "meer": 10
+    "meer": 8
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:28",
+    "gat": "+8:09",
     "renners": [
      [
       "T. Pogacar",
@@ -1586,12 +1591,12 @@
       21
      ]
     ],
-    "meer": 82
+    "meer": 81
    },
    {
     "naam": "Distancés",
-    "aantal": 47,
-    "gat": "+17:17",
+    "aantal": 49,
+    "gat": "+18:46",
     "renners": [
      [
       "F. Grossschartner",
@@ -1624,17 +1629,17 @@
       26
      ],
      [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
       "T. Skujins",
       "LAT",
       36
-     ],
-     [
-      "M. Vacek",
-      "CZE",
-      37
      ]
     ],
-    "meer": 39
+    "meer": 41
    }
   ],
   "bron": "racecenter.letour.fr"
