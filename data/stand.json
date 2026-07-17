@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T12:45:11Z",
+ "bijgewerkt": "2026-07-17T12:50:23Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,7 +1404,7 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T12:45:10.796Z",
+  "bijgewerkt": "2026-07-17T12:50:23.175Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1457,7 +1457,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 20,
-    "gat": "+45s",
+    "gat": "+48s",
     "renners": [
      [
       "M. Pedersen",
@@ -1505,7 +1505,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+3:01",
+    "gat": "+3:29",
     "renners": [
      [
       "T. Pogacar",
