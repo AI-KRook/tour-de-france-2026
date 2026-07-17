@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T14:47:56Z",
+ "bijgewerkt": "2026-07-17T14:53:18Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,11 +1404,11 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T14:47:55.668Z",
+  "bijgewerkt": "2026-07-17T14:53:17.241Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 25,
+    "aantal": 23,
     "gat": "",
     "renners": [
      [
@@ -1425,11 +1425,6 @@
       "M. Van Gils",
       "BEL",
       28
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
      ],
      [
       "M. Valgren",
@@ -1450,19 +1445,29 @@
       "M. Mohoric",
       "SLO",
       75
+     ],
+     [
+      "V. Van Mechelen",
+      "BEL",
+      78
      ]
     ],
-    "meer": 17
+    "meer": 15
    },
    {
     "naam": "Groep Grégoire",
-    "aantal": 10,
-    "gat": "+20s",
+    "aantal": 12,
+    "gat": "+44s",
     "renners": [
      [
       "P. Hagenes",
       "NOR",
       15
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
      ],
      [
       "E. Verstrynge",
@@ -1493,19 +1498,14 @@
       "Q. Pacher",
       "FRA",
       187
-     ],
-     [
-      "J. Delbove",
-      "FRA",
-      203
      ]
     ],
-    "meer": 2
+    "meer": 4
    },
    {
     "naam": "Groep groene trui",
     "aantal": 12,
-    "gat": "+1:36",
+    "gat": "+3:30",
     "renners": [
      [
       "V. Campenaerts",
@@ -1551,9 +1551,9 @@
     "meer": 4
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 11,
-    "gat": "+6:07",
+    "naam": "Groep Alaphilippe",
+    "aantal": 9,
+    "gat": "+6:58",
     "renners": [
      [
       "D. Ballerini",
@@ -1586,22 +1586,22 @@
       176
      ],
      [
-      "F. Wright",
-      "GBR",
-      178
-     ],
-     [
       "J. Alaphilippe",
       "FRA",
       191
+     ],
+     [
+      "J. Degenkolb",
+      "GER",
+      214
      ]
     ],
-    "meer": 3
+    "meer": 1
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:10",
+    "gat": "+8:14",
     "renners": [
      [
       "T. Pogacar",
@@ -1644,13 +1644,18 @@
       12
      ]
     ],
-    "meer": 89
+    "meer": 86
    },
    {
     "naam": "Distancés",
-    "aantal": 16,
-    "gat": "+11:32",
+    "aantal": 21,
+    "gat": "+12:12",
     "renners": [
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
      [
       "C. Bol",
       "NED",
@@ -1660,6 +1665,11 @@
       "O. Kooij",
       "NED",
       55
+     ],
+     [
+      "A. Gate",
+      "NZL",
+      63
      ],
      [
       "M. Kanter",
@@ -1680,19 +1690,9 @@
       "R. Stannard",
       "AUS",
       76
-     ],
-     [
-      "D. Godon",
-      "FRA",
-      85
-     ],
-     [
-      "T. Merlier",
-      "BEL",
-      91
      ]
     ],
-    "meer": 8
+    "meer": 13
    }
   ],
   "bron": "racecenter.letour.fr"
