@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T15:04:01Z",
+ "bijgewerkt": "2026-07-17T15:09:22Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,7 +1404,7 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T15:04:00.271Z",
+  "bijgewerkt": "2026-07-17T15:09:21.975Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1455,32 +1455,19 @@
     "meer": 2
    },
    {
-    "naam": "N. Breuillard",
-    "aantal": 1,
-    "gat": "+20s",
-    "renners": [
-     [
-      "N. Breuillard",
-      "FRA",
-      202
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep Matthews",
-    "aantal": 5,
-    "gat": "+32s",
+    "aantal": 6,
+    "gat": "+53s",
     "renners": [
-     [
-      "M. Valgren",
-      "DEN",
-      47
-     ],
      [
       "M. Matthews",
       "AUS",
       115
+     ],
+     [
+      "R. Garcia Pierna",
+      "ESP",
+      144
      ],
      [
       "L. Craps",
@@ -1496,14 +1483,19 @@
       "M. Hirschi",
       "SUI",
       194
+     ],
+     [
+      "N. Breuillard",
+      "FRA",
+      202
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep Grégoire",
-    "aantal": 15,
-    "gat": "+1:59",
+    "aantal": 18,
+    "gat": "+2:14",
     "renners": [
      [
       "V. Campenaerts",
@@ -1531,6 +1523,11 @@
       44
      ],
      [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
       "N. Vinokurov",
       "KAZ",
       68
@@ -1539,67 +1536,14 @@
       "M. Cort Nielsen",
       "DEN",
       124
-     ],
-     [
-      "M. Heßmann",
-      "GER",
-      145
      ]
     ],
-    "meer": 7
-   },
-   {
-    "naam": "Groep groene trui",
-    "aantal": 8,
-    "gat": "+7:25",
-    "renners": [
-     [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
-      "J. Philipsen",
-      "BEL",
-      105
-     ],
-     [
-      "J. Abrahamsen",
-      "NOR",
-      122
-     ],
-     [
-      "B. Girmay",
-      "ERI",
-      131
-     ],
-     [
-      "A. Kirsch",
-      "LUX",
-      166
-     ],
-     [
-      "Q. Hermans",
-      "BEL",
-      174
-     ],
-     [
-      "L. Germani",
-      "ITA",
-      185
-     ],
-     [
-      "C. Russo",
-      "FRA",
-      188
-     ]
-    ],
-    "meer": 0
+    "meer": 10
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:26",
+    "gat": "+8:28",
     "renners": [
      [
       "T. Pogacar",
@@ -1610,11 +1554,6 @@
       "I. Del Toro Romero",
       "MEX",
       2
-     ],
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
      ],
      [
       "A. Yates",
@@ -1640,15 +1579,25 @@
       "D. Piganzoli",
       "ITA",
       18
+     ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
      ]
     ],
-    "meer": 91
+    "meer": 82
    },
    {
     "naam": "Distancés",
-    "aantal": 33,
-    "gat": "+15:43",
+    "aantal": 47,
+    "gat": "+17:17",
     "renners": [
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
      [
       "N. Politt",
       "GER",
@@ -1670,27 +1619,22 @@
       16
      ],
      [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
+      "T. Skujins",
+      "LAT",
+      36
+     ],
+     [
       "M. Vacek",
       "CZE",
       37
-     ],
-     [
-      "A. Baudin",
-      "FRA",
-      43
-     ],
-     [
-      "G. Steinhauser",
-      "GER",
-      46
-     ],
-     [
-      "C. Bol",
-      "NED",
-      53
      ]
     ],
-    "meer": 25
+    "meer": 39
    }
   ],
   "bron": "racecenter.letour.fr"
