@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T15:14:44Z",
+ "bijgewerkt": "2026-07-17T15:20:05Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,12 +1404,30 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T15:14:43.548Z",
+  "bijgewerkt": "2026-07-17T15:20:05.131Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 10,
+    "aantal": 2,
     "gat": "",
+    "renners": [
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "M. Schmid",
+      "SUI",
+      118
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Pidcock",
+    "aantal": 8,
+    "gat": "+8s",
     "renners": [
      [
       "B. Mcnulty",
@@ -1427,11 +1445,6 @@
       28
      ],
      [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
       "K. Vauquelin",
       "FRA",
       88
@@ -1442,22 +1455,27 @@
       117
      ],
      [
-      "M. Schmid",
-      "SUI",
-      118
-     ],
-     [
       "T. Pidcock",
       "GBR",
       171
+     ],
+     [
+      "C. Braz Afonso",
+      "FRA",
+      183
+     ],
+     [
+      "J. Jegat",
+      "FRA",
+      201
      ]
     ],
-    "meer": 2
+    "meer": 0
    },
    {
     "naam": "Groep Matthews",
     "aantal": 7,
-    "gat": "+33s",
+    "gat": "+41s",
     "renners": [
      [
       "M. Valgren",
@@ -1498,9 +1516,27 @@
     "meer": 0
    },
    {
+    "naam": "Groep O'Connor",
+    "aantal": 2,
+    "gat": "+49s",
+    "renners": [
+     [
+      "B. O'Connor",
+      "AUS",
+      111
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep Grégoire",
-    "aantal": 16,
-    "gat": "+2:13",
+    "aantal": 18,
+    "gat": "+2:18",
     "renners": [
      [
       "V. Campenaerts",
@@ -1528,6 +1564,11 @@
       68
      ],
      [
+      "E. Verstrynge",
+      "BEL",
+      108
+     ],
+     [
       "M. Cort Nielsen",
       "DEN",
       124
@@ -1536,19 +1577,14 @@
       "M. Heßmann",
       "GER",
       145
-     ],
-     [
-      "N. Oliveira",
-      "POR",
-      146
      ]
     ],
-    "meer": 8
+    "meer": 10
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:09",
+    "gat": "+8:15",
     "renners": [
      [
       "T. Pogacar",
@@ -1591,12 +1627,12 @@
       21
      ]
     ],
-    "meer": 81
+    "meer": 77
    },
    {
     "naam": "Distancés",
     "aantal": 49,
-    "gat": "+18:46",
+    "gat": "+20:34",
     "renners": [
      [
       "F. Grossschartner",
