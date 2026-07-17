@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T13:38:08Z",
+ "bijgewerkt": "2026-07-17T14:47:56Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,11 +1404,11 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T13:38:07.327Z",
+  "bijgewerkt": "2026-07-17T14:47:55.668Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 57,
+    "aantal": 25,
     "gat": "",
     "renners": [
      [
@@ -1422,24 +1422,100 @@
       7
      ],
      [
-      "V. Campenaerts",
+      "M. Van Gils",
       "BEL",
-      14
+      28
      ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "N. Vinokurov",
+      "KAZ",
+      68
+     ],
+     [
+      "M. Mohoric",
+      "SLO",
+      75
+     ]
+    ],
+    "meer": 17
+   },
+   {
+    "naam": "Groep Grégoire",
+    "aantal": 10,
+    "gat": "+20s",
+    "renners": [
      [
       "P. Hagenes",
       "NOR",
       15
      ],
      [
+      "E. Verstrynge",
+      "BEL",
+      108
+     ],
+     [
+      "B. O'Connor",
+      "AUS",
+      111
+     ],
+     [
+      "M. Cort Nielsen",
+      "DEN",
+      124
+     ],
+     [
+      "A. Aranburu Deva",
+      "ESP",
+      163
+     ],
+     [
+      "R. Gregoire",
+      "FRA",
+      181
+     ],
+     [
+      "Q. Pacher",
+      "FRA",
+      187
+     ],
+     [
+      "J. Delbove",
+      "FRA",
+      203
+     ]
+    ],
+    "meer": 2
+   },
+   {
+    "naam": "Groep groene trui",
+    "aantal": 12,
+    "gat": "+1:36",
+    "renners": [
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
       "T. Van Dijke",
       "NED",
       27
-     ],
-     [
-      "M. Van Gils",
-      "BEL",
-      28
      ],
      [
       "M. Pedersen",
@@ -1450,14 +1526,82 @@
       "K. Asgreen",
       "DEN",
       42
+     ],
+     [
+      "J. Philipsen",
+      "BEL",
+      105
+     ],
+     [
+      "J. Abrahamsen",
+      "NOR",
+      122
+     ],
+     [
+      "B. Girmay",
+      "ERI",
+      131
+     ],
+     [
+      "N. Oliveira",
+      "POR",
+      146
      ]
     ],
-    "meer": 49
+    "meer": 4
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 11,
+    "gat": "+6:07",
+    "renners": [
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "J. Tarling",
+      "GBR",
+      87
+     ],
+     [
+      "E. Planckaert",
+      "BEL",
+      106
+     ],
+     [
+      "T. Van Asbroeck",
+      "BEL",
+      138
+     ],
+     [
+      "M. Heßmann",
+      "GER",
+      145
+     ],
+     [
+      "X. Meurisse",
+      "BEL",
+      176
+     ],
+     [
+      "F. Wright",
+      "GBR",
+      178
+     ],
+     [
+      "J. Alaphilippe",
+      "FRA",
+      191
+     ]
+    ],
+    "meer": 3
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+6:47",
+    "gat": "+8:10",
     "renners": [
      [
       "T. Pogacar",
@@ -1500,7 +1644,55 @@
       12
      ]
     ],
-    "meer": 106
+    "meer": 89
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 16,
+    "gat": "+11:32",
+    "renners": [
+     [
+      "C. Bol",
+      "NED",
+      53
+     ],
+     [
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "M. Kanter",
+      "GER",
+      64
+     ],
+     [
+      "M. Teunissen",
+      "NED",
+      66
+     ],
+     [
+      "P. Bauhaus",
+      "GER",
+      72
+     ],
+     [
+      "R. Stannard",
+      "AUS",
+      76
+     ],
+     [
+      "D. Godon",
+      "FRA",
+      85
+     ],
+     [
+      "T. Merlier",
+      "BEL",
+      91
+     ]
+    ],
+    "meer": 8
    }
   ],
   "bron": "racecenter.letour.fr"
