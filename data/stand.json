@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T13:32:45Z",
+ "bijgewerkt": "2026-07-17T13:38:08Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,13 +1404,18 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T13:32:45.272Z",
+  "bijgewerkt": "2026-07-17T13:38:07.327Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 33,
+    "aantal": 57,
     "gat": "",
     "renners": [
+     [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
      [
       "T. Wellens",
       "BEL",
@@ -1420,6 +1425,11 @@
       "V. Campenaerts",
       "BEL",
       14
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
      ],
      [
       "T. Van Dijke",
@@ -1432,44 +1442,6 @@
       28
      ],
      [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "M. Valgren",
-      "DEN",
-      47
-     ],
-     [
-      "N. Vinokurov",
-      "KAZ",
-      68
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
-     ]
-    ],
-    "meer": 25
-   },
-   {
-    "naam": "Groep groene trui",
-    "aantal": 24,
-    "gat": "+16s",
-    "renners": [
-     [
-      "B. Mcnulty",
-      "USA",
-      4
-     ],
-     [
-      "P. Hagenes",
-      "NOR",
-      15
-     ],
-     [
       "M. Pedersen",
       "DEN",
       33
@@ -1478,34 +1450,14 @@
       "K. Asgreen",
       "DEN",
       42
-     ],
-     [
-      "D. Ballerini",
-      "ITA",
-      62
-     ],
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
-      "V. Van Mechelen",
-      "BEL",
-      78
-     ],
-     [
-      "J. Tarling",
-      "GBR",
-      87
      ]
     ],
-    "meer": 16
+    "meer": 49
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+6:14",
+    "gat": "+6:47",
     "renners": [
      [
       "T. Pogacar",
