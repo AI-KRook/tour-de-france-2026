@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T14:58:39Z",
+ "bijgewerkt": "2026-07-17T15:04:01Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,26 +1404,18 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T14:58:38.838Z",
+  "bijgewerkt": "2026-07-17T15:04:00.271Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 1,
+    "aantal": 10,
     "gat": "",
     "renners": [
      [
-      "L. Plapp",
-      "AUS",
-      117
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Poursuivants",
-    "aantal": 7,
-    "gat": "+7s",
-    "renners": [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
      [
       "T. Wellens",
       "BEL",
@@ -1440,6 +1432,16 @@
       65
      ],
      [
+      "K. Vauquelin",
+      "FRA",
+      88
+     ],
+     [
+      "L. Plapp",
+      "AUS",
+      117
+     ],
+     [
       "M. Schmid",
       "SUI",
       118
@@ -1448,12 +1450,15 @@
       "T. Pidcock",
       "GBR",
       171
-     ],
-     [
-      "J. Jegat",
-      "FRA",
-      201
-     ],
+     ]
+    ],
+    "meer": 2
+   },
+   {
+    "naam": "N. Breuillard",
+    "aantal": 1,
+    "gat": "+20s",
+    "renners": [
      [
       "N. Breuillard",
       "FRA",
@@ -1463,57 +1468,42 @@
     "meer": 0
    },
    {
-    "naam": "Groep Grégoire",
-    "aantal": 23,
-    "gat": "+1:33",
+    "naam": "Groep Matthews",
+    "aantal": 5,
+    "gat": "+32s",
     "renners": [
-     [
-      "P. Hagenes",
-      "NOR",
-      15
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
      [
       "M. Valgren",
       "DEN",
       47
      ],
      [
-      "N. Vinokurov",
-      "KAZ",
-      68
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
-     ],
-     [
-      "V. Van Mechelen",
-      "BEL",
-      78
-     ],
-     [
-      "E. Verstrynge",
-      "BEL",
-      108
-     ],
-     [
-      "B. O'Connor",
+      "M. Matthews",
       "AUS",
-      111
+      115
+     ],
+     [
+      "L. Craps",
+      "BEL",
+      154
+     ],
+     [
+      "I. Izagirre Insausti",
+      "ESP",
+      161
+     ],
+     [
+      "M. Hirschi",
+      "SUI",
+      194
      ]
     ],
-    "meer": 15
+    "meer": 0
    },
    {
-    "naam": "Groep groene trui",
-    "aantal": 12,
-    "gat": "+5:25",
+    "naam": "Groep Grégoire",
+    "aantal": 15,
+    "gat": "+1:59",
     "renners": [
      [
       "V. Campenaerts",
@@ -1521,19 +1511,52 @@
       14
      ],
      [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
       "T. Van Dijke",
       "NED",
       27
      ],
      [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
       "K. Asgreen",
       "DEN",
       42
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "N. Vinokurov",
+      "KAZ",
+      68
+     ],
+     [
+      "M. Cort Nielsen",
+      "DEN",
+      124
+     ],
+     [
+      "M. Heßmann",
+      "GER",
+      145
+     ]
+    ],
+    "meer": 7
+   },
+   {
+    "naam": "Groep groene trui",
+    "aantal": 8,
+    "gat": "+7:25",
+    "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
      ],
      [
       "J. Philipsen",
@@ -1551,17 +1574,32 @@
       131
      ],
      [
-      "N. Oliveira",
-      "POR",
-      146
+      "A. Kirsch",
+      "LUX",
+      166
+     ],
+     [
+      "Q. Hermans",
+      "BEL",
+      174
+     ],
+     [
+      "L. Germani",
+      "ITA",
+      185
+     ],
+     [
+      "C. Russo",
+      "FRA",
+      188
      ]
     ],
-    "meer": 4
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:12",
+    "gat": "+8:26",
     "renners": [
      [
       "T. Pogacar",
@@ -1577,11 +1615,6 @@
       "F. Grossschartner",
       "AUT",
       3
-     ],
-     [
-      "B. Mcnulty",
-      "USA",
-      4
      ],
      [
       "A. Yates",
@@ -1602,14 +1635,19 @@
       "S. Kuss",
       "USA",
       17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
      ]
     ],
-    "meer": 87
+    "meer": 91
    },
    {
     "naam": "Distancés",
     "aantal": 33,
-    "gat": "+14:00",
+    "gat": "+15:43",
     "renners": [
      [
       "N. Politt",
