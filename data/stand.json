@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T15:25:27Z",
+ "bijgewerkt": "2026-07-17T15:30:49Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,7 +1404,7 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T15:25:27.031Z",
+  "bijgewerkt": "2026-07-17T15:30:48.632Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1425,9 +1425,27 @@
     "meer": 0
    },
    {
+    "naam": "Poursuivants",
+    "aantal": 2,
+    "gat": "+20s",
+    "renners": [
+     [
+      "K. Vauquelin",
+      "FRA",
+      88
+     ],
+     [
+      "J. Jegat",
+      "FRA",
+      201
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep Pidcock",
-    "aantal": 8,
-    "gat": "+15s",
+    "aantal": 6,
+    "gat": "+20s",
     "renners": [
      [
       "B. Mcnulty",
@@ -1445,11 +1463,6 @@
       28
      ],
      [
-      "K. Vauquelin",
-      "FRA",
-      88
-     ],
-     [
       "L. Plapp",
       "AUS",
       117
@@ -1463,11 +1476,6 @@
       "C. Braz Afonso",
       "FRA",
       183
-     ],
-     [
-      "J. Jegat",
-      "FRA",
-      201
      ]
     ],
     "meer": 0
@@ -1475,7 +1483,7 @@
    {
     "naam": "Groep Matthews",
     "aantal": 9,
-    "gat": "+55s",
+    "gat": "+1:07",
     "renners": [
      [
       "M. Valgren",
@@ -1522,8 +1530,8 @@
    },
    {
     "naam": "Groep Grégoire",
-    "aantal": 18,
-    "gat": "+2:41",
+    "aantal": 16,
+    "gat": "+3:03",
     "renners": [
      [
       "V. Campenaerts",
@@ -1566,12 +1574,12 @@
       145
      ]
     ],
-    "meer": 10
+    "meer": 8
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:08",
+    "gat": "+8:05",
     "renners": [
      [
       "T. Pogacar",
@@ -1614,12 +1622,12 @@
       21
      ]
     ],
-    "meer": 77
+    "meer": 79
    },
    {
     "naam": "Distancés",
     "aantal": 49,
-    "gat": "+22:37",
+    "gat": "+23:08",
     "renners": [
      [
       "F. Grossschartner",
