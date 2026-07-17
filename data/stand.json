@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T11:30:01Z",
+ "bijgewerkt": "2026-07-17T11:34:51Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,12 +1404,45 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T11:30:00.804Z",
+  "bijgewerkt": "2026-07-17T11:34:51.337Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 5,
+    "gat": "",
+    "renners": [
+     [
+      "K. Asgreen",
+      "DEN",
+      42
+     ],
+     [
+      "M. Kwiatkowski",
+      "POL",
+      86
+     ],
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
+      "G. Zimmermann",
+      "GER",
+      158
+     ],
+     [
+      "A. Kirsch",
+      "LUX",
+      166
+     ]
+    ],
+    "meer": 0
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+19s",
     "renners": [
      [
       "T. Pogacar",
@@ -1452,7 +1485,7 @@
       8
      ]
     ],
-    "meer": 163
+    "meer": 158
    }
   ],
   "bron": "racecenter.letour.fr"
