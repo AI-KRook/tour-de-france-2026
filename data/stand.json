@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T14:53:18Z",
+ "bijgewerkt": "2026-07-17T14:58:39Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,18 +1404,26 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T14:53:17.241Z",
+  "bijgewerkt": "2026-07-17T14:58:38.838Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 23,
+    "aantal": 1,
     "gat": "",
     "renners": [
      [
-      "B. Mcnulty",
-      "USA",
-      4
-     ],
+      "L. Plapp",
+      "AUS",
+      117
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 7,
+    "gat": "+7s",
+    "renners": [
      [
       "T. Wellens",
       "BEL",
@@ -1427,14 +1435,52 @@
       28
      ],
      [
-      "M. Valgren",
-      "DEN",
-      47
-     ],
-     [
       "H. Tejada Canacue",
       "COL",
       65
+     ],
+     [
+      "M. Schmid",
+      "SUI",
+      118
+     ],
+     [
+      "T. Pidcock",
+      "GBR",
+      171
+     ],
+     [
+      "J. Jegat",
+      "FRA",
+      201
+     ],
+     [
+      "N. Breuillard",
+      "FRA",
+      202
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Grégoire",
+    "aantal": 23,
+    "gat": "+1:33",
+    "renners": [
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
      ],
      [
       "N. Vinokurov",
@@ -1450,24 +1496,6 @@
       "V. Van Mechelen",
       "BEL",
       78
-     ]
-    ],
-    "meer": 15
-   },
-   {
-    "naam": "Groep Grégoire",
-    "aantal": 12,
-    "gat": "+44s",
-    "renners": [
-     [
-      "P. Hagenes",
-      "NOR",
-      15
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
      ],
      [
       "E. Verstrynge",
@@ -1478,34 +1506,14 @@
       "B. O'Connor",
       "AUS",
       111
-     ],
-     [
-      "M. Cort Nielsen",
-      "DEN",
-      124
-     ],
-     [
-      "A. Aranburu Deva",
-      "ESP",
-      163
-     ],
-     [
-      "R. Gregoire",
-      "FRA",
-      181
-     ],
-     [
-      "Q. Pacher",
-      "FRA",
-      187
      ]
     ],
-    "meer": 4
+    "meer": 15
    },
    {
     "naam": "Groep groene trui",
     "aantal": 12,
-    "gat": "+3:30",
+    "gat": "+5:25",
     "renners": [
      [
       "V. Campenaerts",
@@ -1551,57 +1559,9 @@
     "meer": 4
    },
    {
-    "naam": "Groep Alaphilippe",
-    "aantal": 9,
-    "gat": "+6:58",
-    "renners": [
-     [
-      "D. Ballerini",
-      "ITA",
-      62
-     ],
-     [
-      "J. Tarling",
-      "GBR",
-      87
-     ],
-     [
-      "E. Planckaert",
-      "BEL",
-      106
-     ],
-     [
-      "T. Van Asbroeck",
-      "BEL",
-      138
-     ],
-     [
-      "M. Heßmann",
-      "GER",
-      145
-     ],
-     [
-      "X. Meurisse",
-      "BEL",
-      176
-     ],
-     [
-      "J. Alaphilippe",
-      "FRA",
-      191
-     ],
-     [
-      "J. Degenkolb",
-      "GER",
-      214
-     ]
-    ],
-    "meer": 1
-   },
-   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:14",
+    "gat": "+8:12",
     "renners": [
      [
       "T. Pogacar",
@@ -1619,14 +1579,9 @@
       3
      ],
      [
-      "N. Politt",
-      "GER",
-      5
-     ],
-     [
-      "F. Vermeersch",
-      "BEL",
-      6
+      "B. Mcnulty",
+      "USA",
+      4
      ],
      [
       "A. Yates",
@@ -1642,57 +1597,62 @@
       "E. Affini",
       "ITA",
       12
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
      ]
     ],
-    "meer": 86
+    "meer": 87
    },
    {
     "naam": "Distancés",
-    "aantal": 21,
-    "gat": "+12:12",
+    "aantal": 33,
+    "gat": "+14:00",
     "renners": [
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "M. Vacek",
+      "CZE",
+      37
+     ],
      [
       "A. Baudin",
       "FRA",
       43
      ],
      [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
+     [
       "C. Bol",
       "NED",
       53
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
-     ],
-     [
-      "A. Gate",
-      "NZL",
-      63
-     ],
-     [
-      "M. Kanter",
-      "GER",
-      64
-     ],
-     [
-      "M. Teunissen",
-      "NED",
-      66
-     ],
-     [
-      "P. Bauhaus",
-      "GER",
-      72
-     ],
-     [
-      "R. Stannard",
-      "AUS",
-      76
      ]
     ],
-    "meer": 13
+    "meer": 25
    }
   ],
   "bron": "racecenter.letour.fr"
