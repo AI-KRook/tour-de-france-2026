@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T12:00:32Z",
+ "bijgewerkt": "2026-07-17T12:05:51Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,12 +1404,60 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T12:00:31.376Z",
+  "bijgewerkt": "2026-07-17T12:05:50.909Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 37,
+    "gat": "",
+    "renners": [
+     [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "T. Van Dijke",
+      "NED",
+      27
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ]
+    ],
+    "meer": 29
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+5s",
     "renners": [
      [
       "T. Pogacar",
@@ -1427,11 +1475,6 @@
       3
      ],
      [
-      "B. Mcnulty",
-      "USA",
-      4
-     ],
-     [
       "N. Politt",
       "GER",
       5
@@ -1442,17 +1485,22 @@
       6
      ],
      [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
       "A. Yates",
       "GBR",
       8
+     ],
+     [
+      "J. Vingegaard Hansen",
+      "DEN",
+      11
+     ],
+     [
+      "E. Affini",
+      "ITA",
+      12
      ]
     ],
-    "meer": 163
+    "meer": 126
    }
   ],
   "bron": "racecenter.letour.fr"
