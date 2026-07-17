@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-17T12:16:33Z",
+ "bijgewerkt": "2026-07-17T12:45:11Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1404,7 +1404,7 @@
  },
  "koers": {
   "etappe": 13,
-  "bijgewerkt": "2026-07-17T12:16:33.269Z",
+  "bijgewerkt": "2026-07-17T12:45:10.796Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1455,9 +1455,57 @@
     "meer": 29
    },
    {
+    "naam": "Groep groene trui",
+    "aantal": 20,
+    "gat": "+45s",
+    "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "K. Asgreen",
+      "DEN",
+      42
+     ],
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "V. Van Mechelen",
+      "BEL",
+      78
+     ],
+     [
+      "J. Tarling",
+      "GBR",
+      87
+     ],
+     [
+      "B. O'Connor",
+      "AUS",
+      111
+     ],
+     [
+      "M. Matthews",
+      "AUS",
+      115
+     ]
+    ],
+    "meer": 12
+   },
+   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+10s",
+    "gat": "+3:01",
     "renners": [
      [
       "T. Pogacar",
@@ -1500,7 +1548,7 @@
       12
      ]
     ],
-    "meer": 126
+    "meer": 106
    }
   ],
   "bron": "racecenter.letour.fr"
