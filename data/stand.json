@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T15:21:13Z",
+ "bijgewerkt": "2026-07-18T15:26:35Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,48 +1488,17 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T15:21:11.928Z",
+  "bijgewerkt": "2026-07-18T15:26:34.036Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 1,
-    "gat": "",
-    "renners": [
-     [
-      "R. Carapaz",
-      "ECU",
-      41
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "T.H. Johannessen",
-    "aantal": 1,
-    "gat": "+3s",
-    "renners": [
-     [
-      "T. Johannessen",
-      "NOR",
-      121
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep gele trui",
     "aantal": 6,
-    "gat": "+22s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
       "SLO",
       1
-     ],
-     [
-      "I. Del Toro Romero",
-      "MEX",
-      2
      ],
      [
       "J. Vingegaard Hansen",
@@ -1547,6 +1516,11 @@
       31
      ],
      [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
       "P. Seixas",
       "FRA",
       51
@@ -1555,9 +1529,27 @@
     "meer": 0
    },
    {
+    "naam": "Groep del Toro",
+    "aantal": 2,
+    "gat": "+5s",
+    "renners": [
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
+     ],
+     [
+      "T. Johannessen",
+      "NOR",
+      121
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "R. Evenepoel",
     "aantal": 1,
-    "gat": "+30s",
+    "gat": "+18s",
     "renners": [
      [
       "R. Evenepoel",
@@ -1570,7 +1562,7 @@
    {
     "naam": "Groep Martinez",
     "aantal": 2,
-    "gat": "+47s",
+    "gat": "+37s",
     "renners": [
      [
       "M. Skjelmose",
@@ -1588,7 +1580,7 @@
    {
     "naam": "Groep Pidcock",
     "aantal": 9,
-    "gat": "+1:44",
+    "gat": "+1:54",
     "renners": [
      [
       "A. Yates",
@@ -1636,7 +1628,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 56,
-    "gat": "+19:30",
+    "gat": "+20:28",
     "renners": [
      [
       "F. Grossschartner",
@@ -1684,7 +1676,7 @@
    {
     "naam": "Distancés",
     "aantal": 57,
-    "gat": "+24:54",
+    "gat": "+23:49",
     "renners": [
      [
       "F. Vermeersch",
