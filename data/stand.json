@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T14:15:42Z",
+ "bijgewerkt": "2026-07-18T14:21:04Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T14:15:41.571Z",
+  "bijgewerkt": "2026-07-18T14:21:03.293Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1529,9 +1529,9 @@
     "meer": 0
    },
    {
-    "naam": "Peloton",
-    "aantal": 999,
-    "gat": "+2:10",
+    "naam": "Groep gele trui",
+    "aantal": 41,
+    "gat": "+1:56",
     "renners": [
      [
       "T. Pogacar",
@@ -1554,11 +1554,6 @@
       4
      ],
      [
-      "N. Politt",
-      "GER",
-      5
-     ],
-     [
       "T. Wellens",
       "BEL",
       7
@@ -1572,15 +1567,25 @@
       "J. Vingegaard Hansen",
       "DEN",
       11
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
      ]
     ],
-    "meer": 69
+    "meer": 33
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 22,
-    "gat": "+9:54",
+    "aantal": 33,
+    "gat": "+10:31",
     "renners": [
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
      [
       "J. Tratnik",
       "SLO",
@@ -1615,19 +1620,14 @@
       "M. Walker",
       "GBR",
       48
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
      ]
     ],
-    "meer": 14
+    "meer": 25
    },
    {
     "naam": "Distancés",
-    "aantal": 65,
-    "gat": "+16:04",
+    "aantal": 59,
+    "gat": "+17:07",
     "renners": [
      [
       "F. Vermeersch",
@@ -1638,11 +1638,6 @@
       "E. Affini",
       "ITA",
       12
-     ],
-     [
-      "V. Campenaerts",
-      "BEL",
-      14
      ],
      [
       "A. Baudin",
@@ -1668,9 +1663,14 @@
       "D. Ballerini",
       "ITA",
       62
+     ],
+     [
+      "M. Kanter",
+      "GER",
+      64
      ]
     ],
-    "meer": 57
+    "meer": 50
    }
   ],
   "bron": "racecenter.letour.fr"
