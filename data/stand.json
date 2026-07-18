@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T13:59:37Z",
+ "bijgewerkt": "2026-07-18T14:04:59Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T13:59:36.600Z",
+  "bijgewerkt": "2026-07-18T14:04:58.230Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1531,7 +1531,7 @@
    {
     "naam": "Groep Pidcock",
     "aantal": 13,
-    "gat": "+1:43",
+    "gat": "+1:50",
     "renners": [
      [
       "B. Armirail",
@@ -1579,7 +1579,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:33",
+    "gat": "+2:15",
     "renners": [
      [
       "T. Pogacar",
@@ -1622,13 +1622,18 @@
       11
      ]
     ],
-    "meer": 63
+    "meer": 56
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 15,
-    "gat": "+6:25",
+    "aantal": 22,
+    "gat": "+7:34",
     "renners": [
+     [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
      [
       "M. Pedersen",
       "DEN",
@@ -1650,6 +1655,11 @@
       46
      ],
      [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
       "M. Walker",
       "GBR",
       48
@@ -1658,24 +1668,14 @@
       "M. Mohoric",
       "SLO",
       75
-     ],
-     [
-      "V. Van Mechelen",
-      "BEL",
-      78
-     ],
-     [
-      "M. Kwiatkowski",
-      "POL",
-      86
      ]
     ],
-    "meer": 7
+    "meer": 14
    },
    {
     "naam": "Distancés",
     "aantal": 65,
-    "gat": "+12:56",
+    "gat": "+14:10",
     "renners": [
      [
       "F. Vermeersch",
