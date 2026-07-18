@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T13:02:20Z",
+ "bijgewerkt": "2026-07-18T13:07:42Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,12 +1488,68 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T13:02:19.897Z",
+  "bijgewerkt": "2026-07-18T13:07:41.780Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 32,
+    "aantal": 5,
     "gat": "",
+    "renners": [
+     [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "T. Johannessen",
+      "NOR",
+      121
+     ],
+     [
+      "A. Johannessen",
+      "NOR",
+      125
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Arensman",
+    "aantal": 3,
+    "gat": "+37s",
+    "renners": [
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ],
+     [
+      "P. Castrillo Zapater",
+      "ESP",
+      142
+     ],
+     [
+      "E. Rubio Reyes",
+      "COL",
+      148
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Pidcock",
+    "aantal": 20,
+    "gat": "+1:29",
     "renners": [
      [
       "B. Armirail",
@@ -1516,32 +1572,32 @@
       22
      ],
      [
-      "J. Tratnik",
-      "SLO",
-      26
-     ],
-     [
       "Q. Simmons",
       "USA",
       34
      ],
      [
-      "R. Carapaz",
-      "ECU",
-      41
+      "G. Steinhauser",
+      "GER",
+      46
      ],
      [
-      "A. Baudin",
+      "A. Paret Peintre",
       "FRA",
-      43
+      56
+     ],
+     [
+      "A. Tiberi",
+      "ITA",
+      77
      ]
     ],
-    "meer": 24
+    "meer": 12
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:09",
+    "gat": "+2:02",
     "renners": [
      [
       "T. Pogacar",
@@ -1584,17 +1640,22 @@
       11
      ]
     ],
-    "meer": 93
+    "meer": 88
    },
    {
     "naam": "Distancés",
-    "aantal": 37,
-    "gat": "+3:29",
+    "aantal": 46,
+    "gat": "+5:33",
     "renners": [
      [
       "F. Vermeersch",
       "BEL",
       6
+     ],
+     [
+      "E. Affini",
+      "ITA",
+      12
      ],
      [
       "C. Bol",
@@ -1625,14 +1686,9 @@
       "K. Gradek",
       "POL",
       74
-     ],
-     [
-      "J. Tarling",
-      "GBR",
-      87
      ]
     ],
-    "meer": 29
+    "meer": 38
    }
   ],
   "bron": "racecenter.letour.fr"
