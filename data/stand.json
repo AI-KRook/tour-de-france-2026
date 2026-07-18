@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T12:40:54Z",
+ "bijgewerkt": "2026-07-18T12:46:16Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T12:40:53.903Z",
+  "bijgewerkt": "2026-07-18T12:46:15.339Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1509,9 +1509,57 @@
     "meer": 0
    },
    {
+    "naam": "Poursuivants",
+    "aantal": 33,
+    "gat": "+10s",
+    "renners": [
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ],
+     [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ]
+    ],
+    "meer": 25
+   },
+   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:27",
+    "gat": "+1:32",
     "renners": [
      [
       "T. Pogacar",
@@ -1554,12 +1602,12 @@
       11
      ]
     ],
-    "meer": 134
+    "meer": 101
    },
    {
     "naam": "Distancés",
     "aantal": 26,
-    "gat": "+3:08",
+    "gat": "+3:01",
     "renners": [
      [
       "F. Vermeersch",
