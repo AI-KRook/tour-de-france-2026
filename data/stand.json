@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T13:23:47Z",
+ "bijgewerkt": "2026-07-18T13:59:37Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T13:23:46.730Z",
+  "bijgewerkt": "2026-07-18T13:59:36.600Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1529,22 +1529,9 @@
     "meer": 0
    },
    {
-    "naam": "T. Arensman",
-    "aantal": 1,
-    "gat": "+22s",
-    "renners": [
-     [
-      "T. Arensman",
-      "NED",
-      82
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep Pidcock",
-    "aantal": 19,
-    "gat": "+1:52",
+    "aantal": 13,
+    "gat": "+1:43",
     "renners": [
      [
       "B. Armirail",
@@ -1567,11 +1554,6 @@
       34
      ],
      [
-      "G. Steinhauser",
-      "GER",
-      46
-     ],
-     [
       "A. Paret Peintre",
       "FRA",
       56
@@ -1585,14 +1567,19 @@
       "E. Bernal Gomez",
       "COL",
       81
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
      ]
     ],
-    "meer": 11
+    "meer": 5
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:47",
+    "gat": "+2:33",
     "renners": [
      [
       "T. Pogacar",
@@ -1635,25 +1622,60 @@
       11
      ]
     ],
-    "meer": 87
+    "meer": 63
    },
    {
-    "naam": "M. Kwiatkowski",
-    "aantal": 1,
-    "gat": "+4:29",
+    "naam": "Groep groene trui",
+    "aantal": 15,
+    "gat": "+6:25",
     "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "M. Vacek",
+      "CZE",
+      37
+     ],
+     [
+      "K. Asgreen",
+      "DEN",
+      42
+     ],
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
+     [
+      "M. Walker",
+      "GBR",
+      48
+     ],
+     [
+      "M. Mohoric",
+      "SLO",
+      75
+     ],
+     [
+      "V. Van Mechelen",
+      "BEL",
+      78
+     ],
      [
       "M. Kwiatkowski",
       "POL",
       86
      ]
     ],
-    "meer": 0
+    "meer": 7
    },
    {
     "naam": "Distancés",
-    "aantal": 47,
-    "gat": "+7:24",
+    "aantal": 65,
+    "gat": "+12:56",
     "renners": [
      [
       "F. Vermeersch",
@@ -1666,9 +1688,24 @@
       12
      ],
      [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
       "C. Bol",
       "NED",
       53
+     ],
+     [
+      "D. Hoole",
+      "NED",
+      54
      ],
      [
       "O. Kooij",
@@ -1679,37 +1716,9 @@
       "D. Ballerini",
       "ITA",
       62
-     ],
-     [
-      "M. Kanter",
-      "GER",
-      64
-     ],
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
-      "P. Bauhaus",
-      "GER",
-      72
      ]
     ],
-    "meer": 39
-   },
-   {
-    "naam": "A. Charmig",
-    "aantal": 1,
-    "gat": "+10:55",
-    "renners": [
-     [
-      "A. Charmig",
-      "DEN",
-      123
-     ]
-    ],
-    "meer": 0
+    "meer": 57
    }
   ],
   "bron": "racecenter.letour.fr"
