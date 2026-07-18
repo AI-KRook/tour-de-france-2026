@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T12:51:37Z",
+ "bijgewerkt": "2026-07-18T12:56:58Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,30 +1488,12 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T12:51:36.964Z",
+  "bijgewerkt": "2026-07-18T12:56:58.418Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 2,
+    "aantal": 35,
     "gat": "",
-    "renners": [
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "P. Castrillo Zapater",
-      "ESP",
-      142
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Poursuivants",
-    "aantal": 33,
-    "gat": "+15s",
     "renners": [
      [
       "B. Armirail",
@@ -1549,40 +1531,17 @@
       43
      ],
      [
-      "G. Steinhauser",
-      "GER",
-      46
+      "B. Healy",
+      "IRL",
+      44
      ]
     ],
-    "meer": 25
-   },
-   {
-    "naam": "Groep Higuita",
-    "aantal": 3,
-    "gat": "+1:05",
-    "renners": [
-     [
-      "S. Higuita Garcia",
-      "COL",
-      61
-     ],
-     [
-      "G. Martin Guyonnet",
-      "FRA",
-      186
-     ],
-     [
-      "Q. Pacher",
-      "FRA",
-      187
-     ]
-    ],
-    "meer": 0
+    "meer": 27
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:28",
+    "gat": "+1:20",
     "renners": [
      [
       "T. Pogacar",
@@ -1625,12 +1584,12 @@
       11
      ]
     ],
-    "meer": 98
+    "meer": 101
    },
    {
     "naam": "Distancés",
     "aantal": 26,
-    "gat": "+3:05",
+    "gat": "+3:21",
     "renners": [
      [
       "F. Vermeersch",
