@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T15:37:19Z",
+ "bijgewerkt": "2026-07-18T15:42:28Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1051,10 +1051,10 @@
     "ploeg": "UAE Team Emirates XRG"
    },
    "wit": {
-    "naam": "Juan Ayuso",
-    "kort": "J. Ayuso",
-    "land": "ESP",
-    "ploeg": "Lidl–Trek"
+    "naam": "Paul Seixas",
+    "kort": "P. Seixas",
+    "land": "FRA",
+    "ploeg": "Decathlon CMA CGM Team"
    }
   },
   "top10": [
@@ -1064,6 +1064,69 @@
     "land": "SLO",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "—"
+   },
+   {
+    "pos": 2,
+    "naam": "Jonas Vingegaard Hansen",
+    "land": "DEN",
+    "ploeg": "Team Visma | Lease A Bike",
+    "tijd": "+ 4:30"
+   },
+   {
+    "pos": 3,
+    "naam": "Remco Evenepoel",
+    "land": "BEL",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
+    "tijd": "+ 5:04"
+   },
+   {
+    "pos": 4,
+    "naam": "Paul Seixas",
+    "land": "FRA",
+    "ploeg": "Decathlon CMA CGM Team",
+    "tijd": "+ 5:19"
+   },
+   {
+    "pos": 5,
+    "naam": "Juan Ayuso Pesquera",
+    "land": "ESP",
+    "ploeg": "Lidl-Trek",
+    "tijd": "+ 5:22"
+   },
+   {
+    "pos": 6,
+    "naam": "Florian Lipowitz",
+    "land": "GER",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
+    "tijd": "+ 5:44"
+   },
+   {
+    "pos": 7,
+    "naam": "Isaac Del Toro Romero",
+    "land": "MEX",
+    "ploeg": "UAE Team Emirates XRG",
+    "tijd": "+ 5:50"
+   },
+   {
+    "pos": 8,
+    "naam": "Mattias Skjelmose",
+    "land": "DEN",
+    "ploeg": "Lidl-Trek",
+    "tijd": "+ 7:35"
+   },
+   {
+    "pos": 9,
+    "naam": "Tom Pidcock",
+    "land": "GBR",
+    "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+    "tijd": "+ 7:59"
+   },
+   {
+    "pos": 10,
+    "naam": "Lenny Martinez",
+    "land": "FRA",
+    "ploeg": "Bahrain Victorious",
+    "tijd": "+ 8:25"
    }
   ],
   "klassementen": {
@@ -1077,6 +1140,69 @@
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "—"
+     },
+     {
+      "pos": 2,
+      "naam": "Jonas Vingegaard Hansen",
+      "land": "DEN",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "+ 4:30"
+     },
+     {
+      "pos": 3,
+      "naam": "Remco Evenepoel",
+      "land": "BEL",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "+ 5:04"
+     },
+     {
+      "pos": 4,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 5:19"
+     },
+     {
+      "pos": 5,
+      "naam": "Juan Ayuso Pesquera",
+      "land": "ESP",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 5:22"
+     },
+     {
+      "pos": 6,
+      "naam": "Florian Lipowitz",
+      "land": "GER",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "+ 5:44"
+     },
+     {
+      "pos": 7,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "+ 5:50"
+     },
+     {
+      "pos": 8,
+      "naam": "Mattias Skjelmose",
+      "land": "DEN",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 7:35"
+     },
+     {
+      "pos": 9,
+      "naam": "Tom Pidcock",
+      "land": "GBR",
+      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+      "tijd": "+ 7:59"
+     },
+     {
+      "pos": 10,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 8:25"
      }
     ]
    },
@@ -1231,16 +1357,56 @@
       "tijd": "16 ptn"
      }
     ]
+   },
+   "wit": {
+    "naEtappe": 14,
+    "eenheid": "tijd",
+    "top10": [
+     {
+      "pos": 1,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "—"
+     },
+     {
+      "pos": 2,
+      "naam": "Juan Ayuso Pesquera",
+      "land": "ESP",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 0:03"
+     },
+     {
+      "pos": 3,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "+ 0:31"
+     },
+     {
+      "pos": 4,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 3:06"
+     }
+    ]
    }
   },
-  "wissels": [],
-  "voetnoot": "Stand na etappe 14, automatisch bijgewerkt 18 juli 17:37 uur (bron: letour.fr)."
+  "wissels": [
+   {
+    "trui": "wit",
+    "van": "Juan Ayuso",
+    "naar": "Paul Seixas"
+   }
+  ],
+  "voetnoot": "Stand na etappe 14, automatisch bijgewerkt 18 juli 17:42 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 14,
-  "tekst": "Mauro Schmid (Team Jayco Alula) sloeg toe in Belfort, voor Harold Tejada Canacue en Tom Pidcock. Alle truien blijven om dezelfde schouders.",
+  "tekst": "Mauro Schmid (Team Jayco Alula) sloeg toe in Belfort, voor Harold Tejada Canacue en Tom Pidcock. Paul Seixas neemt de witte trui over van Juan Ayuso. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 4:30.",
   "bron": "vast patroon",
-  "feiten": "25387f568e92f2ae"
+  "feiten": "0b67b3ea280717c9"
  },
  "samenvattingen": {
   "6": {
@@ -1279,9 +1445,9 @@
    "feiten": "0ec7c5223ad2ba99"
   },
   "13": {
-   "tekst": "Mauro Schmid (Team Jayco Alula) sloeg toe in Belfort, voor Harold Tejada Canacue. Alle truien bleven om dezelfde schouders.",
+   "tekst": "Mauro Schmid (Team Jayco Alula) sloeg toe in Belfort, voor Harold Tejada Canacue. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 4:30.",
    "bron": "vast patroon",
-   "feiten": "ce4ed9ec18f403e3"
+   "feiten": "887e5845928dd5d3"
   }
  }
 }
