@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T14:59:44Z",
+ "bijgewerkt": "2026-07-18T15:05:06Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,11 +1488,11 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T14:59:43.082Z",
+  "bijgewerkt": "2026-07-18T15:05:05.126Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 4,
+    "aantal": 2,
     "gat": "",
     "renners": [
      [
@@ -1501,14 +1501,22 @@
       41
      ],
      [
-      "V. Paret Peintre",
-      "FRA",
-      93
-     ],
-     [
       "T. Johannessen",
       "NOR",
       121
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 2,
+    "gat": "+15s",
+    "renners": [
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
      ],
      [
       "E. Rubio Reyes",
@@ -1519,22 +1527,9 @@
     "meer": 0
    },
    {
-    "naam": "A.H. Johannessen",
-    "aantal": 1,
-    "gat": "+14s",
-    "renners": [
-     [
-      "A. Johannessen",
-      "NOR",
-      125
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep gele trui",
-    "aantal": 35,
-    "gat": "+1:25",
+    "aantal": 22,
+    "gat": "+57s",
     "renners": [
      [
       "T. Pogacar",
@@ -1545,11 +1540,6 @@
       "I. Del Toro Romero",
       "MEX",
       2
-     ],
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
      ],
      [
       "B. Mcnulty",
@@ -1567,22 +1557,75 @@
       11
      ],
      [
+      "S. Kuss",
+      "USA",
+      17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ]
+    ],
+    "meer": 14
+   },
+   {
+    "naam": "Groep Cattaneo",
+    "aantal": 14,
+    "gat": "+2:22",
+    "renners": [
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
       "M. Jorgenson",
       "USA",
       16
      ],
      [
-      "S. Kuss",
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
+      "Q. Simmons",
       "USA",
-      17
+      34
+     ],
+     [
+      "C. Verona Quintanilla",
+      "ESP",
+      38
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Riccitello",
+      "USA",
+      58
      ]
     ],
-    "meer": 27
+    "meer": 6
    },
    {
     "naam": "Groep Arensman",
     "aantal": 8,
-    "gat": "+9:15",
+    "gat": "+10:01",
     "renners": [
      [
       "T. Wellens",
@@ -1630,7 +1673,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 33,
-    "gat": "+16:39",
+    "gat": "+17:39",
     "renners": [
      [
       "V. Campenaerts",
@@ -1678,7 +1721,7 @@
    {
     "naam": "Distancés",
     "aantal": 58,
-    "gat": "+21:47",
+    "gat": "+23:06",
     "renners": [
      [
       "F. Vermeersch",
