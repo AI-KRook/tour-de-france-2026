@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T13:18:25Z",
+ "bijgewerkt": "2026-07-18T13:23:47Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,11 +1488,11 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T13:18:25.042Z",
+  "bijgewerkt": "2026-07-18T13:23:46.730Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 5,
+    "aantal": 6,
     "gat": "",
     "renners": [
      [
@@ -1519,15 +1519,7 @@
       "A. Johannessen",
       "NOR",
       125
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "E. Rubio",
-    "aantal": 1,
-    "gat": "+5s",
-    "renners": [
+     ],
      [
       "E. Rubio Reyes",
       "COL",
@@ -1539,7 +1531,7 @@
    {
     "naam": "T. Arensman",
     "aantal": 1,
-    "gat": "+35s",
+    "gat": "+22s",
     "renners": [
      [
       "T. Arensman",
@@ -1552,7 +1544,7 @@
    {
     "naam": "Groep Pidcock",
     "aantal": 19,
-    "gat": "+1:56",
+    "gat": "+1:52",
     "renners": [
      [
       "B. Armirail",
@@ -1600,7 +1592,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:36",
+    "gat": "+2:47",
     "renners": [
      [
       "T. Pogacar",
@@ -1643,12 +1635,25 @@
       11
      ]
     ],
-    "meer": 88
+    "meer": 87
+   },
+   {
+    "naam": "M. Kwiatkowski",
+    "aantal": 1,
+    "gat": "+4:29",
+    "renners": [
+     [
+      "M. Kwiatkowski",
+      "POL",
+      86
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Distancés",
     "aantal": 47,
-    "gat": "+6:37",
+    "gat": "+7:24",
     "renners": [
      [
       "F. Vermeersch",
@@ -1696,7 +1701,7 @@
    {
     "naam": "A. Charmig",
     "aantal": 1,
-    "gat": "+10:07",
+    "gat": "+10:55",
     "renners": [
      [
       "A. Charmig",
