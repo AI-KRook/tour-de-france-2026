@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T15:15:51Z",
+ "bijgewerkt": "2026-07-18T15:21:13Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T15:15:49.253Z",
+  "bijgewerkt": "2026-07-18T15:21:11.928Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1506,7 +1506,7 @@
    {
     "naam": "T.H. Johannessen",
     "aantal": 1,
-    "gat": "+12s",
+    "gat": "+3s",
     "renners": [
      [
       "T. Johannessen",
@@ -1518,8 +1518,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 10,
-    "gat": "+59s",
+    "aantal": 6,
+    "gat": "+22s",
     "renners": [
      [
       "T. Pogacar",
@@ -1537,16 +1537,6 @@
       11
      ],
      [
-      "S. Kuss",
-      "USA",
-      17
-     ],
-     [
-      "R. Evenepoel",
-      "BEL",
-      21
-     ],
-     [
       "F. Lipowitz",
       "GER",
       25
@@ -1557,22 +1547,58 @@
       31
      ],
      [
+      "P. Seixas",
+      "FRA",
+      51
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "R. Evenepoel",
+    "aantal": 1,
+    "gat": "+30s",
+    "renners": [
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Martinez",
+    "aantal": 2,
+    "gat": "+47s",
+    "renners": [
+     [
       "M. Skjelmose",
       "DEN",
       35
+     ],
+     [
+      "L. Martinez",
+      "FRA",
+      71
      ]
     ],
-    "meer": 2
+    "meer": 0
    },
    {
     "naam": "Groep Pidcock",
     "aantal": 9,
-    "gat": "+1:42",
+    "gat": "+1:44",
     "renners": [
      [
       "A. Yates",
       "GBR",
       8
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
      ],
      [
       "D. Gee",
@@ -1595,11 +1621,6 @@
       97
      ],
      [
-      "E. Rubio Reyes",
-      "COL",
-      148
-     ],
-     [
       "T. Pidcock",
       "GBR",
       171
@@ -1614,56 +1635,56 @@
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 32,
-    "gat": "+18:52",
+    "aantal": 56,
+    "gat": "+19:30",
     "renners": [
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
      [
       "V. Campenaerts",
       "BEL",
       14
      ],
      [
-      "J. Tratnik",
-      "SLO",
-      26
+      "M. Jorgenson",
+      "USA",
+      16
      ],
      [
-      "M. Pedersen",
-      "DEN",
-      33
+      "M. Cattaneo",
+      "ITA",
+      22
      ],
      [
-      "M. Vacek",
-      "CZE",
-      37
-     ],
-     [
-      "K. Asgreen",
-      "DEN",
-      42
-     ],
-     [
-      "G. Steinhauser",
-      "GER",
-      46
-     ],
-     [
-      "M. Valgren",
-      "DEN",
-      47
-     ],
-     [
-      "M. Walker",
-      "GBR",
-      48
+      "J. Hindley",
+      "AUS",
+      24
      ]
     ],
-    "meer": 24
+    "meer": 48
    },
    {
     "naam": "Distancés",
     "aantal": 57,
-    "gat": "+24:43",
+    "gat": "+24:54",
     "renners": [
      [
       "F. Vermeersch",
