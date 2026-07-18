@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T15:52:38Z",
+ "bijgewerkt": "2026-07-18T16:02:48Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1027,6 +1027,85 @@
     }
    ],
    "bron": "letour.fr"
+  },
+  "14": {
+   "w": "Tadej Pogacar",
+   "wLand": "SLO",
+   "wPloeg": "UAE Team Emirates XRG",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Tadej Pogacar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": ""
+    },
+    {
+     "pos": 2,
+     "naam": "Isaac Del Toro Romero",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 0:38"
+    },
+    {
+     "pos": 3,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM Team",
+     "tijd": "+ 0:38"
+    },
+    {
+     "pos": 4,
+     "naam": "Jonas Vingegaard Hansen",
+     "land": "DEN",
+     "ploeg": "Team Visma | Lease A Bike",
+     "tijd": "+ 0:44"
+    },
+    {
+     "pos": 5,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": "+ 0:48"
+    },
+    {
+     "pos": 6,
+     "naam": "Juan Ayuso Pesquera",
+     "land": "ESP",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 0:50"
+    },
+    {
+     "pos": 7,
+     "naam": "Florian Lipowitz",
+     "land": "GER",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": "+ 0:50"
+    },
+    {
+     "pos": 8,
+     "naam": "Richard Carapaz",
+     "land": "ECU",
+     "ploeg": "EF Education - Easypost",
+     "tijd": "+ 1:18"
+    },
+    {
+     "pos": 9,
+     "naam": "Tobias Johannessen",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "+ 1:40"
+    },
+    {
+     "pos": 10,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 1:40"
+    }
+   ],
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -1400,13 +1479,13 @@
     "naar": "Paul Seixas"
    }
   ],
-  "voetnoot": "Stand na etappe 14, automatisch bijgewerkt 18 juli 17:52 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 14, automatisch bijgewerkt 18 juli 18:02 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
-  "voorEtappe": 14,
-  "tekst": "Mauro Schmid (Team Jayco Alula) sloeg toe in Belfort, voor Harold Tejada Canacue en Tom Pidcock. Paul Seixas neemt de witte trui over van Juan Ayuso. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 4:30.",
+  "voorEtappe": 15,
+  "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Le Markstein, voor Isaac Del Toro Romero en Paul Seixas. Paul Seixas neemt de witte trui over van Juan Ayuso. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen als eerste achtervolger op 4:30.",
   "bron": "vast patroon",
-  "feiten": "0b67b3ea280717c9"
+  "feiten": "05b8a55721526d79"
  },
  "samenvattingen": {
   "6": {
@@ -1448,6 +1527,11 @@
    "tekst": "Mauro Schmid (Team Jayco Alula) sloeg toe in Belfort, voor Harold Tejada Canacue. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 4:30.",
    "bron": "vast patroon",
    "feiten": "887e5845928dd5d3"
+  },
+  "14": {
+   "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Le Markstein, met Isaac Del Toro Romero op +0:38. Paul Seixas pakt de witte trui. In het algemeen klassement leidt Tadej Pogacar, met Jonas Vingegaard Hansen op 4:30.",
+   "bron": "vast patroon",
+   "feiten": "a0e6a3cdbd4e1c7d"
   }
  }
 }
