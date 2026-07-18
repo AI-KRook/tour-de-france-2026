@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T12:56:58Z",
+ "bijgewerkt": "2026-07-18T13:02:20Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,11 +1488,11 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T12:56:58.418Z",
+  "bijgewerkt": "2026-07-18T13:02:19.897Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 35,
+    "aantal": 32,
     "gat": "",
     "renners": [
      [
@@ -1516,6 +1516,11 @@
       22
      ],
      [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
       "Q. Simmons",
       "USA",
       34
@@ -1529,19 +1534,14 @@
       "A. Baudin",
       "FRA",
       43
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
      ]
     ],
-    "meer": 27
+    "meer": 24
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:20",
+    "gat": "+1:09",
     "renners": [
      [
       "T. Pogacar",
@@ -1584,12 +1584,12 @@
       11
      ]
     ],
-    "meer": 101
+    "meer": 93
    },
    {
     "naam": "Distancés",
-    "aantal": 26,
-    "gat": "+3:21",
+    "aantal": 37,
+    "gat": "+3:29",
     "renners": [
      [
       "F. Vermeersch",
@@ -1607,9 +1607,19 @@
       55
      ],
      [
+      "M. Kanter",
+      "GER",
+      64
+     ],
+     [
       "H. Tejada Canacue",
       "COL",
       65
+     ],
+     [
+      "P. Bauhaus",
+      "GER",
+      72
      ],
      [
       "K. Gradek",
@@ -1617,22 +1627,12 @@
       74
      ],
      [
-      "T. Merlier",
-      "BEL",
-      91
-     ],
-     [
-      "P. Eenkhoorn",
-      "NED",
-      92
-     ],
-     [
-      "S. Dillier",
-      "SUI",
-      103
+      "J. Tarling",
+      "GBR",
+      87
      ]
     ],
-    "meer": 18
+    "meer": 29
    }
   ],
   "bron": "racecenter.letour.fr"
