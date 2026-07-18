@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T11:57:20Z",
+ "bijgewerkt": "2026-07-18T12:02:39Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T11:57:19.708Z",
+  "bijgewerkt": "2026-07-18T12:02:39.218Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1536,17 +1536,27 @@
       8
      ]
     ],
-    "meer": 161
+    "meer": 159
    },
    {
     "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+48s",
+    "aantal": 3,
+    "gat": "+1:12",
     "renners": [
      [
-      "M. Valgren",
-      "DEN",
-      47
+      "T. Skujins",
+      "LAT",
+      36
+     ],
+     [
+      "C. Bol",
+      "NED",
+      53
+     ],
+     [
+      "I. Izagirre Insausti",
+      "ESP",
+      161
      ]
     ],
     "meer": 0
