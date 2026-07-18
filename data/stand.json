@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T13:13:04Z",
+ "bijgewerkt": "2026-07-18T13:18:25Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T13:13:03.387Z",
+  "bijgewerkt": "2026-07-18T13:18:25.042Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1524,20 +1524,10 @@
     "meer": 0
    },
    {
-    "naam": "Groep Arensman",
-    "aantal": 3,
-    "gat": "+30s",
+    "naam": "E. Rubio",
+    "aantal": 1,
+    "gat": "+5s",
     "renners": [
-     [
-      "T. Arensman",
-      "NED",
-      82
-     ],
-     [
-      "P. Castrillo Zapater",
-      "ESP",
-      142
-     ],
      [
       "E. Rubio Reyes",
       "COL",
@@ -1547,19 +1537,27 @@
     "meer": 0
    },
    {
+    "naam": "T. Arensman",
+    "aantal": 1,
+    "gat": "+35s",
+    "renners": [
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep Pidcock",
-    "aantal": 20,
-    "gat": "+1:50",
+    "aantal": 19,
+    "gat": "+1:56",
     "renners": [
      [
       "B. Armirail",
       "FRA",
       13
-     ],
-     [
-      "V. Campenaerts",
-      "BEL",
-      14
      ],
      [
       "M. Jorgenson",
@@ -1590,14 +1588,19 @@
       "A. Tiberi",
       "ITA",
       77
+     ],
+     [
+      "E. Bernal Gomez",
+      "COL",
+      81
      ]
     ],
-    "meer": 12
+    "meer": 11
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:10",
+    "gat": "+2:36",
     "renners": [
      [
       "T. Pogacar",
@@ -1640,12 +1643,12 @@
       11
      ]
     ],
-    "meer": 87
+    "meer": 88
    },
    {
     "naam": "Distancés",
-    "aantal": 46,
-    "gat": "+5:32",
+    "aantal": 47,
+    "gat": "+6:37",
     "renners": [
      [
       "F. Vermeersch",
@@ -1688,12 +1691,12 @@
       72
      ]
     ],
-    "meer": 38
+    "meer": 39
    },
    {
     "naam": "A. Charmig",
     "aantal": 1,
-    "gat": "+9:46",
+    "gat": "+10:07",
     "renners": [
      [
       "A. Charmig",
