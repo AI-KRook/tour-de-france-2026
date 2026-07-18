@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T13:07:42Z",
+ "bijgewerkt": "2026-07-18T13:13:04Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T13:07:41.780Z",
+  "bijgewerkt": "2026-07-18T13:13:03.387Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1526,7 +1526,7 @@
    {
     "naam": "Groep Arensman",
     "aantal": 3,
-    "gat": "+37s",
+    "gat": "+30s",
     "renners": [
      [
       "T. Arensman",
@@ -1549,7 +1549,7 @@
    {
     "naam": "Groep Pidcock",
     "aantal": 20,
-    "gat": "+1:29",
+    "gat": "+1:50",
     "renners": [
      [
       "B. Armirail",
@@ -1597,7 +1597,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:02",
+    "gat": "+2:10",
     "renners": [
      [
       "T. Pogacar",
@@ -1640,12 +1640,12 @@
       11
      ]
     ],
-    "meer": 88
+    "meer": 87
    },
    {
     "naam": "Distancés",
     "aantal": 46,
-    "gat": "+5:33",
+    "gat": "+5:32",
     "renners": [
      [
       "F. Vermeersch",
@@ -1668,6 +1668,11 @@
       55
      ],
      [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
       "M. Kanter",
       "GER",
       64
@@ -1681,14 +1686,22 @@
       "P. Bauhaus",
       "GER",
       72
-     ],
-     [
-      "K. Gradek",
-      "POL",
-      74
      ]
     ],
     "meer": 38
+   },
+   {
+    "naam": "A. Charmig",
+    "aantal": 1,
+    "gat": "+9:46",
+    "renners": [
+     [
+      "A. Charmig",
+      "DEN",
+      123
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
