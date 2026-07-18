@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T11:09:29Z",
+ "bijgewerkt": "2026-07-18T11:41:31Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1485,5 +1485,60 @@
    "bron": "vast patroon",
    "feiten": "dc5d54cb1b9ff096"
   }
+ },
+ "koers": {
+  "etappe": 14,
+  "bijgewerkt": "2026-07-18T11:41:30.603Z",
+  "groepen": [
+   {
+    "naam": "Peloton",
+    "aantal": 999,
+    "gat": "",
+    "renners": [
+     [
+      "T. Pogacar",
+      "SLO",
+      1
+     ],
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
+     ],
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ]
+    ],
+    "meer": 162
+   }
+  ],
+  "bron": "racecenter.letour.fr"
  }
 }
