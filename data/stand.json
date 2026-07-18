@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T12:02:39Z",
+ "bijgewerkt": "2026-07-18T12:30:49Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,12 +1488,83 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T12:02:39.218Z",
+  "bijgewerkt": "2026-07-18T12:30:48.597Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 37,
+    "gat": "",
+    "renners": [
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ],
+     [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ]
+    ],
+    "meer": 29
+   },
+   {
+    "naam": "Groep Higuita",
+    "aantal": 3,
+    "gat": "+44s",
+    "renners": [
+     [
+      "S. Higuita Garcia",
+      "COL",
+      61
+     ],
+     [
+      "G. Martin Guyonnet",
+      "FRA",
+      186
+     ],
+     [
+      "Q. Pacher",
+      "FRA",
+      187
+     ]
+    ],
+    "meer": 0
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+1:22",
     "renners": [
      [
       "T. Pogacar",
@@ -1521,11 +1592,6 @@
       5
      ],
      [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
       "T. Wellens",
       "BEL",
       7
@@ -1534,19 +1600,24 @@
       "A. Yates",
       "GBR",
       8
+     ],
+     [
+      "J. Vingegaard Hansen",
+      "DEN",
+      11
      ]
     ],
-    "meer": 159
+    "meer": 96
    },
    {
-    "naam": "Crevaison",
-    "aantal": 3,
-    "gat": "+1:12",
+    "naam": "Distancés",
+    "aantal": 26,
+    "gat": "+2:43",
     "renners": [
      [
-      "T. Skujins",
-      "LAT",
-      36
+      "F. Vermeersch",
+      "BEL",
+      6
      ],
      [
       "C. Bol",
@@ -1554,12 +1625,37 @@
       53
      ],
      [
-      "I. Izagirre Insausti",
-      "ESP",
-      161
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "K. Gradek",
+      "POL",
+      74
+     ],
+     [
+      "T. Merlier",
+      "BEL",
+      91
+     ],
+     [
+      "P. Eenkhoorn",
+      "NED",
+      92
+     ],
+     [
+      "S. Dillier",
+      "SUI",
+      103
      ]
     ],
-    "meer": 0
+    "meer": 18
    }
   ],
   "bron": "racecenter.letour.fr"
