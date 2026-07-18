@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T14:26:25Z",
+ "bijgewerkt": "2026-07-18T14:31:47Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T14:26:24.951Z",
+  "bijgewerkt": "2026-07-18T14:31:46.489Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1530,8 +1530,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 28,
-    "gat": "+1:53",
+    "aantal": 41,
+    "gat": "+1:50",
     "renners": [
      [
       "T. Pogacar",
@@ -1574,60 +1574,30 @@
       13
      ]
     ],
-    "meer": 20
+    "meer": 33
    },
    {
-    "naam": "Groep Martinez",
-    "aantal": 14,
-    "gat": "+2:10",
+    "naam": "Groep Arensman",
+    "aantal": 2,
+    "gat": "+2:11",
     "renners": [
      [
-      "D. Gee",
-      "CAN",
-      32
+      "T. Arensman",
+      "NED",
+      82
      ],
      [
-      "A. Paret Peintre",
-      "FRA",
-      56
-     ],
-     [
-      "M. Riccitello",
-      "USA",
-      58
-     ],
-     [
-      "S. Higuita Garcia",
-      "COL",
-      61
-     ],
-     [
-      "L. Martinez",
-      "FRA",
-      71
-     ],
-     [
-      "D. Caruso",
-      "ITA",
-      73
-     ],
-     [
-      "E. Bernal Gomez",
-      "COL",
-      81
-     ],
-     [
-      "I. Van Wilder",
-      "BEL",
-      97
+      "M. Hirschi",
+      "SUI",
+      194
      ]
     ],
-    "meer": 6
+    "meer": 0
    },
    {
     "naam": "Groep groene trui",
     "aantal": 33,
-    "gat": "+10:53",
+    "gat": "+11:20",
     "renners": [
      [
       "V. Campenaerts",
@@ -1675,7 +1645,7 @@
    {
     "naam": "Distancés",
     "aantal": 58,
-    "gat": "+18:03",
+    "gat": "+18:21",
     "renners": [
      [
       "F. Vermeersch",
