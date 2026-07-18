@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T15:10:28Z",
+ "bijgewerkt": "2026-07-18T15:15:51Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,7 +1488,7 @@
  },
  "koers": {
   "etappe": 14,
-  "bijgewerkt": "2026-07-18T15:10:27.069Z",
+  "bijgewerkt": "2026-07-18T15:15:49.253Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1506,7 +1506,7 @@
    {
     "naam": "T.H. Johannessen",
     "aantal": 1,
-    "gat": "+15s",
+    "gat": "+12s",
     "renners": [
      [
       "T. Johannessen",
@@ -1517,27 +1517,9 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 2,
-    "gat": "+56s",
-    "renners": [
-     [
-      "V. Paret Peintre",
-      "FRA",
-      93
-     ],
-     [
-      "E. Rubio Reyes",
-      "COL",
-      148
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep gele trui",
-    "aantal": 16,
-    "gat": "+58s",
+    "aantal": 10,
+    "gat": "+59s",
     "renners": [
      [
       "T. Pogacar",
@@ -1548,11 +1530,6 @@
       "I. Del Toro Romero",
       "MEX",
       2
-     ],
-     [
-      "B. Mcnulty",
-      "USA",
-      4
      ],
      [
       "J. Vingegaard Hansen",
@@ -1578,110 +1555,67 @@
       "J. Ayuso Pesquera",
       "ESP",
       31
+     ],
+     [
+      "M. Skjelmose",
+      "DEN",
+      35
      ]
     ],
-    "meer": 8
+    "meer": 2
    },
    {
     "naam": "Groep Pidcock",
-    "aantal": 22,
-    "gat": "+4:12",
+    "aantal": 9,
+    "gat": "+1:42",
     "renners": [
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
-     ],
      [
       "A. Yates",
       "GBR",
       8
      ],
      [
-      "M. Jorgenson",
-      "USA",
-      16
-     ],
-     [
-      "D. Piganzoli",
-      "ITA",
-      18
-     ],
-     [
-      "M. Cattaneo",
-      "ITA",
-      22
-     ],
-     [
-      "J. Hindley",
-      "AUS",
-      24
-     ],
-     [
-      "M. Van Gils",
-      "BEL",
-      28
-     ],
-     [
       "D. Gee",
       "CAN",
       32
-     ]
-    ],
-    "meer": 14
-   },
-   {
-    "naam": "Groep Arensman",
-    "aantal": 8,
-    "gat": "+10:55",
-    "renners": [
-     [
-      "T. Wellens",
-      "BEL",
-      7
      ],
      [
-      "B. Armirail",
+      "E. Bernal Gomez",
+      "COL",
+      81
+     ],
+     [
+      "V. Paret Peintre",
       "FRA",
-      13
+      93
      ],
      [
-      "A. Paret Peintre",
-      "FRA",
-      56
-     ],
-     [
-      "D. Caruso",
-      "ITA",
-      73
-     ],
-     [
-      "A. Tiberi",
-      "ITA",
-      77
-     ],
-     [
-      "T. Arensman",
-      "NED",
-      82
-     ],
-     [
-      "X. Meurisse",
+      "I. Van Wilder",
       "BEL",
-      176
+      97
      ],
      [
-      "M. Hirschi",
+      "E. Rubio Reyes",
+      "COL",
+      148
+     ],
+     [
+      "T. Pidcock",
+      "GBR",
+      171
+     ],
+     [
+      "Y. Voisard",
       "SUI",
-      194
+      198
      ]
     ],
-    "meer": 0
+    "meer": 1
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 33,
-    "gat": "+18:03",
+    "aantal": 32,
+    "gat": "+18:52",
     "renners": [
      [
       "V. Campenaerts",
@@ -1724,12 +1658,12 @@
       48
      ]
     ],
-    "meer": 25
+    "meer": 24
    },
    {
     "naam": "Distancés",
-    "aantal": 58,
-    "gat": "+24:27",
+    "aantal": 57,
+    "gat": "+24:43",
     "renners": [
      [
       "F. Vermeersch",
