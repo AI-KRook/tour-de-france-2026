@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-18T16:34:45Z",
+ "bijgewerkt": "2026-07-18T16:39:36Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1478,38 +1478,38 @@
      },
      {
       "pos": 6,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 1:00:53"
+     },
+     {
+      "pos": 7,
       "naam": "Lennert Van Eetvelt",
       "land": "BEL",
       "ploeg": "Lotto Intermarche",
       "tijd": "+ 1:06:45"
      },
      {
-      "pos": 7,
+      "pos": 8,
       "naam": "Quinn Simmons",
       "land": "USA",
       "ploeg": "Lidl-Trek",
       "tijd": "+ 1:15:49"
      },
      {
-      "pos": 8,
+      "pos": 9,
       "naam": "Kévin Vauquelin",
       "land": "FRA",
       "ploeg": "Netcompany Ineos Cycling Team",
       "tijd": "+ 1:20:06"
      },
      {
-      "pos": 9,
+      "pos": 10,
       "naam": "Valentin Paret Peintre",
       "land": "FRA",
       "ploeg": "Soudal Quick-Step",
       "tijd": "+ 1:33:14"
-     },
-     {
-      "pos": 10,
-      "naam": "Raul Garcia Pierna",
-      "land": "ESP",
-      "ploeg": "Movistar Team",
-      "tijd": "+ 1:37:33"
      }
     ]
    }
@@ -1521,7 +1521,7 @@
     "naar": "Paul Seixas"
    }
   ],
-  "voetnoot": "Stand na etappe 14, automatisch bijgewerkt 18 juli 18:34 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 14, automatisch bijgewerkt 18 juli 18:39 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 15,
