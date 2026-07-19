@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T12:00:22Z",
+ "bijgewerkt": "2026-07-19T12:05:36Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,32 +1578,17 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T12:00:22.061Z",
+  "bijgewerkt": "2026-07-19T12:05:35.337Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 4,
+    "aantal": 1,
     "gat": "",
     "renners": [
      [
-      "M. Mohoric",
-      "SLO",
-      75
-     ],
-     [
-      "J. Alaphilippe",
-      "FRA",
-      191
-     ],
-     [
-      "J. Delbove",
-      "FRA",
-      203
-     ],
-     [
-      "J. Degenkolb",
-      "GER",
-      214
+      "R. Carapaz",
+      "ECU",
+      41
      ]
     ],
     "meer": 0
@@ -1654,7 +1639,40 @@
       8
      ]
     ],
-    "meer": 157
+    "meer": 155
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 5,
+    "gat": "+1:05",
+    "renners": [
+     [
+      "T. Merlier",
+      "BEL",
+      91
+     ],
+     [
+      "P. Eenkhoorn",
+      "NED",
+      92
+     ],
+     [
+      "S. Wærenskjold",
+      "NOR",
+      128
+     ],
+     [
+      "M. Louvel",
+      "FRA",
+      135
+     ],
+     [
+      "P. Allegaert",
+      "BEL",
+      162
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
