@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T15:56:30Z",
+ "bijgewerkt": "2026-07-19T16:01:23Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1106,6 +1106,85 @@
     }
    ],
    "bron": "en.wikipedia.org"
+  },
+  "15": {
+   "w": "Remco Evenepoel",
+   "wLand": "BEL",
+   "wPloeg": "RED Bull - Bora - Hansgrohe",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": ""
+    },
+    {
+     "pos": 2,
+     "naam": "Tadej Pogacar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "—"
+    },
+    {
+     "pos": 3,
+     "naam": "Isaac Del Toro Romero",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 0:06"
+    },
+    {
+     "pos": 4,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM Team",
+     "tijd": "+ 0:58"
+    },
+    {
+     "pos": 5,
+     "naam": "Florian Lipowitz",
+     "land": "GER",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": "+ 0:58"
+    },
+    {
+     "pos": 6,
+     "naam": "Lenny Martinez",
+     "land": "FRA",
+     "ploeg": "Bahrain Victorious",
+     "tijd": "+ 1:57"
+    },
+    {
+     "pos": 7,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 1:57"
+    },
+    {
+     "pos": 8,
+     "naam": "Juan Ayuso Pesquera",
+     "land": "ESP",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 2:00"
+    },
+    {
+     "pos": 9,
+     "naam": "Adam Yates",
+     "land": "GBR",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 2:00"
+    },
+    {
+     "pos": 10,
+     "naam": "Quinn Simmons",
+     "land": "USA",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 2:16"
+    }
+   ],
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -1198,7 +1277,7 @@
     "naam": "Tom Pidcock",
     "land": "GBR",
     "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
-    "tijd": "+ 10:59"
+    "tijd": "+ 11:19"
    },
    {
     "pos": 10,
@@ -1274,7 +1353,7 @@
       "naam": "Tom Pidcock",
       "land": "GBR",
       "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
-      "tijd": "+ 10:59"
+      "tijd": "+ 11:19"
      },
      {
       "pos": 10,
@@ -1454,6 +1533,62 @@
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 0:25"
+     },
+     {
+      "pos": 3,
+      "naam": "Juan Ayuso Pesquera",
+      "land": "ESP",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 1:30"
+     },
+     {
+      "pos": 4,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 4:30"
+     },
+     {
+      "pos": 5,
+      "naam": "Davide Piganzoli",
+      "land": "ITA",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "+ 18:44"
+     },
+     {
+      "pos": 6,
+      "naam": "Quinn Simmons",
+      "land": "USA",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 1:17:32"
+     },
+     {
+      "pos": 7,
+      "naam": "Antonio Tiberi",
+      "land": "ITA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 1:48:28"
+     },
+     {
+      "pos": 8,
+      "naam": "Matthew Riccitello",
+      "land": "USA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 1:52:41"
+     },
+     {
+      "pos": 9,
+      "naam": "Ewen Costiou",
+      "land": "FRA",
+      "ploeg": "Groupama-Fdj United",
+      "tijd": "+ 2:43:21"
+     },
+     {
+      "pos": 10,
+      "naam": "Nicolya Vinokurov",
+      "land": "KAZ",
+      "ploeg": "XDS Astana Team",
+      "tijd": "+ 3:12:47"
      }
     ]
    }
@@ -1465,13 +1600,13 @@
     "naar": "Isaac Del Toro Romero"
    }
   ],
-  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 17:56 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 18:01 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
-  "voorEtappe": 15,
-  "tekst": "Tadej Pogačar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Le Markstein, voor Isaac del Toro en Paul Seixas. Isaac Del Toro Romero neemt de witte trui over van Paul Seixas. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 5:00.",
+  "voorEtappe": 16,
+  "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar en Isaac Del Toro Romero. Isaac Del Toro Romero neemt de witte trui over van Paul Seixas. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 5:00.",
   "bron": "vast patroon",
-  "feiten": "00b33f4cc0ccb78c"
+  "feiten": "f79cb738f2a2511e"
  },
  "samenvattingen": {
   "6": {
@@ -1518,6 +1653,11 @@
    "tekst": "Tadej Pogačar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Le Markstein, met Isaac del Toro op +0:38. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 5:00.",
    "bron": "vast patroon",
    "feiten": "426c84b921770c69"
+  },
+  "15": {
+   "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar. Isaac Del Toro Romero pakt de witte trui. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 5:00.",
+   "bron": "vast patroon",
+   "feiten": "99bd9f4a9f970863"
   }
  }
 }
