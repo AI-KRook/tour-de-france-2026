@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T14:15:04Z",
+ "bijgewerkt": "2026-07-19T14:20:26Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,32 +1578,30 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T14:15:04.057Z",
+  "bijgewerkt": "2026-07-19T14:20:25.975Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 8,
+    "aantal": 1,
     "gat": "",
+    "renners": [
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Pidcock",
+    "aantal": 5,
+    "gat": "+13s",
     "renners": [
      [
       "A. Yates",
       "GBR",
       8
-     ],
-     [
-      "Q. Simmons",
-      "USA",
-      34
-     ],
-     [
-      "I. Van Wilder",
-      "BEL",
-      97
-     ],
-     [
-      "M. Schmid",
-      "SUI",
-      118
      ],
      [
       "E. Rubio Reyes",
@@ -1629,9 +1627,27 @@
     "meer": 0
    },
    {
+    "naam": "Groep Schmid",
+    "aantal": 2,
+    "gat": "+33s",
+    "renners": [
+     [
+      "I. Van Wilder",
+      "BEL",
+      97
+     ],
+     [
+      "M. Schmid",
+      "SUI",
+      118
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep Bernal",
-    "aantal": 10,
-    "gat": "+1:04",
+    "aantal": 11,
+    "gat": "+2:22",
     "renners": [
      [
       "B. Armirail",
@@ -1642,6 +1658,11 @@
       "V. Campenaerts",
       "BEL",
       14
+     ],
+     [
+      "T. Van Dijke",
+      "NED",
+      27
      ],
      [
       "A. Baudin",
@@ -1667,57 +1688,14 @@
       "M. Frigo",
       "ITA",
       134
-     ],
-     [
-      "G. Martin Guyonnet",
-      "FRA",
-      186
      ]
     ],
-    "meer": 2
-   },
-   {
-    "naam": "Groep Healy",
-    "aantal": 6,
-    "gat": "+1:36",
-    "renners": [
-     [
-      "T. Van Dijke",
-      "NED",
-      27
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "N. Vinokurov",
-      "KAZ",
-      68
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
-     ],
-     [
-      "R. Garcia Pierna",
-      "ESP",
-      144
-     ],
-     [
-      "B. Van Moer",
-      "BEL",
-      177
-     ]
-    ],
-    "meer": 0
+    "meer": 3
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 19,
-    "gat": "+2:45",
+    "aantal": 24,
+    "gat": "+3:04",
     "renners": [
      [
       "T. Pogacar",
@@ -1760,12 +1738,12 @@
       21
      ]
     ],
-    "meer": 10
+    "meer": 15
    },
    {
     "naam": "Groep bollentrui",
-    "aantal": 56,
-    "gat": "+4:46",
+    "aantal": 59,
+    "gat": "+5:54",
     "renners": [
      [
       "T. Wellens",
@@ -1783,6 +1761,11 @@
       26
      ],
      [
+      "D. Gee",
+      "CAN",
+      32
+     ],
+     [
       "M. Pedersen",
       "DEN",
       33
@@ -1793,27 +1776,22 @@
       42
      ],
      [
+      "S. Quinn",
+      "USA",
+      45
+     ],
+     [
       "M. Walker",
       "GBR",
       48
-     ],
-     [
-      "T. Benoot",
-      "BEL",
-      52
-     ],
-     [
-      "D. Hoole",
-      "NED",
-      54
      ]
     ],
-    "meer": 47
+    "meer": 50
    },
    {
     "naam": "Groep Merlier",
-    "aantal": 2,
-    "gat": "+11:10",
+    "aantal": 3,
+    "gat": "+12:38",
     "renners": [
      [
       "T. Merlier",
@@ -1824,15 +1802,7 @@
       "P. Eenkhoorn",
       "NED",
       92
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "T. Van Asbroeck",
-    "aantal": 1,
-    "gat": "+25:20",
-    "renners": [
+     ],
      [
       "T. Van Asbroeck",
       "BEL",
