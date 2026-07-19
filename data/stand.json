@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T12:29:44Z",
+ "bijgewerkt": "2026-07-19T12:35:05Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,43 +1578,60 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T12:29:44.012Z",
+  "bijgewerkt": "2026-07-19T12:35:05.143Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 2,
+    "aantal": 10,
     "gat": "",
     "renners": [
+     [
+      "T. Van Dijke",
+      "NED",
+      27
+     ],
      [
       "T. Arensman",
       "NED",
       82
      ],
      [
-      "X. Azparren Irurzun",
+      "M. Matthews",
+      "AUS",
+      115
+     ],
+     [
+      "M. Schmid",
+      "SUI",
+      118
+     ],
+     [
+      "T. Johannessen",
+      "NOR",
+      121
+     ],
+     [
+      "A. Skaarseth",
+      "NOR",
+      126
+     ],
+     [
+      "R. Garcia Pierna",
       "ESP",
-      172
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Poursuivant",
-    "aantal": 1,
-    "gat": "+14s",
-    "renners": [
+      144
+     ],
      [
       "N. Oliveira",
       "POR",
       146
      ]
     ],
-    "meer": 0
+    "meer": 2
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+20s",
+    "gat": "+10s",
     "renners": [
      [
       "T. Pogacar",
@@ -1657,12 +1674,12 @@
       11
      ]
     ],
-    "meer": 116
+    "meer": 109
    },
    {
     "naam": "Distancés",
     "aantal": 40,
-    "gat": "+1:29",
+    "gat": "+1:13",
     "renners": [
      [
       "F. Vermeersch",
@@ -1710,7 +1727,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 2,
-    "gat": "+3:29",
+    "gat": "+2:59",
     "renners": [
      [
       "T. Merlier",
