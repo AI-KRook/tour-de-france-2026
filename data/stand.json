@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T14:36:32Z",
+ "bijgewerkt": "2026-07-19T14:41:54Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,50 +1578,12 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T14:36:31.954Z",
+  "bijgewerkt": "2026-07-19T14:41:53.888Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 6,
-    "gat": "",
-    "renners": [
-     [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
-      "Q. Simmons",
-      "USA",
-      34
-     ],
-     [
-      "E. Rubio Reyes",
-      "COL",
-      148
-     ],
-     [
-      "T. Pidcock",
-      "GBR",
-      171
-     ],
-     [
-      "E. Costiou",
-      "FRA",
-      184
-     ],
-     [
-      "Y. Voisard",
-      "SUI",
-      198
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "M. Schmid",
     "aantal": 1,
-    "gat": "+6s",
+    "gat": "",
     "renners": [
      [
       "M. Schmid",
@@ -1634,7 +1596,7 @@
    {
     "naam": "Groep Vauquelin",
     "aantal": 4,
-    "gat": "+55s",
+    "gat": "+39s",
     "renners": [
      [
       "A. Baudin",
@@ -1660,9 +1622,37 @@
     "meer": 0
    },
    {
+    "naam": "Groep Campenaerts",
+    "aantal": 4,
+    "gat": "+2:35",
+    "renners": [
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "T. Van Dijke",
+      "NED",
+      27
+     ],
+     [
+      "M. Mohoric",
+      "SLO",
+      75
+     ],
+     [
+      "M. Frigo",
+      "ITA",
+      134
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep gele trui",
-    "aantal": 25,
-    "gat": "+3:08",
+    "aantal": 26,
+    "gat": "+2:37",
     "renners": [
      [
       "T. Pogacar",
@@ -1705,12 +1695,12 @@
       21
      ]
     ],
-    "meer": 17
+    "meer": 18
    },
    {
     "naam": "Groep bollentrui",
     "aantal": 59,
-    "gat": "+8:25",
+    "gat": "+8:14",
     "renners": [
      [
       "T. Wellens",
@@ -1726,11 +1716,6 @@
       "J. Tratnik",
       "SLO",
       26
-     ],
-     [
-      "T. Van Dijke",
-      "NED",
-      27
      ],
      [
       "D. Gee",
@@ -1751,6 +1736,11 @@
       "B. Healy",
       "IRL",
       44
+     ],
+     [
+      "S. Quinn",
+      "USA",
+      45
      ]
     ],
     "meer": 51
@@ -1758,7 +1748,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 3,
-    "gat": "+17:32",
+    "gat": "+19:16",
     "renners": [
      [
       "T. Merlier",
