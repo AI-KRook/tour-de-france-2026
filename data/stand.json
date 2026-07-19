@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T11:49:39Z",
+ "bijgewerkt": "2026-07-19T11:55:01Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T11:49:38.749Z",
+  "bijgewerkt": "2026-07-19T11:55:00.391Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1589,6 +1589,11 @@
       "T. Pogacar",
       "SLO",
       1
+     ],
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
      ],
      [
       "F. Grossschartner",
@@ -1619,32 +1624,9 @@
       "A. Yates",
       "GBR",
       8
-     ],
-     [
-      "J. Vingegaard Hansen",
-      "DEN",
-      11
      ]
     ],
-    "meer": 159
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 2,
-    "gat": "+27s",
-    "renners": [
-     [
-      "I. Del Toro Romero",
-      "MEX",
-      2
-     ],
-     [
-      "E. Planckaert",
-      "BEL",
-      106
-     ]
-    ],
-    "meer": 0
+    "meer": 161
    }
   ],
   "bron": "racecenter.letour.fr"
