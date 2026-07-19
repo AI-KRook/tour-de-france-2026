@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T14:41:54Z",
+ "bijgewerkt": "2026-07-19T14:47:16Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T14:41:53.888Z",
+  "bijgewerkt": "2026-07-19T14:47:15.829Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1594,9 +1594,47 @@
     "meer": 0
    },
    {
-    "naam": "Groep Vauquelin",
+    "naam": "Poursuivants",
+    "aantal": 6,
+    "gat": "+10s",
+    "renners": [
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ],
+     [
+      "E. Rubio Reyes",
+      "COL",
+      148
+     ],
+     [
+      "T. Pidcock",
+      "GBR",
+      171
+     ],
+     [
+      "E. Costiou",
+      "FRA",
+      184
+     ],
+     [
+      "Y. Voisard",
+      "SUI",
+      198
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Van Wilder",
     "aantal": 4,
-    "gat": "+39s",
+    "gat": "+1:01",
     "renners": [
      [
       "A. Baudin",
@@ -1622,37 +1660,22 @@
     "meer": 0
    },
    {
-    "naam": "Groep Campenaerts",
-    "aantal": 4,
-    "gat": "+2:35",
+    "naam": "G. Martin-Guyonnet",
+    "aantal": 1,
+    "gat": "+2:16",
     "renners": [
      [
-      "V. Campenaerts",
-      "BEL",
-      14
-     ],
-     [
-      "T. Van Dijke",
-      "NED",
-      27
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
-     ],
-     [
-      "M. Frigo",
-      "ITA",
-      134
+      "G. Martin Guyonnet",
+      "FRA",
+      186
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 26,
-    "gat": "+2:37",
+    "aantal": 29,
+    "gat": "+2:36",
     "renners": [
      [
       "T. Pogacar",
@@ -1680,27 +1703,27 @@
       11
      ],
      [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
       "M. Jorgenson",
       "USA",
       16
-     ],
-     [
-      "D. Piganzoli",
-      "ITA",
-      18
-     ],
-     [
-      "R. Evenepoel",
-      "BEL",
-      21
      ]
     ],
-    "meer": 18
+    "meer": 21
    },
    {
     "naam": "Groep bollentrui",
-    "aantal": 59,
-    "gat": "+8:14",
+    "aantal": 70,
+    "gat": "+9:04",
     "renners": [
      [
       "T. Wellens",
@@ -1711,6 +1734,11 @@
       "E. Affini",
       "ITA",
       12
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
      ],
      [
       "J. Tratnik",
@@ -1728,27 +1756,22 @@
       33
      ],
      [
+      "T. Skujins",
+      "LAT",
+      36
+     ],
+     [
       "K. Asgreen",
       "DEN",
       42
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "S. Quinn",
-      "USA",
-      45
      ]
     ],
-    "meer": 51
+    "meer": 62
    },
    {
     "naam": "Groep Merlier",
     "aantal": 3,
-    "gat": "+19:16",
+    "gat": "+21:03",
     "renners": [
      [
       "T. Merlier",
