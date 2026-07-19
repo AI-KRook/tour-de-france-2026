@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T13:17:16Z",
+ "bijgewerkt": "2026-07-19T13:22:37Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T13:17:15.894Z",
+  "bijgewerkt": "2026-07-19T13:22:37.117Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1631,7 +1631,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:18",
+    "gat": "+2:19",
     "renners": [
      [
       "T. Pogacar",
@@ -1679,7 +1679,7 @@
    {
     "naam": "Crevaison",
     "aantal": 1,
-    "gat": "+1:45",
+    "gat": "+2:27",
     "renners": [
      [
       "T. Johannessen",
@@ -1692,7 +1692,7 @@
    {
     "naam": "Groep Philipsen",
     "aantal": 41,
-    "gat": "+3:15",
+    "gat": "+3:46",
     "renners": [
      [
       "F. Vermeersch",
@@ -1740,7 +1740,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 2,
-    "gat": "+5:53",
+    "gat": "+6:33",
     "renners": [
      [
       "T. Merlier",
