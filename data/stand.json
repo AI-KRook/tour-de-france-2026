@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T15:08:10Z",
+ "bijgewerkt": "2026-07-19T15:13:32Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T15:08:10.051Z",
+  "bijgewerkt": "2026-07-19T15:13:32.113Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1595,8 +1595,8 @@
    },
    {
     "naam": "Groep Pidcock",
-    "aantal": 6,
-    "gat": "+26s",
+    "aantal": 4,
+    "gat": "+24s",
     "renners": [
      [
       "A. Yates",
@@ -1609,19 +1609,9 @@
       34
      ],
      [
-      "E. Rubio Reyes",
-      "COL",
-      148
-     ],
-     [
       "T. Pidcock",
       "GBR",
       171
-     ],
-     [
-      "E. Costiou",
-      "FRA",
-      184
      ],
      [
       "Y. Voisard",
@@ -1632,37 +1622,27 @@
     "meer": 0
    },
    {
-    "naam": "Groep Van Wilder",
-    "aantal": 4,
-    "gat": "+1:49",
+    "naam": "Groep Rubio",
+    "aantal": 2,
+    "gat": "+29s",
     "renners": [
      [
-      "A. Baudin",
-      "FRA",
-      43
+      "E. Rubio Reyes",
+      "COL",
+      148
      ],
      [
-      "A. Paret Peintre",
+      "E. Costiou",
       "FRA",
-      56
-     ],
-     [
-      "K. Vauquelin",
-      "FRA",
-      88
-     ],
-     [
-      "I. Van Wilder",
-      "BEL",
-      97
+      184
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 26,
-    "gat": "+2:41",
+    "aantal": 19,
+    "gat": "+2:07",
     "renners": [
      [
       "T. Pogacar",
@@ -1673,16 +1653,6 @@
       "I. Del Toro Romero",
       "MEX",
       2
-     ],
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
-     ],
-     [
-      "B. Mcnulty",
-      "USA",
-      4
      ],
      [
       "D. Piganzoli",
@@ -1703,15 +1673,35 @@
       "F. Lipowitz",
       "GER",
       25
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
      ]
     ],
-    "meer": 18
+    "meer": 11
    },
    {
     "naam": "Groep Jorgenson",
-    "aantal": 4,
-    "gat": "+5:05",
+    "aantal": 15,
+    "gat": "+6:05",
     "renners": [
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
      [
       "B. Armirail",
       "FRA",
@@ -1731,14 +1721,24 @@
       "S. Kuss",
       "USA",
       17
+     ],
+     [
+      "T. Van Dijke",
+      "NED",
+      27
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
      ]
     ],
-    "meer": 0
+    "meer": 7
    },
    {
     "naam": "Groep bollentrui",
     "aantal": 71,
-    "gat": "+10:44",
+    "gat": "+10:40",
     "renners": [
      [
       "T. Wellens",
@@ -1786,7 +1786,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 3,
-    "gat": "+26:18",
+    "gat": "+28:59",
     "renners": [
      [
       "T. Merlier",
