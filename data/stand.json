@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T15:45:46Z",
+ "bijgewerkt": "2026-07-19T15:51:08Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1157,6 +1157,55 @@
     "land": "MEX",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "+ 5:58"
+   },
+   {
+    "pos": 4,
+    "naam": "Paul Seixas",
+    "land": "FRA",
+    "ploeg": "Decathlon CMA CGM Team",
+    "tijd": "+ 6:23"
+   },
+   {
+    "pos": 5,
+    "naam": "Florian Lipowitz",
+    "land": "GER",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
+    "tijd": "+ 6:48"
+   },
+   {
+    "pos": 6,
+    "naam": "Juan Ayuso Pesquera",
+    "land": "ESP",
+    "ploeg": "Lidl-Trek",
+    "tijd": "+ 7:25"
+   },
+   {
+    "pos": 7,
+    "naam": "Mattias Skjelmose",
+    "land": "DEN",
+    "ploeg": "Lidl-Trek",
+    "tijd": "+ 9:38"
+   },
+   {
+    "pos": 8,
+    "naam": "Lenny Martinez",
+    "land": "FRA",
+    "ploeg": "Bahrain Victorious",
+    "tijd": "+ 10:28"
+   },
+   {
+    "pos": 9,
+    "naam": "Tom Pidcock",
+    "land": "GBR",
+    "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+    "tijd": "+ 10:56"
+   },
+   {
+    "pos": 10,
+    "naam": "Jordan Jegat",
+    "land": "FRA",
+    "ploeg": "Totalenergies",
+    "tijd": "+ 19:26"
    }
   ],
   "klassementen": {
@@ -1184,6 +1233,55 @@
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "+ 5:58"
+     },
+     {
+      "pos": 4,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 6:23"
+     },
+     {
+      "pos": 5,
+      "naam": "Florian Lipowitz",
+      "land": "GER",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "+ 6:48"
+     },
+     {
+      "pos": 6,
+      "naam": "Juan Ayuso Pesquera",
+      "land": "ESP",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 7:25"
+     },
+     {
+      "pos": 7,
+      "naam": "Mattias Skjelmose",
+      "land": "DEN",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 9:38"
+     },
+     {
+      "pos": 8,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 10:28"
+     },
+     {
+      "pos": 9,
+      "naam": "Tom Pidcock",
+      "land": "GBR",
+      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+      "tijd": "+ 10:56"
+     },
+     {
+      "pos": 10,
+      "naam": "Jordan Jegat",
+      "land": "FRA",
+      "ploeg": "Totalenergies",
+      "tijd": "+ 19:26"
      }
     ]
    },
@@ -1367,7 +1465,7 @@
     "naar": "Isaac Del Toro Romero"
    }
   ],
-  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 17:45 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 17:51 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 15,
