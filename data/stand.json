@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T14:52:38Z",
+ "bijgewerkt": "2026-07-19T14:58:00Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T14:52:37.996Z",
+  "bijgewerkt": "2026-07-19T14:57:59.975Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1594,9 +1594,9 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
+    "naam": "Groep Pidcock",
     "aantal": 6,
-    "gat": "+18s",
+    "gat": "+24s",
     "renners": [
      [
       "A. Yates",
@@ -1634,7 +1634,7 @@
    {
     "naam": "Groep Van Wilder",
     "aantal": 4,
-    "gat": "+1:14",
+    "gat": "+1:37",
     "renners": [
      [
       "A. Baudin",
@@ -1661,8 +1661,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 30,
-    "gat": "+2:17",
+    "aantal": 27,
+    "gat": "+2:37",
     "renners": [
      [
       "T. Pogacar",
@@ -1670,24 +1670,9 @@
       1
      ],
      [
-      "I. Del Toro Romero",
-      "MEX",
-      2
-     ],
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
-     ],
-     [
       "B. Mcnulty",
       "USA",
       4
-     ],
-     [
-      "J. Vingegaard Hansen",
-      "DEN",
-      11
      ],
      [
       "B. Armirail",
@@ -1703,14 +1688,29 @@
       "M. Jorgenson",
       "USA",
       16
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
      ]
     ],
-    "meer": 22
+    "meer": 19
    },
    {
     "naam": "Groep bollentrui",
     "aantal": 70,
-    "gat": "+9:57",
+    "gat": "+10:06",
     "renners": [
      [
       "T. Wellens",
@@ -1758,7 +1758,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 3,
-    "gat": "+21:26",
+    "gat": "+23:07",
     "renners": [
      [
       "T. Merlier",
