@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T17:21:23Z",
+ "bijgewerkt": "2026-07-19T17:34:02Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1488,17 +1488,17 @@
      },
      {
       "pos": 7,
-      "naam": "Tom Pidcock",
-      "land": "GBR",
-      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
-      "tijd": "28 ptn"
-     },
-     {
-      "pos": 8,
       "naam": "Lenny Martinez",
       "land": "FRA",
       "ploeg": "Bahrain Victorious",
       "tijd": "22 ptn"
+     },
+     {
+      "pos": 8,
+      "naam": "Tom Pidcock",
+      "land": "GBR",
+      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+      "tijd": "20 ptn"
      },
      {
       "pos": 9,
@@ -1600,7 +1600,7 @@
     "naar": "Isaac Del Toro Romero"
    }
   ],
-  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 19:21 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 19:34 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 16,
