@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T12:56:30Z",
+ "bijgewerkt": "2026-07-19T13:01:52Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,12 +1578,25 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T12:56:30.128Z",
+  "bijgewerkt": "2026-07-19T13:01:51.779Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 1,
+    "gat": "",
+    "renners": [
+     [
+      "N. Vinokurov",
+      "KAZ",
+      68
+     ]
+    ],
+    "meer": 0
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+5s",
     "renners": [
      [
       "T. Pogacar",
@@ -1626,30 +1639,45 @@
       11
      ]
     ],
-    "meer": 116
+    "meer": 112
    },
    {
-    "naam": "L. Craps",
-    "aantal": 1,
-    "gat": "+29s",
-    "renners": [
-     [
-      "L. Craps",
-      "BEL",
-      154
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+1:03",
+    "naam": "Groep Tratnik",
+    "aantal": 2,
+    "gat": "+30s",
     "renners": [
      [
       "J. Tratnik",
       "SLO",
       26
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 3,
+    "gat": "+42s",
+    "renners": [
+     [
+      "M. Walker",
+      "GBR",
+      48
+     ],
+     [
+      "L. Craps",
+      "BEL",
+      154
+     ],
+     [
+      "J. Otruba",
+      "CZE",
+      227
      ]
     ],
     "meer": 0
@@ -1657,7 +1685,7 @@
    {
     "naam": "Groep Philipsen",
     "aantal": 41,
-    "gat": "+1:38",
+    "gat": "+2:32",
     "renners": [
      [
       "F. Vermeersch",
@@ -1705,7 +1733,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 2,
-    "gat": "+3:50",
+    "gat": "+4:32",
     "renners": [
      [
       "T. Merlier",
