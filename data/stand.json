@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T13:22:37Z",
+ "bijgewerkt": "2026-07-19T14:04:20Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T13:22:37.117Z",
+  "bijgewerkt": "2026-07-19T14:04:20.084Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1631,7 +1631,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:19",
+    "gat": "+2:54",
     "renners": [
      [
       "T. Pogacar",
@@ -1659,6 +1659,11 @@
       5
      ],
      [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
       "T. Wellens",
       "BEL",
       7
@@ -1667,80 +1672,14 @@
       "J. Vingegaard Hansen",
       "DEN",
       11
-     ],
-     [
-      "P. Hagenes",
-      "NOR",
-      15
      ]
     ],
-    "meer": 93
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+2:27",
-    "renners": [
-     [
-      "T. Johannessen",
-      "NOR",
-      121
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Philipsen",
-    "aantal": 41,
-    "gat": "+3:46",
-    "renners": [
-     [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
-      "E. Affini",
-      "ITA",
-      12
-     ],
-     [
-      "D. Hoole",
-      "NED",
-      54
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
-     ],
-     [
-      "D. Ballerini",
-      "ITA",
-      62
-     ],
-     [
-      "A. Gate",
-      "NZL",
-      63
-     ],
-     [
-      "M. Kanter",
-      "GER",
-      64
-     ],
-     [
-      "M. Teunissen",
-      "NED",
-      66
-     ]
-    ],
-    "meer": 33
+    "meer": 134
    },
    {
     "naam": "Groep Merlier",
     "aantal": 2,
-    "gat": "+6:33",
+    "gat": "+9:28",
     "renners": [
      [
       "T. Merlier",
@@ -1751,6 +1690,19 @@
       "P. Eenkhoorn",
       "NED",
       92
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "T. Van Asbroeck",
+    "aantal": 1,
+    "gat": "+22:54",
+    "renners": [
+     [
+      "T. Van Asbroeck",
+      "BEL",
+      138
      ]
     ],
     "meer": 0
