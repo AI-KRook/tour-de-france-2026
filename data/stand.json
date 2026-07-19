@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T16:01:23Z",
+ "bijgewerkt": "2026-07-19T16:28:59Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1391,31 +1391,31 @@
      },
      {
       "pos": 4,
-      "naam": "Tim Merlier",
-      "land": "BEL",
-      "ploeg": "Soudal Quick-Step",
-      "tijd": "307 ptn"
-     },
-     {
-      "pos": 5,
       "naam": "Max Kanter",
       "land": "GER",
       "ploeg": "XDS Astana Team",
       "tijd": "271 ptn"
      },
      {
-      "pos": 6,
+      "pos": 5,
       "naam": "Olav Kooij",
       "land": "NED",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "210 ptn"
      },
      {
-      "pos": 7,
+      "pos": 6,
       "naam": "Soren Wærenskjold",
       "land": "NOR",
       "ploeg": "Uno-X Mobility",
       "tijd": "159 ptn"
+     },
+     {
+      "pos": 7,
+      "naam": "Tadej Pogacar",
+      "land": "SLO",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "144 ptn"
      },
      {
       "pos": 8,
@@ -1426,17 +1426,17 @@
      },
      {
       "pos": 9,
-      "naam": "Tadej Pogacar",
-      "land": "SLO",
-      "ploeg": "UAE Team Emirates XRG",
-      "tijd": "127 ptn"
-     },
-     {
-      "pos": 10,
       "naam": "Milan Fretin",
       "land": "BEL",
       "ploeg": "Cofidis",
       "tijd": "117 ptn"
+     },
+     {
+      "pos": 10,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "112 ptn"
      }
     ]
    },
@@ -1449,7 +1449,7 @@
       "naam": "Tadej Pogacar",
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "52 ptn"
+      "tijd": "67 ptn"
      },
      {
       "pos": 2,
@@ -1467,52 +1467,52 @@
      },
      {
       "pos": 4,
-      "naam": "Tom Pidcock",
-      "land": "GBR",
-      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
-      "tijd": "28 ptn"
-     },
-     {
-      "pos": 5,
       "naam": "Paul Seixas",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM Team",
-      "tijd": "24 ptn"
+      "tijd": "34 ptn"
+     },
+     {
+      "pos": 5,
+      "naam": "Remco Evenepoel",
+      "land": "BEL",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "31 ptn"
      },
      {
       "pos": 6,
       "naam": "Isaac Del Toro Romero",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "18 ptn"
+      "tijd": "30 ptn"
      },
      {
       "pos": 7,
+      "naam": "Tom Pidcock",
+      "land": "GBR",
+      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+      "tijd": "28 ptn"
+     },
+     {
+      "pos": 8,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "22 ptn"
+     },
+     {
+      "pos": 9,
+      "naam": "Florian Lipowitz",
+      "land": "GER",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "20 ptn"
+     },
+     {
+      "pos": 10,
       "naam": "Nicolas Prodhomme",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "17 ptn"
-     },
-     {
-      "pos": 8,
-      "naam": "Alex Baudin",
-      "land": "FRA",
-      "ploeg": "EF Education - Easypost",
-      "tijd": "16 ptn"
-     },
-     {
-      "pos": 9,
-      "naam": "Lenny Martinez",
-      "land": "FRA",
-      "ploeg": "Bahrain Victorious",
-      "tijd": "16 ptn"
-     },
-     {
-      "pos": 10,
-      "naam": "Tobias Johannessen",
-      "land": "NOR",
-      "ploeg": "Uno-X Mobility",
-      "tijd": "16 ptn"
      }
     ]
    },
@@ -1564,31 +1564,31 @@
      },
      {
       "pos": 7,
+      "naam": "Lennert Van Eetvelt",
+      "land": "BEL",
+      "ploeg": "Lotto Intermarche",
+      "tijd": "+ 1:27:35"
+     },
+     {
+      "pos": 8,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 1:28:05"
+     },
+     {
+      "pos": 9,
+      "naam": "Kévin Vauquelin",
+      "land": "FRA",
+      "ploeg": "Netcompany Ineos Cycling Team",
+      "tijd": "+ 1:37:19"
+     },
+     {
+      "pos": 10,
       "naam": "Antonio Tiberi",
       "land": "ITA",
       "ploeg": "Bahrain Victorious",
       "tijd": "+ 1:48:28"
-     },
-     {
-      "pos": 8,
-      "naam": "Matthew Riccitello",
-      "land": "USA",
-      "ploeg": "Decathlon CMA CGM Team",
-      "tijd": "+ 1:52:41"
-     },
-     {
-      "pos": 9,
-      "naam": "Ewen Costiou",
-      "land": "FRA",
-      "ploeg": "Groupama-Fdj United",
-      "tijd": "+ 2:43:21"
-     },
-     {
-      "pos": 10,
-      "naam": "Nicolya Vinokurov",
-      "land": "KAZ",
-      "ploeg": "XDS Astana Team",
-      "tijd": "+ 3:12:47"
      }
     ]
    }
@@ -1600,7 +1600,7 @@
     "naar": "Isaac Del Toro Romero"
    }
   ],
-  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 18:01 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 19 juli 18:28 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 16,
