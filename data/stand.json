@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T15:29:40Z",
+ "bijgewerkt": "2026-07-19T15:35:02Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,25 +1578,12 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T15:29:38.475Z",
+  "bijgewerkt": "2026-07-19T15:35:01.160Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 1,
+    "aantal": 3,
     "gat": "",
-    "renners": [
-     [
-      "Q. Simmons",
-      "USA",
-      34
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep gele trui",
-    "aantal": 4,
-    "gat": "+3s",
     "renners": [
      [
       "T. Pogacar",
@@ -1609,11 +1596,6 @@
       2
      ],
      [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
       "R. Evenepoel",
       "BEL",
       21
@@ -1622,9 +1604,50 @@
     "meer": 0
    },
    {
-    "naam": "Groep Pidcock",
+    "naam": "Groep witte trui",
     "aantal": 2,
     "gat": "+36s",
+    "renners": [
+     [
+      "F. Lipowitz",
+      "GER",
+      25
+     ],
+     [
+      "P. Seixas",
+      "FRA",
+      51
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Ayuso",
+    "aantal": 3,
+    "gat": "+57s",
+    "renners": [
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
+     ],
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Pidcock",
+    "aantal": 2,
+    "gat": "+1:00",
     "renners": [
      [
       "T. Pidcock",
@@ -1640,32 +1663,9 @@
     "meer": 0
    },
    {
-    "naam": "Groep witte trui",
-    "aantal": 3,
-    "gat": "+42s",
-    "renners": [
-     [
-      "F. Lipowitz",
-      "GER",
-      25
-     ],
-     [
-      "J. Ayuso Pesquera",
-      "ESP",
-      31
-     ],
-     [
-      "P. Seixas",
-      "FRA",
-      51
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep Jegat",
     "aantal": 13,
-    "gat": "+1:53",
+    "gat": "+2:03",
     "renners": [
      [
       "D. Piganzoli",
@@ -1713,7 +1713,7 @@
    {
     "naam": "Groep Jorgenson",
     "aantal": 19,
-    "gat": "+10:20",
+    "gat": "+11:05",
     "renners": [
      [
       "F. Grossschartner",
@@ -1761,7 +1761,7 @@
    {
     "naam": "Groep bollentrui",
     "aantal": 74,
-    "gat": "+13:40",
+    "gat": "+13:55",
     "renners": [
      [
       "T. Wellens",
