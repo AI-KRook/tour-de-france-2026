@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T15:13:32Z",
+ "bijgewerkt": "2026-07-19T15:18:55Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T15:13:32.113Z",
+  "bijgewerkt": "2026-07-19T15:18:54.250Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1586,27 +1586,22 @@
     "gat": "",
     "renners": [
      [
-      "M. Schmid",
-      "SUI",
-      118
+      "Q. Simmons",
+      "USA",
+      34
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep Pidcock",
-    "aantal": 4,
-    "gat": "+24s",
+    "aantal": 3,
+    "gat": "+25s",
     "renners": [
      [
       "A. Yates",
       "GBR",
       8
-     ],
-     [
-      "Q. Simmons",
-      "USA",
-      34
      ],
      [
       "T. Pidcock",
@@ -1623,9 +1618,14 @@
    },
    {
     "naam": "Groep Rubio",
-    "aantal": 2,
-    "gat": "+29s",
+    "aantal": 3,
+    "gat": "+2:03",
     "renners": [
+     [
+      "M. Schmid",
+      "SUI",
+      118
+     ],
      [
       "E. Rubio Reyes",
       "COL",
@@ -1641,8 +1641,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 19,
-    "gat": "+2:07",
+    "aantal": 16,
+    "gat": "+1:41",
     "renners": [
      [
       "T. Pogacar",
@@ -1675,22 +1675,22 @@
       25
      ],
      [
-      "M. Van Gils",
-      "BEL",
-      28
-     ],
-     [
       "J. Ayuso Pesquera",
       "ESP",
       31
+     ],
+     [
+      "M. Skjelmose",
+      "DEN",
+      35
      ]
     ],
-    "meer": 11
+    "meer": 8
    },
    {
     "naam": "Groep Jorgenson",
-    "aantal": 15,
-    "gat": "+6:05",
+    "aantal": 20,
+    "gat": "+7:04",
     "renners": [
      [
       "F. Grossschartner",
@@ -1723,22 +1723,22 @@
       17
      ],
      [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
       "T. Van Dijke",
       "NED",
       27
-     ],
-     [
-      "A. Baudin",
-      "FRA",
-      43
      ]
     ],
-    "meer": 7
+    "meer": 12
    },
    {
     "naam": "Groep bollentrui",
     "aantal": 71,
-    "gat": "+10:40",
+    "gat": "+10:31",
     "renners": [
      [
       "T. Wellens",
@@ -1786,7 +1786,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 3,
-    "gat": "+28:59",
+    "gat": "+26:39",
     "renners": [
      [
       "T. Merlier",
