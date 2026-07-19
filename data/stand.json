@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T15:24:17Z",
+ "bijgewerkt": "2026-07-19T15:29:40Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T15:24:16.497Z",
+  "bijgewerkt": "2026-07-19T15:29:38.475Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1594,15 +1594,38 @@
     "meer": 0
    },
    {
-    "naam": "Groep Pidcock",
-    "aantal": 3,
-    "gat": "+26s",
+    "naam": "Groep gele trui",
+    "aantal": 4,
+    "gat": "+3s",
     "renners": [
+     [
+      "T. Pogacar",
+      "SLO",
+      1
+     ],
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
+     ],
      [
       "A. Yates",
       "GBR",
       8
      ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Pidcock",
+    "aantal": 2,
+    "gat": "+36s",
+    "renners": [
      [
       "T. Pidcock",
       "GBR",
@@ -1617,32 +1640,9 @@
     "meer": 0
    },
    {
-    "naam": "Groep gele trui",
-    "aantal": 3,
-    "gat": "+52s",
-    "renners": [
-     [
-      "T. Pogacar",
-      "SLO",
-      1
-     ],
-     [
-      "I. Del Toro Romero",
-      "MEX",
-      2
-     ],
-     [
-      "R. Evenepoel",
-      "BEL",
-      21
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep witte trui",
     "aantal": 3,
-    "gat": "+1:03",
+    "gat": "+42s",
     "renners": [
      [
       "F. Lipowitz",
@@ -1665,7 +1665,7 @@
    {
     "naam": "Groep Jegat",
     "aantal": 13,
-    "gat": "+1:55",
+    "gat": "+1:53",
     "renners": [
      [
       "D. Piganzoli",
@@ -1713,7 +1713,7 @@
    {
     "naam": "Groep Jorgenson",
     "aantal": 19,
-    "gat": "+8:38",
+    "gat": "+10:20",
     "renners": [
      [
       "F. Grossschartner",
@@ -1761,7 +1761,7 @@
    {
     "naam": "Groep bollentrui",
     "aantal": 74,
-    "gat": "+11:55",
+    "gat": "+13:40",
     "renners": [
      [
       "T. Wellens",
