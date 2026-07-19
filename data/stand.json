@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T12:05:36Z",
+ "bijgewerkt": "2026-07-19T12:29:44Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,17 +1578,35 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T12:05:35.337Z",
+  "bijgewerkt": "2026-07-19T12:29:44.012Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 1,
+    "aantal": 2,
     "gat": "",
     "renners": [
      [
-      "R. Carapaz",
-      "ECU",
-      41
+      "T. Arensman",
+      "NED",
+      82
+     ],
+     [
+      "X. Azparren Irurzun",
+      "ESP",
+      172
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Poursuivant",
+    "aantal": 1,
+    "gat": "+14s",
+    "renners": [
+     [
+      "N. Oliveira",
+      "POR",
+      146
      ]
     ],
     "meer": 0
@@ -1596,7 +1614,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+9s",
+    "gat": "+20s",
     "renners": [
      [
       "T. Pogacar",
@@ -1624,11 +1642,6 @@
       5
      ],
      [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
       "T. Wellens",
       "BEL",
       7
@@ -1637,14 +1650,67 @@
       "A. Yates",
       "GBR",
       8
+     ],
+     [
+      "J. Vingegaard Hansen",
+      "DEN",
+      11
      ]
     ],
-    "meer": 155
+    "meer": 116
    },
    {
     "naam": "Distancés",
-    "aantal": 5,
-    "gat": "+1:05",
+    "aantal": 40,
+    "gat": "+1:29",
+    "renners": [
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "E. Affini",
+      "ITA",
+      12
+     ],
+     [
+      "D. Hoole",
+      "NED",
+      54
+     ],
+     [
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "A. Gate",
+      "NZL",
+      63
+     ],
+     [
+      "M. Kanter",
+      "GER",
+      64
+     ],
+     [
+      "M. Teunissen",
+      "NED",
+      66
+     ]
+    ],
+    "meer": 32
+   },
+   {
+    "naam": "Groep Merlier",
+    "aantal": 2,
+    "gat": "+3:29",
     "renners": [
      [
       "T. Merlier",
@@ -1655,21 +1721,6 @@
       "P. Eenkhoorn",
       "NED",
       92
-     ],
-     [
-      "S. Wærenskjold",
-      "NOR",
-      128
-     ],
-     [
-      "M. Louvel",
-      "FRA",
-      135
-     ],
-     [
-      "P. Allegaert",
-      "BEL",
-      162
      ]
     ],
     "meer": 0
