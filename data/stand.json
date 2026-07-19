@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-19T14:47:16Z",
+ "bijgewerkt": "2026-07-19T14:52:38Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1578,7 +1578,7 @@
  },
  "koers": {
   "etappe": 15,
-  "bijgewerkt": "2026-07-19T14:47:15.829Z",
+  "bijgewerkt": "2026-07-19T14:52:37.996Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1596,7 +1596,7 @@
    {
     "naam": "Poursuivants",
     "aantal": 6,
-    "gat": "+10s",
+    "gat": "+18s",
     "renners": [
      [
       "A. Yates",
@@ -1634,7 +1634,7 @@
    {
     "naam": "Groep Van Wilder",
     "aantal": 4,
-    "gat": "+1:01",
+    "gat": "+1:14",
     "renners": [
      [
       "A. Baudin",
@@ -1660,22 +1660,9 @@
     "meer": 0
    },
    {
-    "naam": "G. Martin-Guyonnet",
-    "aantal": 1,
-    "gat": "+2:16",
-    "renners": [
-     [
-      "G. Martin Guyonnet",
-      "FRA",
-      186
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep gele trui",
-    "aantal": 29,
-    "gat": "+2:36",
+    "aantal": 30,
+    "gat": "+2:17",
     "renners": [
      [
       "T. Pogacar",
@@ -1718,12 +1705,12 @@
       16
      ]
     ],
-    "meer": 21
+    "meer": 22
    },
    {
     "naam": "Groep bollentrui",
     "aantal": 70,
-    "gat": "+9:04",
+    "gat": "+9:57",
     "renners": [
      [
       "T. Wellens",
@@ -1771,7 +1758,7 @@
    {
     "naam": "Groep Merlier",
     "aantal": 3,
-    "gat": "+21:03",
+    "gat": "+21:26",
     "renners": [
      [
       "T. Merlier",
