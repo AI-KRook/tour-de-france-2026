@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-21T16:32:11Z",
+ "bijgewerkt": "2026-07-21T17:27:04Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1185,10 +1185,89 @@
     }
    ],
    "bron": "letour.fr"
+  },
+  "16": {
+   "w": "Remco Evenepoel",
+   "wLand": "BEL",
+   "wPloeg": "Red Bull–Bora–Hansgrohe",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "32:19"
+    },
+    {
+     "pos": 2,
+     "naam": "Tadej Pogačar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 0:28"
+    },
+    {
+     "pos": 3,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl–Trek",
+     "tijd": "+ 1:04"
+    },
+    {
+     "pos": 4,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM",
+     "tijd": "+ 1:16"
+    },
+    {
+     "pos": 5,
+     "naam": "Isaac del Toro",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 1:21"
+    },
+    {
+     "pos": 6,
+     "naam": "Mattia Cattaneo",
+     "land": "ITA",
+     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "tijd": "+ 1:42"
+    },
+    {
+     "pos": 7,
+     "naam": "Thymen Arensman",
+     "land": "NED",
+     "ploeg": "Netcompany INEOS",
+     "tijd": "+ 1:47"
+    },
+    {
+     "pos": 8,
+     "naam": "Bruno Armirail",
+     "land": "FRA",
+     "ploeg": "Visma–Lease a Bike",
+     "tijd": "+ 1:55"
+    },
+    {
+     "pos": 9,
+     "naam": "Pablo Castrillo",
+     "land": "ESP",
+     "ploeg": "Movistar Team",
+     "tijd": "+ 2:00"
+    },
+    {
+     "pos": 10,
+     "naam": "Josh Tarling",
+     "land": "GBR",
+     "ploeg": "Netcompany INEOS",
+     "tijd": "+ 2:02"
+    }
+   ],
+   "bron": "en.wikipedia.org"
   }
  },
  "klassement": {
-  "naEtappe": 15,
+  "naEtappe": 16,
   "truien": {
    "geel": {
     "naam": "Tadej Pogačar",
@@ -1289,7 +1368,7 @@
   ],
   "klassementen": {
    "geel": {
-    "naEtappe": 15,
+    "naEtappe": 16,
     "eenheid": "tijd",
     "top10": [
      {
@@ -1593,20 +1672,14 @@
     ]
    }
   },
-  "wissels": [
-   {
-    "trui": "wit",
-    "van": "Paul Seixas",
-    "naar": "Isaac Del Toro Romero"
-   }
-  ],
-  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 21 juli 18:32 uur (bron: Wikipedia)."
+  "wissels": [],
+  "voetnoot": "Stand na etappe 16, automatisch bijgewerkt 21 juli 19:27 uur (bron: Wikipedia)."
  },
  "dagcommentaar": {
-  "voorEtappe": 16,
-  "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar en Isaac Del Toro Romero. Isaac Del Toro Romero neemt de witte trui over van Paul Seixas. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel als eerste achtervolger op 4:32.",
+  "voorEtappe": 17,
+  "tekst": "Remco Evenepoel (Red Bull–Bora–Hansgrohe) was de snelste tegen de klok in Thonon-les-Bains, voor Tadej Pogačar en Mattias Skjelmose. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel als eerste achtervolger op 4:32.",
   "bron": "vast patroon",
-  "feiten": "d3e613b0ae2f9824"
+  "feiten": "630c7b79877e89ff"
  },
  "samenvattingen": {
   "6": {
@@ -1658,6 +1731,11 @@
    "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar. Isaac Del Toro Romero pakt de witte trui. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel op 4:32.",
    "bron": "vast patroon",
    "feiten": "823f38a4bff2992a"
+  },
+  "16": {
+   "tekst": "Remco Evenepoel (Red Bull–Bora–Hansgrohe) was de snelste tegen de klok in Thonon-les-Bains, met Tadej Pogačar op +0:28. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel op 4:32.",
+   "bron": "vast patroon",
+   "feiten": "2ef8bc5a3fa10fea"
   }
  }
 }
