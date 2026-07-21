@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-21T17:42:56Z",
+ "bijgewerkt": "2026-07-21T17:53:08Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1596,7 +1596,7 @@
     ]
    },
    "wit": {
-    "naEtappe": 15,
+    "naEtappe": 16,
     "eenheid": "tijd",
     "top10": [
      {
@@ -1611,69 +1611,69 @@
       "naam": "Paul Seixas",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM",
-      "tijd": "+ 0:25"
+      "tijd": "+ 0:20"
      },
      {
       "pos": 3,
       "naam": "Juan Ayuso",
       "land": "ESP",
       "ploeg": "Lidl–Trek",
-      "tijd": "+ 1:30"
+      "tijd": "+ 2:31"
      },
      {
       "pos": 4,
       "naam": "Lenny Martinez",
       "land": "FRA",
       "ploeg": "Team Bahrain Victorious",
-      "tijd": "+ 4:30"
+      "tijd": "+ 5:59"
      },
      {
       "pos": 5,
       "naam": "Davide Piganzoli",
       "land": "ITA",
       "ploeg": "Visma–Lease a Bike",
-      "tijd": "+ 18:44"
+      "tijd": "+ 20:37"
      },
      {
       "pos": 6,
       "naam": "Quinn Simmons",
       "land": "USA",
       "ploeg": "Lidl–Trek",
-      "tijd": "+ 1:17:32"
+      "tijd": "+ 1:20:34"
      },
      {
       "pos": 7,
-      "naam": "Lennert Van Eetvelt",
-      "land": "BEL",
-      "ploeg": "Lotto–Intermarché",
-      "tijd": "+ 1:27:35"
-     },
-     {
-      "pos": 8,
       "naam": "Pablo Castrillo",
       "land": "ESP",
       "ploeg": "Movistar Team",
-      "tijd": "+ 1:28:05"
+      "tijd": "+ 1:28:44"
+     },
+     {
+      "pos": 8,
+      "naam": "Lennert Van Eetvelt",
+      "land": "BEL",
+      "ploeg": "Lotto–Intermarché",
+      "tijd": "+ 1:33:01"
      },
      {
       "pos": 9,
       "naam": "Kévin Vauquelin",
       "land": "FRA",
       "ploeg": "Netcompany INEOS",
-      "tijd": "+ 1:37:19"
+      "tijd": "+ 1:41:05"
      },
      {
       "pos": 10,
       "naam": "Antonio Tiberi",
       "land": "ITA",
       "ploeg": "Team Bahrain Victorious",
-      "tijd": "+ 1:48:28"
+      "tijd": "+ 1:52:00"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 16, automatisch bijgewerkt 21 juli 19:42 uur (bron: Wikipedia)."
+  "voetnoot": "Stand na etappe 16, automatisch bijgewerkt 21 juli 19:53 uur (bron: Wikipedia)."
  },
  "dagcommentaar": {
   "voorEtappe": 17,
