@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-21T17:27:04Z",
+ "bijgewerkt": "2026-07-21T17:42:56Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1444,7 +1444,7 @@
     ]
    },
    "groen": {
-    "naEtappe": 15,
+    "naEtappe": 16,
     "eenheid": "punten",
     "top10": [
      {
@@ -1484,17 +1484,17 @@
      },
      {
       "pos": 6,
+      "naam": "Tadej Pogačar",
+      "land": "SLO",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "161 ptn"
+     },
+     {
+      "pos": 7,
       "naam": "Søren Wærenskjold",
       "land": "NOR",
       "ploeg": "Uno-X Mobility",
       "tijd": "159 ptn"
-     },
-     {
-      "pos": 7,
-      "naam": "Tadej Pogačar",
-      "land": "SLO",
-      "ploeg": "UAE Team Emirates XRG",
-      "tijd": "144 ptn"
      },
      {
       "pos": 8,
@@ -1505,22 +1505,22 @@
      },
      {
       "pos": 9,
-      "naam": "Milan Fretin",
-      "land": "BEL",
-      "ploeg": "Cofidis",
-      "tijd": "117 ptn"
-     },
-     {
-      "pos": 10,
       "naam": "Isaac del Toro",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "112 ptn"
+      "tijd": "123 ptn"
+     },
+     {
+      "pos": 10,
+      "naam": "Remco Evenepoel",
+      "land": "BEL",
+      "ploeg": "Red Bull–Bora–Hansgrohe",
+      "tijd": "121 ptn"
      }
     ]
    },
    "bollen": {
-    "naEtappe": 15,
+    "naEtappe": 16,
     "eenheid": "punten",
     "top10": [
      {
@@ -1528,7 +1528,7 @@
       "naam": "Tadej Pogačar",
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "67 ptn"
+      "tijd": "70 ptn"
      },
      {
       "pos": 2,
@@ -1546,17 +1546,17 @@
      },
      {
       "pos": 4,
+      "naam": "Remco Evenepoel",
+      "land": "BEL",
+      "ploeg": "Red Bull–Bora–Hansgrohe",
+      "tijd": "36 ptn"
+     },
+     {
+      "pos": 5,
       "naam": "Paul Seixas",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM",
       "tijd": "34 ptn"
-     },
-     {
-      "pos": 5,
-      "naam": "Remco Evenepoel",
-      "land": "BEL",
-      "ploeg": "Red Bull–Bora–Hansgrohe",
-      "tijd": "31 ptn"
      },
      {
       "pos": 6,
@@ -1581,17 +1581,17 @@
      },
      {
       "pos": 9,
-      "naam": "Florian Lipowitz",
-      "land": "GER",
-      "ploeg": "Red Bull–Bora–Hansgrohe",
-      "tijd": "20 ptn"
-     },
-     {
-      "pos": 10,
       "naam": "Nicolas Prodhomme",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM",
       "tijd": "17 ptn"
+     },
+     {
+      "pos": 10,
+      "naam": "Alex Baudin",
+      "land": "FRA",
+      "ploeg": "EF Education–EasyPost",
+      "tijd": "16 ptn"
      }
     ]
    },
@@ -1673,7 +1673,7 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 16, automatisch bijgewerkt 21 juli 19:27 uur (bron: Wikipedia)."
+  "voetnoot": "Stand na etappe 16, automatisch bijgewerkt 21 juli 19:42 uur (bron: Wikipedia)."
  },
  "dagcommentaar": {
   "voorEtappe": 17,
