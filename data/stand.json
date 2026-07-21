@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-21T15:50:18Z",
+ "bijgewerkt": "2026-07-21T16:32:11Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1228,63 +1228,63 @@
     "naam": "Remco Evenepoel",
     "land": "BEL",
     "ploeg": "Red Bull–Bora–Hansgrohe",
-    "tijd": "+ 5:00"
+    "tijd": "+ 4:32"
    },
    {
     "pos": 3,
     "naam": "Isaac del Toro",
     "land": "MEX",
     "ploeg": "UAE Team Emirates XRG",
-    "tijd": "+ 5:58"
+    "tijd": "+ 6:51"
    },
    {
     "pos": 4,
     "naam": "Paul Seixas",
     "land": "FRA",
     "ploeg": "Decathlon CMA CGM",
-    "tijd": "+ 6:23"
+    "tijd": "+ 7:11"
    },
    {
     "pos": 5,
-    "naam": "Florian Lipowitz",
-    "land": "GER",
-    "ploeg": "Red Bull–Bora–Hansgrohe",
-    "tijd": "+ 6:48"
-   },
-   {
-    "pos": 6,
     "naam": "Juan Ayuso",
     "land": "ESP",
     "ploeg": "Lidl–Trek",
-    "tijd": "+ 7:28"
+    "tijd": "+ 9:22"
    },
    {
-    "pos": 7,
+    "pos": 6,
     "naam": "Mattias Skjelmose",
     "land": "DEN",
     "ploeg": "Lidl–Trek",
-    "tijd": "+ 9:38"
+    "tijd": "+ 10:14"
    },
    {
-    "pos": 8,
+    "pos": 7,
     "naam": "Lenny Martinez",
     "land": "FRA",
     "ploeg": "Team Bahrain Victorious",
-    "tijd": "+ 10:28"
+    "tijd": "+ 12:50"
    },
    {
-    "pos": 9,
+    "pos": 8,
     "naam": "Tom Pidcock",
     "land": "GBR",
     "ploeg": "Pinarello–Q36.5 Pro Cycling Team",
-    "tijd": "+ 11:19"
+    "tijd": "+ 12:58"
    },
    {
-    "pos": 10,
+    "pos": 9,
     "naam": "Jordan Jegat",
     "land": "FRA",
     "ploeg": "Team TotalEnergies",
-    "tijd": "+ 19:26"
+    "tijd": "+ 22:50"
+   },
+   {
+    "pos": 10,
+    "naam": "Yannis Voisard",
+    "land": "SUI",
+    "ploeg": "Tudor Pro Cycling Team",
+    "tijd": "+ 24:18"
    }
   ],
   "klassementen": {
@@ -1304,63 +1304,63 @@
       "naam": "Remco Evenepoel",
       "land": "BEL",
       "ploeg": "Red Bull–Bora–Hansgrohe",
-      "tijd": "+ 5:00"
+      "tijd": "+ 4:32"
      },
      {
       "pos": 3,
       "naam": "Isaac del Toro",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "+ 5:58"
+      "tijd": "+ 6:51"
      },
      {
       "pos": 4,
       "naam": "Paul Seixas",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM",
-      "tijd": "+ 6:23"
+      "tijd": "+ 7:11"
      },
      {
       "pos": 5,
-      "naam": "Florian Lipowitz",
-      "land": "GER",
-      "ploeg": "Red Bull–Bora–Hansgrohe",
-      "tijd": "+ 6:48"
-     },
-     {
-      "pos": 6,
       "naam": "Juan Ayuso",
       "land": "ESP",
       "ploeg": "Lidl–Trek",
-      "tijd": "+ 7:28"
+      "tijd": "+ 9:22"
      },
      {
-      "pos": 7,
+      "pos": 6,
       "naam": "Mattias Skjelmose",
       "land": "DEN",
       "ploeg": "Lidl–Trek",
-      "tijd": "+ 9:38"
+      "tijd": "+ 10:14"
      },
      {
-      "pos": 8,
+      "pos": 7,
       "naam": "Lenny Martinez",
       "land": "FRA",
       "ploeg": "Team Bahrain Victorious",
-      "tijd": "+ 10:28"
+      "tijd": "+ 12:50"
      },
      {
-      "pos": 9,
+      "pos": 8,
       "naam": "Tom Pidcock",
       "land": "GBR",
       "ploeg": "Pinarello–Q36.5 Pro Cycling Team",
-      "tijd": "+ 11:19"
+      "tijd": "+ 12:58"
      },
      {
-      "pos": 10,
+      "pos": 9,
       "naam": "Jordan Jegat",
       "land": "FRA",
       "ploeg": "Team TotalEnergies",
-      "tijd": "+ 19:26"
+      "tijd": "+ 22:50"
+     },
+     {
+      "pos": 10,
+      "naam": "Yannis Voisard",
+      "land": "SUI",
+      "ploeg": "Tudor Pro Cycling Team",
+      "tijd": "+ 24:18"
      }
     ]
    },
@@ -1600,13 +1600,13 @@
     "naar": "Isaac Del Toro Romero"
    }
   ],
-  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 20 juli 21:00 uur (bron: Wikipedia)."
+  "voetnoot": "Stand na etappe 15, automatisch bijgewerkt 21 juli 18:32 uur (bron: Wikipedia)."
  },
  "dagcommentaar": {
   "voorEtappe": 16,
-  "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar en Isaac Del Toro Romero. Isaac Del Toro Romero neemt de witte trui over van Paul Seixas. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel als eerste achtervolger op 5:00.",
+  "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar en Isaac Del Toro Romero. Isaac Del Toro Romero neemt de witte trui over van Paul Seixas. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel als eerste achtervolger op 4:32.",
   "bron": "vast patroon",
-  "feiten": "470b2d3c286c5d90"
+  "feiten": "d3e613b0ae2f9824"
  },
  "samenvattingen": {
   "6": {
@@ -1655,9 +1655,9 @@
    "feiten": "426c84b921770c69"
   },
   "15": {
-   "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar. Isaac Del Toro Romero pakt de witte trui. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel op 5:00.",
+   "tekst": "Remco Evenepoel (RED Bull - Bora - Hansgrohe) bedwong als eerste de slotklim naar Plateau de Solaison, voor Tadej Pogacar. Isaac Del Toro Romero pakt de witte trui. In het algemeen klassement leidt Tadej Pogačar, met Remco Evenepoel op 4:32.",
    "bron": "vast patroon",
-   "feiten": "25dab51faa613274"
+   "feiten": "823f38a4bff2992a"
   }
  }
 }
