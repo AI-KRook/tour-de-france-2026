@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T14:22:59Z",
+ "bijgewerkt": "2026-07-22T14:28:21Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,7 +1740,7 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T14:22:59.062Z",
+  "bijgewerkt": "2026-07-22T14:28:21.054Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1783,7 +1783,7 @@
    {
     "naam": "Groep van der Poel",
     "aantal": 26,
-    "gat": "+45s",
+    "gat": "+56s",
     "renners": [
      [
       "V. Campenaerts",
@@ -1829,9 +1829,9 @@
     "meer": 18
    },
    {
-    "naam": "Groep Philipsen",
-    "aantal": 12,
-    "gat": "+1:29",
+    "naam": "Groep García Pierna",
+    "aantal": 6,
+    "gat": "+1:10",
     "renners": [
      [
       "N. Politt",
@@ -1839,14 +1839,42 @@
       5
      ],
      [
-      "D. Gee",
-      "CAN",
-      32
-     ],
-     [
       "M. Valgren",
       "DEN",
       47
+     ],
+     [
+      "R. Garcia Pierna",
+      "ESP",
+      144
+     ],
+     [
+      "G. Zimmermann",
+      "GER",
+      158
+     ],
+     [
+      "H. Page",
+      "FRA",
+      167
+     ],
+     [
+      "C. Russo",
+      "FRA",
+      188
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Philipsen",
+    "aantal": 6,
+    "gat": "+1:23",
+    "renners": [
+     [
+      "D. Gee",
+      "CAN",
+      32
      ],
      [
       "V. Van Mechelen",
@@ -1864,22 +1892,22 @@
       111
      ],
      [
-      "R. Garcia Pierna",
-      "ESP",
-      144
+      "Q. Hermans",
+      "BEL",
+      174
      ],
      [
-      "G. Zimmermann",
-      "GER",
-      158
+      "A. Balderstone Roumens",
+      "ESP",
+      222
      ]
     ],
-    "meer": 4
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4:26",
+    "gat": "+4:37",
     "renners": [
      [
       "T. Pogacar",
@@ -1927,7 +1955,7 @@
    {
     "naam": "A. Yates",
     "aantal": 1,
-    "gat": "+6:56",
+    "gat": "+8:26",
     "renners": [
      [
       "A. Yates",
