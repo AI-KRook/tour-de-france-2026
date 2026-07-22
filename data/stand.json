@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T12:34:56Z",
+ "bijgewerkt": "2026-07-22T12:40:18Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,13 +1740,23 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T12:34:56.417Z",
+  "bijgewerkt": "2026-07-22T12:40:18.019Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 19,
+    "aantal": 22,
     "gat": "",
     "renners": [
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
      [
       "M. Jorgenson",
       "USA",
@@ -1776,24 +1786,27 @@
       "T. Benoot",
       "BEL",
       52
-     ],
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
      ]
     ],
-    "meer": 11
+    "meer": 14
+   },
+   {
+    "naam": "I. Izagirre",
+    "aantal": 1,
+    "gat": "+12s",
+    "renners": [
+     [
+      "I. Izagirre Insausti",
+      "ESP",
+      161
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+7s",
+    "gat": "+15s",
     "renners": [
      [
       "T. Pogacar",
@@ -1816,11 +1829,6 @@
       4
      ],
      [
-      "N. Politt",
-      "GER",
-      5
-     ],
-     [
       "F. Vermeersch",
       "BEL",
       6
@@ -1834,27 +1842,19 @@
       "A. Yates",
       "GBR",
       8
-     ]
-    ],
-    "meer": 128
-   },
-   {
-    "naam": "F. Wright",
-    "aantal": 1,
-    "gat": "+40s",
-    "renners": [
+     ],
      [
-      "F. Wright",
-      "GBR",
-      178
+      "E. Affini",
+      "ITA",
+      12
      ]
     ],
-    "meer": 0
+    "meer": 125
    },
    {
     "naam": "Distancés",
     "aantal": 8,
-    "gat": "+1:43",
+    "gat": "+1:27",
     "renners": [
      [
       "P. Bauhaus",
