@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T12:40:18Z",
+ "bijgewerkt": "2026-07-22T12:45:26Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,11 +1740,11 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T12:40:18.019Z",
+  "bijgewerkt": "2026-07-22T12:45:26.087Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 22,
+    "aantal": 21,
     "gat": "",
     "renners": [
      [
@@ -1788,17 +1788,37 @@
       52
      ]
     ],
-    "meer": 14
+    "meer": 13
    },
    {
-    "naam": "I. Izagirre",
-    "aantal": 1,
+    "naam": "Groep groene trui",
+    "aantal": 5,
     "gat": "+12s",
     "renners": [
      [
-      "I. Izagirre Insausti",
-      "ESP",
-      161
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "V. Van Mechelen",
+      "BEL",
+      78
+     ],
+     [
+      "T. Marsman",
+      "NED",
+      104
+     ],
+     [
+      "A. Skaarseth",
+      "NOR",
+      126
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
      ]
     ],
     "meer": 0
@@ -1806,7 +1826,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+15s",
+    "gat": "+17s",
     "renners": [
      [
       "T. Pogacar",
@@ -1849,13 +1869,31 @@
       12
      ]
     ],
-    "meer": 125
+    "meer": 120
+   },
+   {
+    "naam": "B. Veistroffer",
+    "aantal": 1,
+    "gat": "+1:20",
+    "renners": [
+     [
+      "B. Veistroffer",
+      "FRA",
+      157
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Distancés",
-    "aantal": 8,
-    "gat": "+1:27",
+    "aantal": 9,
+    "gat": "+2:42",
     "renners": [
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
      [
       "P. Bauhaus",
       "GER",
@@ -1870,11 +1908,6 @@
       "J. Cepeda",
       "ECU",
       143
-     ],
-     [
-      "B. Veistroffer",
-      "FRA",
-      157
      ],
      [
       "J. Biermans",
@@ -1892,12 +1925,12 @@
       225
      ],
      [
-      "J. Parra Cuerda",
-      "ESP",
-      228
+      "S. Oldani",
+      "ITA",
+      226
      ]
     ],
-    "meer": 0
+    "meer": 1
    }
   ],
   "bron": "racecenter.letour.fr"
