@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T11:57:30Z",
+ "bijgewerkt": "2026-07-22T12:02:51Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,7 +1740,7 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T11:57:29.672Z",
+  "bijgewerkt": "2026-07-22T12:02:51.000Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1748,9 +1748,9 @@
     "gat": "",
     "renners": [
      [
-      "J. Abrahamsen",
-      "NOR",
-      122
+      "K. Vauquelin",
+      "FRA",
+      88
      ]
     ],
     "meer": 0
@@ -1758,7 +1758,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4s",
+    "gat": "+8s",
     "renners": [
      [
       "T. Pogacar",
@@ -1801,7 +1801,20 @@
       8
      ]
     ],
-    "meer": 155
+    "meer": 154
+   },
+   {
+    "naam": "J. Nicolau",
+    "aantal": 1,
+    "gat": "+31s",
+    "renners": [
+     [
+      "J. Nicolau Beltran",
+      "ESP",
+      225
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
