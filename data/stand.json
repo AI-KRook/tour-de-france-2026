@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T12:24:14Z",
+ "bijgewerkt": "2026-07-22T12:29:35Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,45 +1740,12 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T12:24:13.553Z",
+  "bijgewerkt": "2026-07-22T12:29:34.972Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 5,
-    "gat": "",
-    "renners": [
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "M. Walker",
-      "GBR",
-      48
-     ],
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
-      "I. Izagirre Insausti",
-      "ESP",
-      161
-     ],
-     [
-      "A. Turgis",
-      "FRA",
-      207
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+12s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
@@ -1821,12 +1788,12 @@
       8
      ]
     ],
-    "meer": 143
+    "meer": 147
    },
    {
     "naam": "Crevaison",
     "aantal": 1,
-    "gat": "+50s",
+    "gat": "+23s",
     "renners": [
      [
       "M. Hirschi",
@@ -1838,13 +1805,23 @@
    },
    {
     "naam": "Distancés",
-    "aantal": 7,
-    "gat": "+1:29",
+    "aantal": 8,
+    "gat": "+1:58",
     "renners": [
      [
-      "R. Stannard",
-      "AUS",
-      76
+      "P. Bauhaus",
+      "GER",
+      72
+     ],
+     [
+      "D. Van Baarle",
+      "NED",
+      95
+     ],
+     [
+      "J. Cepeda",
+      "ECU",
+      143
      ],
      [
       "B. Veistroffer",
@@ -1860,11 +1837,6 @@
       "F. Wright",
       "GBR",
       178
-     ],
-     [
-      "A. Delettre",
-      "FRA",
-      204
      ],
      [
       "J. Nicolau Beltran",
