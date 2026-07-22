@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T12:45:26Z",
+ "bijgewerkt": "2026-07-22T14:06:53Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,18 +1740,13 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T12:45:26.087Z",
+  "bijgewerkt": "2026-07-22T14:06:52.325Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 21,
+    "aantal": 19,
     "gat": "",
     "renners": [
-     [
-      "N. Politt",
-      "GER",
-      5
-     ],
      [
       "P. Hagenes",
       "NOR",
@@ -1763,9 +1758,14 @@
       16
      ],
      [
-      "N. Denz",
-      "GER",
-      23
+      "J. Hindley",
+      "AUS",
+      24
+     ],
+     [
+      "M. Pedersen",
+      "DEN",
+      33
      ],
      [
       "Q. Simmons",
@@ -1778,27 +1778,85 @@
       43
      ],
      [
-      "S. Quinn",
-      "USA",
-      45
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Mohoric",
+      "SLO",
+      75
+     ]
+    ],
+    "meer": 11
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 12,
+    "gat": "+9s",
+    "renners": [
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
      ],
      [
       "T. Benoot",
       "BEL",
       52
+     ],
+     [
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "M. Kwiatkowski",
+      "POL",
+      86
+     ],
+     [
+      "E. Planckaert",
+      "BEL",
+      106
+     ],
+     [
+      "E. Verstrynge",
+      "BEL",
+      108
+     ],
+     [
+      "M. Matthews",
+      "AUS",
+      115
      ]
     ],
-    "meer": 13
+    "meer": 4
    },
    {
-    "naam": "Groep groene trui",
-    "aantal": 5,
-    "gat": "+12s",
+    "naam": "Groep Philipsen",
+    "aantal": 7,
+    "gat": "+24s",
     "renners": [
      [
-      "M. Pedersen",
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "D. Gee",
+      "CAN",
+      32
+     ],
+     [
+      "M. Valgren",
       "DEN",
-      33
+      47
      ],
      [
       "V. Van Mechelen",
@@ -1806,27 +1864,27 @@
       78
      ],
      [
-      "T. Marsman",
-      "NED",
-      104
+      "J. Philipsen",
+      "BEL",
+      105
      ],
      [
-      "A. Skaarseth",
-      "NOR",
-      126
+      "R. Garcia Pierna",
+      "ESP",
+      144
      ],
      [
-      "G. Bennett",
-      "NZL",
-      133
+      "Q. Hermans",
+      "BEL",
+      174
      ]
     ],
     "meer": 0
    },
    {
-    "naam": "Peloton",
-    "aantal": 999,
-    "gat": "+17s",
+    "naam": "Groep gele trui",
+    "aantal": 16,
+    "gat": "+1:10",
     "renners": [
      [
       "T. Pogacar",
@@ -1839,10 +1897,43 @@
       2
      ],
      [
-      "F. Grossschartner",
-      "AUT",
-      3
+      "S. Kuss",
+      "USA",
+      17
      ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
+     ],
+     [
+      "M. Skjelmose",
+      "DEN",
+      35
+     ],
+     [
+      "M. Vacek",
+      "CZE",
+      37
+     ]
+    ],
+    "meer": 8
+   },
+   {
+    "naam": "Groep Girmay",
+    "aantal": 62,
+    "gat": "+2:32",
+    "renners": [
      [
       "B. Mcnulty",
       "USA",
@@ -1867,70 +1958,24 @@
       "E. Affini",
       "ITA",
       12
-     ]
-    ],
-    "meer": 120
-   },
-   {
-    "naam": "B. Veistroffer",
-    "aantal": 1,
-    "gat": "+1:20",
-    "renners": [
+     ],
      [
-      "B. Veistroffer",
+      "B. Armirail",
       "FRA",
-      157
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Distancés",
-    "aantal": 9,
-    "gat": "+2:42",
-    "renners": [
-     [
-      "G. Steinhauser",
-      "GER",
-      46
+      13
      ],
      [
-      "P. Bauhaus",
-      "GER",
-      72
+      "J. Tratnik",
+      "SLO",
+      26
      ],
      [
-      "D. Van Baarle",
+      "T. Van Dijke",
       "NED",
-      95
-     ],
-     [
-      "J. Cepeda",
-      "ECU",
-      143
-     ],
-     [
-      "J. Biermans",
-      "BEL",
-      164
-     ],
-     [
-      "L. Germani",
-      "ITA",
-      185
-     ],
-     [
-      "J. Nicolau Beltran",
-      "ESP",
-      225
-     ],
-     [
-      "S. Oldani",
-      "ITA",
-      226
+      27
      ]
     ],
-    "meer": 1
+    "meer": 54
    }
   ],
   "bron": "racecenter.letour.fr"
