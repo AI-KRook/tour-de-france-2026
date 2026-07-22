@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T14:06:53Z",
+ "bijgewerkt": "2026-07-22T14:12:15Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,13 +1740,18 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T14:06:52.325Z",
+  "bijgewerkt": "2026-07-22T14:12:15.102Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 19,
+    "aantal": 30,
     "gat": "",
     "renners": [
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
      [
       "P. Hagenes",
       "NOR",
@@ -1781,67 +1786,14 @@
       "B. Healy",
       "IRL",
       44
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
      ]
     ],
-    "meer": 11
-   },
-   {
-    "naam": "Poursuivants",
-    "aantal": 12,
-    "gat": "+9s",
-    "renners": [
-     [
-      "V. Campenaerts",
-      "BEL",
-      14
-     ],
-     [
-      "T. Benoot",
-      "BEL",
-      52
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
-     ],
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
-      "M. Kwiatkowski",
-      "POL",
-      86
-     ],
-     [
-      "E. Planckaert",
-      "BEL",
-      106
-     ],
-     [
-      "E. Verstrynge",
-      "BEL",
-      108
-     ],
-     [
-      "M. Matthews",
-      "AUS",
-      115
-     ]
-    ],
-    "meer": 4
+    "meer": 22
    },
    {
     "naam": "Groep Philipsen",
-    "aantal": 7,
-    "gat": "+24s",
+    "aantal": 15,
+    "gat": "+49s",
     "renners": [
      [
       "N. Politt",
@@ -1859,6 +1811,11 @@
       47
      ],
      [
+      "A. Gate",
+      "NZL",
+      63
+     ],
+     [
       "V. Van Mechelen",
       "BEL",
       78
@@ -1869,22 +1826,22 @@
       105
      ],
      [
-      "R. Garcia Pierna",
-      "ESP",
-      144
+      "B. O'Connor",
+      "AUS",
+      111
      ],
      [
-      "Q. Hermans",
-      "BEL",
-      174
+      "M. Schmid",
+      "SUI",
+      118
      ]
     ],
-    "meer": 0
+    "meer": 7
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 16,
-    "gat": "+1:10",
+    "aantal": 45,
+    "gat": "+2:42",
     "renners": [
      [
       "T. Pogacar",
@@ -1897,9 +1854,19 @@
       2
      ],
      [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
       "S. Kuss",
       "USA",
       17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
      ],
      [
       "R. Evenepoel",
@@ -1907,32 +1874,22 @@
       21
      ],
      [
-      "M. Van Gils",
-      "BEL",
-      28
+      "M. Cattaneo",
+      "ITA",
+      22
      ],
      [
-      "J. Ayuso Pesquera",
-      "ESP",
-      31
-     ],
-     [
-      "M. Skjelmose",
-      "DEN",
-      35
-     ],
-     [
-      "M. Vacek",
-      "CZE",
-      37
+      "T. Van Dijke",
+      "NED",
+      27
      ]
     ],
-    "meer": 8
+    "meer": 37
    },
    {
     "naam": "Groep Girmay",
-    "aantal": 62,
-    "gat": "+2:32",
+    "aantal": 60,
+    "gat": "+3:05",
     "renners": [
      [
       "B. Mcnulty",
@@ -1950,11 +1907,6 @@
       7
      ],
      [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
       "E. Affini",
       "ITA",
       12
@@ -1970,12 +1922,30 @@
       26
      ],
      [
-      "T. Van Dijke",
-      "NED",
-      27
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
+     [
+      "M. Walker",
+      "GBR",
+      48
      ]
     ],
-    "meer": 54
+    "meer": 52
+   },
+   {
+    "naam": "A. Yates",
+    "aantal": 1,
+    "gat": "+3:14",
+    "renners": [
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
