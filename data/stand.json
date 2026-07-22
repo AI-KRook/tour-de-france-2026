@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T12:08:09Z",
+ "bijgewerkt": "2026-07-22T12:13:31Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,12 +1740,60 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T12:08:08.919Z",
+  "bijgewerkt": "2026-07-22T12:13:30.611Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 15,
+    "gat": "",
+    "renners": [
+     [
+      "M. Vacek",
+      "CZE",
+      37
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
+      "M. Walker",
+      "GBR",
+      48
+     ],
+     [
+      "M. Riccitello",
+      "USA",
+      58
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
+      "M. Mohoric",
+      "SLO",
+      75
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ],
+     [
+      "T. Foss",
+      "NOR",
+      83
+     ]
+    ],
+    "meer": 7
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+9s",
     "renners": [
      [
       "T. Pogacar",
@@ -1788,26 +1836,46 @@
       8
      ]
     ],
-    "meer": 153
+    "meer": 134
    },
    {
-    "naam": "B. Veistroffer",
-    "aantal": 1,
-    "gat": "+34s",
+    "naam": "Chute",
+    "aantal": 4,
+    "gat": "+40s",
     "renners": [
      [
-      "B. Veistroffer",
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
+      "T. Pidcock",
+      "GBR",
+      171
+     ],
+     [
+      "M. Hirschi",
+      "SUI",
+      194
+     ],
+     [
+      "A. Delettre",
       "FRA",
-      157
+      204
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Distancés",
-    "aantal": 2,
-    "gat": "+1:27",
+    "aantal": 3,
+    "gat": "+1:25",
     "renners": [
+     [
+      "B. Veistroffer",
+      "FRA",
+      157
+     ],
      [
       "J. Biermans",
       "BEL",
