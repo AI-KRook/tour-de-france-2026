@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-22T14:28:21Z",
+ "bijgewerkt": "2026-07-22T14:33:43Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1740,7 +1740,7 @@
  },
  "koers": {
   "etappe": 17,
-  "bijgewerkt": "2026-07-22T14:28:21.054Z",
+  "bijgewerkt": "2026-07-22T14:33:42.977Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1781,10 +1781,28 @@
     "meer": 0
    },
    {
-    "naam": "Groep van der Poel",
-    "aantal": 26,
-    "gat": "+56s",
+    "naam": "A. Gate",
+    "aantal": 1,
+    "gat": "+1:09",
     "renners": [
+     [
+      "A. Gate",
+      "NZL",
+      63
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Kooij - Philipsen",
+    "aantal": 37,
+    "gat": "+1:23",
+    "renners": [
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
      [
       "V. Campenaerts",
       "BEL",
@@ -1806,6 +1824,11 @@
       24
      ],
      [
+      "D. Gee",
+      "CAN",
+      32
+     ],
+     [
       "Q. Simmons",
       "USA",
       34
@@ -1814,100 +1837,14 @@
       "A. Baudin",
       "FRA",
       43
-     ],
-     [
-      "T. Benoot",
-      "BEL",
-      52
-     ],
-     [
-      "O. Kooij",
-      "NED",
-      55
      ]
     ],
-    "meer": 18
-   },
-   {
-    "naam": "Groep García Pierna",
-    "aantal": 6,
-    "gat": "+1:10",
-    "renners": [
-     [
-      "N. Politt",
-      "GER",
-      5
-     ],
-     [
-      "M. Valgren",
-      "DEN",
-      47
-     ],
-     [
-      "R. Garcia Pierna",
-      "ESP",
-      144
-     ],
-     [
-      "G. Zimmermann",
-      "GER",
-      158
-     ],
-     [
-      "H. Page",
-      "FRA",
-      167
-     ],
-     [
-      "C. Russo",
-      "FRA",
-      188
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Philipsen",
-    "aantal": 6,
-    "gat": "+1:23",
-    "renners": [
-     [
-      "D. Gee",
-      "CAN",
-      32
-     ],
-     [
-      "V. Van Mechelen",
-      "BEL",
-      78
-     ],
-     [
-      "J. Philipsen",
-      "BEL",
-      105
-     ],
-     [
-      "B. O'Connor",
-      "AUS",
-      111
-     ],
-     [
-      "Q. Hermans",
-      "BEL",
-      174
-     ],
-     [
-      "A. Balderstone Roumens",
-      "ESP",
-      222
-     ]
-    ],
-    "meer": 0
+    "meer": 29
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4:37",
+    "gat": "+4:44",
     "renners": [
      [
       "T. Pogacar",
@@ -1955,7 +1892,7 @@
    {
     "naam": "A. Yates",
     "aantal": 1,
-    "gat": "+8:26",
+    "gat": "+10:03",
     "renners": [
      [
       "A. Yates",
