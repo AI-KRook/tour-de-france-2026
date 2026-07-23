@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:33:37Z",
+ "bijgewerkt": "2026-07-23T14:38:59Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:33:37.040Z",
+  "bijgewerkt": "2026-07-23T14:38:58.607Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1867,7 +1867,7 @@
    {
     "naam": "Groep Bernal",
     "aantal": 7,
-    "gat": "+1:18",
+    "gat": "+1:27",
     "renners": [
      [
       "M. Vacek",
@@ -1910,7 +1910,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 24,
-    "gat": "+4:07",
+    "gat": "+4:38",
     "renners": [
      [
       "B. Armirail",
@@ -1958,7 +1958,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:04",
+    "gat": "+7:41",
     "renners": [
      [
       "T. Pogacar",
@@ -2006,7 +2006,7 @@
    {
     "naam": "Distancés",
     "aantal": 62,
-    "gat": "+18:25",
+    "gat": "+18:48",
     "renners": [
      [
       "B. Mcnulty",
