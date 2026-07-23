@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T15:00:26Z",
+ "bijgewerkt": "2026-07-23T15:05:48Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T15:00:25.840Z",
+  "bijgewerkt": "2026-07-23T15:05:47.753Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1865,24 +1865,14 @@
     "meer": 0
    },
    {
-    "naam": "Groep Bernal",
-    "aantal": 7,
-    "gat": "+3:02",
+    "naam": "Poursuivants",
+    "aantal": 5,
+    "gat": "+3:40",
     "renners": [
      [
       "M. Vacek",
       "CZE",
       37
-     ],
-     [
-      "E. Bernal Gomez",
-      "COL",
-      81
-     ],
-     [
-      "T. Arensman",
-      "NED",
-      82
      ],
      [
       "F. Engelhardt",
@@ -1908,9 +1898,27 @@
     "meer": 0
    },
    {
+    "naam": "Groep Bernal",
+    "aantal": 2,
+    "gat": "+4:07",
+    "renners": [
+     [
+      "E. Bernal Gomez",
+      "COL",
+      81
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep Simmons",
     "aantal": 6,
-    "gat": "+4:59",
+    "gat": "+5:19",
     "renners": [
      [
       "Q. Simmons",
@@ -1946,27 +1954,9 @@
     "meer": 0
    },
    {
-    "naam": "Groep Armirail",
-    "aantal": 2,
-    "gat": "+5:32",
-    "renners": [
-     [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep gele trui",
-    "aantal": 37,
-    "gat": "+6:09",
+    "aantal": 39,
+    "gat": "+5:52",
     "renners": [
      [
       "T. Pogacar",
@@ -1982,6 +1972,11 @@
       "F. Grossschartner",
       "AUT",
       3
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
      ],
      [
       "S. Kuss",
@@ -2002,19 +1997,14 @@
       "J. Hindley",
       "AUS",
       24
-     ],
-     [
-      "M. Van Gils",
-      "BEL",
-      28
      ]
     ],
-    "meer": 29
+    "meer": 31
    },
    {
     "naam": "Distancés",
-    "aantal": 90,
-    "gat": "+20:24",
+    "aantal": 92,
+    "gat": "+21:07",
     "renners": [
      [
       "N. Politt",
@@ -2057,7 +2047,7 @@
       23
      ]
     ],
-    "meer": 82
+    "meer": 84
    }
   ],
   "bron": "racecenter.letour.fr"
