@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:22:54Z",
+ "bijgewerkt": "2026-07-23T14:28:15Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:22:53.309Z",
+  "bijgewerkt": "2026-07-23T14:28:15.147Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1867,7 +1867,7 @@
    {
     "naam": "Poursuivants",
     "aantal": 7,
-    "gat": "+55s",
+    "gat": "+1:15",
     "renners": [
      [
       "M. Vacek",
@@ -1910,7 +1910,7 @@
    {
     "naam": "Groep Martin-Guyonnet",
     "aantal": 8,
-    "gat": "+2:56",
+    "gat": "+3:26",
     "renners": [
      [
       "B. Armirail",
@@ -1956,23 +1956,15 @@
     "meer": 0
    },
    {
-    "naam": "M. Pedersen",
-    "aantal": 1,
-    "gat": "+3:06",
+    "naam": "Groep groene trui",
+    "aantal": 16,
+    "gat": "+3:49",
     "renners": [
      [
       "M. Pedersen",
       "DEN",
       33
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Simmons",
-    "aantal": 15,
-    "gat": "+3:24",
-    "renners": [
+     ],
      [
       "Q. Simmons",
       "USA",
@@ -2007,19 +1999,14 @@
       "M. Matthews",
       "AUS",
       115
-     ],
-     [
-      "M. Cort Nielsen",
-      "DEN",
-      124
      ]
     ],
-    "meer": 7
+    "meer": 8
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:09",
+    "gat": "+8:01",
     "renners": [
      [
       "T. Pogacar",
@@ -2042,11 +2029,6 @@
       5
      ],
      [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
       "S. Kuss",
       "USA",
       17
@@ -2060,14 +2042,19 @@
       "R. Evenepoel",
       "BEL",
       21
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
      ]
     ],
-    "meer": 57
+    "meer": 56
    },
    {
     "naam": "Distancés",
-    "aantal": 61,
-    "gat": "+16:53",
+    "aantal": 62,
+    "gat": "+17:17",
     "renners": [
      [
       "B. Mcnulty",
@@ -2083,6 +2070,11 @@
       "T. Wellens",
       "BEL",
       7
+     ],
+     [
+      "A. Yates",
+      "GBR",
+      8
      ],
      [
       "E. Affini",
@@ -2103,14 +2095,9 @@
       "N. Denz",
       "GER",
       23
-     ],
-     [
-      "G. Steinhauser",
-      "GER",
-      46
      ]
     ],
-    "meer": 53
+    "meer": 54
    }
   ],
   "bron": "racecenter.letour.fr"
