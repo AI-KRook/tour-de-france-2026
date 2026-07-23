@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T12:43:21Z",
+ "bijgewerkt": "2026-07-23T12:48:43Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T12:43:20.090Z",
+  "bijgewerkt": "2026-07-23T12:48:42.257Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1876,8 +1876,8 @@
    },
    {
     "naam": "Groep bollentrui",
-    "aantal": 9,
-    "gat": "+1:11",
+    "aantal": 6,
+    "gat": "+45s",
     "renners": [
      [
       "J. Tratnik",
@@ -1895,37 +1895,65 @@
       41
      ],
      [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
       "V. Paret Peintre",
       "FRA",
       93
      ],
      [
-      "J. Stuyven",
-      "BEL",
-      94
-     ],
-     [
-      "L. Vervaeke",
-      "BEL",
-      98
-     ],
-     [
       "M. Schmid",
       "SUI",
       118
+     ],
+     [
+      "R. Garcia Pierna",
+      "ESP",
+      144
      ]
     ],
-    "meer": 1
+    "meer": 0
+   },
+   {
+    "naam": "Groep Bernal",
+    "aantal": 6,
+    "gat": "+1:16",
+    "renners": [
+     [
+      "D. Caruso",
+      "ITA",
+      73
+     ],
+     [
+      "E. Bernal Gomez",
+      "COL",
+      81
+     ],
+     [
+      "M. Kwiatkowski",
+      "POL",
+      86
+     ],
+     [
+      "M. Cort Nielsen",
+      "DEN",
+      124
+     ],
+     [
+      "D. Howson",
+      "AUS",
+      175
+     ],
+     [
+      "G. Martin Guyonnet",
+      "FRA",
+      186
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:31",
+    "gat": "+2:03",
     "renners": [
      [
       "T. Pogacar",
@@ -1968,12 +1996,12 @@
       21
      ]
     ],
-    "meer": 70
+    "meer": 67
    },
    {
     "naam": "Groep Piganzoli",
     "aantal": 2,
-    "gat": "+2:03",
+    "gat": "+2:07",
     "renners": [
      [
       "D. Piganzoli",
@@ -1991,7 +2019,7 @@
    {
     "naam": "Groep Alaphilippe",
     "aantal": 15,
-    "gat": "+2:46",
+    "gat": "+3:36",
     "renners": [
      [
       "M. Walker",
@@ -2039,7 +2067,7 @@
    {
     "naam": "Distancés",
     "aantal": 51,
-    "gat": "+5:45",
+    "gat": "+6:09",
     "renners": [
      [
       "B. Mcnulty",
