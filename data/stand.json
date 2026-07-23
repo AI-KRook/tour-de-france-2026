@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T12:37:58Z",
+ "bijgewerkt": "2026-07-23T12:43:21Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T12:37:57.923Z",
+  "bijgewerkt": "2026-07-23T12:43:20.090Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1875,9 +1875,9 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 5,
-    "gat": "+55s",
+    "naam": "Groep bollentrui",
+    "aantal": 9,
+    "gat": "+1:11",
     "renners": [
      [
       "J. Tratnik",
@@ -1890,27 +1890,42 @@
       37
      ],
      [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
       "B. Healy",
       "IRL",
       44
      ],
      [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "J. Stuyven",
+      "BEL",
+      94
+     ],
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
       "M. Schmid",
       "SUI",
       118
-     ],
-     [
-      "R. Garcia Pierna",
-      "ESP",
-      144
      ]
     ],
-    "meer": 0
+    "meer": 1
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:35",
+    "gat": "+1:31",
     "renners": [
      [
       "T. Pogacar",
@@ -1953,12 +1968,12 @@
       21
      ]
     ],
-    "meer": 74
+    "meer": 70
    },
    {
-    "naam": "Crevaison",
+    "naam": "Groep Piganzoli",
     "aantal": 2,
-    "gat": "+2:09",
+    "gat": "+2:03",
     "renners": [
      [
       "D. Piganzoli",
@@ -1976,7 +1991,7 @@
    {
     "naam": "Groep Alaphilippe",
     "aantal": 15,
-    "gat": "+2:19",
+    "gat": "+2:46",
     "renners": [
      [
       "M. Walker",
@@ -2024,7 +2039,7 @@
    {
     "naam": "Distancés",
     "aantal": 51,
-    "gat": "+5:27",
+    "gat": "+5:45",
     "renners": [
      [
       "B. Mcnulty",
