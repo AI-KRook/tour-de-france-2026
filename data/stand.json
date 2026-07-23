@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:17:32Z",
+ "bijgewerkt": "2026-07-23T14:22:54Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:17:31.532Z",
+  "bijgewerkt": "2026-07-23T14:22:53.309Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1867,7 +1867,7 @@
    {
     "naam": "Poursuivants",
     "aantal": 7,
-    "gat": "+37s",
+    "gat": "+55s",
     "renners": [
      [
       "M. Vacek",
@@ -1908,23 +1908,15 @@
     "meer": 0
    },
    {
-    "naam": "M. Pedersen",
-    "aantal": 1,
-    "gat": "+1:49",
+    "naam": "Groep Martin-Guyonnet",
+    "aantal": 8,
+    "gat": "+2:56",
     "renners": [
      [
-      "M. Pedersen",
-      "DEN",
-      33
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Martin-Guyonnet",
-    "aantal": 6,
-    "gat": "+2:47",
-    "renners": [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
      [
       "A. Baudin",
       "FRA",
@@ -1954,20 +1946,33 @@
       "G. Martin Guyonnet",
       "FRA",
       186
+     ],
+     [
+      "M. Storer",
+      "AUS",
+      196
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "M. Pedersen",
+    "aantal": 1,
+    "gat": "+3:06",
+    "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep Simmons",
-    "aantal": 18,
-    "gat": "+3:06",
+    "aantal": 15,
+    "gat": "+3:24",
     "renners": [
-     [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
      [
       "Q. Simmons",
       "USA",
@@ -1984,34 +1989,6 @@
       47
      ],
      [
-      "M. Matthews",
-      "AUS",
-      115
-     ],
-     [
-      "M. Cort Nielsen",
-      "DEN",
-      124
-     ],
-     [
-      "G. Bennett",
-      "NZL",
-      133
-     ],
-     [
-      "E. Rubio Reyes",
-      "COL",
-      148
-     ]
-    ],
-    "meer": 5
-   },
-   {
-    "naam": "Groep Caruso",
-    "aantal": 4,
-    "gat": "+3:11",
-    "renners": [
-     [
       "D. Caruso",
       "ITA",
       73
@@ -2027,17 +2004,22 @@
       111
      ],
      [
-      "J. Delbove",
-      "FRA",
-      203
+      "M. Matthews",
+      "AUS",
+      115
+     ],
+     [
+      "M. Cort Nielsen",
+      "DEN",
+      124
      ]
     ],
-    "meer": 0
+    "meer": 7
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:02",
+    "gat": "+8:09",
     "renners": [
      [
       "T. Pogacar",
@@ -2085,7 +2067,7 @@
    {
     "naam": "Distancés",
     "aantal": 61,
-    "gat": "+16:32",
+    "gat": "+16:53",
     "renners": [
      [
       "B. Mcnulty",
