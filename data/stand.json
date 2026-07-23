@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T12:48:43Z",
+ "bijgewerkt": "2026-07-23T14:12:10Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,11 +1824,11 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T12:48:42.257Z",
+  "bijgewerkt": "2026-07-23T14:12:09.807Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 8,
+    "aantal": 4,
     "gat": "",
     "renners": [
      [
@@ -1837,19 +1837,9 @@
       16
      ],
      [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
-      "T. Arensman",
-      "NED",
-      82
-     ],
-     [
-      "F. Engelhardt",
-      "GER",
-      114
+      "M. Schmid",
+      "SUI",
+      118
      ],
      [
       "T. Johannessen",
@@ -1857,32 +1847,35 @@
       121
      ],
      [
-      "P. Castrillo Zapater",
+      "R. Garcia Pierna",
       "ESP",
-      142
-     ],
+      144
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "F. Engelhardt",
+    "aantal": 1,
+    "gat": "+6s",
+    "renners": [
      [
-      "R. Gregoire",
-      "FRA",
-      181
-     ],
-     [
-      "N. Breuillard",
-      "FRA",
-      202
+      "F. Engelhardt",
+      "GER",
+      114
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep bollentrui",
-    "aantal": 6,
-    "gat": "+45s",
+    "aantal": 9,
+    "gat": "+22s",
     "renners": [
      [
-      "J. Tratnik",
-      "SLO",
-      26
+      "M. Pedersen",
+      "DEN",
+      33
      ],
      [
       "M. Vacek",
@@ -1895,37 +1888,67 @@
       41
      ],
      [
+      "E. Bernal Gomez",
+      "COL",
+      81
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ],
+     [
       "V. Paret Peintre",
       "FRA",
       93
      ],
      [
-      "M. Schmid",
-      "SUI",
-      118
+      "P. Castrillo Zapater",
+      "ESP",
+      142
      ],
      [
-      "R. Garcia Pierna",
-      "ESP",
-      144
+      "R. Gregoire",
+      "FRA",
+      181
      ]
     ],
-    "meer": 0
+    "meer": 1
    },
    {
-    "naam": "Groep Bernal",
-    "aantal": 6,
-    "gat": "+1:16",
+    "naam": "Groep Simmons",
+    "aantal": 19,
+    "gat": "+2:19",
     "renners": [
      [
-      "D. Caruso",
-      "ITA",
-      73
+      "B. Armirail",
+      "FRA",
+      13
      ],
      [
-      "E. Bernal Gomez",
+      "Q. Simmons",
+      "USA",
+      34
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
+      "H. Tejada Canacue",
       "COL",
-      81
+      65
      ],
      [
       "M. Kwiatkowski",
@@ -1933,19 +1956,60 @@
       86
      ],
      [
-      "M. Cort Nielsen",
-      "DEN",
-      124
+      "L. Vervaeke",
+      "BEL",
+      98
+     ]
+    ],
+    "meer": 11
+   },
+   {
+    "naam": "Groep Caruso",
+    "aantal": 4,
+    "gat": "+2:44",
+    "renners": [
+     [
+      "D. Caruso",
+      "ITA",
+      73
      ],
+     [
+      "J. Stuyven",
+      "BEL",
+      94
+     ],
+     [
+      "B. O'Connor",
+      "AUS",
+      111
+     ],
+     [
+      "J. Delbove",
+      "FRA",
+      203
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Poursuivants",
+    "aantal": 3,
+    "gat": "+7:09",
+    "renners": [
      [
       "D. Howson",
       "AUS",
       175
      ],
      [
-      "G. Martin Guyonnet",
+      "X. Meurisse",
+      "BEL",
+      176
+     ],
+     [
+      "W. Barguil",
       "FRA",
-      186
+      211
      ]
     ],
     "meer": 0
@@ -1953,7 +2017,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+2:03",
+    "gat": "+8:07",
     "renners": [
      [
       "T. Pogacar",
@@ -1981,14 +2045,14 @@
       8
      ],
      [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
-     [
       "S. Kuss",
       "USA",
       17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
      ],
      [
       "R. Evenepoel",
@@ -1996,78 +2060,12 @@
       21
      ]
     ],
-    "meer": 67
-   },
-   {
-    "naam": "Groep Piganzoli",
-    "aantal": 2,
-    "gat": "+2:07",
-    "renners": [
-     [
-      "D. Piganzoli",
-      "ITA",
-      18
-     ],
-     [
-      "C. Verona Quintanilla",
-      "ESP",
-      38
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep Alaphilippe",
-    "aantal": 15,
-    "gat": "+3:36",
-    "renners": [
-     [
-      "M. Walker",
-      "GBR",
-      48
-     ],
-     [
-      "S. Velasco",
-      "ITA",
-      67
-     ],
-     [
-      "R. Stannard",
-      "AUS",
-      76
-     ],
-     [
-      "L. Durbridge",
-      "AUS",
-      113
-     ],
-     [
-      "L. Plapp",
-      "AUS",
-      117
-     ],
-     [
-      "J. Abrahamsen",
-      "NOR",
-      122
-     ],
-     [
-      "A. Skaarseth",
-      "NOR",
-      126
-     ],
-     [
-      "L. Van Eetvelt",
-      "BEL",
-      156
-     ]
-    ],
-    "meer": 7
+    "meer": 54
    },
    {
     "naam": "Distancés",
-    "aantal": 51,
-    "gat": "+6:09",
+    "aantal": 61,
+    "gat": "+15:37",
     "renners": [
      [
       "B. Mcnulty",
@@ -2110,7 +2108,7 @@
       46
      ]
     ],
-    "meer": 43
+    "meer": 53
    }
   ],
   "bron": "racecenter.letour.fr"
