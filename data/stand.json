@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T12:11:08Z",
+ "bijgewerkt": "2026-07-23T12:16:30Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T12:11:07.323Z",
+  "bijgewerkt": "2026-07-23T12:16:29.309Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1870,9 +1870,22 @@
     "meer": 0
    },
    {
+    "naam": "R. Grégoire",
+    "aantal": 1,
+    "gat": "+31s",
+    "renners": [
+     [
+      "R. Gregoire",
+      "FRA",
+      181
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+37s",
+    "gat": "+39s",
     "renners": [
      [
       "T. Pogacar",
@@ -1905,22 +1918,22 @@
       13
      ],
      [
-      "P. Hagenes",
-      "NOR",
-      15
-     ],
-     [
       "S. Kuss",
       "USA",
       17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
      ]
     ],
-    "meer": 84
+    "meer": 79
    },
    {
     "naam": "Groep Vauquelin",
     "aantal": 17,
-    "gat": "+1:56",
+    "gat": "+2:12",
     "renners": [
      [
       "M. Walker",
@@ -1967,8 +1980,8 @@
    },
    {
     "naam": "Distancés",
-    "aantal": 47,
-    "gat": "+3:22",
+    "aantal": 51,
+    "gat": "+3:50",
     "renners": [
      [
       "B. Mcnulty",
@@ -1996,6 +2009,11 @@
       14
      ],
      [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
       "N. Denz",
       "GER",
       23
@@ -2004,14 +2022,9 @@
       "G. Steinhauser",
       "GER",
       46
-     ],
-     [
-      "C. Bol",
-      "NED",
-      53
      ]
     ],
-    "meer": 39
+    "meer": 43
    }
   ],
   "bron": "racecenter.letour.fr"
