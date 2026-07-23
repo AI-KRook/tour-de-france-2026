@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:38:59Z",
+ "bijgewerkt": "2026-07-23T14:44:21Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,11 +1824,11 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:38:58.607Z",
+  "bijgewerkt": "2026-07-23T14:44:20.538Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 6,
+    "aantal": 5,
     "gat": "",
     "renners": [
      [
@@ -1855,7 +1855,15 @@
       "T. Johannessen",
       "NOR",
       121
-     ],
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "R. García Pierna",
+    "aantal": 1,
+    "gat": "+8s",
+    "renners": [
      [
       "R. Garcia Pierna",
       "ESP",
@@ -1867,7 +1875,7 @@
    {
     "naam": "Groep Bernal",
     "aantal": 7,
-    "gat": "+1:27",
+    "gat": "+1:48",
     "renners": [
      [
       "M. Vacek",
@@ -1910,7 +1918,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 24,
-    "gat": "+4:38",
+    "gat": "+4:44",
     "renners": [
      [
       "B. Armirail",
@@ -1958,7 +1966,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+7:41",
+    "gat": "+7:15",
     "renners": [
      [
       "T. Pogacar",
@@ -2005,14 +2013,9 @@
    },
    {
     "naam": "Distancés",
-    "aantal": 62,
-    "gat": "+18:48",
+    "aantal": 61,
+    "gat": "+19:14",
     "renners": [
-     [
-      "B. Mcnulty",
-      "USA",
-      4
-     ],
      [
       "F. Vermeersch",
       "BEL",
@@ -2047,9 +2050,14 @@
       "N. Denz",
       "GER",
       23
+     ],
+     [
+      "G. Steinhauser",
+      "GER",
+      46
      ]
     ],
-    "meer": 54
+    "meer": 53
    }
   ],
   "bron": "racecenter.letour.fr"
