@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:49:43Z",
+ "bijgewerkt": "2026-07-23T14:55:04Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:49:42.400Z",
+  "bijgewerkt": "2026-07-23T14:55:04.132Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1867,7 +1867,7 @@
    {
     "naam": "Groep Bernal",
     "aantal": 7,
-    "gat": "+2:13",
+    "gat": "+2:40",
     "renners": [
      [
       "M. Vacek",
@@ -1910,7 +1910,7 @@
    {
     "naam": "Groep Simmons",
     "aantal": 8,
-    "gat": "+5:00",
+    "gat": "+4:55",
     "renners": [
      [
       "Q. Simmons",
@@ -1956,57 +1956,9 @@
     "meer": 0
    },
    {
-    "naam": "Groep groene trui",
-    "aantal": 16,
-    "gat": "+5:49",
-    "renners": [
-     [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
-     [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
-      "A. Baudin",
-      "FRA",
-      43
-     ],
-     [
-      "M. Kwiatkowski",
-      "POL",
-      86
-     ],
-     [
-      "J. Stuyven",
-      "BEL",
-      94
-     ],
-     [
-      "L. Vervaeke",
-      "BEL",
-      98
-     ],
-     [
-      "B. O'Connor",
-      "AUS",
-      111
-     ],
-     [
-      "M. Matthews",
-      "AUS",
-      115
-     ]
-    ],
-    "meer": 8
-   },
-   {
-    "naam": "Peloton",
-    "aantal": 999,
-    "gat": "+7:02",
+    "naam": "Groep gele trui",
+    "aantal": 28,
+    "gat": "+6:27",
     "renners": [
      [
       "T. Pogacar",
@@ -2029,11 +1981,6 @@
       17
      ],
      [
-      "D. Piganzoli",
-      "ITA",
-      18
-     ],
-     [
       "R. Evenepoel",
       "BEL",
       21
@@ -2047,14 +1994,19 @@
       "J. Hindley",
       "AUS",
       24
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
      ]
     ],
-    "meer": 49
+    "meer": 20
    },
    {
     "naam": "Distancés",
-    "aantal": 68,
-    "gat": "+19:27",
+    "aantal": 90,
+    "gat": "+19:57",
     "renners": [
      [
       "N. Politt",
@@ -2097,7 +2049,7 @@
       23
      ]
     ],
-    "meer": 60
+    "meer": 82
    }
   ],
   "bron": "racecenter.letour.fr"
