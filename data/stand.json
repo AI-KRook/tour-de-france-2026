@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:28:15Z",
+ "bijgewerkt": "2026-07-23T14:33:37Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,7 +1824,7 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:28:15.147Z",
+  "bijgewerkt": "2026-07-23T14:33:37.040Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1865,9 +1865,9 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
+    "naam": "Groep Bernal",
     "aantal": 7,
-    "gat": "+1:15",
+    "gat": "+1:18",
     "renners": [
      [
       "M. Vacek",
@@ -1908,58 +1908,15 @@
     "meer": 0
    },
    {
-    "naam": "Groep Martin-Guyonnet",
-    "aantal": 8,
-    "gat": "+3:26",
+    "naam": "Groep groene trui",
+    "aantal": 24,
+    "gat": "+4:07",
     "renners": [
      [
       "B. Armirail",
       "FRA",
       13
      ],
-     [
-      "A. Baudin",
-      "FRA",
-      43
-     ],
-     [
-      "H. Tejada Canacue",
-      "COL",
-      65
-     ],
-     [
-      "M. Kwiatkowski",
-      "POL",
-      86
-     ],
-     [
-      "L. Vervaeke",
-      "BEL",
-      98
-     ],
-     [
-      "C. Braz Afonso",
-      "FRA",
-      183
-     ],
-     [
-      "G. Martin Guyonnet",
-      "FRA",
-      186
-     ],
-     [
-      "M. Storer",
-      "AUS",
-      196
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep groene trui",
-    "aantal": 16,
-    "gat": "+3:49",
-    "renners": [
      [
       "M. Pedersen",
       "DEN",
@@ -1969,6 +1926,11 @@
       "Q. Simmons",
       "USA",
       34
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
      ],
      [
       "B. Healy",
@@ -1981,32 +1943,22 @@
       47
      ],
      [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ],
+     [
       "D. Caruso",
       "ITA",
       73
-     ],
-     [
-      "J. Stuyven",
-      "BEL",
-      94
-     ],
-     [
-      "B. O'Connor",
-      "AUS",
-      111
-     ],
-     [
-      "M. Matthews",
-      "AUS",
-      115
      ]
     ],
-    "meer": 8
+    "meer": 16
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:01",
+    "gat": "+8:04",
     "renners": [
      [
       "T. Pogacar",
@@ -2054,7 +2006,7 @@
    {
     "naam": "Distancés",
     "aantal": 62,
-    "gat": "+17:17",
+    "gat": "+18:25",
     "renners": [
      [
       "B. Mcnulty",
