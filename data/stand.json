@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:44:21Z",
+ "bijgewerkt": "2026-07-23T14:49:43Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,11 +1824,11 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:44:20.538Z",
+  "bijgewerkt": "2026-07-23T14:49:42.400Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 5,
+    "aantal": 6,
     "gat": "",
     "renners": [
      [
@@ -1855,15 +1855,7 @@
       "T. Johannessen",
       "NOR",
       121
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "R. García Pierna",
-    "aantal": 1,
-    "gat": "+8s",
-    "renners": [
+     ],
      [
       "R. Garcia Pierna",
       "ESP",
@@ -1875,7 +1867,7 @@
    {
     "naam": "Groep Bernal",
     "aantal": 7,
-    "gat": "+1:48",
+    "gat": "+2:13",
     "renners": [
      [
       "M. Vacek",
@@ -1916,29 +1908,14 @@
     "meer": 0
    },
    {
-    "naam": "Groep groene trui",
-    "aantal": 24,
-    "gat": "+4:44",
+    "naam": "Groep Simmons",
+    "aantal": 8,
+    "gat": "+5:00",
     "renners": [
-     [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
-     [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
      [
       "Q. Simmons",
       "USA",
       34
-     ],
-     [
-      "A. Baudin",
-      "FRA",
-      43
      ],
      [
       "B. Healy",
@@ -1959,14 +1936,77 @@
       "D. Caruso",
       "ITA",
       73
+     ],
+     [
+      "C. Braz Afonso",
+      "FRA",
+      183
+     ],
+     [
+      "G. Martin Guyonnet",
+      "FRA",
+      186
+     ],
+     [
+      "A. Delettre",
+      "FRA",
+      204
      ]
     ],
-    "meer": 16
+    "meer": 0
+   },
+   {
+    "naam": "Groep groene trui",
+    "aantal": 16,
+    "gat": "+5:49",
+    "renners": [
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "M. Kwiatkowski",
+      "POL",
+      86
+     ],
+     [
+      "J. Stuyven",
+      "BEL",
+      94
+     ],
+     [
+      "L. Vervaeke",
+      "BEL",
+      98
+     ],
+     [
+      "B. O'Connor",
+      "AUS",
+      111
+     ],
+     [
+      "M. Matthews",
+      "AUS",
+      115
+     ]
+    ],
+    "meer": 8
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+7:15",
+    "gat": "+7:02",
     "renners": [
      [
       "T. Pogacar",
@@ -1982,11 +2022,6 @@
       "F. Grossschartner",
       "AUT",
       3
-     ],
-     [
-      "N. Politt",
-      "GER",
-      5
      ],
      [
       "S. Kuss",
@@ -2007,15 +2042,25 @@
       "M. Cattaneo",
       "ITA",
       22
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
      ]
     ],
-    "meer": 56
+    "meer": 49
    },
    {
     "naam": "Distancés",
-    "aantal": 61,
-    "gat": "+19:14",
+    "aantal": 68,
+    "gat": "+19:27",
     "renners": [
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
      [
       "F. Vermeersch",
       "BEL",
@@ -2050,14 +2095,9 @@
       "N. Denz",
       "GER",
       23
-     ],
-     [
-      "G. Steinhauser",
-      "GER",
-      46
      ]
     ],
-    "meer": 53
+    "meer": 60
    }
   ],
   "bron": "racecenter.letour.fr"
