@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T12:21:52Z",
+ "bijgewerkt": "2026-07-23T12:27:14Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,11 +1824,11 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T12:21:51.324Z",
+  "bijgewerkt": "2026-07-23T12:27:13.700Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 7,
+    "aantal": 8,
     "gat": "",
     "renners": [
      [
@@ -1862,6 +1862,11 @@
       142
      ],
      [
+      "R. Gregoire",
+      "FRA",
+      181
+     ],
+     [
       "N. Breuillard",
       "FRA",
       202
@@ -1870,22 +1875,9 @@
     "meer": 0
    },
    {
-    "naam": "R. Grégoire",
-    "aantal": 1,
-    "gat": "+20s",
-    "renners": [
-     [
-      "R. Gregoire",
-      "FRA",
-      181
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+42s",
+    "gat": "+40s",
     "renners": [
      [
       "T. Pogacar",
@@ -1928,13 +1920,18 @@
       18
      ]
     ],
-    "meer": 78
+    "meer": 77
    },
    {
     "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+1:07",
+    "aantal": 2,
+    "gat": "+1:32",
     "renners": [
+     [
+      "K. Asgreen",
+      "DEN",
+      42
+     ],
      [
       "M. Riccitello",
       "USA",
@@ -1946,7 +1943,7 @@
    {
     "naam": "Groep Vauquelin",
     "aantal": 17,
-    "gat": "+2:14",
+    "gat": "+1:58",
     "renners": [
      [
       "M. Walker",
@@ -1994,7 +1991,7 @@
    {
     "naam": "Distancés",
     "aantal": 51,
-    "gat": "+4:03",
+    "gat": "+4:14",
     "renners": [
      [
       "B. Mcnulty",
