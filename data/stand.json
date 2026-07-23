@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T14:12:10Z",
+ "bijgewerkt": "2026-07-23T14:17:32Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1824,17 +1824,27 @@
  },
  "koers": {
   "etappe": 18,
-  "bijgewerkt": "2026-07-23T14:12:09.807Z",
+  "bijgewerkt": "2026-07-23T14:17:31.532Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 4,
+    "aantal": 6,
     "gat": "",
     "renners": [
      [
       "M. Jorgenson",
       "USA",
       16
+     ],
+     [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
      ],
      [
       "M. Schmid",
@@ -1855,37 +1865,14 @@
     "meer": 0
    },
    {
-    "naam": "F. Engelhardt",
-    "aantal": 1,
-    "gat": "+6s",
+    "naam": "Poursuivants",
+    "aantal": 7,
+    "gat": "+37s",
     "renners": [
-     [
-      "F. Engelhardt",
-      "GER",
-      114
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Groep bollentrui",
-    "aantal": 9,
-    "gat": "+22s",
-    "renners": [
-     [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
      [
       "M. Vacek",
       "CZE",
       37
-     ],
-     [
-      "R. Carapaz",
-      "ECU",
-      41
      ],
      [
       "E. Bernal Gomez",
@@ -1898,9 +1885,9 @@
       82
      ],
      [
-      "V. Paret Peintre",
-      "FRA",
-      93
+      "F. Engelhardt",
+      "GER",
+      114
      ],
      [
       "P. Castrillo Zapater",
@@ -1911,39 +1898,37 @@
       "R. Gregoire",
       "FRA",
       181
+     ],
+     [
+      "N. Breuillard",
+      "FRA",
+      202
      ]
     ],
-    "meer": 1
+    "meer": 0
    },
    {
-    "naam": "Groep Simmons",
-    "aantal": 19,
-    "gat": "+2:19",
+    "naam": "M. Pedersen",
+    "aantal": 1,
+    "gat": "+1:49",
     "renners": [
      [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
-     [
-      "Q. Simmons",
-      "USA",
-      34
-     ],
+      "M. Pedersen",
+      "DEN",
+      33
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Martin-Guyonnet",
+    "aantal": 6,
+    "gat": "+2:47",
+    "renners": [
      [
       "A. Baudin",
       "FRA",
       43
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "M. Valgren",
-      "DEN",
-      47
      ],
      [
       "H. Tejada Canacue",
@@ -1959,14 +1944,72 @@
       "L. Vervaeke",
       "BEL",
       98
+     ],
+     [
+      "C. Braz Afonso",
+      "FRA",
+      183
+     ],
+     [
+      "G. Martin Guyonnet",
+      "FRA",
+      186
      ]
     ],
-    "meer": 11
+    "meer": 0
+   },
+   {
+    "naam": "Groep Simmons",
+    "aantal": 18,
+    "gat": "+3:06",
+    "renners": [
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "Q. Simmons",
+      "USA",
+      34
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
+      "M. Matthews",
+      "AUS",
+      115
+     ],
+     [
+      "M. Cort Nielsen",
+      "DEN",
+      124
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
+     ],
+     [
+      "E. Rubio Reyes",
+      "COL",
+      148
+     ]
+    ],
+    "meer": 5
    },
    {
     "naam": "Groep Caruso",
     "aantal": 4,
-    "gat": "+2:44",
+    "gat": "+3:11",
     "renners": [
      [
       "D. Caruso",
@@ -1992,32 +2035,9 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 3,
-    "gat": "+7:09",
-    "renners": [
-     [
-      "D. Howson",
-      "AUS",
-      175
-     ],
-     [
-      "X. Meurisse",
-      "BEL",
-      176
-     ],
-     [
-      "W. Barguil",
-      "FRA",
-      211
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+8:07",
+    "gat": "+8:02",
     "renners": [
      [
       "T. Pogacar",
@@ -2060,12 +2080,12 @@
       21
      ]
     ],
-    "meer": 54
+    "meer": 57
    },
    {
     "naam": "Distancés",
     "aantal": 61,
-    "gat": "+15:37",
+    "gat": "+16:32",
     "renners": [
      [
       "B. Mcnulty",
