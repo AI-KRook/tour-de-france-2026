@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-23T07:26:25Z",
+ "bijgewerkt": "2026-07-23T11:55:02Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1821,5 +1821,151 @@
    "bron": "vast patroon",
    "feiten": "480f11f679febea2"
   }
+ },
+ "koers": {
+  "etappe": 18,
+  "bijgewerkt": "2026-07-23T11:55:01.245Z",
+  "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 7,
+    "gat": "",
+    "renners": [
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ],
+     [
+      "F. Engelhardt",
+      "GER",
+      114
+     ],
+     [
+      "T. Johannessen",
+      "NOR",
+      121
+     ],
+     [
+      "P. Castrillo Zapater",
+      "ESP",
+      142
+     ],
+     [
+      "N. Breuillard",
+      "FRA",
+      202
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Peloton",
+    "aantal": 999,
+    "gat": "+6s",
+    "renners": [
+     [
+      "T. Pogacar",
+      "SLO",
+      1
+     ],
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
+     ],
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
+     ]
+    ],
+    "meer": 84
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 64,
+    "gat": "+2:37",
+    "renners": [
+     [
+      "B. Mcnulty",
+      "USA",
+      4
+     ],
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "E. Affini",
+      "ITA",
+      12
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "N. Denz",
+      "GER",
+      23
+     ],
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
+     [
+      "M. Walker",
+      "GBR",
+      48
+     ]
+    ],
+    "meer": 56
+   }
+  ],
+  "bron": "racecenter.letour.fr"
  }
 }
