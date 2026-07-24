@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T14:38:02Z",
+ "bijgewerkt": "2026-07-24T14:43:24Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,18 +1908,13 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T14:38:01.865Z",
+  "bijgewerkt": "2026-07-24T14:43:23.543Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 34,
+    "aantal": 14,
     "gat": "",
     "renners": [
-     [
-      "A. Yates",
-      "GBR",
-      8
-     ],
      [
       "B. Armirail",
       "FRA",
@@ -1931,19 +1926,9 @@
       17
      ],
      [
-      "D. Piganzoli",
-      "ITA",
-      18
-     ],
-     [
       "M. Cattaneo",
       "ITA",
       22
-     ],
-     [
-      "M. Pedersen",
-      "DEN",
-      33
      ],
      [
       "Q. Simmons",
@@ -1951,48 +1936,103 @@
       34
      ],
      [
+      "R. Carapaz",
+      "ECU",
+      41
+     ],
+     [
+      "T. Benoot",
+      "BEL",
+      52
+     ],
+     [
+      "M. Riccitello",
+      "USA",
+      58
+     ],
+     [
+      "H. Tejada Canacue",
+      "COL",
+      65
+     ]
+    ],
+    "meer": 6
+   },
+   {
+    "naam": "Groep Yates",
+    "aantal": 11,
+    "gat": "+1:01",
+    "renners": [
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "S. Quinn",
+      "USA",
+      45
+     ],
+     [
+      "A. Tiberi",
+      "ITA",
+      77
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
+     ],
+     [
+      "I. Izagirre Insausti",
+      "ESP",
+      161
+     ],
+     [
+      "D. Howson",
+      "AUS",
+      175
+     ],
+     [
+      "C. Braz Afonso",
+      "FRA",
+      183
+     ]
+    ],
+    "meer": 3
+   },
+   {
+    "naam": "Groep groene trui",
+    "aantal": 3,
+    "gat": "+2:26",
+    "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
       "M. Vacek",
       "CZE",
       37
-     ]
-    ],
-    "meer": 26
-   },
-   {
-    "naam": "Groep bollentrui",
-    "aantal": 3,
-    "gat": "+1:48",
-    "renners": [
-     [
-      "M. Jorgenson",
-      "USA",
-      16
      ],
      [
-      "D. Gee",
-      "CAN",
-      32
+      "A. Johannessen",
+      "NOR",
+      125
      ]
     ],
     "meer": 0
    },
    {
-    "naam": "J. Tarling",
-    "aantal": 1,
-    "gat": "+3:28",
-    "renners": [
-     [
-      "J. Tarling",
-      "GBR",
-      87
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "Peloton",
-    "aantal": 999,
-    "gat": "+4:23",
+    "naam": "Groep gele trui",
+    "aantal": 11,
+    "gat": "+3:50",
     "renners": [
      [
       "T. Pogacar",
@@ -2010,9 +2050,128 @@
       3
      ],
      [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
+     ],
+     [
+      "M. Skjelmose",
+      "DEN",
+      35
+     ]
+    ],
+    "meer": 3
+   },
+   {
+    "naam": "Groep Jegat",
+    "aantal": 5,
+    "gat": "+4:19",
+    "renners": [
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "D. Gee",
+      "CAN",
+      32
+     ],
+     [
+      "A. Paret Peintre",
+      "FRA",
+      56
+     ],
+     [
+      "J. Jegat",
+      "FRA",
+      201
+     ],
+     [
+      "M. Vercher",
+      "FRA",
+      208
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep bollentrui",
+    "aantal": 16,
+    "gat": "+7:30",
+    "renners": [
+     [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
+      "C. Verona Quintanilla",
+      "ESP",
+      38
+     ],
+     [
+      "K. Asgreen",
+      "DEN",
+      42
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
+      "K. Vauquelin",
+      "FRA",
+      88
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "I. Van Wilder",
+      "BEL",
+      97
+     ]
+    ],
+    "meer": 8
+   },
+   {
+    "naam": "Groep Wellens",
+    "aantal": 80,
+    "gat": "+11:07",
+    "renners": [
+     [
       "N. Politt",
       "GER",
       5
+     ],
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
      ],
      [
       "T. Wellens",
@@ -2030,60 +2189,22 @@
       15
      ],
      [
-      "R. Evenepoel",
-      "BEL",
-      21
-     ]
-    ],
-    "meer": 82
-   },
-   {
-    "naam": "Groep Godon",
-    "aantal": 34,
-    "gat": "+8:28",
-    "renners": [
-     [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
-      "C. Bol",
+      "T. Van Dijke",
       "NED",
-      53
+      27
      ],
      [
-      "D. Ballerini",
-      "ITA",
-      62
+      "T. Skujins",
+      "LAT",
+      36
      ],
      [
-      "A. Gate",
-      "NZL",
-      63
-     ],
-     [
-      "M. Kanter",
+      "G. Steinhauser",
       "GER",
-      64
-     ],
-     [
-      "N. Vinokurov",
-      "KAZ",
-      68
-     ],
-     [
-      "P. Bauhaus",
-      "GER",
-      72
-     ],
-     [
-      "K. Gradek",
-      "POL",
-      74
+      46
      ]
     ],
-    "meer": 26
+    "meer": 72
    }
   ],
   "bron": "racecenter.letour.fr"
