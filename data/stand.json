@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T12:18:02Z",
+ "bijgewerkt": "2026-07-24T12:23:24Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,7 +1908,7 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T12:18:01.966Z",
+  "bijgewerkt": "2026-07-24T12:23:23.290Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -1951,12 +1951,60 @@
       8
      ],
      [
+      "B. Armirail",
+      "FRA",
+      13
+     ]
+    ],
+    "meer": 127
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 27,
+    "gat": "+1:00",
+    "renners": [
+     [
       "E. Affini",
       "ITA",
       12
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "M. Valgren",
+      "DEN",
+      47
+     ],
+     [
+      "C. Bol",
+      "NED",
+      53
+     ],
+     [
+      "O. Kooij",
+      "NED",
+      55
+     ],
+     [
+      "A. Gate",
+      "NZL",
+      63
+     ],
+     [
+      "M. Teunissen",
+      "NED",
+      66
      ]
     ],
-    "meer": 154
+    "meer": 19
    }
   ],
   "bron": "racecenter.letour.fr"
