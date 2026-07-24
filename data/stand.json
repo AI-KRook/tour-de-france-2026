@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T14:27:19Z",
+ "bijgewerkt": "2026-07-24T14:32:41Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,11 +1908,11 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T14:27:18.562Z",
+  "bijgewerkt": "2026-07-24T14:32:40.359Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 38,
+    "aantal": 34,
     "gat": "",
     "renners": [
      [
@@ -1956,12 +1956,12 @@
       37
      ]
     ],
-    "meer": 30
+    "meer": 26
    },
    {
-    "naam": "Groep Jorgenson",
-    "aantal": 2,
-    "gat": "+21s",
+    "naam": "Groep bollentrui",
+    "aantal": 3,
+    "gat": "+1:48",
     "renners": [
      [
       "M. Jorgenson",
@@ -1979,7 +1979,7 @@
    {
     "naam": "J. Tarling",
     "aantal": 1,
-    "gat": "+1:49",
+    "gat": "+3:28",
     "renners": [
      [
       "J. Tarling",
@@ -1992,7 +1992,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4:21",
+    "gat": "+4:23",
     "renners": [
      [
       "T. Pogacar",
@@ -2035,12 +2035,12 @@
       21
      ]
     ],
-    "meer": 78
+    "meer": 82
    },
    {
     "naam": "Groep Godon",
     "aantal": 34,
-    "gat": "+7:30",
+    "gat": "+8:28",
     "renners": [
      [
       "F. Vermeersch",
