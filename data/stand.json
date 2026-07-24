@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T12:39:28Z",
+ "bijgewerkt": "2026-07-24T13:55:09Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,11 +1908,11 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T12:39:27.980Z",
+  "bijgewerkt": "2026-07-24T13:55:08.877Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 43,
+    "aantal": 42,
     "gat": "",
     "renners": [
      [
@@ -1946,22 +1946,22 @@
       22
      ],
      [
-      "N. Denz",
-      "GER",
-      23
-     ],
-     [
       "D. Gee",
       "CAN",
       32
+     ],
+     [
+      "M. Pedersen",
+      "DEN",
+      33
      ]
     ],
-    "meer": 35
+    "meer": 34
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+1:14",
+    "gat": "+3:55",
     "renners": [
      [
       "T. Pogacar",
@@ -1989,11 +1989,6 @@
       6
      ],
      [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
       "E. Affini",
       "ITA",
       12
@@ -2002,9 +1997,47 @@
       "V. Campenaerts",
       "BEL",
       14
+     ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
      ]
     ],
-    "meer": 111
+    "meer": 107
+   },
+   {
+    "naam": "Groep Wellens",
+    "aantal": 5,
+    "gat": "+5:23",
+    "renners": [
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "E. Planckaert",
+      "BEL",
+      106
+     ],
+     [
+      "H. Artz",
+      "NED",
+      152
+     ],
+     [
+      "L. Germani",
+      "ITA",
+      185
+     ]
+    ],
+    "meer": 0
    }
   ],
   "bron": "racecenter.letour.fr"
