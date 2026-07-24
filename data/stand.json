@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T15:44:37Z",
+ "bijgewerkt": "2026-07-24T15:49:23Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1422,6 +1422,85 @@
     }
    ],
    "bron": "letour.fr"
+  },
+  "19": {
+   "w": "Tadej Pogacar",
+   "wLand": "SLO",
+   "wPloeg": "UAE Team Emirates XRG",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Tadej Pogacar",
+     "land": "SLO",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": ""
+    },
+    {
+     "pos": 2,
+     "naam": "Lenny Martinez",
+     "land": "FRA",
+     "ploeg": "Bahrain Victorious",
+     "tijd": "+ 0:06"
+    },
+    {
+     "pos": 3,
+     "naam": "Richard Carapaz",
+     "land": "ECU",
+     "ploeg": "EF Education - Easypost",
+     "tijd": "+ 0:09"
+    },
+    {
+     "pos": 4,
+     "naam": "Sepp Kuss",
+     "land": "USA",
+     "ploeg": "Team Visma | Lease A Bike",
+     "tijd": "+ 1:14"
+    },
+    {
+     "pos": 5,
+     "naam": "Tobias Johannessen",
+     "land": "NOR",
+     "ploeg": "Uno-X Mobility",
+     "tijd": "+ 2:07"
+    },
+    {
+     "pos": 6,
+     "naam": "Remco Evenepoel",
+     "land": "BEL",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
+     "tijd": "+ 2:29"
+    },
+    {
+     "pos": 7,
+     "naam": "Isaac Del Toro Romero",
+     "land": "MEX",
+     "ploeg": "UAE Team Emirates XRG",
+     "tijd": "+ 2:41"
+    },
+    {
+     "pos": 8,
+     "naam": "Mattias Skjelmose",
+     "land": "DEN",
+     "ploeg": "Lidl-Trek",
+     "tijd": "+ 2:45"
+    },
+    {
+     "pos": 9,
+     "naam": "Paul Seixas",
+     "land": "FRA",
+     "ploeg": "Decathlon CMA CGM Team",
+     "tijd": "+ 2:45"
+    },
+    {
+     "pos": 10,
+     "naam": "Harold Tejada Canacue",
+     "land": "COL",
+     "ploeg": "XDS Astana Team",
+     "tijd": "+ 3:22"
+    }
+   ],
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -1805,6 +1884,13 @@
       "land": "USA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 1:55:35"
+     },
+     {
+      "pos": 8,
+      "naam": "Antonio Tiberi",
+      "land": "ITA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 2:18:39"
      }
     ]
    }
@@ -1816,13 +1902,13 @@
     "naar": "Richard Carapaz"
    }
   ],
-  "voetnoot": "Stand na etappe 19, automatisch bijgewerkt 24 juli 17:44 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 19, automatisch bijgewerkt 24 juli 17:49 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
-  "voorEtappe": 19,
-  "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Orcières-Merlette, voor Mauro Schmid en Matteo Jorgenson. Richard Carapaz neemt de bollentrui over van Tadej Pogačar. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 7:11.",
+  "voorEtappe": 20,
+  "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Alpe d'Huez, voor Lenny Martinez en Richard Carapaz. Richard Carapaz neemt de bollentrui over van Tadej Pogačar. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 7:11.",
   "bron": "vast patroon",
-  "feiten": "282f7b623c448957"
+  "feiten": "abad349dd56557e1"
  },
  "samenvattingen": {
   "6": {
@@ -1889,6 +1975,11 @@
    "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Orcières-Merlette, met Mauro Schmid op +0:45. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 7:11.",
    "bron": "vast patroon",
    "feiten": "cbe34c27fa9fce8e"
+  },
+  "19": {
+   "tekst": "Tadej Pogacar (UAE Team Emirates XRG) bedwong als eerste de slotklim naar Alpe d'Huez, met Lenny Martinez op +0:06. Richard Carapaz pakt de bollentrui. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 7:11.",
+   "bron": "vast patroon",
+   "feiten": "8920a3842d4197dc"
   }
  }
 }
