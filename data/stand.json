@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T15:34:43Z",
+ "bijgewerkt": "2026-07-24T15:40:06Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1440,14 +1440,14 @@
     "ploeg": "Lidl-Trek"
    },
    "bollen": {
-    "naam": "Valentin Paret Peintre",
-    "kort": "V. Paret Peintre",
-    "land": "FRA",
-    "ploeg": "Soudal Quick-Step"
+    "naam": "Richard Carapaz",
+    "kort": "R. Carapaz",
+    "land": "ECU",
+    "ploeg": "EF Education - Easypost"
    },
    "wit": {
-    "naam": "Isaac del Toro",
-    "kort": "I. del Toro",
+    "naam": "Isaac Del Toro Romero",
+    "kort": "I. Del Toro Romero",
     "land": "MEX",
     "ploeg": "UAE Team Emirates XRG"
    }
@@ -1459,6 +1459,27 @@
     "land": "SLO",
     "ploeg": "UAE Team Emirates XRG",
     "tijd": "—"
+   },
+   {
+    "pos": 2,
+    "naam": "Remco Evenepoel",
+    "land": "BEL",
+    "ploeg": "RED Bull - Bora - Hansgrohe",
+    "tijd": "+ 7:11"
+   },
+   {
+    "pos": 3,
+    "naam": "Isaac Del Toro Romero",
+    "land": "MEX",
+    "ploeg": "UAE Team Emirates XRG",
+    "tijd": "+ 9:42"
+   },
+   {
+    "pos": 4,
+    "naam": "Paul Seixas",
+    "land": "FRA",
+    "ploeg": "Decathlon CMA CGM Team",
+    "tijd": "+ 10:06"
    }
   ],
   "klassementen": {
@@ -1472,6 +1493,27 @@
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "—"
+     },
+     {
+      "pos": 2,
+      "naam": "Remco Evenepoel",
+      "land": "BEL",
+      "ploeg": "RED Bull - Bora - Hansgrohe",
+      "tijd": "+ 7:11"
+     },
+     {
+      "pos": 3,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "+ 9:42"
+     },
+     {
+      "pos": 4,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 10:06"
      }
     ]
    },
@@ -1557,52 +1599,52 @@
     "top10": [
      {
       "pos": 1,
+      "naam": "Richard Carapaz",
+      "land": "ECU",
+      "ploeg": "EF Education - Easypost",
+      "tijd": "91 ptn"
+     },
+     {
+      "pos": 2,
+      "naam": "Tadej Pogacar",
+      "land": "SLO",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "90 ptn"
+     },
+     {
+      "pos": 3,
       "naam": "Valentin Paret Peintre",
       "land": "FRA",
       "ploeg": "Soudal Quick-Step",
       "tijd": "84 ptn"
      },
      {
-      "pos": 2,
-      "naam": "Richard Carapaz",
-      "land": "ECU",
-      "ploeg": "EF Education - Easypost",
-      "tijd": "79 ptn"
-     },
-     {
-      "pos": 3,
-      "naam": "Tadej Pogacar",
-      "land": "SLO",
-      "ploeg": "UAE Team Emirates XRG",
-      "tijd": "70 ptn"
-     },
-     {
       "pos": 4,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "37 ptn"
+     },
+     {
+      "pos": 5,
       "naam": "Remco Evenepoel",
       "land": "BEL",
       "ploeg": "RED Bull - Bora - Hansgrohe",
       "tijd": "36 ptn"
      },
      {
-      "pos": 5,
+      "pos": 6,
       "naam": "Paul Seixas",
       "land": "FRA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "34 ptn"
      },
      {
-      "pos": 6,
+      "pos": 7,
       "naam": "Isaac Del Toro Romero",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "30 ptn"
-     },
-     {
-      "pos": 7,
-      "naam": "Lenny Martinez",
-      "land": "FRA",
-      "ploeg": "Bahrain Victorious",
-      "tijd": "22 ptn"
      },
      {
       "pos": 8,
@@ -1626,22 +1668,42 @@
       "tijd": "18 ptn"
      }
     ]
+   },
+   "wit": {
+    "naEtappe": 19,
+    "eenheid": "tijd",
+    "top10": [
+     {
+      "pos": 1,
+      "naam": "Isaac Del Toro Romero",
+      "land": "MEX",
+      "ploeg": "UAE Team Emirates XRG",
+      "tijd": "—"
+     },
+     {
+      "pos": 2,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 0:24"
+     }
+    ]
    }
   },
   "wissels": [
    {
     "trui": "bollen",
     "van": "Tadej Pogačar",
-    "naar": "Valentin Paret Peintre"
+    "naar": "Richard Carapaz"
    }
   ],
-  "voetnoot": "Stand na etappe 19, automatisch bijgewerkt 24 juli 17:34 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 19, automatisch bijgewerkt 24 juli 17:40 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 19,
-  "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Orcières-Merlette, voor Mauro Schmid en Matteo Jorgenson. Valentin Paret Peintre neemt de bollentrui over van Tadej Pogačar.",
+  "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Orcières-Merlette, voor Mauro Schmid en Matteo Jorgenson. Richard Carapaz neemt de bollentrui over van Tadej Pogačar. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 7:11.",
   "bron": "vast patroon",
-  "feiten": "be1fa610c006fdfd"
+  "feiten": "282f7b623c448957"
  },
  "samenvattingen": {
   "6": {
@@ -1705,9 +1767,9 @@
    "feiten": "480f11f679febea2"
   },
   "18": {
-   "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Orcières-Merlette, met Mauro Schmid op +0:45. Alle truien bleven om dezelfde schouders.",
+   "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Orcières-Merlette, met Mauro Schmid op +0:45. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 7:11.",
    "bron": "vast patroon",
-   "feiten": "4cecc5a40aa7ca9d"
+   "feiten": "cbe34c27fa9fce8e"
   }
  }
 }
