@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T14:05:53Z",
+ "bijgewerkt": "2026-07-24T14:11:14Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,11 +1908,11 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T14:05:52.271Z",
+  "bijgewerkt": "2026-07-24T14:11:13.844Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 42,
+    "aantal": 41,
     "gat": "",
     "renners": [
      [
@@ -1956,12 +1956,25 @@
       33
      ]
     ],
-    "meer": 34
+    "meer": 33
+   },
+   {
+    "naam": "B. Healy",
+    "aantal": 1,
+    "gat": "+18s",
+    "renners": [
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4:15",
+    "gat": "+4:12",
     "renners": [
      [
       "T. Pogacar",
@@ -1989,11 +2002,6 @@
       6
      ],
      [
-      "E. Affini",
-      "ITA",
-      12
-     ],
-     [
       "V. Campenaerts",
       "BEL",
       14
@@ -2002,14 +2010,67 @@
       "R. Evenepoel",
       "BEL",
       21
+     ],
+     [
+      "N. Denz",
+      "GER",
+      23
      ]
     ],
-    "meer": 107
+    "meer": 90
+   },
+   {
+    "naam": "Groep Godon",
+    "aantal": 16,
+    "gat": "+4:56",
+    "renners": [
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "A. Gate",
+      "NZL",
+      63
+     ],
+     [
+      "M. Kanter",
+      "GER",
+      64
+     ],
+     [
+      "N. Vinokurov",
+      "KAZ",
+      68
+     ],
+     [
+      "P. Bauhaus",
+      "GER",
+      72
+     ],
+     [
+      "D. Godon",
+      "FRA",
+      85
+     ],
+     [
+      "E. Verstrynge",
+      "BEL",
+      108
+     ],
+     [
+      "L. Van Eetvelt",
+      "BEL",
+      156
+     ]
+    ],
+    "meer": 8
    },
    {
     "naam": "Groep Wellens",
     "aantal": 5,
-    "gat": "+6:26",
+    "gat": "+6:49",
     "renners": [
      [
       "T. Wellens",
