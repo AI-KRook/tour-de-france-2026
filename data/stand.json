@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T12:23:24Z",
+ "bijgewerkt": "2026-07-24T12:28:45Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,12 +1908,60 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T12:23:23.290Z",
+  "bijgewerkt": "2026-07-24T12:28:45.293Z",
   "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 43,
+    "gat": "",
+    "renners": [
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
+      "N. Denz",
+      "GER",
+      23
+     ],
+     [
+      "D. Gee",
+      "CAN",
+      32
+     ]
+    ],
+    "meer": 35
+   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "",
+    "gat": "+33s",
     "renners": [
      [
       "T. Pogacar",
@@ -1936,6 +1984,34 @@
       5
      ],
      [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ],
+     [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
+      "T. Van Dijke",
+      "NED",
+      27
+     ]
+    ],
+    "meer": 63
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 48,
+    "gat": "+1:40",
+    "renners": [
+     [
       "F. Vermeersch",
       "BEL",
       6
@@ -1945,24 +2021,6 @@
       "BEL",
       7
      ],
-     [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
-      "B. Armirail",
-      "FRA",
-      13
-     ]
-    ],
-    "meer": 127
-   },
-   {
-    "naam": "Distancés",
-    "aantal": 27,
-    "gat": "+1:00",
-    "renners": [
      [
       "E. Affini",
       "ITA",
@@ -1992,19 +2050,9 @@
       "O. Kooij",
       "NED",
       55
-     ],
-     [
-      "A. Gate",
-      "NZL",
-      63
-     ],
-     [
-      "M. Teunissen",
-      "NED",
-      66
      ]
     ],
-    "meer": 19
+    "meer": 40
    }
   ],
   "bron": "racecenter.letour.fr"
