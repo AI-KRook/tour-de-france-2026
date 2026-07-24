@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T14:11:14Z",
+ "bijgewerkt": "2026-07-24T14:16:36Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,11 +1908,11 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T14:11:13.844Z",
+  "bijgewerkt": "2026-07-24T14:16:35.569Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 41,
+    "aantal": 40,
     "gat": "",
     "renners": [
      [
@@ -1956,12 +1956,25 @@
       33
      ]
     ],
-    "meer": 33
+    "meer": 32
+   },
+   {
+    "naam": "J. Tarling",
+    "aantal": 1,
+    "gat": "+27s",
+    "renners": [
+     [
+      "J. Tarling",
+      "GBR",
+      87
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "B. Healy",
     "aantal": 1,
-    "gat": "+18s",
+    "gat": "+1:37",
     "renners": [
      [
       "B. Healy",
@@ -1974,7 +1987,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4:12",
+    "gat": "+4:22",
     "renners": [
      [
       "T. Pogacar",
@@ -1997,11 +2010,6 @@
       5
      ],
      [
-      "F. Vermeersch",
-      "BEL",
-      6
-     ],
-     [
       "V. Campenaerts",
       "BEL",
       14
@@ -2015,15 +2023,30 @@
       "N. Denz",
       "GER",
       23
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
      ]
     ],
-    "meer": 90
+    "meer": 72
    },
    {
     "naam": "Groep Godon",
-    "aantal": 16,
-    "gat": "+4:56",
+    "aantal": 34,
+    "gat": "+5:51",
     "renners": [
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "C. Bol",
+      "NED",
+      53
+     ],
      [
       "D. Ballerini",
       "ITA",
@@ -2050,27 +2073,17 @@
       72
      ],
      [
-      "D. Godon",
-      "FRA",
-      85
-     ],
-     [
-      "E. Verstrynge",
-      "BEL",
-      108
-     ],
-     [
-      "L. Van Eetvelt",
-      "BEL",
-      156
+      "K. Gradek",
+      "POL",
+      74
      ]
     ],
-    "meer": 8
+    "meer": 26
    },
    {
     "naam": "Groep Wellens",
     "aantal": 5,
-    "gat": "+6:49",
+    "gat": "+7:39",
     "renners": [
      [
       "T. Wellens",
