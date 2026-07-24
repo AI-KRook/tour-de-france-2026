@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T14:21:57Z",
+ "bijgewerkt": "2026-07-24T14:27:19Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,7 +1908,7 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T14:21:56.983Z",
+  "bijgewerkt": "2026-07-24T14:27:18.562Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1959,9 +1959,27 @@
     "meer": 30
    },
    {
+    "naam": "Groep Jorgenson",
+    "aantal": 2,
+    "gat": "+21s",
+    "renners": [
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "D. Gee",
+      "CAN",
+      32
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "J. Tarling",
     "aantal": 1,
-    "gat": "+1:37",
+    "gat": "+1:49",
     "renners": [
      [
       "J. Tarling",
@@ -1972,22 +1990,9 @@
     "meer": 0
    },
    {
-    "naam": "B. Healy",
-    "aantal": 1,
-    "gat": "+3:07",
-    "renners": [
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+4:24",
+    "gat": "+4:21",
     "renners": [
      [
       "T. Pogacar",
@@ -2010,32 +2015,32 @@
       5
      ],
      [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
       "V. Campenaerts",
       "BEL",
       14
      ],
      [
-      "M. Jorgenson",
-      "USA",
-      16
+      "P. Hagenes",
+      "NOR",
+      15
      ],
      [
       "R. Evenepoel",
       "BEL",
       21
-     ],
-     [
-      "N. Denz",
-      "GER",
-      23
      ]
     ],
-    "meer": 75
+    "meer": 78
    },
    {
     "naam": "Groep Godon",
-    "aantal": 33,
-    "gat": "+7:03",
+    "aantal": 34,
+    "gat": "+7:30",
     "renners": [
      [
       "F. Vermeersch",
@@ -2078,40 +2083,7 @@
       74
      ]
     ],
-    "meer": 25
-   },
-   {
-    "naam": "Groep Wellens",
-    "aantal": 5,
-    "gat": "+8:19",
-    "renners": [
-     [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
-      "P. Hagenes",
-      "NOR",
-      15
-     ],
-     [
-      "H. Artz",
-      "NED",
-      152
-     ],
-     [
-      "L. Slock",
-      "BEL",
-      155
-     ],
-     [
-      "L. Germani",
-      "ITA",
-      185
-     ]
-    ],
-    "meer": 0
+    "meer": 26
    }
   ],
   "bron": "racecenter.letour.fr"
