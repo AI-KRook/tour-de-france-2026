@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T16:04:53Z",
+ "bijgewerkt": "2026-07-24T16:09:44Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1880,24 +1880,31 @@
      },
      {
       "pos": 7,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 1:41:55"
+     },
+     {
+      "pos": 8,
       "naam": "Matthew Riccitello",
       "land": "USA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 1:55:35"
      },
      {
-      "pos": 8,
-      "naam": "Antonio Tiberi",
-      "land": "ITA",
-      "ploeg": "Bahrain Victorious",
-      "tijd": "+ 2:18:39"
+      "pos": 9,
+      "naam": "Raul Garcia Pierna",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 2:09:19"
      },
      {
-      "pos": 9,
-      "naam": "Matteo Vercher",
+      "pos": 10,
+      "naam": "Kévin Vauquelin",
       "land": "FRA",
-      "ploeg": "Totalenergies",
-      "tijd": "+ 3:50:19"
+      "ploeg": "Netcompany Ineos Cycling Team",
+      "tijd": "+ 2:12:52"
      }
     ]
    }
@@ -1909,7 +1916,7 @@
     "naar": "Richard Carapaz"
    }
   ],
-  "voetnoot": "Stand na etappe 19, automatisch bijgewerkt 24 juli 18:04 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 19, automatisch bijgewerkt 24 juli 18:09 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 20,
