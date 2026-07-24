@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T14:43:24Z",
+ "bijgewerkt": "2026-07-24T14:48:45Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,11 +1908,11 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T14:43:23.543Z",
+  "bijgewerkt": "2026-07-24T14:48:45.035Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 14,
+    "aantal": 15,
     "gat": "",
     "renners": [
      [
@@ -1956,12 +1956,12 @@
       65
      ]
     ],
-    "meer": 6
+    "meer": 7
    },
    {
     "naam": "Groep Yates",
-    "aantal": 11,
-    "gat": "+1:01",
+    "aantal": 13,
+    "gat": "+1:06",
     "renners": [
      [
       "A. Yates",
@@ -1984,55 +1984,32 @@
       77
      ],
      [
-      "G. Bennett",
-      "NZL",
-      133
-     ],
-     [
-      "I. Izagirre Insausti",
-      "ESP",
-      161
-     ],
-     [
-      "D. Howson",
+      "B. O'Connor",
       "AUS",
-      175
+      111
      ],
      [
-      "C. Braz Afonso",
-      "FRA",
-      183
-     ]
-    ],
-    "meer": 3
-   },
-   {
-    "naam": "Groep groene trui",
-    "aantal": 3,
-    "gat": "+2:26",
-    "renners": [
-     [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
-      "M. Vacek",
-      "CZE",
-      37
+      "M. Matthews",
+      "AUS",
+      115
      ],
      [
       "A. Johannessen",
       "NOR",
       125
+     ],
+     [
+      "G. Bennett",
+      "NZL",
+      133
      ]
     ],
-    "meer": 0
+    "meer": 5
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 11,
-    "gat": "+3:50",
+    "aantal": 15,
+    "gat": "+3:47",
     "renners": [
      [
       "T. Pogacar",
@@ -2070,17 +2047,17 @@
       31
      ],
      [
-      "M. Skjelmose",
+      "M. Pedersen",
       "DEN",
-      35
+      33
      ]
     ],
-    "meer": 3
+    "meer": 7
    },
    {
     "naam": "Groep Jegat",
-    "aantal": 5,
-    "gat": "+4:19",
+    "aantal": 4,
+    "gat": "+4:30",
     "renners": [
      [
       "M. Jorgenson",
@@ -2091,11 +2068,6 @@
       "D. Gee",
       "CAN",
       32
-     ],
-     [
-      "A. Paret Peintre",
-      "FRA",
-      56
      ],
      [
       "J. Jegat",
@@ -2113,7 +2085,7 @@
    {
     "naam": "Groep bollentrui",
     "aantal": 16,
-    "gat": "+7:30",
+    "gat": "+9:16",
     "renners": [
      [
       "J. Tratnik",
@@ -2161,7 +2133,7 @@
    {
     "naam": "Groep Wellens",
     "aantal": 80,
-    "gat": "+11:07",
+    "gat": "+12:32",
     "renners": [
      [
       "N. Politt",
