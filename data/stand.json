@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T12:28:45Z",
+ "bijgewerkt": "2026-07-24T12:34:07Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1908,7 +1908,7 @@
  },
  "koers": {
   "etappe": 19,
-  "bijgewerkt": "2026-07-24T12:28:45.293Z",
+  "bijgewerkt": "2026-07-24T12:34:06.720Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -1961,7 +1961,7 @@
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+33s",
+    "gat": "+1:04",
     "renners": [
      [
       "T. Pogacar",
@@ -1984,34 +1984,6 @@
       5
      ],
      [
-      "R. Evenepoel",
-      "BEL",
-      21
-     ],
-     [
-      "J. Hindley",
-      "AUS",
-      24
-     ],
-     [
-      "J. Tratnik",
-      "SLO",
-      26
-     ],
-     [
-      "T. Van Dijke",
-      "NED",
-      27
-     ]
-    ],
-    "meer": 63
-   },
-   {
-    "naam": "Distancés",
-    "aantal": 48,
-    "gat": "+1:40",
-    "renners": [
-     [
       "F. Vermeersch",
       "BEL",
       6
@@ -2021,6 +1993,24 @@
       "BEL",
       7
      ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ]
+    ],
+    "meer": 84
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 27,
+    "gat": "+1:38",
+    "renners": [
      [
       "E. Affini",
       "ITA",
@@ -2050,9 +2040,19 @@
       "O. Kooij",
       "NED",
       55
+     ],
+     [
+      "A. Gate",
+      "NZL",
+      63
+     ],
+     [
+      "M. Teunissen",
+      "NED",
+      66
      ]
     ],
-    "meer": 40
+    "meer": 19
    }
   ],
   "bron": "racecenter.letour.fr"
