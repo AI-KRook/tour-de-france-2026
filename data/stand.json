@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T12:32:34Z",
+ "bijgewerkt": "2026-07-25T12:37:37Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,7 +1998,7 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T12:32:33.924Z",
+  "bijgewerkt": "2026-07-25T12:37:36.754Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -2046,7 +2046,7 @@
    {
     "naam": "T.H. Johannessen",
     "aantal": 1,
-    "gat": "+6s",
+    "gat": "+8s",
     "renners": [
      [
       "T. Johannessen",
@@ -2059,7 +2059,7 @@
    {
     "naam": "Groep Piganzoli",
     "aantal": 2,
-    "gat": "+36s",
+    "gat": "+32s",
     "renners": [
      [
       "D. Piganzoli",
@@ -2076,8 +2076,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 29,
-    "gat": "+4:07",
+    "aantal": 28,
+    "gat": "+4:29",
     "renners": [
      [
       "T. Pogacar",
@@ -2120,17 +2120,22 @@
       32
      ]
     ],
-    "meer": 21
+    "meer": 20
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 11,
-    "gat": "+5:52",
+    "aantal": 12,
+    "gat": "+7:27",
     "renners": [
      [
       "M. Pedersen",
       "DEN",
       33
+     ],
+     [
+      "S. Higuita Garcia",
+      "COL",
+      61
      ],
      [
       "R. Stannard",
@@ -2161,19 +2166,14 @@
       "D. Howson",
       "AUS",
       175
-     ],
-     [
-      "B. Van Moer",
-      "BEL",
-      177
      ]
     ],
-    "meer": 3
+    "meer": 4
    },
    {
     "naam": "Groep Armirail",
     "aantal": 14,
-    "gat": "+8:39",
+    "gat": "+9:42",
     "renners": [
      [
       "N. Politt",
@@ -2221,7 +2221,7 @@
    {
     "naam": "Distancés",
     "aantal": 89,
-    "gat": "+14:56",
+    "gat": "+15:09",
     "renners": [
      [
       "F. Vermeersch",
