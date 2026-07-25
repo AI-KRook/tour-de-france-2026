@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T12:59:06Z",
+ "bijgewerkt": "2026-07-25T13:04:29Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,11 +1998,11 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T12:59:05.922Z",
+  "bijgewerkt": "2026-07-25T13:04:28.236Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 4,
+    "aantal": 5,
     "gat": "",
     "renners": [
      [
@@ -2014,6 +2014,11 @@
       "J. Hindley",
       "AUS",
       24
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
      ],
      [
       "R. Carapaz",
@@ -2029,22 +2034,9 @@
     "meer": 0
    },
    {
-    "naam": "J. Ayuso",
-    "aantal": 1,
-    "gat": "+17s",
-    "renners": [
-     [
-      "J. Ayuso Pesquera",
-      "ESP",
-      31
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep Arensman",
     "aantal": 3,
-    "gat": "+49s",
+    "gat": "+1:22",
     "renners": [
      [
       "D. Piganzoli",
@@ -2067,7 +2059,7 @@
    {
     "naam": "B. Healy",
     "aantal": 1,
-    "gat": "+3:06",
+    "gat": "+4:08",
     "renners": [
      [
       "B. Healy",
@@ -2079,8 +2071,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 22,
-    "gat": "+5:30",
+    "aantal": 5,
+    "gat": "+4:49",
     "renners": [
      [
       "T. Pogacar",
@@ -2093,14 +2085,32 @@
       2
      ],
      [
-      "F. Grossschartner",
-      "AUT",
-      3
-     ],
-     [
       "R. Evenepoel",
       "BEL",
       21
+     ],
+     [
+      "P. Seixas",
+      "FRA",
+      51
+     ],
+     [
+      "L. Martinez",
+      "FRA",
+      71
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Skjelmose",
+    "aantal": 17,
+    "gat": "+6:14",
+    "renners": [
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
      ],
      [
       "M. Cattaneo",
@@ -2113,45 +2123,37 @@
       28
      ],
      [
-      "D. Gee",
-      "CAN",
-      32
-     ],
-     [
       "Q. Simmons",
       "USA",
       34
-     ]
-    ],
-    "meer": 14
-   },
-   {
-    "naam": "Groep Jegat",
-    "aantal": 3,
-    "gat": "+5:45",
-    "renners": [
-     [
-      "J. Jegat",
-      "FRA",
-      201
      ],
      [
-      "N. Breuillard",
-      "FRA",
-      202
+      "M. Skjelmose",
+      "DEN",
+      35
      ],
      [
-      "W. Barguil",
+      "S. Quinn",
+      "USA",
+      45
+     ],
+     [
+      "T. Benoot",
+      "BEL",
+      52
+     ],
+     [
+      "N. Prodhomme",
       "FRA",
-      211
+      57
      ]
     ],
-    "meer": 0
+    "meer": 9
    },
    {
     "naam": "Groep groene trui",
     "aantal": 30,
-    "gat": "+13:25",
+    "gat": "+14:50",
     "renners": [
      [
       "N. Politt",
@@ -2199,7 +2201,7 @@
    {
     "naam": "Distancés",
     "aantal": 89,
-    "gat": "+19:16",
+    "gat": "+19:59",
     "renners": [
      [
       "F. Vermeersch",
