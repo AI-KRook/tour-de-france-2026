@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-24T19:00:28Z",
+ "bijgewerkt": "2026-07-25T11:15:39Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1995,5 +1995,156 @@
    "bron": "vast patroon",
    "feiten": "39a17759a208dbe6"
   }
+ },
+ "koers": {
+  "etappe": 20,
+  "bijgewerkt": "2026-07-25T11:15:38.862Z",
+  "groepen": [
+   {
+    "naam": "Kopgroep",
+    "aantal": 15,
+    "gat": "",
+    "renners": [
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
+     ],
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "R. Carapaz",
+      "ECU",
+      41
+     ]
+    ],
+    "meer": 7
+   },
+   {
+    "naam": "Groep gele trui",
+    "aantal": 50,
+    "gat": "+2:14",
+    "renners": [
+     [
+      "T. Pogacar",
+      "SLO",
+      1
+     ],
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
+     ],
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "R. Evenepoel",
+      "BEL",
+      21
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ]
+    ],
+    "meer": 42
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 89,
+    "gat": "+7:09",
+    "renners": [
+     [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "N. Denz",
+      "GER",
+      23
+     ],
+     [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
+      "M. Vacek",
+      "CZE",
+      37
+     ],
+     [
+      "K. Asgreen",
+      "DEN",
+      42
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ]
+    ],
+    "meer": 81
+   }
+  ],
+  "bron": "racecenter.letour.fr"
  }
 }
