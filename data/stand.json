@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T11:33:51Z",
+ "bijgewerkt": "2026-07-25T11:38:35Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,22 +1998,17 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T11:33:50.331Z",
+  "bijgewerkt": "2026-07-25T11:38:34.291Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 15,
+    "aantal": 13,
     "gat": "",
     "renners": [
      [
       "B. Armirail",
       "FRA",
       13
-     ],
-     [
-      "M. Jorgenson",
-      "USA",
-      16
      ],
      [
       "S. Kuss",
@@ -2036,22 +2031,53 @@
       31
      ],
      [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
       "R. Carapaz",
       "ECU",
       41
+     ],
+     [
+      "B. Healy",
+      "IRL",
+      44
+     ],
+     [
+      "M. Riccitello",
+      "USA",
+      58
      ]
     ],
-    "meer": 7
+    "meer": 5
+   },
+   {
+    "naam": "M. Pedersen",
+    "aantal": 1,
+    "gat": "+35s",
+    "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "M. Jorgenson",
+    "aantal": 1,
+    "gat": "+1:19",
+    "renners": [
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Groep gele trui",
     "aantal": 50,
-    "gat": "+3:14",
+    "gat": "+3:36",
     "renners": [
      [
       "T. Pogacar",
@@ -2099,7 +2125,7 @@
    {
     "naam": "Distancés",
     "aantal": 89,
-    "gat": "+8:27",
+    "gat": "+8:56",
     "renners": [
      [
       "F. Vermeersch",
