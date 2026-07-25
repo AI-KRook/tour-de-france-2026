@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T11:57:24Z",
+ "bijgewerkt": "2026-07-25T12:02:00Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,7 +1998,7 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T11:57:23.871Z",
+  "bijgewerkt": "2026-07-25T12:01:59.991Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -2051,7 +2051,7 @@
    {
     "naam": "Groep Paret-Peintre",
     "aantal": 3,
-    "gat": "+1:34",
+    "gat": "+2:05",
     "renners": [
      [
       "B. Healy",
@@ -2074,7 +2074,7 @@
    {
     "naam": "M. Pedersen",
     "aantal": 1,
-    "gat": "+3:24",
+    "gat": "+2:39",
     "renners": [
      [
       "M. Pedersen",
@@ -2085,27 +2085,9 @@
     "meer": 0
    },
    {
-    "naam": "Groep Jorgenson",
-    "aantal": 2,
-    "gat": "+4:24",
-    "renners": [
-     [
-      "B. Armirail",
-      "FRA",
-      13
-     ],
-     [
-      "M. Jorgenson",
-      "USA",
-      16
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep gele trui",
-    "aantal": 48,
-    "gat": "+4:38",
+    "aantal": 36,
+    "gat": "+4:18",
     "renners": [
      [
       "T. Pogacar",
@@ -2123,16 +2105,6 @@
       3
      ],
      [
-      "N. Politt",
-      "GER",
-      5
-     ],
-     [
-      "T. Wellens",
-      "BEL",
-      7
-     ],
-     [
       "A. Yates",
       "GBR",
       8
@@ -2146,14 +2118,72 @@
       "M. Cattaneo",
       "ITA",
       22
+     ],
+     [
+      "M. Van Gils",
+      "BEL",
+      28
+     ],
+     [
+      "D. Gee",
+      "CAN",
+      32
      ]
     ],
-    "meer": 40
+    "meer": 28
+   },
+   {
+    "naam": "Groep Armirail",
+    "aantal": 14,
+    "gat": "+5:05",
+    "renners": [
+     [
+      "N. Politt",
+      "GER",
+      5
+     ],
+     [
+      "T. Wellens",
+      "BEL",
+      7
+     ],
+     [
+      "B. Armirail",
+      "FRA",
+      13
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ],
+     [
+      "T. Skujins",
+      "LAT",
+      36
+     ],
+     [
+      "G. Steinhauser",
+      "GER",
+      46
+     ],
+     [
+      "S. Velasco",
+      "ITA",
+      67
+     ],
+     [
+      "R. Stannard",
+      "AUS",
+      76
+     ]
+    ],
+    "meer": 6
    },
    {
     "naam": "Distancés",
-    "aantal": 88,
-    "gat": "+11:22",
+    "aantal": 90,
+    "gat": "+12:03",
     "renners": [
      [
       "F. Vermeersch",
@@ -2196,7 +2226,7 @@
       43
      ]
     ],
-    "meer": 80
+    "meer": 82
    }
   ],
   "bron": "racecenter.letour.fr"
