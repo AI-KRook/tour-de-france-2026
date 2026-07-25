@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T14:58:25Z",
+ "bijgewerkt": "2026-07-25T15:02:52Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1505,40 +1505,40 @@
   "20": {
    "w": "Richard Carapaz",
    "wLand": "ECU",
-   "wPloeg": "EF Education–EasyPost",
+   "wPloeg": "EF Education - Easypost",
    "note": "",
    "pod": [
     {
      "pos": 1,
      "naam": "Richard Carapaz",
      "land": "ECU",
-     "ploeg": "EF Education–EasyPost",
-     "tijd": "4:59:39"
+     "ploeg": "EF Education - Easypost",
+     "tijd": ""
     },
     {
      "pos": 2,
      "naam": "Remco Evenepoel",
      "land": "BEL",
-     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
      "tijd": "+ 0:26"
     },
     {
      "pos": 3,
      "naam": "Sepp Kuss",
      "land": "USA",
-     "ploeg": "Visma–Lease a Bike",
+     "ploeg": "Team Visma | Lease A Bike",
      "tijd": "+ 0:31"
     },
     {
      "pos": 4,
-     "naam": "Tadej Pogačar",
+     "naam": "Tadej Pogacar",
      "land": "SLO",
      "ploeg": "UAE Team Emirates XRG",
      "tijd": "+ 1:05"
     },
     {
      "pos": 5,
-     "naam": "Isaac del Toro",
+     "naam": "Isaac Del Toro Romero",
      "land": "MEX",
      "ploeg": "UAE Team Emirates XRG",
      "tijd": "+ 1:05"
@@ -1547,39 +1547,39 @@
      "pos": 6,
      "naam": "Lenny Martinez",
      "land": "FRA",
-     "ploeg": "Team Bahrain Victorious",
+     "ploeg": "Bahrain Victorious",
      "tijd": "+ 1:07"
     },
     {
      "pos": 7,
      "naam": "Jai Hindley",
      "land": "AUS",
-     "ploeg": "Red Bull–Bora–Hansgrohe",
+     "ploeg": "RED Bull - Bora - Hansgrohe",
      "tijd": "+ 2:15"
     },
     {
      "pos": 8,
      "naam": "Mattias Skjelmose",
      "land": "DEN",
-     "ploeg": "Lidl–Trek",
+     "ploeg": "Lidl-Trek",
      "tijd": "+ 2:55"
     },
     {
      "pos": 9,
-     "naam": "Juan Ayuso",
+     "naam": "Juan Ayuso Pesquera",
      "land": "ESP",
-     "ploeg": "Lidl–Trek",
+     "ploeg": "Lidl-Trek",
      "tijd": "+ 2:55"
     },
     {
      "pos": 10,
      "naam": "Paul Seixas",
      "land": "FRA",
-     "ploeg": "Decathlon CMA CGM",
+     "ploeg": "Decathlon CMA CGM Team",
      "tijd": "+ 2:55"
     }
    ],
-   "bron": "en.wikipedia.org"
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -1954,13 +1954,13 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 16:58 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 17:02 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 21,
-  "tekst": "Richard Carapaz (EF Education–EasyPost) bedwong als eerste de slotklim naar Alpe d'Huez, voor Remco Evenepoel en Sepp Kuss. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 6:26.",
+  "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Alpe d'Huez, voor Remco Evenepoel en Sepp Kuss. Alle truien blijven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel als eerste achtervolger op 6:26.",
   "bron": "vast patroon",
-  "feiten": "8459e50a5ca8131e"
+  "feiten": "041a9aa360e8fb30"
  },
  "samenvattingen": {
   "6": {
@@ -2034,9 +2034,9 @@
    "feiten": "2dc0ef3217444957"
   },
   "20": {
-   "tekst": "Richard Carapaz (EF Education–EasyPost) bedwong als eerste de slotklim naar Alpe d'Huez, met Remco Evenepoel op +0:26. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 6:26.",
+   "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Alpe d'Huez, met Remco Evenepoel op +0:26. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 6:26.",
    "bron": "vast patroon",
-   "feiten": "179971964442d028"
+   "feiten": "ca20082a0ea2ac78"
   }
  }
 }
