@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T13:09:51Z",
+ "bijgewerkt": "2026-07-25T13:15:02Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,7 +1998,7 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T13:09:50.398Z",
+  "bijgewerkt": "2026-07-25T13:15:01.530Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -2031,7 +2031,7 @@
    {
     "naam": "M. Riccitello",
     "aantal": 1,
-    "gat": "+10s",
+    "gat": "+19s",
     "renners": [
      [
       "M. Riccitello",
@@ -2044,7 +2044,7 @@
    {
     "naam": "Groep Arensman",
     "aantal": 3,
-    "gat": "+2:26",
+    "gat": "+3:07",
     "renners": [
      [
       "D. Piganzoli",
@@ -2067,7 +2067,7 @@
    {
     "naam": "Groep gele trui",
     "aantal": 5,
-    "gat": "+4:34",
+    "gat": "+4:33",
     "renners": [
      [
       "T. Pogacar",
@@ -2100,7 +2100,7 @@
    {
     "naam": "Groep Skjelmose",
     "aantal": 3,
-    "gat": "+4:52",
+    "gat": "+4:42",
     "renners": [
      [
       "M. Van Gils",
@@ -2123,7 +2123,7 @@
    {
     "naam": "Groep Jegat",
     "aantal": 14,
-    "gat": "+6:30",
+    "gat": "+6:35",
     "renners": [
      [
       "F. Grossschartner",
@@ -2171,7 +2171,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 119,
-    "gat": "+16:21",
+    "gat": "+17:24",
     "renners": [
      [
       "N. Politt",
