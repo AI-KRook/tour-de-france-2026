@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T12:06:28Z",
+ "bijgewerkt": "2026-07-25T12:32:34Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,22 +1998,17 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T12:06:27.619Z",
+  "bijgewerkt": "2026-07-25T12:32:33.924Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 10,
+    "aantal": 7,
     "gat": "",
     "renners": [
      [
       "S. Kuss",
       "USA",
       17
-     ],
-     [
-      "D. Piganzoli",
-      "ITA",
-      18
      ],
      [
       "J. Hindley",
@@ -2046,43 +2041,43 @@
       82
      ]
     ],
-    "meer": 2
+    "meer": 0
    },
    {
-    "naam": "Groep Paret-Peintre",
-    "aantal": 2,
-    "gat": "+2:24",
+    "naam": "T.H. Johannessen",
+    "aantal": 1,
+    "gat": "+6s",
     "renners": [
      [
-      "V. Paret Peintre",
-      "FRA",
-      93
-     ],
-     [
-      "C. Braz Afonso",
-      "FRA",
-      183
+      "T. Johannessen",
+      "NOR",
+      121
      ]
     ],
     "meer": 0
    },
    {
-    "naam": "M. Pedersen",
-    "aantal": 1,
-    "gat": "+2:53",
+    "naam": "Groep Piganzoli",
+    "aantal": 2,
+    "gat": "+36s",
     "renners": [
      [
-      "M. Pedersen",
-      "DEN",
-      33
+      "D. Piganzoli",
+      "ITA",
+      18
+     ],
+     [
+      "T. Foss",
+      "NOR",
+      83
      ]
     ],
     "meer": 0
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 35,
-    "gat": "+4:08",
+    "aantal": 29,
+    "gat": "+4:07",
     "renners": [
      [
       "T. Pogacar",
@@ -2125,12 +2120,60 @@
       32
      ]
     ],
-    "meer": 27
+    "meer": 21
+   },
+   {
+    "naam": "Groep groene trui",
+    "aantal": 11,
+    "gat": "+5:52",
+    "renners": [
+     [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
+      "R. Stannard",
+      "AUS",
+      76
+     ],
+     [
+      "A. Tiberi",
+      "ITA",
+      77
+     ],
+     [
+      "V. Van Mechelen",
+      "BEL",
+      78
+     ],
+     [
+      "V. Paret Peintre",
+      "FRA",
+      93
+     ],
+     [
+      "J. Cepeda",
+      "ECU",
+      143
+     ],
+     [
+      "D. Howson",
+      "AUS",
+      175
+     ],
+     [
+      "B. Van Moer",
+      "BEL",
+      177
+     ]
+    ],
+    "meer": 3
    },
    {
     "naam": "Groep Armirail",
-    "aantal": 15,
-    "gat": "+5:43",
+    "aantal": 14,
+    "gat": "+8:39",
     "renners": [
      [
       "N. Politt",
@@ -2168,17 +2211,17 @@
       67
      ],
      [
-      "R. Stannard",
-      "AUS",
-      76
+      "M. Schmid",
+      "SUI",
+      118
      ]
     ],
-    "meer": 7
+    "meer": 6
    },
    {
     "naam": "Distancés",
-    "aantal": 90,
-    "gat": "+13:34",
+    "aantal": 89,
+    "gat": "+14:56",
     "renners": [
      [
       "F. Vermeersch",
@@ -2221,7 +2264,7 @@
       43
      ]
     ],
-    "meer": 82
+    "meer": 81
    }
   ],
   "bron": "racecenter.letour.fr"
