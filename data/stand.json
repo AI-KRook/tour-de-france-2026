@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T11:48:13Z",
+ "bijgewerkt": "2026-07-25T11:52:41Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,11 +1998,11 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T11:48:13.029Z",
+  "bijgewerkt": "2026-07-25T11:52:40.741Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 11,
+    "aantal": 10,
     "gat": "",
     "renners": [
      [
@@ -2046,17 +2046,22 @@
       82
      ]
     ],
-    "meer": 3
+    "meer": 2
    },
    {
-    "naam": "V. Paret-Peintre",
-    "aantal": 1,
-    "gat": "+29s",
+    "naam": "Groep Paret-Peintre",
+    "aantal": 2,
+    "gat": "+1:01",
     "renners": [
      [
       "V. Paret Peintre",
       "FRA",
       93
+     ],
+     [
+      "C. Braz Afonso",
+      "FRA",
+      183
      ]
     ],
     "meer": 0
@@ -2064,7 +2069,7 @@
    {
     "naam": "M. Pedersen",
     "aantal": 1,
-    "gat": "+1:36",
+    "gat": "+1:58",
     "renners": [
      [
       "M. Pedersen",
@@ -2077,7 +2082,7 @@
    {
     "naam": "Groep Jorgenson",
     "aantal": 2,
-    "gat": "+2:51",
+    "gat": "+3:34",
     "renners": [
      [
       "B. Armirail",
@@ -2095,7 +2100,7 @@
    {
     "naam": "Groep gele trui",
     "aantal": 48,
-    "gat": "+4:02",
+    "gat": "+4:18",
     "renners": [
      [
       "T. Pogacar",
@@ -2143,7 +2148,7 @@
    {
     "naam": "Distancés",
     "aantal": 88,
-    "gat": "+10:04",
+    "gat": "+10:46",
     "renners": [
      [
       "F. Vermeersch",
