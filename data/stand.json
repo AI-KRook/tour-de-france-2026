@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T14:40:36Z",
+ "bijgewerkt": "2026-07-25T14:45:03Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1587,6 +1587,13 @@
     "land": "ECU",
     "ploeg": "EF Education - Easypost",
     "tijd": "+ 20:00"
+   },
+   {
+    "pos": 9,
+    "naam": "Tom Pidcock",
+    "land": "GBR",
+    "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+    "tijd": "+ 29:28"
    }
   ],
   "klassementen": {
@@ -1649,6 +1656,13 @@
       "land": "ECU",
       "ploeg": "EF Education - Easypost",
       "tijd": "+ 20:00"
+     },
+     {
+      "pos": 9,
+      "naam": "Tom Pidcock",
+      "land": "GBR",
+      "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
+      "tijd": "+ 29:28"
      }
     ]
    },
@@ -1696,7 +1710,7 @@
       "naam": "Tadej Pogacar",
       "land": "SLO",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "185 ptn"
+      "tijd": "198 ptn"
      },
      {
       "pos": 7,
@@ -1710,14 +1724,14 @@
       "naam": "Remco Evenepoel",
       "land": "BEL",
       "ploeg": "RED Bull - Bora - Hansgrohe",
-      "tijd": "140 ptn"
+      "tijd": "157 ptn"
      },
      {
       "pos": 9,
       "naam": "Isaac Del Toro Romero",
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
-      "tijd": "132 ptn"
+      "tijd": "143 ptn"
      },
      {
       "pos": 10,
@@ -1814,12 +1828,40 @@
       "land": "MEX",
       "ploeg": "UAE Team Emirates XRG",
       "tijd": "—"
+     },
+     {
+      "pos": 2,
+      "naam": "Paul Seixas",
+      "land": "FRA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 2:14"
+     },
+     {
+      "pos": 3,
+      "naam": "Lenny Martinez",
+      "land": "FRA",
+      "ploeg": "Bahrain Victorious",
+      "tijd": "+ 3:20"
+     },
+     {
+      "pos": 4,
+      "naam": "Juan Ayuso Pesquera",
+      "land": "ESP",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 8:06"
+     },
+     {
+      "pos": 5,
+      "naam": "Matthew Riccitello",
+      "land": "USA",
+      "ploeg": "Decathlon CMA CGM Team",
+      "tijd": "+ 2:01:27"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 16:40 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 16:45 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 20,
