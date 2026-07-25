@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T14:20:00Z",
+ "bijgewerkt": "2026-07-25T14:25:23Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,25 +1998,12 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T14:19:58.861Z",
+  "bijgewerkt": "2026-07-25T14:25:21.949Z",
   "groepen": [
    {
     "naam": "Kopgroep",
     "aantal": 1,
     "gat": "",
-    "renners": [
-     [
-      "S. Kuss",
-      "USA",
-      17
-     ]
-    ],
-    "meer": 0
-   },
-   {
-    "naam": "R. Carapaz",
-    "aantal": 1,
-    "gat": "+15s",
     "renners": [
      [
       "R. Carapaz",
@@ -2027,9 +2014,22 @@
     "meer": 0
    },
    {
+    "naam": "S. Kuss",
+    "aantal": 1,
+    "gat": "+9s",
+    "renners": [
+     [
+      "S. Kuss",
+      "USA",
+      17
+     ]
+    ],
+    "meer": 0
+   },
+   {
     "naam": "Groep gele trui",
     "aantal": 5,
-    "gat": "+1:46",
+    "gat": "+1:10",
     "renners": [
      [
       "T. Pogacar",
@@ -2062,7 +2062,7 @@
    {
     "naam": "Groep Seixas",
     "aantal": 3,
-    "gat": "+2:46",
+    "gat": "+2:37",
     "renners": [
      [
       "J. Ayuso Pesquera",
@@ -2085,7 +2085,7 @@
    {
     "naam": "Groep Pidcock",
     "aantal": 21,
-    "gat": "+9:46",
+    "gat": "+9:59",
     "renners": [
      [
       "F. Grossschartner",
@@ -2133,7 +2133,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 118,
-    "gat": "+25:11",
+    "gat": "+26:32",
     "renners": [
      [
       "N. Politt",
