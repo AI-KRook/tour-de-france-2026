@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T14:45:03Z",
+ "bijgewerkt": "2026-07-25T14:49:30Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1594,6 +1594,13 @@
     "land": "GBR",
     "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
     "tijd": "+ 29:28"
+   },
+   {
+    "pos": 10,
+    "naam": "Jordan Jegat",
+    "land": "FRA",
+    "ploeg": "Totalenergies",
+    "tijd": "+ 33:21"
    }
   ],
   "klassementen": {
@@ -1663,6 +1670,13 @@
       "land": "GBR",
       "ploeg": "Pinarello-Q36.5 PRO Cycling Team",
       "tijd": "+ 29:28"
+     },
+     {
+      "pos": 10,
+      "naam": "Jordan Jegat",
+      "land": "FRA",
+      "ploeg": "Totalenergies",
+      "tijd": "+ 33:21"
      }
     ]
    },
@@ -1735,10 +1749,10 @@
      },
      {
       "pos": 10,
-      "naam": "Mauro Schmid",
-      "land": "SUI",
-      "ploeg": "Team Jayco Alula",
-      "tijd": "131 ptn"
+      "naam": "Tobias Johannessen",
+      "land": "NOR",
+      "ploeg": "Uno-X Mobility",
+      "tijd": "133 ptn"
      }
     ]
    },
@@ -1861,7 +1875,7 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 16:45 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 16:49 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 20,
