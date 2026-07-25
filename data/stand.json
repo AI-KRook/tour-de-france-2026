@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T12:48:22Z",
+ "bijgewerkt": "2026-07-25T12:53:44Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,30 +1998,68 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T12:48:21.114Z",
+  "bijgewerkt": "2026-07-25T12:53:43.296Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 1,
+    "aantal": 4,
     "gat": "",
     "renners": [
+     [
+      "S. Kuss",
+      "USA",
+      17
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ],
      [
       "R. Carapaz",
       "ECU",
       41
+     ],
+     [
+      "M. Riccitello",
+      "USA",
+      58
      ]
     ],
     "meer": 0
    },
    {
-    "naam": "D. Piganzoli",
+    "naam": "J. Ayuso",
     "aantal": 1,
-    "gat": "+22s",
+    "gat": "+6s",
+    "renners": [
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "Groep Arensman",
+    "aantal": 3,
+    "gat": "+44s",
     "renners": [
      [
       "D. Piganzoli",
       "ITA",
       18
+     ],
+     [
+      "T. Arensman",
+      "NED",
+      82
+     ],
+     [
+      "T. Johannessen",
+      "NOR",
+      121
      ]
     ],
     "meer": 0
@@ -2029,7 +2067,7 @@
    {
     "naam": "B. Healy",
     "aantal": 1,
-    "gat": "+50s",
+    "gat": "+2:12",
     "renners": [
      [
       "B. Healy",
@@ -2041,8 +2079,8 @@
    },
    {
     "naam": "Groep gele trui",
-    "aantal": 24,
-    "gat": "+4:27",
+    "aantal": 22,
+    "gat": "+4:52",
     "renners": [
      [
       "T. Pogacar",
@@ -2085,60 +2123,35 @@
       34
      ]
     ],
-    "meer": 16
+    "meer": 14
+   },
+   {
+    "naam": "Groep Jegat",
+    "aantal": 3,
+    "gat": "+5:02",
+    "renners": [
+     [
+      "J. Jegat",
+      "FRA",
+      201
+     ],
+     [
+      "N. Breuillard",
+      "FRA",
+      202
+     ],
+     [
+      "W. Barguil",
+      "FRA",
+      211
+     ]
+    ],
+    "meer": 0
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 16,
-    "gat": "+10:52",
-    "renners": [
-     [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
-      "M. Pedersen",
-      "DEN",
-      33
-     ],
-     [
-      "S. Higuita Garcia",
-      "COL",
-      61
-     ],
-     [
-      "R. Stannard",
-      "AUS",
-      76
-     ],
-     [
-      "A. Tiberi",
-      "ITA",
-      77
-     ],
-     [
-      "V. Van Mechelen",
-      "BEL",
-      78
-     ],
-     [
-      "E. Bernal Gomez",
-      "COL",
-      81
-     ],
-     [
-      "V. Paret Peintre",
-      "FRA",
-      93
-     ]
-    ],
-    "meer": 8
-   },
-   {
-    "naam": "Groep Armirail",
-    "aantal": 14,
-    "gat": "+11:31",
+    "aantal": 30,
+    "gat": "+12:29",
     "renners": [
      [
       "N. Politt",
@@ -2151,6 +2164,11 @@
       7
      ],
      [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
       "B. Armirail",
       "FRA",
       13
@@ -2161,6 +2179,11 @@
       16
      ],
      [
+      "M. Pedersen",
+      "DEN",
+      33
+     ],
+     [
       "T. Skujins",
       "LAT",
       36
@@ -2169,24 +2192,14 @@
       "G. Steinhauser",
       "GER",
       46
-     ],
-     [
-      "S. Velasco",
-      "ITA",
-      67
-     ],
-     [
-      "M. Schmid",
-      "SUI",
-      118
      ]
     ],
-    "meer": 6
+    "meer": 22
    },
    {
     "naam": "Distancés",
     "aantal": 89,
-    "gat": "+17:21",
+    "gat": "+18:31",
     "renners": [
      [
       "F. Vermeersch",
