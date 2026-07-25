@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T12:42:59Z",
+ "bijgewerkt": "2026-07-25T12:48:22Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,47 +1998,30 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T12:42:58.900Z",
+  "bijgewerkt": "2026-07-25T12:48:21.114Z",
   "groepen": [
    {
     "naam": "Kopgroep",
-    "aantal": 7,
+    "aantal": 1,
     "gat": "",
     "renners": [
-     [
-      "S. Kuss",
-      "USA",
-      17
-     ],
-     [
-      "J. Hindley",
-      "AUS",
-      24
-     ],
-     [
-      "J. Ayuso Pesquera",
-      "ESP",
-      31
-     ],
      [
       "R. Carapaz",
       "ECU",
       41
-     ],
+     ]
+    ],
+    "meer": 0
+   },
+   {
+    "naam": "D. Piganzoli",
+    "aantal": 1,
+    "gat": "+22s",
+    "renners": [
      [
-      "M. Riccitello",
-      "USA",
-      58
-     ],
-     [
-      "T. Arensman",
-      "NED",
-      82
-     ],
-     [
-      "T. Johannessen",
-      "NOR",
-      121
+      "D. Piganzoli",
+      "ITA",
+      18
      ]
     ],
     "meer": 0
@@ -2046,7 +2029,7 @@
    {
     "naam": "B. Healy",
     "aantal": 1,
-    "gat": "+19s",
+    "gat": "+50s",
     "renners": [
      [
       "B. Healy",
@@ -2057,27 +2040,9 @@
     "meer": 0
    },
    {
-    "naam": "Groep Piganzoli",
-    "aantal": 2,
-    "gat": "+28s",
-    "renners": [
-     [
-      "D. Piganzoli",
-      "ITA",
-      18
-     ],
-     [
-      "T. Foss",
-      "NOR",
-      83
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep gele trui",
-    "aantal": 26,
-    "gat": "+4:30",
+    "aantal": 24,
+    "gat": "+4:27",
     "renners": [
      [
       "T. Pogacar",
@@ -2120,12 +2085,12 @@
       34
      ]
     ],
-    "meer": 18
+    "meer": 16
    },
    {
     "naam": "Groep groene trui",
-    "aantal": 14,
-    "gat": "+9:16",
+    "aantal": 16,
+    "gat": "+10:52",
     "renners": [
      [
       "A. Yates",
@@ -2158,22 +2123,22 @@
       78
      ],
      [
+      "E. Bernal Gomez",
+      "COL",
+      81
+     ],
+     [
       "V. Paret Peintre",
       "FRA",
       93
-     ],
-     [
-      "J. Cepeda",
-      "ECU",
-      143
      ]
     ],
-    "meer": 6
+    "meer": 8
    },
    {
     "naam": "Groep Armirail",
     "aantal": 14,
-    "gat": "+10:42",
+    "gat": "+11:31",
     "renners": [
      [
       "N. Politt",
@@ -2221,7 +2186,7 @@
    {
     "naam": "Distancés",
     "aantal": 89,
-    "gat": "+16:08",
+    "gat": "+17:21",
     "renners": [
      [
       "F. Vermeersch",
