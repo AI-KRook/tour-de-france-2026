@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T12:53:44Z",
+ "bijgewerkt": "2026-07-25T12:59:06Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1998,7 +1998,7 @@
  },
  "koers": {
   "etappe": 20,
-  "bijgewerkt": "2026-07-25T12:53:43.296Z",
+  "bijgewerkt": "2026-07-25T12:59:05.922Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -2031,7 +2031,7 @@
    {
     "naam": "J. Ayuso",
     "aantal": 1,
-    "gat": "+6s",
+    "gat": "+17s",
     "renners": [
      [
       "J. Ayuso Pesquera",
@@ -2044,7 +2044,7 @@
    {
     "naam": "Groep Arensman",
     "aantal": 3,
-    "gat": "+44s",
+    "gat": "+49s",
     "renners": [
      [
       "D. Piganzoli",
@@ -2067,7 +2067,7 @@
    {
     "naam": "B. Healy",
     "aantal": 1,
-    "gat": "+2:12",
+    "gat": "+3:06",
     "renners": [
      [
       "B. Healy",
@@ -2080,7 +2080,7 @@
    {
     "naam": "Groep gele trui",
     "aantal": 22,
-    "gat": "+4:52",
+    "gat": "+5:30",
     "renners": [
      [
       "T. Pogacar",
@@ -2128,7 +2128,7 @@
    {
     "naam": "Groep Jegat",
     "aantal": 3,
-    "gat": "+5:02",
+    "gat": "+5:45",
     "renners": [
      [
       "J. Jegat",
@@ -2151,7 +2151,7 @@
    {
     "naam": "Groep groene trui",
     "aantal": 30,
-    "gat": "+12:29",
+    "gat": "+13:25",
     "renners": [
      [
       "N. Politt",
@@ -2199,7 +2199,7 @@
    {
     "naam": "Distancés",
     "aantal": 89,
-    "gat": "+18:31",
+    "gat": "+19:16",
     "renners": [
      [
       "F. Vermeersch",
