@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T15:07:19Z",
+ "bijgewerkt": "2026-07-25T15:42:40Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1963,12 +1963,33 @@
       "land": "USA",
       "ploeg": "Decathlon CMA CGM Team",
       "tijd": "+ 2:01:27"
+     },
+     {
+      "pos": 8,
+      "naam": "Pablo Castrillo Zapater",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 2:22:01"
+     },
+     {
+      "pos": 9,
+      "naam": "Raul Garcia Pierna",
+      "land": "ESP",
+      "ploeg": "Movistar Team",
+      "tijd": "+ 2:42:50"
+     },
+     {
+      "pos": 10,
+      "naam": "Kévin Vauquelin",
+      "land": "FRA",
+      "ploeg": "Netcompany Ineos Cycling Team",
+      "tijd": "+ 2:51:35"
      }
     ]
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 17:07 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 17:42 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 21,
