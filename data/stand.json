@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-25T15:02:52Z",
+ "bijgewerkt": "2026-07-25T15:07:19Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1945,6 +1945,20 @@
      },
      {
       "pos": 5,
+      "naam": "Davide Piganzoli",
+      "land": "ITA",
+      "ploeg": "Team Visma | Lease A Bike",
+      "tijd": "+ 54:01"
+     },
+     {
+      "pos": 6,
+      "naam": "Quinn Simmons",
+      "land": "USA",
+      "ploeg": "Lidl-Trek",
+      "tijd": "+ 1:25:46"
+     },
+     {
+      "pos": 7,
       "naam": "Matthew Riccitello",
       "land": "USA",
       "ploeg": "Decathlon CMA CGM Team",
@@ -1954,7 +1968,7 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 17:02 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 20, automatisch bijgewerkt 25 juli 17:07 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 21,
