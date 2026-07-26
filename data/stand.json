@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-26T16:11:34Z",
+ "bijgewerkt": "2026-07-26T16:16:56Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -2076,7 +2076,7 @@
  },
  "koers": {
   "etappe": 21,
-  "bijgewerkt": "2026-07-26T16:11:33.637Z",
+  "bijgewerkt": "2026-07-26T16:16:55.475Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -2124,20 +2124,7 @@
       13
      ]
     ],
-    "meer": 149
-   },
-   {
-    "naam": "Crevaison",
-    "aantal": 1,
-    "gat": "+46s",
-    "renners": [
-     [
-      "B. Veistroffer",
-      "FRA",
-      157
-     ]
-    ],
-    "meer": 0
+    "meer": 150
    }
   ],
   "bron": "racecenter.letour.fr"
