@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-26T16:56:57Z",
+ "bijgewerkt": "2026-07-26T17:36:14Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -2076,45 +2076,17 @@
  },
  "koers": {
   "etappe": 21,
-  "bijgewerkt": "2026-07-26T16:56:56.429Z",
+  "bijgewerkt": "2026-07-26T17:36:13.315Z",
   "groepen": [
-   {
-    "naam": "Kopgroep",
-    "aantal": 2,
-    "gat": "",
-    "renners": [
-     [
-      "X. Azparren Irurzun",
-      "ESP",
-      172
-     ],
-     [
-      "T. Guernalec",
-      "FRA",
-      205
-     ]
-    ],
-    "meer": 0
-   },
    {
     "naam": "Peloton",
     "aantal": 999,
-    "gat": "+38s",
+    "gat": "",
     "renners": [
      [
       "T. Pogacar",
       "SLO",
       1
-     ],
-     [
-      "I. Del Toro Romero",
-      "MEX",
-      2
-     ],
-     [
-      "F. Grossschartner",
-      "AUT",
-      3
      ],
      [
       "N. Politt",
@@ -2137,12 +2109,118 @@
       8
      ],
      [
+      "V. Campenaerts",
+      "BEL",
+      14
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
+     ]
+    ],
+    "meer": 68
+   },
+   {
+    "naam": "Distancés",
+    "aantal": 11,
+    "gat": "+43s",
+    "renners": [
+     [
+      "F. Grossschartner",
+      "AUT",
+      3
+     ],
+     [
+      "A. Baudin",
+      "FRA",
+      43
+     ],
+     [
+      "S. Quinn",
+      "USA",
+      45
+     ],
+     [
+      "D. Ballerini",
+      "ITA",
+      62
+     ],
+     [
+      "A. Tiberi",
+      "ITA",
+      77
+     ],
+     [
+      "H. Artz",
+      "NED",
+      152
+     ],
+     [
+      "E. Costiou",
+      "FRA",
+      184
+     ],
+     [
+      "Q. Pacher",
+      "FRA",
+      187
+     ]
+    ],
+    "meer": 3
+   },
+   {
+    "naam": "Groep witte trui",
+    "aantal": 71,
+    "gat": "+3:56",
+    "renners": [
+     [
+      "I. Del Toro Romero",
+      "MEX",
+      2
+     ],
+     [
       "B. Armirail",
       "FRA",
       13
+     ],
+     [
+      "S. Kuss",
+      "USA",
+      17
+     ],
+     [
+      "M. Cattaneo",
+      "ITA",
+      22
+     ],
+     [
+      "N. Denz",
+      "GER",
+      23
+     ],
+     [
+      "J. Hindley",
+      "AUS",
+      24
+     ],
+     [
+      "J. Tratnik",
+      "SLO",
+      26
+     ],
+     [
+      "J. Ayuso Pesquera",
+      "ESP",
+      31
      ]
     ],
-    "meer": 148
+    "meer": 63
    }
   ],
   "bron": "racecenter.letour.fr"
