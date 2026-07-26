@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-26T17:46:59Z",
+ "bijgewerkt": "2026-07-26T17:52:21Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -2076,7 +2076,7 @@
  },
  "koers": {
   "etappe": 21,
-  "bijgewerkt": "2026-07-26T17:46:58.086Z",
+  "bijgewerkt": "2026-07-26T17:52:20.282Z",
   "groepen": [
    {
     "naam": "Kopgroep",
@@ -2097,52 +2097,19 @@
     "meer": 0
    },
    {
-    "naam": "Poursuivants",
-    "aantal": 6,
-    "gat": "+8s",
-    "renners": [
-     [
-      "P. Hagenes",
-      "NOR",
-      15
-     ],
-     [
-      "M. Jorgenson",
-      "USA",
-      16
-     ],
-     [
-      "B. Healy",
-      "IRL",
-      44
-     ],
-     [
-      "M. Mohoric",
-      "SLO",
-      75
-     ],
-     [
-      "J. Stuyven",
-      "BEL",
-      94
-     ],
-     [
-      "J. Abrahamsen",
-      "NOR",
-      122
-     ]
-    ],
-    "meer": 0
-   },
-   {
     "naam": "Groep groene trui",
-    "aantal": 36,
-    "gat": "+21s",
+    "aantal": 40,
+    "gat": "+13s",
     "renners": [
      [
       "V. Campenaerts",
       "BEL",
       14
+     ],
+     [
+      "P. Hagenes",
+      "NOR",
+      15
      ],
      [
       "R. Evenepoel",
@@ -2170,22 +2137,17 @@
       42
      ],
      [
-      "P. Seixas",
-      "FRA",
-      51
-     ],
-     [
-      "T. Benoot",
-      "BEL",
-      52
+      "B. Healy",
+      "IRL",
+      44
      ]
     ],
-    "meer": 28
+    "meer": 32
    },
    {
     "naam": "Distancés",
-    "aantal": 24,
-    "gat": "+3:04",
+    "aantal": 32,
+    "gat": "+4:26",
     "renners": [
      [
       "F. Grossschartner",
@@ -2193,9 +2155,19 @@
       3
      ],
      [
+      "F. Vermeersch",
+      "BEL",
+      6
+     ],
+     [
       "A. Yates",
       "GBR",
       8
+     ],
+     [
+      "M. Jorgenson",
+      "USA",
+      16
      ],
      [
       "D. Piganzoli",
@@ -2216,24 +2188,14 @@
       "A. Baudin",
       "FRA",
       43
-     ],
-     [
-      "S. Quinn",
-      "USA",
-      45
-     ],
-     [
-      "G. Steinhauser",
-      "GER",
-      46
      ]
     ],
-    "meer": 16
+    "meer": 24
    },
    {
     "naam": "Groep witte trui",
     "aantal": 71,
-    "gat": "+5:21",
+    "gat": "+8:07",
     "renners": [
      [
       "I. Del Toro Romero",
