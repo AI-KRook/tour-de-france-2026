@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-26T17:57:44Z",
+ "bijgewerkt": "2026-07-26T18:03:06Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -1580,6 +1580,85 @@
     }
    ],
    "bron": "letour.fr"
+  },
+  "21": {
+   "w": "Mathieu Van Der Poel",
+   "wLand": "NED",
+   "wPloeg": "Alpecin-Premier Tech",
+   "note": "",
+   "pod": [
+    {
+     "pos": 1,
+     "naam": "Mathieu Van Der Poel",
+     "land": "NED",
+     "ploeg": "Alpecin-Premier Tech",
+     "tijd": ""
+    },
+    {
+     "pos": 2,
+     "naam": "Jasper Philipsen",
+     "land": "BEL",
+     "ploeg": "Alpecin-Premier Tech",
+     "tijd": "—"
+    },
+    {
+     "pos": 3,
+     "naam": "Mads Pedersen",
+     "land": "DEN",
+     "ploeg": "Lidl-Trek",
+     "tijd": "—"
+    },
+    {
+     "pos": 4,
+     "naam": "Max Kanter",
+     "land": "GER",
+     "ploeg": "XDS Astana Team",
+     "tijd": "—"
+    },
+    {
+     "pos": 5,
+     "naam": "Olav Kooij",
+     "land": "NED",
+     "ploeg": "Decathlon CMA CGM Team",
+     "tijd": "—"
+    },
+    {
+     "pos": 6,
+     "naam": "Matej Mohoric",
+     "land": "SLO",
+     "ploeg": "Bahrain Victorious",
+     "tijd": "—"
+    },
+    {
+     "pos": 7,
+     "naam": "Rick Pluimers",
+     "land": "NED",
+     "ploeg": "Tudor PRO Cycling Team",
+     "tijd": "—"
+    },
+    {
+     "pos": 8,
+     "naam": "Anthony Turgis",
+     "land": "FRA",
+     "ploeg": "Totalenergies",
+     "tijd": "—"
+    },
+    {
+     "pos": 9,
+     "naam": "Milan Fretin",
+     "land": "BEL",
+     "ploeg": "Cofidis",
+     "tijd": "—"
+    },
+    {
+     "pos": 10,
+     "naam": "Clément Russo",
+     "land": "FRA",
+     "ploeg": "Groupama-Fdj United",
+     "tijd": "—"
+    }
+   ],
+   "bron": "letour.fr"
   }
  },
  "klassement": {
@@ -1796,7 +1875,7 @@
       "naam": "Olav Kooij",
       "land": "NED",
       "ploeg": "Decathlon CMA CGM Team",
-      "tijd": "230 ptn"
+      "tijd": "246 ptn"
      },
      {
       "pos": 6,
@@ -1989,7 +2068,7 @@
    }
   },
   "wissels": [],
-  "voetnoot": "Stand na etappe 21, automatisch bijgewerkt 26 juli 19:57 uur (bron: letour.fr)."
+  "voetnoot": "Stand na etappe 21, automatisch bijgewerkt 26 juli 20:03 uur (bron: letour.fr)."
  },
  "dagcommentaar": {
   "voorEtappe": 21,
@@ -2072,6 +2151,11 @@
    "tekst": "Richard Carapaz (EF Education - Easypost) bedwong als eerste de slotklim naar Alpe d'Huez, met Remco Evenepoel op +0:26. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 6:26.",
    "bron": "vast patroon",
    "feiten": "ca20082a0ea2ac78"
+  },
+  "21": {
+   "tekst": "Mathieu Van Der Poel (Alpecin-Premier Tech) sprintte naar de zege in Parijs, voor Jasper Philipsen. Alle truien bleven om dezelfde schouders. In het algemeen klassement leidt Tadej Pogacar, met Remco Evenepoel op 6:26.",
+   "bron": "vast patroon",
+   "feiten": "ac644eaeef866e28"
   }
  }
 }
