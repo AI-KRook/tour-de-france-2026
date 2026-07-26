@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-07-26T17:36:14Z",
+ "bijgewerkt": "2026-07-26T17:41:36Z",
  "uitslagen": {
   "1": {
    "w": "Visma–Lease a Bike",
@@ -2076,7 +2076,7 @@
  },
  "koers": {
   "etappe": 21,
-  "bijgewerkt": "2026-07-26T17:36:13.315Z",
+  "bijgewerkt": "2026-07-26T17:41:35.660Z",
   "groepen": [
    {
     "naam": "Peloton",
@@ -2104,11 +2104,6 @@
       7
      ],
      [
-      "A. Yates",
-      "GBR",
-      8
-     ],
-     [
       "V. Campenaerts",
       "BEL",
       14
@@ -2122,19 +2117,39 @@
       "M. Jorgenson",
       "USA",
       16
+     ],
+     [
+      "D. Piganzoli",
+      "ITA",
+      18
      ]
     ],
-    "meer": 68
+    "meer": 63
    },
    {
     "naam": "Distancés",
-    "aantal": 11,
-    "gat": "+43s",
+    "aantal": 16,
+    "gat": "+1:20",
     "renners": [
      [
       "F. Grossschartner",
       "AUT",
       3
+     ],
+     [
+      "A. Yates",
+      "GBR",
+      8
+     ],
+     [
+      "M. Skjelmose",
+      "DEN",
+      35
+     ],
+     [
+      "T. Skujins",
+      "LAT",
+      36
      ],
      [
       "A. Baudin",
@@ -2147,37 +2162,22 @@
       45
      ],
      [
-      "D. Ballerini",
-      "ITA",
-      62
+      "G. Steinhauser",
+      "GER",
+      46
      ],
      [
       "A. Tiberi",
       "ITA",
       77
-     ],
-     [
-      "H. Artz",
-      "NED",
-      152
-     ],
-     [
-      "E. Costiou",
-      "FRA",
-      184
-     ],
-     [
-      "Q. Pacher",
-      "FRA",
-      187
      ]
     ],
-    "meer": 3
+    "meer": 8
    },
    {
     "naam": "Groep witte trui",
     "aantal": 71,
-    "gat": "+3:56",
+    "gat": "+4:24",
     "renners": [
      [
       "I. Del Toro Romero",
